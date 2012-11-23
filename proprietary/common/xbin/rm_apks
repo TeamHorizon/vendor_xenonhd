@@ -1,0 +1,138 @@
+#!/system/xbin/bash
+: '
+ ============ Copyright (C) 2010 Jared Rummler (JRummy16) ============
+ 
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ =====================================================================
+'
+
+PKGLINE=(` pm list packages -f | busybox cut -d ':' -f2 `);
+CMD=""
+declare -a APKS
+declare -a PKGS
+
+busybox mount -o remount,rw /system
+
+while true; do
+
+	unset APKS
+	unset PKGS
+	unset CMD
+	
+	echo "=============================="
+	echo " 1) Uninstall user apps"
+	echo " 2) Uninstall system apps"
+	echo " 3) Freeze user apps"
+	echo " 4) Freeze system apps"
+	echo " 5) Unfreeze apps"
+	echo " 6) Exit this menu"
+	echo "=============================="
+	echo -n " Please enter a number: "
+	
+	read choice
+	INDEX=0
+	
+	case $choice in
+		1|2)  CMD="UNINSTALL" ;;
+		2|3)  CMD="FREEZE"    ;;
+		5)    CMD="DEFROST"   ;;
+	esac
+	
+	case $choice in
+		1|3)
+			echo
+			echo "Please wait. Getting list of applications..."
+			echo
+			for pkgline in ${PKGLINE[*]}; do
+				if busybox [ -n "$( echo $pkgline | busybox grep -v /system/ )" ]; then
+					APKS[$INDEX]=` echo $pkgline | busybox cut -d '=' -f1 `
+					PKGS[$INDEX]=` echo $pkgline | busybox cut -d '=' -f2 `
+					let INDEX++
+				fi
+			done
+		;;
+		2|4)
+			echo
+			echo "Please wait. Getting list of applications..."
+			echo
+			for pkgline in ${PKGLINE[*]}; do
+				if busybox [ -n "$( echo $pkgline | busybox grep /system/app/ )" ]; then
+					APKS[$INDEX]=` echo $pkgline | busybox cut -d '=' -f1 `
+					PKGS[$INDEX]=` echo $pkgline | busybox cut -d '=' -f2 `
+					let INDEX++
+				fi
+			done
+		;;
+		5)
+			echo
+			echo "Please wait. Getting list of applications..."
+			echo
+			DISABLED=(` pm list packages -d -f | busybox cut -d ':' -f2 `);
+			for pkgline in ${DISABLED[*]}; do
+				APKS[$INDEX]=` echo $pkgline | busybox cut -d '=' -f1 `
+				PKGS[$INDEX]=` echo $pkgline | busybox cut -d '=' -f2 `
+				let INDEX++
+			done
+		;;
+		6)
+			exit 0
+		;;
+		*)
+			echo "Error: $choice is not a valid option."
+			exit 0
+		;;
+	esac
+	
+	LENGTH=$(( ${#PKGS[*]} - 1 ))
+	echo "=============================="
+	for i in `seq 0 $LENGTH`; do
+		number=$(($i+1))
+		echo " ${number}) ${PKGS[${i}]}"
+	done
+	number=$(($number+1))
+	echo " ${number}) Go back to the main menu"
+	echo "=============================="
+	echo -n " Please enter a number: "
+	
+	read choice
+	
+	case $choice in
+		''|*[!0-9]*) 
+			echo "Error: you went crazy and entered something wrong."
+			exit 1
+		;;
+	esac
+
+	if busybox [ $choice -ne $number ]; then
+		
+		index=$(($choice - 1))
+		
+		if busybox [ $CMD = UNINSTALL ]; then
+			busybox rm -f ${APKS[$index]}
+			pm uninstall ${PKGS[$index]}
+			echo "Uninstalled ${PKGS[$index]}"
+		elif busybox [ $CMD = FREEZE ]; then
+			pm disable ${PKGS[$index]}
+			echo "Froze ${PKGS[$index]}"
+		elif busybox [ $CMD = DEFROST ]; then
+			pm enable ${PKGS[$index]}
+			echo "Defrosted ${PKGS[$index]}"
+		fi
+	fi
+
+done
+
+busybox mount -o remount,ro /system
+sync

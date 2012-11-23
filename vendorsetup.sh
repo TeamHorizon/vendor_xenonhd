@@ -1,0 +1,5 @@
+add_lunch_combo xenonhd_d2vzw-userdebug
+add_lunch_combo xenonhd_emulator-enguser
+add_lunch_combo xenonhd_maguro-userdebug
+add_lunch_combo xenonhd_grouper-userdebug
+add_lunch_combo xenonhd_toro-userdebug
