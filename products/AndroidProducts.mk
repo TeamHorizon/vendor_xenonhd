@@ -1,7 +1,4 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/d2vzw.mk \
-    $(LOCAL_DIR)/emulator.mk \
-    $(LOCAL_DIR)/maguro.mk \
-    $(LOCAL_DIR)/grouper.mk \
-    $(LOCAL_DIR)/toro.mk
-
+    $(LOCAL_DIR)/xenonhd_grouper.mk \
+    $(LOCAL_DIR)/xenonhd_maguro.mk \
+    $(LOCAL_DIR)/xenonhd_toro.mk \
