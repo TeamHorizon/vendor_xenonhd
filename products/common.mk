@@ -79,7 +79,20 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
     vendor/xenonhd/proprietary/common/xbin/su:system/xbin/su \
-    vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign                
+    vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
+
+# 4.2 Keyboard
+PRODUCT_COPY_FILES +=  \
+    vendor/xenonhd/proprietary/LatinIME.apk:system/app/LatinIME.apk \
+    vendor/xenonhd/proprietary/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+
+# JB 4.2 Camera
+PRODUCT_COPY_FILES +=  \
+    vendor/xenonhd/proprietary/GmsCore.apk:system/app/GmsCore.apk \
+    vendor/xenonhd/proprietary/Gallery2.apk:system/app/Gallery2.apk \
+    vendor/xenonhd/proprietary/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
+    vendor/xenonhd/proprietary/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
+    vendor/xenonhd/proprietary/lib/liblightcycle.so:system/lib/liblightcycle.so
 
 ifeq ($(TARGET_BUILD_VARIANT),userdebug)
 # Blobs common to all devices except emulator
