@@ -23,6 +23,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.ril.disable.power.collapse=1 \
 	pm.sleep_mode=1
 
+# Common dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
+
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
