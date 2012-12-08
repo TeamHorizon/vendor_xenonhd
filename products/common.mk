@@ -100,7 +100,7 @@ PRODUCT_COPY_FILES += \
     
 endif
 
-ifneq ($(filter xenonhd_crespo xenonhd_crespo4g xenonhd_maguro xenonhd_toro,$(TARGET_PRODUCT)),)
+ifneq ($(filter xenonhd_crespo xenonhd_crespo4g xenonhd_maguro xenonhd_toro xenonhd_toroplus,$(TARGET_PRODUCT)),)
 # Blobs common to all devices except emulator and tablets
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/CarHome.apk:system/app/CarHome.apk \
