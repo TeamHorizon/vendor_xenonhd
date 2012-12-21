@@ -1,8 +1,8 @@
 # Inherit AOSP device configuration for grouper.
 $(call inherit-product, device/asus/grouper/full_grouper.mk)
 
-# Inherit common product files.
-$(call inherit-product, vendor/xenonhd/products/common.mk)
+# Inherit common/tablet product files.
+$(call inherit-product, vendor/xenonhd/products/common_tablet.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := xenonhd_grouper
