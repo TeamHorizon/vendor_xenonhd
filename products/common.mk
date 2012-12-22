@@ -19,7 +19,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.enc.jpeg.quality=100 \
     ro.media.dec.jpeg.memcap=8000000 \
     ro.media.enc.hprof.vid.bps=8000000 \
-    wifi.supplicant_scan_interval=180
+    wifi.supplicant_scan_interval=180 \
+	ro.ril.disable.power.collapse=1 \
+	pm.sleep_mode=1
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
