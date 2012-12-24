@@ -1,4 +1,5 @@
 add_lunch_combo xenonhd_maguro-userdebug
 add_lunch_combo xenonhd_grouper-userdebug
 add_lunch_combo xenonhd_toro-userdebug
+add_lunch_combo d2att-userdebug
 add_lunch_combo xenonhd_toroplus-userdebug
