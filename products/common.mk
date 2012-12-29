@@ -27,12 +27,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/Microbes.apk:system/app/Microbes.apk \
     vendor/xenonhd/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
+	vendor/xenonhd/proprietary/common/app/com.noozxoidelabs.eizo.rewirepro-2.0.1.7.apk:system/app/com.noozxoidelabs.eizo.rewirepro-2.0.1.7.apk \
     vendor/xenonhd/proprietary/common/etc/resolv.conf:system/etc/resolv.conf \
     vendor/xenonhd/proprietary/common/etc/hosts:system/etc/hosts \
     vendor/xenonhd/proprietary/common/etc/liberty.bsh:system/etc/liberty.bsh \
     vendor/xenonhd/proprietary/common/etc/liberty.cfg:system/etc \
     vendor/xenonhd/proprietary/common/etc/audio_effects.conf:system/etc/audio_effects.conf \
     vendor/xenonhd/proprietary/common/lib/soundfx/libcyanogen-dsp.so:system/lib/soundfx/libcyanogen-dsp.so \
+	vendor/xenonhd/proprietary/common/lib/soundfx/libdownmix.so:system/lib/soundfx/libdownmix.so \
+	vendor/xenonhd/proprietary/common/lib/libaudioparameter.so:system/lib/libaudioparameter.so \
     vendor/xenonhd/proprietary/common/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
     vendor/xenonhd/proprietary/common/lib/libmicrobes_jni.so:system/lib/libmicrobes_jni.so
         
