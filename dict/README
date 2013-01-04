@@ -11,9 +11,15 @@ to compile a new dictionary and install it properly example for English:
 makedict_aosp \
    -s vendor/xenonhd/dict/words_en.xml \
    -d vendor/xenonhd/overlay/dictionaries/packages/inputmethods/LatinIME/java/res/raw/main_en.dict
+   -c vendor/xenonhd/dict/en_whitelist.xml \
+   -s vendor/xenonhd/dict/en_words.xml \
+   -d vendor/xenonhd/overlay/dictionaries/packages/inputmethods/LatinIME/java/res/raw/main_en.dict \
+   -3
 
--s = represents the path tho the source xml word list
--d = represents the output path for the resulting binary
+###################################################
+*** makedict
+Usage: makedict [-s <unigrams.xml> [-b <bigrams.xml>] [-c <shortcuts_and_whitelist.xml>] | [-s <binary input>] [-d <binary output>] [-x <xml output>] [-1] [-2] [-3]
+###################################################
 
 *RULES*
  1. Keep importance below 150 else words will appear annoying often
