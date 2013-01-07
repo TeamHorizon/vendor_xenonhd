@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for maguro.
-$(call inherit-product, device/samsung/maguro/full_mako.mk)
+$(call inherit-product, device/lge/mako/full_mako.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
