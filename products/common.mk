@@ -90,20 +90,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/common/app/LatinIME.apk:system/app/LatinIME.apk \
     vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
-# JB 4.2 Camera
-PRODUCT_COPY_FILES +=  \
-    vendor/xenonhd/proprietary/common/app/GmsCore.apk:system/app/GmsCore.apk \
-    vendor/xenonhd/proprietary/common/app/Gallery2.apk:system/app/Gallery2.apk \
-    vendor/xenonhd/proprietary/common/lib/libjni_filtershow_filters.so:system/lib/libjni_filtershow_filters.so \
-    vendor/xenonhd/proprietary/common/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
-    vendor/xenonhd/proprietary/common/lib/liblightcycle.so:system/lib/liblightcycle.so
-
-ifeq ($(TARGET_BUILD_VARIANT),userdebug)
-# Blobs common to all devices except emulator
-PRODUCT_COPY_FILES += \
-    
-endif
-
 ifneq ($(filter xenonhd_crespo xenonhd_crespo4g xenonhd_maguro xenonhd_toro xenonhd_toroplus xenonhd_mako,$(TARGET_PRODUCT)),)
 # Blobs common to all devices except emulator and tablets
 PRODUCT_COPY_FILES += \
