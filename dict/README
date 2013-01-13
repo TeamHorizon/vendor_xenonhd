@@ -9,8 +9,8 @@ to compile a new dictionary and install it properly example for English:
 
 . build/envsetup.sh && lunch
 makedict_aosp \
-   -s vendor/aokp/dict/words_en.xml \
-   -d vendor/aokp/overlay/dictionaries/packages/inputmethods/LatinIME/java/res/raw/main_en.dict
+   -s vendor/xenonhd/dict/words_en.xml \
+   -d vendor/xenonhd/overlay/dictionaries/packages/inputmethods/LatinIME/java/res/raw/main_en.dict
 
 -s = represents the path tho the source xml word list
 -d = represents the output path for the resulting binary
