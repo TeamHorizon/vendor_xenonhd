@@ -26,6 +26,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Common dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 
+PRODUCT_PACKAGES += \
+LatinImeDictionaryPack
+
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
