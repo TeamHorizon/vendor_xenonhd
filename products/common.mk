@@ -88,10 +88,6 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/su:system/xbin/su \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
-# 4.2 Keyboard
-PRODUCT_COPY_FILES +=  \
-    vendor/xenonhd/proprietary/common/app/LatinIME.apk:system/app/LatinIME.apk \
-    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
 
 ifneq ($(filter xenonhd_crespo xenonhd_crespo4g xenonhd_maguro xenonhd_toro xenonhd_toroplus xenonhd_mako,$(TARGET_PRODUCT)),)
 # Blobs common to all devices except emulator and tablets
