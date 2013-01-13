@@ -1,7 +1,8 @@
 PRODUCT_MAKEFILES := \
+	$(LOCAL_DIR)/xenonhd_crespo.mk \
     $(LOCAL_DIR)/xenonhd_grouper.mk \
     $(LOCAL_DIR)/xenonhd_maguro.mk \
-	$(LOCAL_DIR)/xenonhd_mako.mk \
+    $(LOCAL_DIR)/xenonhd_mako.mk \
     $(LOCAL_DIR)/xenonhd_toro.mk \
-	$(LOCAL_DIR)/d2att.mk \
-	$(LOCAL_DIR)/xenonhd_toroplus.mk \
+    $(LOCAL_DIR)/d2att.mk \
+    $(LOCAL_DIR)/xenonhd_toroplus.mk \

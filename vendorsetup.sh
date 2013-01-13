@@ -1,3 +1,4 @@
+add_lunch_combo xenonhd_crespo-userdebug
 add_lunch_combo xenonhd_maguro-userdebug
 add_lunch_combo xenonhd_mako-userdebug
 add_lunch_combo xenonhd_grouper-userdebug
