@@ -8,7 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     
 # ROM Statistics and ROM Identification
 PRODUCT_PROPERTY_OVERRIDES += \
-ro.romstats.url=http://iceandfire.co/stats/stats \
-ro.romstats.name=XenonHD- \
-ro.romstats.version=$(shell date +"%m-%d-%y")
-
+ro.romstats.url=http://iceandfire.co/stats/ \
+ro.romstats.name=XenonHD \
+ro.romstats.version=$(shell date +"%m-%d-%y") \
+ro.romstats.tframe=2
