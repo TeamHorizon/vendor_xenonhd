@@ -20,6 +20,12 @@ PRODUCT_PACKAGES += \
     Torch \
     XenonWallpapers
     
+# prebuilts
+PRODUCT_PACKAGES += \
+	XposedInstaller \
+    XposedNetflixWorkaround.apk \
+    XposedSettings
+    
 SUPERUSER_PACKAGE := com.xehd.superuser
 
 PRODUCT_PROPERTY_OVERRIDES += \
