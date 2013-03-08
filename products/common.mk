@@ -31,9 +31,7 @@ LatinImeDictionaryPack
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/Superuser.apk:system/app/Superuser.apk \
     vendor/xenonhd/proprietary/common/app/RomStats.apk:system/app/RomStats.apk \
-	vendor/xenonhd/proprietary/common/app/com.noozxoidelabs.eizo.rewirepro-2.0.1.7.apk:system/app/com.noozxoidelabs.eizo.rewirepro-2.0.1.7.apk \
     vendor/xenonhd/proprietary/common/etc/resolv.conf:system/etc/resolv.conf \
     vendor/xenonhd/proprietary/common/etc/hosts:system/etc/hosts \
     vendor/xenonhd/proprietary/common/etc/liberty.bsh:system/etc/liberty.bsh \
@@ -89,7 +87,6 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/sysro:system/xbin/sysro \
     vendor/xenonhd/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
-    vendor/xenonhd/proprietary/common/xbin/su:system/xbin/su \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
 
