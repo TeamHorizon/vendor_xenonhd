@@ -1,3 +1,6 @@
+SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.th.superuser
+
 # Generic product
 PRODUCT_NAME := xenonhd
 PRODUCT_BRAND := xenonhd
@@ -5,6 +8,17 @@ PRODUCT_DEVICE := generic
 
 # Common overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
+
+PRODUCT_PACKAGES += \
+	Apollo \
+	CMFileManager \
+	Onager \
+	LockClock \
+	ROMSettings \
+	Superuser \
+	su \
+    Torch \
+    XenonWallpapers
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
