@@ -1,3 +1,0 @@
-echo "0 0 0" > /sys/class/misc/colorcontrol/v1_offset
-
-echo "1350000000 1350000000 2140000000" > /sys/class/misc/colorcontrol/multiplier
