@@ -20,6 +20,9 @@
         <item>USBTETHER</item>
         <item>QUICKRECORD</item>
         <item>NAVBARHIDE</item>
+        <item>SLEEP</item>
+        <item>POWERMENU</item>
+        <item>REBOOT</item>
     </string-array>
     <string-array name="available_toggles_values" translatable="false">
         <item>@string/toggle_user</item>
@@ -40,6 +43,9 @@
         <item>@string/toggle_usb_tether</item>
         <item>@string/toggle_quickrecord</item>
         <item>@string/toggle_navbar_hide</item>
+        <item>@string/toggle_sleep</item>
+        <item>@string/toggle_powermenu</item>
+        <item>@string/toggle_reboot</item>
     </string-array>
 	<string-array name="navigation_bar_qty_entries">
     <item>1</item>
