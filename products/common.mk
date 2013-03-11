@@ -1,6 +1,3 @@
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.th.superuser
-
 # Generic product
 PRODUCT_NAME := xenonhd
 PRODUCT_BRAND := xenonhd
@@ -12,13 +9,18 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 PRODUCT_PACKAGES += \
 	Apollo \
 	CMFileManager \
+	DSPManager \
 	Onager \
 	LockClock \
+	libcyanogen-dsp \
+    audio_effects.conf \
 	ROMSettings \
 	Superuser \
 	su \
     Torch \
     XenonWallpapers
+    
+SUPERUSER_PACKAGE := com.xehd.superuser
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -111,14 +113,12 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/GenieWidget.apk:system/app/GenieWidget.apk
 endif
 
-ifneq ($(filter xenonhd_maguro xenonhd_toro xenonhd_toroplus,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/etc/audio_effects.conf:system/etc/audio_effects.conf \
-    vendor/xenonhd/proprietary/common/lib/soundfx/libcyanogen-dsp.so:system/lib/soundfx/libcyanogen-dsp.so \
-	vendor/xenonhd/proprietary/common/lib/soundfx/libdownmix.so:system/lib/soundfx/libdownmix.so \
-	vendor/xenonhd/proprietary/common/lib/libaudioparameter.so:system/lib/libaudioparameter.so \
-    vendor/xenonhd/proprietary/common/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf 
-endif
+#PRODUCT_COPY_FILES += \
+#    vendor/xenonhd/proprietary/common/etc/audio_effects.conf:system/etc/audio_effects.conf \
+#    vendor/xenonhd/proprietary/common/lib/soundfx/libcyanogen-dsp.so:system/lib/soundfx/libcyanogen-dsp.so \
+#	vendor/xenonhd/proprietary/common/lib/soundfx/libdownmix.so:system/lib/soundfx/libdownmix.so \
+#	vendor/xenonhd/proprietary/common/lib/libaudioparameter.so:system/lib/libaudioparameter.so \
+#    vendor/xenonhd/proprietary/common/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
