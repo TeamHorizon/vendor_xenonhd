@@ -11,6 +11,7 @@ PRODUCT_PACKAGES += \
 	CMFileManager \
 	DSPManager \
 	Onager \
+	LatinImeDictionaryPack \
 	LockClock \
 	libcyanogen-dsp \
     audio_effects.conf \
@@ -22,6 +23,9 @@ PRODUCT_PACKAGES += \
     
 # prebuilts
 PRODUCT_PACKAGES += \
+	CarHome \
+	GenieWidget \
+	RomStats\
 	XposedInstaller \
     XposedNetflixWorkaround.apk \
     XposedSettings
@@ -48,12 +52,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Common dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 
-PRODUCT_PACKAGES += \
-LatinImeDictionaryPack
-
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/RomStats.apk:system/app/RomStats.apk \
     vendor/xenonhd/proprietary/common/etc/resolv.conf:system/etc/resolv.conf \
     vendor/xenonhd/proprietary/common/etc/hosts:system/etc/hosts \
     vendor/xenonhd/proprietary/common/etc/liberty.bsh:system/etc/liberty.bsh \
@@ -107,21 +107,6 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
-
-
-ifneq ($(filter xenonhd_crespo xenonhd_crespo4g xenonhd_maguro xenonhd_toro xenonhd_toroplus xenonhd_mako,$(TARGET_PRODUCT)),)
-# Blobs common to all devices except emulator and tablets
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/CarHome.apk:system/app/CarHome.apk \
-    vendor/xenonhd/proprietary/common/app/GenieWidget.apk:system/app/GenieWidget.apk
-endif
-
-#PRODUCT_COPY_FILES += \
-#    vendor/xenonhd/proprietary/common/etc/audio_effects.conf:system/etc/audio_effects.conf \
-#    vendor/xenonhd/proprietary/common/lib/soundfx/libcyanogen-dsp.so:system/lib/soundfx/libcyanogen-dsp.so \
-#	vendor/xenonhd/proprietary/common/lib/soundfx/libdownmix.so:system/lib/soundfx/libdownmix.so \
-#	vendor/xenonhd/proprietary/common/lib/libaudioparameter.so:system/lib/libaudioparameter.so \
-#    vendor/xenonhd/proprietary/common/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
