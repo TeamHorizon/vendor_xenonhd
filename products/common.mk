@@ -56,10 +56,7 @@ PRODUCT_COPY_FILES += \
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
-    vendor/xenonhd/proprietary/common/etc/init.d/01zipalign:system/etc/init.d/01zipalign \
-	vendor/xenonhd/proprietary/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
 	vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-	vendor/xenonhd/proprietary/common/etc/init.d/05freemem:system/etc/init.d/05freemem \
 	vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
 	vendor/xenonhd/proprietary/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
 	vendor/xenonhd/proprietary/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
