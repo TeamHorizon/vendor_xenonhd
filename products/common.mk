@@ -18,19 +18,19 @@ PRODUCT_PACKAGES += \
 	ROMSettings \
 	Superuser \
 	su \
-	Thinkfree \
     Torch \
     XenonWallpapers
+    
+SUPERUSER_PACKAGE := com.xehd.superuser
     
 # prebuilts
 PRODUCT_PACKAGES += \
 	CarHome \
 	RomStats\
+	Thinkfree \
 	XposedInstaller \
     XposedNetflixWorkaround.apk \
     XposedSettings
-    
-SUPERUSER_PACKAGE := com.xehd.superuser
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
