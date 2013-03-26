@@ -18,13 +18,13 @@ PRODUCT_PACKAGES += \
 	ROMSettings \
 	Superuser \
 	su \
+	Thinkfree \
     Torch \
     XenonWallpapers
     
 # prebuilts
 PRODUCT_PACKAGES += \
 	CarHome \
-	GenieWidget \
 	RomStats\
 	XposedInstaller \
     XposedNetflixWorkaround.apk \

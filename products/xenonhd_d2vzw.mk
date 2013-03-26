@@ -16,7 +16,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/d2vzw
 
 # Copy d2 specific prebuilt files
 PRODUCT_COPY_FILES +=  \
-    vendor/xenonhd/proprietary/d2-common/app/Thinkfree.apk:system/app/Thinkfree.apk \
     vendor/xenonhd/proprietary/d2-common/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/d2-common/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
 	vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \

@@ -1,8 +1,8 @@
 # Inherit AOSP device configuration for grouper.
 $(call inherit-product, device/asus/grouper/full_grouper.mk)
 
-# Inherit common/tablet product files.
-$(call inherit-product, vendor/xenonhd/products/common_tablet.mk)
+# Inherit common product files.
+$(call inherit-product, vendor/xenonhd/products/common.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := xenonhd_grouper
@@ -21,7 +21,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/grouper
 
 # Copy grouper specific prebuilt files
 PRODUCT_COPY_FILES +=  \
-    vendor/xenonhd/proprietary/grouper/app/Thinkfree.apk:system/app/Thinkfree.apk \
     vendor/xenonhd/proprietary/grouper/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/grouper/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \

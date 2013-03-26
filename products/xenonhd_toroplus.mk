@@ -24,7 +24,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/tuna
 
 # Copy toro specific prebuilt files
 PRODUCT_COPY_FILES +=  \
-    vendor/xenonhd/proprietary/tuna/app/Thinkfree.apk:system/app/Thinkfree.apk \
     vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/tuna/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
