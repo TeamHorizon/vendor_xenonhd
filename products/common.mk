@@ -26,11 +26,8 @@ SUPERUSER_PACKAGE := com.xehd.superuser
 # prebuilts
 PRODUCT_PACKAGES += \
 	CarHome \
-	RomStats\
-	Thinkfree \
-	XposedInstaller \
-    XposedNetflixWorkaround.apk \
-    XposedSettings
+	RomStats \
+	Thinkfree
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
