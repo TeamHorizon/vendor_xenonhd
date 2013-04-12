@@ -118,25 +118,3 @@ busybox mount -o ro,remount /system;
 busybox mount -o ro,remount /;
 touch $ZIPALIGNED_APK;
 echo "Automatic ZipAlign finished at $( date +"%m-%d-%Y %H:%M:%S" )" | tee -a $ZIP_LOG_FILE;
-
-# tweak block dev I/O
-BLOCK_DEVS=`ls -d /sys/block/mmc*`;
-BLOCK_DEVS="$BLOCK_DEVS `ls -d /sys/block/mtd*`";
-
-for i in $BLOCK_DEVS;
-do
-    echo 0 > $i/queue/rotational; 
-    echo 16 > $i/queue/iosched/fifo_batch;
-    echo 256 > $i/queue/max_sectors_kb;
-    echo 1024 > $i/queue/read_ahead_kb;
-done;
-
-# VM tweaks
-echo 0 > /proc/sys/vm/laptop_mode
-echo 0 > /proc/sys/vm/swappiness
-echo 50 > /proc/sys/vm/vfs_cache_pressure
-echo 90 > /proc/sys/vm/dirty_ratio
-echo 40 > /proc/sys/vm/dirty_background_ratio
-echo 2000 > /proc/sys/vm/dirty_writeback_centisecs
-echo 1000 > /proc/sys/vm/dirty_expire_centisecs
-
