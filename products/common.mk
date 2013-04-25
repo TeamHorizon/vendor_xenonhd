@@ -15,6 +15,7 @@ PRODUCT_PACKAGES += \
 	LockClock \
 	libcyanogen-dsp \
     audio_effects.conf \
+    PermissionsManager \
 	ROMSettings \
 	Superuser \
 	su \
