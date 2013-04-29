@@ -12,3 +12,10 @@ ro.romstats.url=http://iceandfire.co/stats/ \
 ro.romstats.name=XenonHD \
 ro.romstats.version=$(shell date +"%m-%d-%y") \
 ro.romstats.tframe=2
+
+# Goo updater app
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.goo.developerid=XenonHD_ROM \
+	ro.goo.board=$(TARGET_PRODUCT) \
+	ro.goo.rom=$(TARGET_PRODUCT) \
+	ro.goo.version=XenonHD-$(shell date +"%m-%d-%y")

@@ -27,6 +27,7 @@ SUPERUSER_PACKAGE := com.xehd.superuser
 # prebuilts
 PRODUCT_PACKAGES += \
 	CarHome \
+	GooManager \
 	RomStats \
 	Thinkfree
 
