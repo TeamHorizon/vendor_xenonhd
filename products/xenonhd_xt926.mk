@@ -1,8 +1,6 @@
 # Inherit AOSP device configuration for vanquish.
-$(call inherit-product, device/motorola/xt926/full_xt926.mk)
 $(call inherit-product, vendor/xenonhd/configs/cdma.mk)
 $(call inherit-product, vendor/xenonhd/configs/vzw.mk)
-$(call inherit_product, device/motorola/xt926/device_xt926.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -16,6 +14,7 @@ PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := xt926
 PRODUCT_MODEL := Razr HD
 PRODUCT_MANUFACTURER := motorola
+$(call inherit-product, device/motorola/xt926/full_xt926.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=xt926 BUILD_FINGERPRINT=motorola/XT926_verizon/vanquish:4.1.1/9.8.1Q37/39:user/release-keys
 
