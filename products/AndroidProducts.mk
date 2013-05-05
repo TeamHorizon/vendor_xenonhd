@@ -10,3 +10,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/xenonhd_tilapia.mk \
     $(LOCAL_DIR)/xenonhd_toro.mk \
     $(LOCAL_DIR)/xenonhd_toroplus.mk \
+    $(LOCAL_DIR)/xenonhd_xt926.mk
