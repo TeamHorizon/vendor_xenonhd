@@ -4,6 +4,7 @@ $(call inherit-product, vendor/xenonhd/configs/vzw.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
+$(call inherit-product, device/motorola/xt926/device_xt926.mk)
 
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1280
@@ -14,7 +15,6 @@ PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := xt926
 PRODUCT_MODEL := Razr HD
 PRODUCT_MANUFACTURER := motorola
-$(call inherit-product, device/motorola/xt926/full_xt926.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=xt926 BUILD_FINGERPRINT=motorola/XT926_verizon/vanquish:4.1.1/9.8.1Q37/39:user/release-keys
 
