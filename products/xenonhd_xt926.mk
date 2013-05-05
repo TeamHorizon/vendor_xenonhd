@@ -1,8 +1,8 @@
 # Inherit AOSP device configuration for vanquish.
-$(call inherit_product, device/motorola/xt926/device_xt926.mk)
 $(call inherit-product, device/motorola/xt926/full_xt926.mk)
 $(call inherit-product, vendor/xenonhd/configs/cdma.mk)
 $(call inherit-product, vendor/xenonhd/configs/vzw.mk)
+$(call inherit_product, device/motorola/xt926/device_xt926.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
