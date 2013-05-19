@@ -1,20 +1,9 @@
 # Inherit AOSP device configuration for vanquish.
-
 $(call inherit-product, device/motorola/xt926/full_xt926.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1280
-
-# Setup device specific product configuration.
-PRODUCT_NAME := xenonhd_xt926
-PRODUCT_BRAND := motorola
-PRODUCT_DEVICE := xt926
-PRODUCT_MODEL := Razr HD
-PRODUCT_MANUFACTURER := motorola
-
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=xt926 BUILD_FINGERPRINT=motorola/XT926_verizon/vanquish:4.1.1/9.8.1Q37/39:user/release-keys
-
 
 # Extra xt926 overlay (same as nexus 4)
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/mako
@@ -29,12 +18,18 @@ PRODUCT_COPY_FILES +=  \
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
-
 $(call inherit-product, vendor/xenonhd/configs/cdma.mk)
 $(call inherit-product, vendor/xenonhd/configs/vzw.mk)
 
-
-
 # Inherit drm blobs
 -include vendor/xenonhd/products/common_drm.mk
+
+# Setup device specific product configuration.
+PRODUCT_NAME := xenonhd_xt926
+PRODUCT_BRAND := motorola
+PRODUCT_DEVICE := xt926
+PRODUCT_MODEL := Razr HD
+PRODUCT_MANUFACTURER := motorola
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=xt926 BUILD_FINGERPRINT=motorola/XT926_verizon/vanquish:4.1.1/9.8.1Q37/39:user/release-keys
 
