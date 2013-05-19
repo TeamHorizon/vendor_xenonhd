@@ -68,7 +68,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/resolv.conf:system/etc/resolv.conf \
-    vendor/xenonhd/proprietary/common/etc/hosts:system/etc/hosts \
     vendor/xenonhd/proprietary/common/etc/liberty.bsh:system/etc/liberty.bsh \
     vendor/xenonhd/proprietary/common/etc/liberty.cfg:system/etc
         
