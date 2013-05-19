@@ -122,6 +122,17 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
+#Declare your device here for APNs    
+ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_d2att xenonhd_d2tmo ,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+endif
+	
+ifneq ($(filter xenonhd_d2vzw xenonhd_d2usc xenonhd_xt926 ,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+	vendor/xenonhd/proprietary/common/etc/apns-conf-cdma.xml:system/etc/apns-conf.xml
+endif
+
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
        ThemeManager \
@@ -130,7 +141,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
        vendor/xenonhd/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
-
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
