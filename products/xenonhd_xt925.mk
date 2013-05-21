@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for vanquish.
-$(call inherit-product, device/motorola/xt926/full_xt926.mk)
+$(call inherit-product, device/motorola/xt925/full_xt925.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 TARGET_SCREEN_WIDTH := 720
