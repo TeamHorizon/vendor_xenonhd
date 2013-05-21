@@ -9,6 +9,8 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/xenonhd_maguro.mk \
     $(LOCAL_DIR)/xenonhd_mako.mk \
     $(LOCAL_DIR)/xenonhd_tilapia.mk \
+    $(LOCAL_DIR)/xenonhd_t0lte.mk \
+    $(LOCAL_DIR)/xenonhd_t0ltetmo.mk \
     $(LOCAL_DIR)/xenonhd_toro.mk \
     $(LOCAL_DIR)/xenonhd_toroplus.mk \
     $(LOCAL_DIR)/xenonhd_xt925.mk\

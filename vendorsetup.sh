@@ -8,6 +8,8 @@ add_lunch_combo	xenonhd_endeavoru-userdebug
 add_lunch_combo xenonhd_maguro-userdebug
 add_lunch_combo xenonhd_mako-userdebug
 add_lunch_combo xenonhd_tilapia-userdebug
+add_lunch_combo xenonhd_t0lte-userdebug
+add_lunch_combo xenonhd_t0ltetmo-userdebug
 add_lunch_combo xenonhd_toro-userdebug
 add_lunch_combo xenonhd_toroplus-userdebug
 add_lunch_combo xenonhd_xt925-userdebug
