@@ -12,5 +12,6 @@ add_lunch_combo xenonhd_t0lte-userdebug
 add_lunch_combo xenonhd_t0ltetmo-userdebug
 add_lunch_combo xenonhd_toro-userdebug
 add_lunch_combo xenonhd_toroplus-userdebug
-add_lunch_combo xenonhd_xt925-userdebug
+add_lunch_combo xenonhd_toroplus-userdebug
+add_lunch_combo xenonhd_vigor-userdebug
 add_lunch_combo xenonhd_xt926-userdebug
