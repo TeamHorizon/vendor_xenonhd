@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for vanquish.
-$(call inherit-product, device/motorola/xt925/full_xt925.mk)
+$(call inherit-product, device/motorola/mb886/full_mb886.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 TARGET_SCREEN_WIDTH := 720
@@ -24,11 +24,11 @@ $(call inherit-product, vendor/xenonhd/configs/gsm.mk)
 -include vendor/xenonhd/products/common_drm.mk
 
 # Setup device specific product configuration.
-PRODUCT_NAME := xenonhd_xt925
+PRODUCT_NAME := xenonhd_mb886
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := xt925
-PRODUCT_MODEL := Razr HD GSM
+PRODUCT_MODEL := Atrix HD
 PRODUCT_MANUFACTURER := motorola
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=xt925 BUILD_FINGERPRINT=motorola/XT925/vanquish_u:4.0.4/7.7.1Q-144_VQL_S3-49/346380647:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mb886 BUILD_FINGERPRINT=motorola/MB886/qinara:4.0.4/7.7.1Q-144_VQL_S3-49/346380647:user/release-keys
 
