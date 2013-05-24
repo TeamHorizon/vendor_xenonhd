@@ -26,7 +26,7 @@ $(call inherit-product, vendor/xenonhd/configs/gsm.mk)
 # Setup device specific product configuration.
 PRODUCT_NAME := xenonhd_mb886
 PRODUCT_BRAND := motorola
-PRODUCT_DEVICE := xt925
+PRODUCT_DEVICE := mb886
 PRODUCT_MODEL := Atrix HD
 PRODUCT_MANUFACTURER := motorola
 
