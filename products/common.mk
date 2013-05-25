@@ -14,13 +14,13 @@ PRODUCT_PACKAGES += \
 	LatinImeDictionaryPack \
 	LockClock \
 	libcyanogen-dsp \
-    audio_effects.conf \
-    PermissionsManager \
+        audio_effects.conf \
+        PermissionsManager \
 	ROMSettings \
 	Superuser \
 	su \
-    Torch \
-    XenonWallpapers
+        Torch \
+        XenonWallpapers
     
 SUPERUSER_PACKAGE := com.xehd.superuser
     
@@ -33,17 +33,20 @@ PRODUCT_PACKAGES += \
 
 #extras	
 PRODUCT_PACKAGES += \
-    openvpn \
-    e2fsck \
-    mke2fs \
-    tune2fs \
-    libssh \
-    ssh \
-    sshd \
-    sshd-config \
-    ssh-keygen \
-    sftp \
-    scp
+	openvpn \
+	e2fsck \
+	mke2fs \
+	tune2fs \
+	bash \
+	nano \
+	libssh \
+	ssh \
+	sshd \
+	sshd-config \
+	ssh-keygen \
+	sftp \
+	scp \
+	start-ssh
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -79,9 +82,9 @@ PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
 	vendor/xenonhd/proprietary/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
 	vendor/xenonhd/proprietary/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
-    vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
+	vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
 	vendor/xenonhd/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
-    vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
+	vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
     
 # Cron schedual 
 #PRODUCT_COPY_FILES += \
@@ -122,7 +125,7 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
 #Declare your device here for APNs    
-ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7 xenonhd_d2att xenonhd_d2tmo ,$(TARGET_PRODUCT)),)
+ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7 xenonhd_d2att xenonhd_d2tmo xenonhd_galaxysmtd xenonhd_i9100 xenonhd_i9100g xenonhd_i9300 xenonhd_n7000 xenonhd_n7100 ,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 endif
