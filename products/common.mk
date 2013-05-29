@@ -14,13 +14,13 @@ PRODUCT_PACKAGES += \
 	LatinImeDictionaryPack \
 	LockClock \
 	libcyanogen-dsp \
-        audio_effects.conf \
-        PermissionsManager \
+    audio_effects.conf \
+    PermissionsManager \
 	ROMSettings \
 	Superuser \
 	su \
-        Torch \
-        XenonWallpapers
+    Torch \
+    XenonWallpapers
     
 SUPERUSER_PACKAGE := com.xehd.superuser
     
@@ -77,6 +77,7 @@ PRODUCT_COPY_FILES += \
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
+    vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.aokp.rc \
 	vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
 	vendor/xenonhd/proprietary/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
 	vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
