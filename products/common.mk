@@ -77,7 +77,7 @@ PRODUCT_COPY_FILES += \
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
-    vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.aokp.rc \
+    vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
 	vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
 	vendor/xenonhd/proprietary/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
 	vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
@@ -126,11 +126,11 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
 #Declare your device here for APNs    
-ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7 xenonhd_d2att xenonhd_d2tmo xenonhd_galaxysmtd xenonhd_i9100 xenonhd_i9100g xenonhd_i9300 xenonhd_n7000 xenonhd_n7100 ,$(TARGET_PRODUCT)),)
+ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7 xenonhd_d2att xenonhd_d2tmo xenonhd_galaxysmtd xenonhd_i9100 xenonhd_i9100g xenonhd_i9300 xenonhd_n7000 xenonhd_n7100 xenonhd_t0lte xenonhd_t0lteatt xenonhd_tolltetmo ,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 endif
-	
+
 ifneq ($(filter xenonhd_d2vzw xenonhd_d2usc xenonhd_xt926 ,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/apns-conf-cdma.xml:system/etc/apns-conf.xml
@@ -148,4 +148,3 @@ PRODUCT_COPY_FILES += \
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
-
