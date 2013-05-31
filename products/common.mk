@@ -14,13 +14,13 @@ PRODUCT_PACKAGES += \
 	LatinImeDictionaryPack \
 	LockClock \
 	libcyanogen-dsp \
-    audio_effects.conf \
-    PermissionsManager \
+        audio_effects.conf \
+        PermissionsManager \
 	ROMSettings \
 	Superuser \
 	su \
-    Torch \
-    XenonWallpapers
+        Torch \
+        XenonWallpapers
     
 SUPERUSER_PACKAGE := com.xehd.superuser
     
@@ -62,8 +62,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.dec.jpeg.memcap=8000000 \
     ro.media.enc.hprof.vid.bps=8000000 \
     wifi.supplicant_scan_interval=180 \
-	ro.ril.disable.power.collapse=1 \
-	pm.sleep_mode=1
+    ro.ril.disable.power.collapse=1 \
+    pm.sleep_mode=1
 
 # Common dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
@@ -78,14 +78,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
-	vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-	vendor/xenonhd/proprietary/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
-	vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
-	vendor/xenonhd/proprietary/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
-	vendor/xenonhd/proprietary/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
-	vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
-	vendor/xenonhd/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
-	vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
+    vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
+    vendor/xenonhd/proprietary/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
+    vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
+    vendor/xenonhd/proprietary/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
+    vendor/xenonhd/proprietary/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
+    vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
+    vendor/xenonhd/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
+    vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
     
 # Cron schedual 
 #PRODUCT_COPY_FILES += \
