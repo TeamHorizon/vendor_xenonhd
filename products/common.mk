@@ -1,3 +1,5 @@
+SUPERUSER_EMBEDDED := true
+
 # Generic product
 PRODUCT_NAME := xenonhd
 PRODUCT_BRAND := xenonhd
@@ -21,9 +23,7 @@ PRODUCT_PACKAGES += \
 	su \
         Torch \
         XenonWallpapers
-    
-SUPERUSER_PACKAGE := com.xehd.superuser
-    
+       
 # prebuilts
 PRODUCT_PACKAGES += \
 	CarHome \
