@@ -22,8 +22,9 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/xenonhd_t0ltetmo.mk \
     $(LOCAL_DIR)/xenonhd_toro.mk \
     $(LOCAL_DIR)/xenonhd_toroplus.mk \
-    $(LOCAL_DIR)/xenonhd_vigor.mk\
-    $(LOCAL_DIR)/xenonhd_xt925.mk\
-    $(LOCAL_DIR)/xenonhd_mb886.mk\
-    $(LOCAL_DIR)/xenonhd_m7.mk\
-    $(LOCAL_DIR)/xenonhd_xt926.mk 
+    $(LOCAL_DIR)/xenonhd_vigor.mk \
+    $(LOCAL_DIR)/xenonhd_xt925.mk \
+    $(LOCAL_DIR)/xenonhd_mb886.mk \
+    $(LOCAL_DIR)/xenonhd_m7.mk \
+    $(LOCAL_DIR)/xenonhd_xt926.mk \ 
+    $(LOCAL_DIR)/xenonhd_xt907.mk
