@@ -4,6 +4,9 @@ $(call inherit-product, device/asus/tilapia/full_tilapia.mk)
 # Inherit common/tablet product files.
 $(call inherit-product, vendor/xenonhd/products/common_tablet.mk)
 
+# Inherit GSM common stuff.
+$(call inherit-product, vendor/xenonhd/configs/gsm.mk)
+
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 

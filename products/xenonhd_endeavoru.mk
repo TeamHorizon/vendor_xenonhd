@@ -4,6 +4,9 @@ $(call inherit-product, device/htc/endeavoru/full_endeavoru.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
+# Inherit GSM common stuff.
+$(call inherit-product, vendor/xenonhd/configs/gsm.mk)
+
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
