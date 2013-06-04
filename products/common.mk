@@ -14,6 +14,7 @@ PRODUCT_PACKAGES += \
 	LatinImeDictionaryPack \
 	LockClock \
 	libcyanogen-dsp \
+	OTAUpdateCenter \
     audio_effects.conf \
     PermissionsManager \
 	ROMSettings \
