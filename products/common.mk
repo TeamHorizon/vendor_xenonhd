@@ -16,8 +16,9 @@ PRODUCT_PACKAGES += \
 	LatinImeDictionaryPack \
 	LockClock \
 	libcyanogen-dsp \
-        audio_effects.conf \
-        PermissionsManager \
+	OTAUpdateCenter \
+    audio_effects.conf \
+    PermissionsManager \
 	ROMSettings \
 	Superuser \
 	su \

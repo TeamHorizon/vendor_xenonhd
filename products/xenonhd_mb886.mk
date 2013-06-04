@@ -1,16 +1,11 @@
 # Inherit AOSP device configuration for vanquish.
-$(call inherit-product, device/motorola/xt926/full_xt926.mk)
-
+$(call inherit-product, device/motorola/mb886/full_mb886.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
-
-# Inherit common build.prop overrides
--include vendor/xenonhd/products/common_versions.mk
-
 
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1280
 
-# Extra xt926 overlay (same as nexus 4)
+# Extra xt925 overlay (same as nexus 4)
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/mako
 
 # Copy maguro specific prebuilt files
@@ -20,18 +15,20 @@ PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/xenonhd/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
-#$(call inherit-product, vendor/xenonhd/configs/cdma.mk)
-#$(call inherit-product, vendor/xenonhd/configs/vzw.mk)
+# Inherit common build.prop overrides
+-include vendor/xenonhd/products/common_versions.mk
+
+$(call inherit-product, vendor/xenonhd/configs/gsm.mk)
 
 # Inherit drm blobs
 -include vendor/xenonhd/products/common_drm.mk
 
 # Setup device specific product configuration.
-PRODUCT_NAME := xenonhd_xt926
+PRODUCT_NAME := xenonhd_mb886
 PRODUCT_BRAND := motorola
-PRODUCT_DEVICE := xt926
-PRODUCT_MODEL := Razr HD
+PRODUCT_DEVICE := mb886
+PRODUCT_MODEL := Atrix HD
 PRODUCT_MANUFACTURER := motorola
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=xt926 BUILD_FINGERPRINT=motorola/XT926_verizon/vanquish:4.1.2/9.8.1Q-62_VQW_MR-2/6:user/release-keys
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mb886 BUILD_FINGERPRINT=motorola/MB886/qinara:4.0.4/7.7.1Q-144_VQL_S3-49/346380647:user/release-keys
 
