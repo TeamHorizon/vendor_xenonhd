@@ -12,6 +12,9 @@ $(call inherit-product, device/htc/m7/device_m7.mk)
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
+# Inherit drm blobs
+-include vendor/xenonhd/products/common_drm.mk
+
 # Device naming
 PRODUCT_DEVICE := m7
 PRODUCT_NAME := xenonhd_m7

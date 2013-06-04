@@ -13,6 +13,14 @@ ro.romstats.name=XenonHD \
 ro.romstats.version=$(shell date +"%m-%d-%y") \
 ro.romstats.tframe=2
 
+#OTA updater app
+PRODUCT_PROPERTY_OVERIDES += \
+otaupdater.otaid=XenonHD_ROM \
+otaupdater.otaversion=9.5 \
+otaupdater.otatime=20130529-0001
+
+	
+	
 # Goo updater app
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.developerid=XenonHD_ROM \
