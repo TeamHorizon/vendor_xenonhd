@@ -17,13 +17,5 @@ ro.romstats.tframe=2
 PRODUCT_PROPERTY_OVERRIDES += \
 otaupdater.otaid=XenonHD_ROM \
 otaupdater.otaversion=9.5 \
-otaupdater.otatime=20130529-0001
+otaupdater.otatime=$(shell date +"%Y%m%d-%H%M") \
 
-	
-	
-# Goo updater app
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.developerid=XenonHD_ROM \
-	ro.goo.board=$(TARGET_PRODUCT) \
-	ro.goo.rom=$(TARGET_PRODUCT) \
-	ro.goo.version=XenonHD-$(shell date +"%m-%d-%y")

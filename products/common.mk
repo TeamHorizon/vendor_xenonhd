@@ -28,7 +28,6 @@ PRODUCT_PACKAGES += \
 # prebuilts
 PRODUCT_PACKAGES += \
 	CarHome \
-	GooManager \
 	RomStats \
 	Thinkfree
 
