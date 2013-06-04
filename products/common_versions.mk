@@ -14,7 +14,7 @@ ro.romstats.version=$(shell date +"%m-%d-%y") \
 ro.romstats.tframe=2
 
 #OTA updater app
-PRODUCT_PROPERTY_OVERIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
 otaupdater.otaid=XenonHD_ROM \
 otaupdater.otaversion=9.5 \
 otaupdater.otatime=20130529-0001
