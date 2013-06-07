@@ -17,5 +17,5 @@ ro.romstats.tframe=2
 PRODUCT_PROPERTY_OVERRIDES += \
 otaupdater.otaid=XenonHD_ROM \
 otaupdater.otaversion=9.5 \
-otaupdater.otatime=$(shell date +"%Y%m%d-%H%M")
-
+otaupdater.otatime=$(shell date +"%Y%m%d-%H%M") \
+otaupdater.noflash=1
