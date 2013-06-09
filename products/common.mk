@@ -22,8 +22,9 @@ PRODUCT_PACKAGES += \
 	ROMSettings \
 	Superuser \
 	su \
-        Torch \
-        XenonWallpapers
+    Torch \
+    AOKPTorch \
+    XenonWallpapers
        
 # prebuilts
 PRODUCT_PACKAGES += \
@@ -138,7 +139,7 @@ endif
 
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
-       ThemeManager \
+	   ThemeManager \
        ThemeChooser \
        com.tmobile.themes
 
