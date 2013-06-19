@@ -27,4 +27,5 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_n7100.mk\
         $(LOCAL_DIR)/xenonhd_mb886.mk \
         $(LOCAL_DIR)/xenonhd_m7.mk \
-        $(LOCAL_DIR)/xenonhd_xt907.mk
+        $(LOCAL_DIR)/xenonhd_xt907.mk \
+        $(LOCAL_DIR)/xenonhd_find5.mk

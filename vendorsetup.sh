@@ -26,3 +26,4 @@ add_lunch_combo xenonhd_i9300-userdebug
 add_lunch_combo xenonhd_i9305-userdebug
 add_lunch_combo xenonhd_n7000-userdebug
 add_lunch_combo xenonhd_n7100-userdebug
+add_lunch_combo xenonhd_find5-userdebug
