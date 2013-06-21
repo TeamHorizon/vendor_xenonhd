@@ -17,14 +17,14 @@ PRODUCT_PACKAGES += \
 	LockClock \
 	libcyanogen-dsp \
 	OTAUpdateCenter \
-    audio_effects.conf \
-    PermissionsManager \
+        audio_effects.conf \
+        PermissionsManager \
 	ROMSettings \
 	Superuser \
 	su \
-    Torch \
-    AOKPTorch \
-    XenonWallpapers
+        Torch \
+        AOKPTorch \
+        XenonWallpapers
        
 # prebuilts
 PRODUCT_PACKAGES += \
@@ -132,7 +132,7 @@ PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 endif
 
-ifneq ($(filter xenonhd_d2vzw xenonhd_d2usc xenonhd_xt926 ,$(TARGET_PRODUCT)),)
+ifneq ($(filter xenonhd_d2vzw xenonhd_jfltevzw xenonhd_d2usc xenonhd_xt926 ,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/apns-conf-cdma.xml:system/etc/apns-conf.xml
 endif
@@ -140,8 +140,8 @@ endif
 # T-Mobile theme engine
 PRODUCT_PACKAGES += \
 	   ThemeManager \
-       ThemeChooser \
-       com.tmobile.themes
+           ThemeChooser \
+           com.tmobile.themes
 
 PRODUCT_COPY_FILES += \
        vendor/xenonhd/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
