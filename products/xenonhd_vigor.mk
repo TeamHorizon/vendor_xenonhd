@@ -17,6 +17,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_vigor TARGET_DEVICE=vigor BUILD
 
 # Copy vigor specific prebuilt files
 PRODUCT_COPY_FILES +=  \
+	vendor/xenonhd/proprietary/hybrid/hybrid_hdpi.conf:system/etc/beerbong/properties.conf \
     vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/vigor/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
 	vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \

@@ -12,6 +12,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/crespo
 
 # Copy crespo specific prebuilt files
 PRODUCT_COPY_FILES +=  \
+	vendor/xenonhd/proprietary/hybrid/hybrid_hdpi.conf:system/etc/beerbong/properties.conf \
     vendor/xenonhd/proprietary/crespo/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/tuna/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
