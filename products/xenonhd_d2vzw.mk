@@ -13,6 +13,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=d2vzw TARGET_DEVICE=d2vzw BUILD_FIN
 
 # Copy d2 specific prebuilt files
 PRODUCT_COPY_FILES +=  \
+	vendor/xenonhd/proprietary/hybrid/hybrid_xhdpi_no_nav.conf:system/etc/beerbong/properties.conf \
     vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/d2-common/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
 	vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \

@@ -12,6 +12,7 @@ $(call inherit-product, vendor/xenonhd/configs/gsm.mk)
 
 # Copy specific prebuilt files
 PRODUCT_COPY_FILES +=  \
+	vendor/xenonhd/proprietary/hybrid/hybrid_xhdpi_no_nav.conf:system/etc/beerbong/properties.conf \
     vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/tuna/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
