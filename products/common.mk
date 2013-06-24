@@ -20,6 +20,7 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     PermissionsManager \
 	ROMSettings \
+	ROMStats \
 	Superuser \
 	su \
     Torch \
@@ -29,7 +30,6 @@ PRODUCT_PACKAGES += \
 # prebuilts
 PRODUCT_PACKAGES += \
 	CarHome \
-	RomStats \
 	Thinkfree
 
 #extras	
