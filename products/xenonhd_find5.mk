@@ -22,4 +22,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=occam BUILD_FINGERPRINT=OPPO/oppo_1
 
 # Copy bootanimation.zip
 PRODUCT_COPY_FILES += \
+    vendor/xenonhd/proprietary/hybrid/hybrid_m7_no_nav.conf:system/etc/beerbong/properties.conf \
     vendor/xenonhd/proprietary/m7/media/bootanimation.zip:system/media/bootanimation.zip
