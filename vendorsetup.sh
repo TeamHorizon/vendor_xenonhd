@@ -3,6 +3,7 @@ add_lunch_combo xenonhd_d2att-userdebug
 add_lunch_combo xenonhd_d2tmo-userdebug
 add_lunch_combo xenonhd_d2usc-userdebug
 add_lunch_combo xenonhd_d2vzw-userdebug
+add_lunch_combo xenonhd_e975-userdebug
 add_lunch_combo xenonhd_grouper-userdebug
 add_lunch_combo	xenonhd_endeavoru-userdebug
 add_lunch_combo xenonhd_jfltevzw-userdebug
