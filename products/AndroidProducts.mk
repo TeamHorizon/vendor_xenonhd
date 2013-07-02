@@ -10,12 +10,11 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_galaxysmtd.mk \
 	$(LOCAL_DIR)/xenonhd_grouper.mk \
 	$(LOCAL_DIR)/xenonhd_i9100.mk \
-    $(LOCAL_DIR)/xenonhd_i9100g.mk \
-    $(LOCAL_DIR)/xenonhd_i9300.mk \
-    $(LOCAL_DIR)/xenonhd_i9305.mk \
-    $(LOCAL_DIR)/xenonhd_jfltevzw.mk \
-    $(LOCAL_DIR)/xenonhd_m7.mk \
-	$(LOCAL_DIR)/xenonhd_maguro.mk \
+        $(LOCAL_DIR)/xenonhd_i9100g.mk \
+        $(LOCAL_DIR)/xenonhd_i9300.mk \
+        $(LOCAL_DIR)/xenonhd_i9305.mk \
+        $(LOCAL_DIR)/xenonhd_jfltevzw.mk \
+        $(LOCAL_DIR)/xenonhd_maguro.mk \
 	$(LOCAL_DIR)/xenonhd_mako.mk \
 	$(LOCAL_DIR)/xenonhd_mb886.mk \
 	$(LOCAL_DIR)/xenonhd_n7000.mk \
@@ -29,4 +28,4 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_vigor.mk \
 	$(LOCAL_DIR)/xenonhd_xt925.mk \
 	$(LOCAL_DIR)/xenonhd_xt926.mk \
-    $(LOCAL_DIR)/xenonhd_xt907.mk
+        $(LOCAL_DIR)/xenonhd_xt907.mk
