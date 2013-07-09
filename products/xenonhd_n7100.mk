@@ -4,6 +4,13 @@ $(call inherit-product, device/samsung/n7100/full_n7100.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
+# Release name
+PRODUCT_RELEASE_NAME := t03g
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
 # Inherit GSM common stuff.
 $(call inherit-product, vendor/xenonhd/configs/gsm.mk)
 
