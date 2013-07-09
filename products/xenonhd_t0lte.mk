@@ -4,6 +4,13 @@ $(call inherit-product, device/samsung/t0lte/full_t0lte.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
+# Release name
+PRODUCT_RELEASE_NAME := t0lte
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
