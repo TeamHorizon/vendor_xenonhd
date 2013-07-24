@@ -25,7 +25,8 @@ PRODUCT_PACKAGES += \
 	su \
         Torch \
         AOKPTorch \
-        XenonWallpapers
+        XenonWallpapers\
+	VoicePlus
        
 # prebuilts
 PRODUCT_PACKAGES += \
