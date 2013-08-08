@@ -1,3 +1,6 @@
+# CyanogenMod Extras
+import /init.superuser.rc
+
 # AOKP Extras
 
 on boot
