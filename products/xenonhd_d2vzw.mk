@@ -1,3 +1,6 @@
+# Get the sample verizon list of APNs
+PRODUCT_COPY_FILES += device/sample/etc/apns-conf_verizon.xml:system/etc/apns-conf.xml
+
 # Inherit AOSP device configuration for d2vzw.
 $(call inherit-product, device/samsung/d2vzw/full_d2vzw.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
