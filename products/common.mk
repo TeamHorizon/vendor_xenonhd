@@ -9,29 +9,16 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
-	Apollo \
-	CMFileManager \
-	DSPManager \
-	Onager \
+	Launcher2 \
 	LatinImeDictionaryPack \
-	LockClock \
 	libcyanogen-dsp \
-	OTAUpdateCenter \
-        audio_effects.conf \
-        PermissionsManager \
-	ROMSettings \
-	ROMStats \
+	audio_effects.conf \
 	Superuser \
 	su \
-        Torch \
-        AOKPTorch \
         XenonWallpapers\
-	VoicePlus
+	VoicePlus \
+	Dialer
        
-# prebuilts
-PRODUCT_PACKAGES += \
-	CarHome \
-	Thinkfree
 
 #extras	
 PRODUCT_PACKAGES += \
