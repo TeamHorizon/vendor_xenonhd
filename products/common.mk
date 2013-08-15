@@ -9,6 +9,8 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
+	DeskClock \
+	DSPManager \
 	Launcher2 \
 	LatinImeDictionaryPack \
 	libcyanogen-dsp \
