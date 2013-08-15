@@ -13,6 +13,8 @@ PRODUCT_PACKAGES += \
 	LatinImeDictionaryPack \
 	libcyanogen-dsp \
 	audio_effects.conf \
+        OTAUpdateCenter \
+        ROMStats \
 	Superuser \
 	su \
         XenonWallpapers\
