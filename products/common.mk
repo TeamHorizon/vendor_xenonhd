@@ -20,6 +20,7 @@ PRODUCT_PACKAGES += \
         ROMStats \
 	Superuser \
 	su \
+        Torch \
         XenonWallpapers\
 	VoicePlus \
 	Dialer
