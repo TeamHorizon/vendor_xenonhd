@@ -9,6 +9,7 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
+        Apollo \
 	DeskClock \
 	DSPManager \
 	Launcher2 \
