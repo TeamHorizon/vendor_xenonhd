@@ -17,6 +17,7 @@ PRODUCT_PACKAGES += \
 	libcyanogen-dsp \
 	audio_effects.conf \
         OTAUpdateCenter \
+	ROMSettings \
         ROMStats \
 	Superuser \
 	su \
