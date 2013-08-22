@@ -4,6 +4,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_DISPLAY_ID=JSS15J BUILD_VERSION_TAGS=relea
 # Rom Manager properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.xehdversion=XenonHD-$(shell date +"%m-%d-%y") \
+    ro.modversion=XenonHD-$(shell date +"%m-%d-%y") \
     ro.rommanager.developerid=TeamHorizon
     
 # ROM Statistics and ROM Identification
