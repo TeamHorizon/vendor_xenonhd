@@ -1,4 +1,5 @@
 SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.superuser
 
 # Generic product
 PRODUCT_NAME := xenonhd
