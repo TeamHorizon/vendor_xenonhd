@@ -45,7 +45,6 @@ PRODUCT_PACKAGES += \
 	start-ssh
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=1 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.google.clientidbase=android-google \
