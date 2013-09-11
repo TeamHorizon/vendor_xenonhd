@@ -12,16 +12,17 @@ PRODUCT_PACKAGES += \
         Apollo \
 	DeskClock \
 	DSPManager \
-	Launcher2 \
 	LatinImeDictionaryPack \
 	libcyanogen-dsp \
 	audio_effects.conf \
+	Onager\
         OTAUpdateCenter \
 	ROMSettings \
         ROMStats \
 	Superuser \
 	su \
         Torch \
+	AOKPTorch \
         XenonWallpapers\
 	VoicePlus \
 	Dialer
