@@ -15,6 +15,7 @@ PRODUCT_PACKAGES += \
 	LatinImeDictionaryPack \
 	libcyanogen-dsp \
 	audio_effects.conf \
+        Focal \
 	Onager\
         OTAUpdateCenter \
 	ROMSettings \
