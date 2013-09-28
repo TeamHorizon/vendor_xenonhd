@@ -1,16 +1,16 @@
 # Inherit AOSP device configuration for maguro.
-$(call inherit-product, device/htc/m7tmo/full_m7tmo.mk)
+$(call inherit-product, device/htc/m7ul/full_m7ul.mk)
 
     # Specify phone tech before including full_phone
     $(call inherit-product, vendor/xenonhd/configs/gsm.mk)
      
     # Release name
-    PRODUCT_RELEASE_NAME := m7tmo
+    PRODUCT_RELEASE_NAME := m7ul
      
     $(call inherit-product, vendor/xenonhd/products/common.mk)
      
     # Inherit device configuration
-    $(call inherit-product, device/htc/m7tmo/device.mk)
+    $(call inherit-product, device/htc/m7ul/device.mk)
      
     # Inherit common build.prop overrides
     -include vendor/xenonhd/products/common_versions.mk
@@ -19,8 +19,8 @@ $(call inherit-product, device/htc/m7tmo/full_m7tmo.mk)
     -include vendor/xenonhd/products/common_drm.mk
      
     # Device naming
-    PRODUCT_DEVICE := m7tmo
-    PRODUCT_NAME := xenonhd_m7tmo
+    PRODUCT_DEVICE := m7ul
+    PRODUCT_NAME := xenonhd_m7ul
     PRODUCT_BRAND := htc
     PRODUCT_MODEL := HTC One
     PRODUCT_MANUFACTURER := HTC
@@ -32,8 +32,7 @@ $(call inherit-product, device/htc/m7tmo/full_m7tmo.mk)
     PRODUCT_COPY_FILES += \
             vendor/xenonhd/proprietary/hybrid/hybrid_m7_no_nav.conf:system/etc/beerbong/properties.conf \
         vendor/xenonhd/proprietary/m7/media/bootanimation.zip:system/media/bootanimation.zip# Specify phone tech before including full_phone
-    
-     
+  
 
      
      
