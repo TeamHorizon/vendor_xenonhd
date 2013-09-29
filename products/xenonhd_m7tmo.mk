@@ -10,7 +10,7 @@ $(call inherit-product, device/htc/m7tmo/full_m7tmo.mk)
     $(call inherit-product, vendor/xenonhd/products/common.mk)
      
     # Inherit device configuration
-    $(call inherit-product, device/htc/m7tmo/device.mk)
+    $(call inherit-product, device/htc/m7tmo/device_m7tmo.mk)
      
     # Inherit common build.prop overrides
     -include vendor/xenonhd/products/common_versions.mk
@@ -32,7 +32,7 @@ $(call inherit-product, device/htc/m7tmo/full_m7tmo.mk)
     PRODUCT_COPY_FILES += \
             vendor/xenonhd/proprietary/hybrid/hybrid_m7_no_nav.conf:system/etc/beerbong/properties.conf \
         vendor/xenonhd/proprietary/m7/media/bootanimation.zip:system/media/bootanimation.zip# Specify phone tech before including full_phone
-    
+    $(call inherit-product, vendor/xenonhd/configs/gsm.mk)
      
 
      

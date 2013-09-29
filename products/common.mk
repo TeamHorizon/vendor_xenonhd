@@ -9,29 +9,27 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
-	Apollo \
-	CMFileManager \
+    Apollo \
+    CMFileManager \
+	DeskClock \
 	DSPManager \
-	Onager \
 	LatinImeDictionaryPack \
 	LockClock \
 	libcyanogen-dsp \
-	OTAUpdateCenter \
-        audio_effects.conf \
-        PermissionsManager \
+	audio_effects.conf \
+    Focal \
+	Onager\
+    OTAUpdateCenter \
 	ROMSettings \
-	ROMStats \
+    ROMStats \
 	Superuser \
 	su \
-        Torch \
-        AOKPTorch \
-        XenonWallpapers\
-	VoicePlus
+    Torch \
+	AOKPTorch \
+    XenonWallpapers\
+	VoicePlus \
+	Dialer
        
-# prebuilts
-PRODUCT_PACKAGES += \
-	CarHome \
-	Thinkfree
 
 #extras	
 PRODUCT_PACKAGES += \
@@ -81,10 +79,8 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
     vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-    vendor/xenonhd/proprietary/common/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
     vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
     vendor/xenonhd/proprietary/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
-    vendor/xenonhd/proprietary/common/etc/init.d/98tweaks:system/etc/init.d/98tweaks \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
     vendor/xenonhd/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
@@ -128,7 +124,7 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
 #Declare your device here for APNs    
-ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7 xenonhd_d2att xenonhd_d2tmo xenonhd_galaxysmtd xenonhd_i9100 xenonhd_i9100g xenonhd_i9300 xenonhd_n7000 xenonhd_n7100 xenonhd_t0lte xenonhd_t0lteatt xenonhd_t0ltetmo ,$(TARGET_PRODUCT)),)
+ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7tmo xenonhd_d2att xenonhd_d2tmo xenonhd_galaxysmtd xenonhd_i9100 xenonhd_i9100g xenonhd_i9300 xenonhd_n7000 xenonhd_n7100 xenonhd_t0lte xenonhd_t0lteatt xenonhd_t0ltetmo ,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 endif

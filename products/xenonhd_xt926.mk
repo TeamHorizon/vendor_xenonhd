@@ -6,7 +6,6 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
-
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1280
 
@@ -34,5 +33,8 @@ PRODUCT_DEVICE := xt926
 PRODUCT_MODEL := Droid Razr HD
 PRODUCT_MANUFACTURER := motorola
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=xt926 BUILD_FINGERPRINT=motorola/XT926_verizon/vanquish:4.1.2/9.8.1Q-62_VQW_MR-2/6:user/release-keys
-
+PRODUCT_BUILD_PROP_OVERRIDES += \
+PRODUCT_BRAND=motorola \
+PRODUCT_NAME=XT926_verizon \
+BUILD_PRODUCT=vanquish \
+BUILD_FINGERPRINT=motorola/XT926_verizon/vanquish:4.1.2/9.8.1Q-62_VQW_MR-2/6:user/release-keys
