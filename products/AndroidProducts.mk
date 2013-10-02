@@ -7,6 +7,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_e975.mk \
 	$(LOCAL_DIR)/xenonhd_endeavoru.mk \
 	$(LOCAL_DIR)/xenonhd_find5.mk \
+	$(LOCAL_DIR)/xenonhd_flo.mk \
 	$(LOCAL_DIR)/xenonhd_galaxysmtd.mk \
 	$(LOCAL_DIR)/xenonhd_grouper.mk \
         $(LOCAL_DIR)/xenonhd_i605.mk \
