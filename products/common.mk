@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
         XenonWallpapers\
 	VoicePlus \
 	Dialer \
-        BluetoothExt\
+        BluetoothExt
        
 
 #extras	
