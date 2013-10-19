@@ -14,7 +14,7 @@ PRODUCT_PACKAGES += \
 	DeskClock \
 	DSPManager \
 	LatinImeDictionaryPack \
-	LockClock \
+	DashClock \
 	libcyanogen-dsp \
 	audio_effects.conf \
         Focal \
