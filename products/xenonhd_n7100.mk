@@ -5,7 +5,7 @@ $(call inherit-product, device/samsung/n7100/full_n7100.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 # Release name
-PRODUCT_RELEASE_NAME := t03g
+PRODUCT_RELEASE_NAME := n7100
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
