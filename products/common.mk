@@ -120,6 +120,7 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/97fixgestures:system/etc/init.d/97fixgestures \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
     vendor/xenonhd/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
+    vendor/xenonhd/proprietary/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # SELinux filesystem labels
