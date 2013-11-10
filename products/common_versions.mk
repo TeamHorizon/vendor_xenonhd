@@ -6,7 +6,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.xehdversion=XenonHD-$(shell date +"%m-%d-%y") \
     ro.modversion=XenonHD-$(shell date +"%m-%d-%y") \
     ro.rommanager.developerid=TeamHorizon
--include vendor/xenonhd/sepolicy/sepolicy.mk
     
 # ROM Statistics and ROM Identification
 PRODUCT_PROPERTY_OVERRIDES += \
