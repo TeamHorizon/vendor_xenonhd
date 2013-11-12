@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
 	AOKPTorch \
         XenonWallpapers\
 	VoicePlus \
+	libemoji \
 	Dialer \
         BluetoothExt
        

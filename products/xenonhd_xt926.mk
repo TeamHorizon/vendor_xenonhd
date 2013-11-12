@@ -20,9 +20,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/xenonhd/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
-#$(call inherit-product, vendor/xenonhd/configs/cdma.mk)
-#$(call inherit-product, vendor/xenonhd/configs/vzw.mk)
-
 # Inherit drm blobs
 -include vendor/xenonhd/products/common_drm.mk
 
