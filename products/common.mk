@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += \
 	libcyanogen-dsp \
 	audio_effects.conf \
         Focal \
-	Onager\
+	Launcher3 \
         OTAUpdateCenter \
 	ROMSettings \
         ROMStats \
