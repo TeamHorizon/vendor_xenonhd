@@ -12,7 +12,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/grouper
 
 # Copy grouper specific prebuilt files
 PRODUCT_COPY_FILES +=  \
-	vendor/xenonhd/proprietary/hybrid/hybrid_tvdpi.conf:system/etc/beerbong/properties.conf \
     vendor/xenonhd/proprietary/grouper/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/grouper/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
@@ -28,4 +27,4 @@ PRODUCT_DEVICE := flo
 PRODUCT_MODEL := Nexus 7 (2013)
 PRODUCT_MANUFACTURER := Asus
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=razor BUILD_FINGERPRINT=google/razor/flo:4.3/JSS15Q/779366:user/release-keys PRIVATE_BUILD_DESC="razor-user 4.3 JSS15Q 779366 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=razor BUILD_FINGERPRINT=google/razor/flo:4.4/KRT16S/920375:user/release-keys PRIVATE_BUILD_DESC="razor-user 4.4 KRT16S 920375 release-keys"

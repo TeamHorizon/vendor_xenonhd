@@ -12,7 +12,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/grouper
 
 # Copy grouper specific prebuilt files
 PRODUCT_COPY_FILES +=  \
-	vendor/xenonhd/proprietary/hybrid/hybrid_tvdpi.conf:system/etc/beerbong/properties.conf \
     vendor/xenonhd/proprietary/grouper/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/grouper/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
@@ -28,4 +27,4 @@ PRODUCT_DEVICE := grouper
 PRODUCT_MODEL := Nexus 7
 PRODUCT_MANUFACTURER := Asus
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nakasi BUILD_FINGERPRINT="google/nakasi/grouper:4.3/JWR66V/573038:user/release-keys" PRIVATE_BUILD_DESC="nakasi-user 4.3 JWR66V 573038 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=nakasi BUILD_FINGERPRINT="google/nakasi/grouper:4.4/KRT16S/573038:user/release-keys" PRIVATE_BUILD_DESC="nakasi-user 4.4 KRT16S 573038 release-keys"
