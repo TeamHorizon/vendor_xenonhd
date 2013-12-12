@@ -22,6 +22,8 @@ PRODUCT_PACKAGES += \
         OTAUpdateCenter \
 	ROMSettings \
         ROMStats \
+	Superuser \
+	su \
         Torch \
 	AOKPTorch \
         XenonWallpapers\
@@ -87,10 +89,10 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # SU Support
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/bin/su:system/xbin/su \
-    vendor/xenonhd/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon \
-    vendor/xenonhd/proprietary/common/app/Superuser.apk:system/app/Superuser.apk 
+PRODUCT_COPY_FILES += \	
+    vendor/$(VENDOR)/prebuilt/bin/su:system/xbin/su \
+    vendor/$(VENDOR)/prebuilt/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon \
+    vendor/$(VENDOR)/prebuilt/apk/Superuser.apk:system/app/Superuser.apk 
     
 # Cron schedual 
 #PRODUCT_COPY_FILES += \
