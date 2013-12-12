@@ -10,6 +10,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_flo.mk \
 	$(LOCAL_DIR)/xenonhd_galaxysmtd.mk \
 	$(LOCAL_DIR)/xenonhd_grouper.mk \
+	$(LOCAL_DIR)/xenonhd_hammerhead.mk \
         $(LOCAL_DIR)/xenonhd_i605.mk \
 	$(LOCAL_DIR)/xenonhd_i9100.mk \
         $(LOCAL_DIR)/xenonhd_i9100g.mk \
