@@ -67,6 +67,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.disable.power.collapse=1 \
     pm.sleep_mode=1
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
+
 # Common dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 
