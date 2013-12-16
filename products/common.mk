@@ -1,6 +1,3 @@
-SUPERUSER_EMBEDDED := true
-SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
-
 # Generic product
 PRODUCT_NAME := xenonhd
 PRODUCT_BRAND := xenonhd
@@ -32,10 +29,15 @@ PRODUCT_PACKAGES += \
 	Dialer \
     BluetoothExt
 
-#Superuser
+# superuser
+SUPERUSER_EMBEDDED := true
+
 PRODUCT_PACKAGES += \
     Superuser \
     su
+
+PRODUCT_COPY_FILES += \
+    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
 
 #extras	
 PRODUCT_PACKAGES += \
