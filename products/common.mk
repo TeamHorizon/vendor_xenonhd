@@ -55,7 +55,6 @@ PRODUCT_PACKAGES += \
 	start-ssh
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=3 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.google.clientidbase=android-google \
@@ -74,6 +73,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
+
+# Enable ADB authentication and root
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    persist.sys.root_access=3
+endif
 
 # Common dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
