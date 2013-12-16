@@ -1,4 +1,5 @@
 SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 # Generic product
 PRODUCT_NAME := xenonhd
@@ -9,28 +10,32 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
-        Apollo \
-        CMFileManager \
+    Apollo \
+    CMFileManager \
 	DeskClock \
 	DSPManager \
 	LatinImeDictionaryPack \
 	DashClock \
 	libcyanogen-dsp \
 	audio_effects.conf \
-        Focal \
+    Focal \
 	Launcher3 \
-        OTAUpdateCenter \
+    OTAUpdateCenter \
+    PerformanceControl \
 	ROMSettings \
-        ROMStats \
-	su \
-        Torch \
+    ROMStats \
+    Torch \
 	AOKPTorch \
-        XenonWallpapers\
+    XenonWallpapers\
 	VoicePlus \
 	libemoji \
 	Dialer \
-        BluetoothExt
-       
+    BluetoothExt
+
+#Superuser
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
 
 #extras	
 PRODUCT_PACKAGES += \
@@ -89,7 +94,11 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
     vendor/xenonhd/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
-    
+
+# SELinux filesystem labels
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/proprietary/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
+
 # Cron schedual 
 #PRODUCT_COPY_FILES += \
 #    vendor/xenonhd/proprietary/common/etc/cron/cron.conf:system/etc/cron/cron.conf \
@@ -154,4 +163,4 @@ PRODUCT_COPY_FILES += \
     
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.camera-sound=1    
+    persist.sys.camera-sound=1
