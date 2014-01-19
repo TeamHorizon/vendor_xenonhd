@@ -100,6 +100,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/xenonhd/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions 
+
 # Audio
 $(call inherit-product-if-exists, frameworks/base/data/sounds/OldAudio.mk)
 $(call inherit-product-if-exists, frameworks/base/data/sounds/NewAudio.mk)
