@@ -34,4 +34,3 @@ add_lunch_combo xenonhd_vigor-userdebug
 add_lunch_combo xenonhd_xt907-userdebug
 add_lunch_combo xenonhd_xt925-userdebug
 add_lunch_combo xenonhd_xt926-userdebug
-
