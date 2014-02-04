@@ -18,6 +18,7 @@ PRODUCT_PACKAGES += \
     Focal \
 	Launcher3 \
     OTAUpdateCenter \
+    OmniSwitch \
     PerformanceControl \
 	ROMSettings \
     ROMStats \
