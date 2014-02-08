@@ -7,9 +7,6 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
-# Extra crespo4g overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/crespo4g
-
 # Copy crespo4g specific prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/crespo/app/Thinkfree.apk:system/app/Thinkfree.apk \

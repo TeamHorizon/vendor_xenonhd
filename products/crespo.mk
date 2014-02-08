@@ -7,9 +7,6 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
-# Extra crespo overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/crespo
-
 # Copy crespo specific prebuilt files
 PRODUCT_COPY_FILES +=  \
 	vendor/xenonhd/proprietary/hybrid/hybrid_hdpi.conf:system/etc/beerbong/properties.conf \
@@ -28,5 +25,6 @@ PRODUCT_DEVICE := crespo
 PRODUCT_MODEL := Nexus S
 PRODUCT_MANUFACTURER := samsung
 
+#Set build fingerprint / ID / Product Name ect.
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=soju BUILD_FINGERPRINT="google/soju/crespo:4.1.2/JZO54K/485486:user/release-keys" PRIVATE_BUILD_DESC="soju-user 4.1.2 JZO54K 485486 release-keys"
 
