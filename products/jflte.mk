@@ -1,12 +1,12 @@
-# Inherit AOSP device configuration for d2vzw.
-$(call inherit-product, device/samsung/jfltevzw/full_jfltevzw.mk)
+# Inherit AOSP device configuration for jflte.
+$(call inherit-product, device/samsung/jflte/full_jflte.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 # Setup device specific product configuration.
-PRODUCT_NAME := xenonhd_jfltevzw
+PRODUCT_NAME := xenonhd_jflte
 PRODUCT_BRAND := Samsung
-PRODUCT_DEVICE := jfltevzw
-PRODUCT_MODEL := SCH-I545
+PRODUCT_DEVICE := jflte
+PRODUCT_MODEL := jflte
 PRODUCT_MANUFACTURER := Samsung
 
 # Copy d2 specific prebuilt files
