@@ -1,0 +1,4 @@
+#!/system/xbin/sh
+busybox mount -o remount,noatime /data
+touch /data/system/ga_gestures
+chmod 666 /data/system/ga_gestures

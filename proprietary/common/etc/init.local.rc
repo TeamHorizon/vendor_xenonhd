@@ -85,10 +85,6 @@ on boot
     write /sys/kernel/mm/ksm/sleep_millisecs 1500
     write /sys/kernel/mm/ksm/pages_to_scan 256
 
-# allow for writing of gesture data
-    touch /data/system/ga_gestures
-    chmod 0666 ga_gestures
-
 # adb over network
 on property:service.adb.tcp.port=5555
     stop adbd

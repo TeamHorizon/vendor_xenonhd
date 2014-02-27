@@ -101,6 +101,7 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
     vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
     vendor/xenonhd/proprietary/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
+    vendor/xenonhd/proprietary/common/etc/init.d/97fixgestures:system/etc/init.d/97fixgestures \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
     vendor/xenonhd/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
