@@ -9,25 +9,24 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 PRODUCT_PACKAGES += \
     Apollo \
     CMFileManager \
-	DeskClock \
-	DSPManager \
-	LatinImeDictionaryPack \
-	DashClock \
-	libcyanogen-dsp \
-	audio_effects.conf \
+    DeskClock \
+    DSPManager \
+    LatinImeDictionaryPack \
+    DashClock \
+    libcyanogen-dsp \
+    audio_effects.conf \
     Focal \
-	Launcher3 \
+    Launcher3 \
     OTAUpdateCenter \
     OmniSwitch \
-    PerformanceControl \
-	ROMSettings \
+    ROMSettings \
     ROMStats \
     Torch \
-	AOKPTorch \
+    AOKPTorch \
     XenonWallpapers\
-	VoicePlus \
-	libemoji \
-	Dialer \
+    VoicePlus \
+    libemoji \
+    Dialer \
     BluetoothExt
 
 # superuser
