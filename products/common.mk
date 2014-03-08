@@ -27,7 +27,9 @@ PRODUCT_PACKAGES += \
     VoicePlus \
     libemoji \
     Dialer \
-    BluetoothExt
+    BluetoothExt \
+    ScreenRecorder \
+    libscreenrecorder
 
 # superuser
 SUPERUSER_EMBEDDED := true
