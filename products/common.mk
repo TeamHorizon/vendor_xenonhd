@@ -7,29 +7,30 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
+    AOKPTorch \
     Apollo \
-    CMFileManager \
-    DeskClock \
-    DSPManager \
-    LatinImeDictionaryPack \
-    DashClock \
-    libcyanogen-dsp \
     audio_effects.conf \
+    BluetoothExt \
+    CMFileManager \
+    DashClock \
+    DeskClock \
+    Dialer \
+    DSPManager \
     Focal \
+    LatinImeDictionaryPack \
     Launcher3 \
-    OTAUpdateCenter \
+    libcyanogen-dsp \
+    libemoji \
+    libscreenrecorder \
     OmniSwitch \
+    OTAUpdateCenter \
     ROMSettings \
     ROMStats \
-    Torch \
-    AOKPTorch \
-    XenonWallpapers\
-    VoicePlus \
-    libemoji \
-    Dialer \
-    BluetoothExt \
     ScreenRecorder \
-    libscreenrecorder
+    SoundRecorder \
+    Torch \
+    VoicePlus \
+    XenonWallpapers
 
 # superuser
 SUPERUSER_EMBEDDED := true
@@ -168,6 +169,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
        vendor/xenonhd/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
+
+PRODUCT_COPY_FILES += \
+       vendor/xenonhd/proprietary/common/app/MyBackupRoot.apk:system/app/MyBackupRoot.apk
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
