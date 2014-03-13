@@ -169,6 +169,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
        vendor/xenonhd/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
 
+PRODUCT_COPY_FILES += \
+       vendor/xenonhd/proprietary/common/app/MyBackupRoot.apk:system/app/MyBackupRoot.apk
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
