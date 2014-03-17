@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     OTAUpdateCenter \
     OmniSwitch \
+    OmniTorch \
     ROMSettings \
     ROMStats \
     Torch \
