@@ -24,6 +24,7 @@ PRODUCT_PACKAGES += \
     libscreenrecorder \
     OmniSwitch \
     OTAUpdateCenter \
+    OmniTorch \
     ROMSettings \
     ROMStats \
     ScreenRecorder \
