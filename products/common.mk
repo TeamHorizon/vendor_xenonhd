@@ -25,6 +25,7 @@ PRODUCT_PACKAGES += \
     OmniSwitch \
     OTAUpdateCenter \
     OmniTorch \
+    RingsExtended \
     ROMSettings \
     ROMStats \
     ScreenRecorder \
