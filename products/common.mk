@@ -12,7 +12,6 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     BluetoothExt \
     CMFileManager \
-    DashClock \
     DeskClock \
     Dialer \
     DSPManager \
@@ -174,6 +173,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
        vendor/xenonhd/proprietary/common/app/MyBackupRoot.apk:system/app/MyBackupRoot.apk
+
+# Dashclock 
+PRODUCT_COPY_FILES += \
+    vendor/omni/prebuilt/app/DashClock.apk:system/app/DashClock.apk
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
