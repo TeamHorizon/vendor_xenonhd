@@ -7,6 +7,7 @@ add_lunch_combo xenonhd_flo-userdebug
 add_lunch_combo xenonhd_galaxysmtd-userdebug
 add_lunch_combo xenonhd_grouper-userdebug
 add_lunch_combo xenonhd_hammerhead-userdebug
+add_lunch_combo xenonhd_honami-userdebug
 add_lunch_combo xenonhd_i605-userdebug
 add_lunch_combo xenonhd_i9100-userdebug
 add_lunch_combo xenonhd_i9100g-userdebug
