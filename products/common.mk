@@ -176,7 +176,7 @@ PRODUCT_COPY_FILES += \
 
 # Dashclock 
 PRODUCT_COPY_FILES += \
-    vendor/omni/prebuilt/app/DashClock.apk:system/app/DashClock.apk
+    vendor/xenonhd/proprietary/common/app/DashClock.apk:system/app/DashClock.apk
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
