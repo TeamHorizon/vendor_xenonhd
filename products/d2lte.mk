@@ -7,6 +7,10 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := xenonhd_d2lte
+PRODUCT_DEVICE := d2lte
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := d2lte
 
 PRODUCT_GMS_CLIENTID_BASE := android-verizon
 
