@@ -1,6 +1,3 @@
-# Get the sample verizon list of APNs
-PRODUCT_COPY_FILES += device/sample/etc/apns-conf_verizon.xml:system/etc/apns-conf.xml
-
 # Inherit AOSP device configuration for d2lte.
 $(call inherit-product, device/samsung/d2lte/full_d2lte.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
