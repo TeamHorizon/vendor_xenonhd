@@ -167,7 +167,7 @@ rm -rf $REPACK/ota/recovery
 if [ -z "$XenonHD" ]; then
 	MODVERSION=`sed -n -e'/ro\.xehdversion/s/^.*=//p' $REPACK/ota/system/build.prop`
 	: ${MODVERSION:=}
-	Device=`sed -n -e'/ro\.product.device/s/^.*=//p' $REPACK/ota/system/build.prop`
+	Device=`sed -n -e'/ro\.product\.device/s/^.*=//p' $REPACK/ota/system/build.prop`
 	: ${Device:=}
 	OUTFILE=$OUT/update-$MODVERSION-signed-$Device.zip
 else
