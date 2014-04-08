@@ -7,7 +7,11 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
-# Copy hammerhead specific prebuilt files
+# APNs
+PRODUCT_COPY_FILES +=  \
+	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+
+# Copy honami specific prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/tuna/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
