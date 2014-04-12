@@ -162,14 +162,7 @@ PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/apns-conf-cdma.xml:system/etc/apns-conf.xml
 endif
 
-# T-Mobile theme engine
-PRODUCT_PACKAGES += \
-	   ThemeManager \
-           ThemeChooser \
-           com.tmobile.themes
-
-PRODUCT_COPY_FILES += \
-       vendor/xenonhd/proprietary/common/etc/permissions/com.tmobile.software.themes.xml:system/etc/permissions/com.tmobile.software.themes.xml
+-include vendor/xenonhd/products/themes_common.mk
 
 PRODUCT_COPY_FILES += \
        vendor/xenonhd/proprietary/common/app/MyBackupRoot.apk:system/app/MyBackupRoot.apk
