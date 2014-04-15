@@ -80,6 +80,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# Audio
+$(call inherit-product-if-exists, frameworks/base/data/sounds/OldAudio.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/NewAudio.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackageStars.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackageNewWave.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackageElements.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage8.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage9.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage10.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage11.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage12.mk)
+$(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage12_48.mk)
+
 # Enable ADB authentication and root
 ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += \
