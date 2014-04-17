@@ -1,5 +1,5 @@
-PRODUCT_PACKAGES += \	
-       ThemeManager \	
+PRODUCT_PACKAGES += \
+       ThemeManager \
        ThemeChooser \
        com.tmobile.themes
 
