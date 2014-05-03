@@ -13,7 +13,7 @@
 # git config remote.gerrit.receivepack "git receive-pack --reviewer jtoro2716@gmail.com --reviewer arhamjamal@gmail.com"
 # Fetch URL: https://github.com/TeamHorizon/platform_frameworks_base
 
-@reviewers = ("jtoro271@gmail.com","arhamjamal@gmail.com","pcarenza@gmail.com");
+@reviewers = ('arhamjamal@gmail.com','pcarenza@gmail.com');
 chomp ($username = `whoami`);
 
 chomp ($branch = `git branch| grep "*"`);
@@ -33,6 +33,9 @@ $base{'push'} = "HEAD:refs/for/kitkat";
 $base{'receivepack'} = "git receive-pack";
 
 $reviewertitle = "--reviewer ";
+foreach (@reviewers) {
+    $base{'receivepack'} .= " $reviewertitle $_";
+}
 
 print "branch is $branch\n";
 $addcommand = "git remote add gerrit $base{'url'}";
