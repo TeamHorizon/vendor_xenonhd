@@ -26,7 +26,7 @@ print "**** Setting up gerrit configuration for $repo. ****\n";
 
 $basecommand = 'git config remote.gerrit.';
 
-$base{'url'} = "ssh://$username\@review.gerrithub.io:29418/TeamHorizon/$repo";
+$base{'url'} = "ssh://$username\@gerrit.xenonhd.com:29418/$repo";
 
 $base{'push'} = "HEAD:refs/for/kitkat";
 
@@ -37,6 +37,10 @@ $reviewertitle = "--reviewer ";
 print "branch is $branch\n";
 $addcommand = "git remote add gerrit $base{'url'}";
 print "$addcommand\n";
+`addcommand`;
+$addcommand = 'gitdir=$(git rev-parse --git-dir); scp -p -P 29418 '.$username.'@gerrit.xenonhd.com:hooks/commit-msg ${gitdir}/hooks/';
+print "$addcommand\n";
+`addcommand`;
 
 foreach my $key (keys %base) {
      $command= "$basecommand$key \"$base{$key}\"";
