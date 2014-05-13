@@ -13,7 +13,7 @@
 # git config remote.gerrit.receivepack "git receive-pack --reviewer jtoro2716@gmail.com --reviewer arhamjamal@gmail.com"
 # Fetch URL: https://github.com/TeamHorizon/platform_frameworks_base
 # list default reviewers here
-@reviewers = ('teamhorizon');
+@reviewers = ('pcarenza@gmail.com','arhamjamal@gmail.com','jtoro2716@gmail.com');
 # grabs user name from local unix system
 chomp ($username = `whoami`);
 # grabs active branch from 'git branch'
