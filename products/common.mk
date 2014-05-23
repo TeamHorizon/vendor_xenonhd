@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     Torch \
     VoicePlus \
+    KernelTweaker \
     XenonWallpapers
 
 # superuser
