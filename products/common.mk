@@ -34,17 +34,7 @@ PRODUCT_PACKAGES += \
     KernelTweaker \
     XenonWallpapers
 
-# superuser
-SUPERUSER_EMBEDDED := true
-
-PRODUCT_PACKAGES += \
-    Superuser \
-    su
-
-PRODUCT_COPY_FILES += \
-    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
-
-#extras	
+#extras
 PRODUCT_PACKAGES += \
 	openvpn \
 	e2fsck \
@@ -107,28 +97,22 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/etc/resolv.conf:system/etc/resolv.conf \
-    vendor/xenonhd/proprietary/common/etc/liberty.bsh:system/etc/liberty.bsh \
-    vendor/xenonhd/proprietary/common/etc/liberty.cfg:system/etc
-        
+    vendor/xenonhd/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
     vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-    vendor/xenonhd/proprietary/common/etc/init.d/07fixperms:system/etc/init.d/07fixperms \
-    vendor/xenonhd/proprietary/common/etc/init.d/10sdboost:system/etc/init.d/10sdboost \
-    vendor/xenonhd/proprietary/common/etc/init.d/97fixgestures:system/etc/init.d/97fixgestures \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
-    vendor/xenonhd/proprietary/common/etc/sysctl.conf:system/etc/sysctl.conf \
-    vendor/xenonhd/proprietary/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
-# Cron schedual 
+# Cron schedual
 #PRODUCT_COPY_FILES += \
 #    vendor/xenonhd/proprietary/common/etc/cron/cron.conf:system/etc/cron/cron.conf \
 #    vendor/xenonhd/proprietary/common/etc/cron/cron.hourly/00drop_caches:system/etc/cron/cron.hourly/00drop_caches \
@@ -137,18 +121,18 @@ PRODUCT_COPY_FILES += \
 #    vendor/xenonhd/proprietary/common/etc/cron/cron.hourly/01clear_cache:system/etc/cron/cron.hourly/01clear_cache \
 #    vendor/xenonhd/proprietary/common/etc/cron/cron.daily/01clear_cache:system/etc/cron/cron.daily/01clear_cache \
 #    vendor/xenonhd/proprietary/common/etc/cron/cron.weekly/01clear_cache:system/etc/cron/cron.weekly/01clear_ca
-    
+
 # Term info for nano support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/terminfo/l/linux:system/etc/terminfo/l/linux \
     vendor/xenonhd/proprietary/common/etc/terminfo/u/unknown:system/etc/terminfo/u/unknown
-    
+
 # Compcache/Zram support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:system/etc/init.local.rc \
     vendor/xenonhd/proprietary/common/bin/compcache:system/bin/compcache \
     vendor/xenonhd/proprietary/common/bin/handle_compcache:system/bin/handle_compcache
-    
+
 # Added xbin files
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/backup:system/xbin/backup \
@@ -166,7 +150,7 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
-#Declare your device here for APNs    
+#Declare your device here for APNs
 ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7tmo xenonhd_d2lte xenonhd_jflte xenonhd_galaxysmtd xenonhd_i9100 xenonhd_i9100g xenonhd_i9300 xenonhd_n7000 xenonhd_n7100 xenonhd_t0lte xenonhd_t0lteatt xenonhd_t0ltetmo ,$(TARGET_PRODUCT)),)
 PRODUCT_COPY_FILES += \
 	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
@@ -182,7 +166,7 @@ endif
 PRODUCT_COPY_FILES += \
        vendor/xenonhd/proprietary/common/app/MyBackupRoot.apk:system/app/MyBackupRoot.apk
 
-# Dashclock 
+# Dashclock
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/DashClock.apk:system/app/DashClock.apk
 
@@ -194,7 +178,7 @@ PRODUCT_COPY_FILES += \
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
-    
+
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.camera-sound=1

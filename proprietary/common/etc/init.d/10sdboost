@@ -1,2 +1,0 @@
-#!/system/bin/sh
-echo "1024" > /sys/devices/virtual/bdi/179:0/read_ahead_kb;
