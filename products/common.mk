@@ -163,9 +163,6 @@ endif
 
 -include vendor/xenonhd/products/themes_common.mk
 
-PRODUCT_COPY_FILES += \
-       vendor/xenonhd/proprietary/common/app/MyBackupRoot.apk:system/app/MyBackupRoot.apk
-
 # Dashclock
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/DashClock.apk:system/app/DashClock.apk
