@@ -193,6 +193,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/Layers.apk:system/app/Layers.apk
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+     vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+     vendor/xenonhd/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
