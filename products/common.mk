@@ -34,6 +34,16 @@ PRODUCT_PACKAGES += \
     KernelTweaker \
     XenonWallpapers
 
+# Superuser
+SUPERUSER_EMBEDDED := true
+
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
+
+PRODUCT_COPY_FILES += \
+    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
+
 #extras
 PRODUCT_PACKAGES += \
 	openvpn \
