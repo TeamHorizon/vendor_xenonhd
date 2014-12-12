@@ -14,6 +14,7 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     DeskClock \
     Dialer \
+    Eleven \
     Focal \
     LatinImeDictionaryPack \
     Launcher3 \
