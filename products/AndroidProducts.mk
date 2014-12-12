@@ -19,6 +19,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_i9305.mk \
 	$(LOCAL_DIR)/xenonhd_jflte.mk \
 	$(LOCAL_DIR)/xenonhd_l900.mk \
+	$(LOCAL_DIR)/xenonhd_m7.mk \
 	$(LOCAL_DIR)/xenonhd_m8.mk \
 	$(LOCAL_DIR)/xenonhd_maguro.mk \
 	$(LOCAL_DIR)/xenonhd_mako.mk \
