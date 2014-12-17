@@ -9,16 +9,15 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 PRODUCT_PACKAGES += \
     AOKPTorch \
     Apollo \
-    audio_effects.conf \
+    AudioFX \
     BluetoothExt \
     CMFileManager \
     DeskClock \
     Dialer \
-    DSPManager \
+    Eleven \
     Focal \
     LatinImeDictionaryPack \
     Launcher3 \
-    libcyanogen-dsp \
     libemoji \
     libscreenrecorder \
     OmniSwitch \
