@@ -204,10 +204,6 @@ endif
 
 -include vendor/xenonhd/products/themes_common.mk
 
-# Dashclock
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/DashClock.apk:system/app/DashClock.apk
-
 # AdAway
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/org.adaway.apk:system/app/org.adaway.apk
