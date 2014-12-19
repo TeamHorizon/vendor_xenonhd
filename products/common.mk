@@ -43,22 +43,54 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
 
-#extras
+#Extras
 PRODUCT_PACKAGES += \
-	openvpn \
-	e2fsck \
-	mke2fs \
-	tune2fs \
-	bash \
-	nano \
+    procmem \
+    procrank
+
+# Openssh
+PRODUCT_PACKAGES += \
 	libssh \
-	ssh \
-	sshd \
-	sshd-config \
-	ssh-keygen \
-	sftp \
-	scp \
-	start-ssh
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+
+# Extra tools in XenonHD
+PRODUCT_PACKAGES += \
+    libsepol \
+    openvpn \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    bash \
+    nano \
+    htop \
+    powertop \
+    lsof \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
+    ntfsfix \
+    ntfs-3g \
+    gdbserver \
+    micro_bench \
+    oprofiled \
+    sqlite3 \
+    strace
+
+# Stagefright FFMPEG plugin
+PRODUCT_PACKAGES += \
+    libstagefright_soft_ffmpegadec \
+    libstagefright_soft_ffmpegvdec \
+    libFFmpegExtractor \
+    libnamparser
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
