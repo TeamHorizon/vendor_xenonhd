@@ -33,6 +33,11 @@ PRODUCT_PACKAGES += \
     KernelTweaker \
     XenonWallpapers
 
+# CM Hardware Abstraction Framework
+PRODUCT_PACKAGES += \
+		org.cyanogenmod.hardware \
+		org.cyanogenmod.hardware.xml
+
 # Superuser
 SUPERUSER_EMBEDDED := true
 
