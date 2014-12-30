@@ -35,8 +35,8 @@ PRODUCT_PACKAGES += \
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
-		org.cyanogenmod.hardware \
-		org.cyanogenmod.hardware.xml
+	org.cyanogenmod.hardware \
+	org.cyanogenmod.hardware.xml
 
 # Superuser
 SUPERUSER_EMBEDDED := true
