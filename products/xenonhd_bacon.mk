@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for bacon.
-$(call inherit-product, device/oneplus/bacon/full_bacon.mk)
+$(call inherit-product, device/oneplus/bacon/bacon.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
