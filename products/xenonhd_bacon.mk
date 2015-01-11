@@ -1,5 +1,7 @@
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
 # Inherit AOSP device configuration for bacon.
-$(call inherit-product, device/oneplus/bacon/bacon.mk)
+$(call inherit-product, device/oneplus/bacon/full_bacon.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -26,5 +28,7 @@ PRODUCT_BRAND := oneplus
 PRODUCT_DEVICE := bacon
 PRODUCT_MODEL := A001
 PRODUCT_MANUFACTURER := OnePlus
+
+TARGET_CONTINUOUS_SPLASH_ENABLED := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=bacon BUILD_FINGERPRINT=oneplus/bacon/A0001:4.4.2/KVT49L/XNPH25R:user/release-keys PRIVATE_BUILD_DESC="bacon-user 4.4.2 KVT49L XNPH25R release-keys"
