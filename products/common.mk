@@ -20,6 +20,7 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     libemoji \
     libscreenrecorder \
+	LockClock \
     OmniSwitch \
     OTAUpdateCenter \
     OmniTorch \
