@@ -1,10 +1,15 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
 
 # Inherit AOSP device configuration for bacon.
 $(call inherit-product, device/oneplus/bacon/full_bacon.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
+
+# APNs
+PRODUCT_COPY_FILES +=  \
+        vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Enhanced NFC
 $(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
@@ -28,7 +33,7 @@ PRODUCT_BRAND := oneplus
 PRODUCT_DEVICE := bacon
 PRODUCT_MODEL := A001
 PRODUCT_MANUFACTURER := OnePlus
-
+PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=bacon BUILD_FINGERPRINT=oneplus/bacon/A0001:4.4.2/KVT49L/XNPH25R:user/release-keys PRIVATE_BUILD_DESC="bacon-user 4.4.2 KVT49L XNPH25R release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:5.0/LRX22G/XNPH25R:user/release-keys PRIVATE_BUILD_DESC="bacon-user 5.0 LRX22G XNPH25R release-keys"
