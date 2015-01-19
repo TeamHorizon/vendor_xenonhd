@@ -17,7 +17,6 @@ PRODUCT_PACKAGES += \
     Eleven \
     Focal \
     LatinImeDictionaryPack \
-    Launcher3 \
     libemoji \
     libscreenrecorder \
 	LockClock \
@@ -28,6 +27,7 @@ PRODUCT_PACKAGES += \
     ROMSettings \
     ROMStats \
     ScreenRecorder \
+    SlimLauncher \
     SoundRecorder \
     Torch \
     VoicePlus \
