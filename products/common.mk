@@ -197,16 +197,9 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
-#Declare your device here for APNs
-ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7tmo xenonhd_d2lte xenonhd_jflte xenonhd_galaxysmtd xenonhd_i9100 xenonhd_i9100g xenonhd_i9300 xenonhd_n7000 xenonhd_n7100 xenonhd_t0lte xenonhd_t0lteatt xenonhd_t0ltetmo ,$(TARGET_PRODUCT)),)
+# World APN list
 PRODUCT_COPY_FILES += \
-	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
-endif
-
-ifneq ($(filter xenonhd_d2vzw xenonhd_jfltevzw xenonhd_d2usc xenonhd_xt926 xenonhd_i605 xenonhd_l900 xenonhd_r950 ,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-	vendor/xenonhd/proprietary/common/etc/apns-conf-cdma.xml:system/etc/apns-conf.xml
-endif
+    vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # AdAway
 PRODUCT_COPY_FILES += \
