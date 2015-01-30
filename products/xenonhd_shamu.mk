@@ -23,10 +23,10 @@ PRODUCT_COPY_FILES +=  \
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := xenonhd_shamu
+PRODUCT_BRAND := google
 PRODUCT_DEVICE := shamu
-PRODUCT_BRAND := Google
 PRODUCT_MODEL := Nexus 6
-PRODUCT_MANUFACTURER := Motorola
+PRODUCT_MANUFACTURER := motorola
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=shamu \
