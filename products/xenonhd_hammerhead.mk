@@ -4,6 +4,9 @@ $(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
+# Telephony
+$(call inherit-product, vendor/xenonhd/configs/telephony.mk)
+
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 

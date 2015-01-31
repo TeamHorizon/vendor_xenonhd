@@ -197,14 +197,9 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
-# World APN list
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
-
 # AdAway
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/org.adaway.apk:system/app/org.adaway.apk
-
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \

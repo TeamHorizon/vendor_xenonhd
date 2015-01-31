@@ -4,10 +4,13 @@ $(call inherit-product, device/lge/mako/full_mako.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
+# Telephony
+$(call inherit-product, vendor/xenonhd/configs/telephony.mk)
+
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
-# Extra maguro overlay
+# Extra mako overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/mako
 
 # Copy maguro specific prebuilt files

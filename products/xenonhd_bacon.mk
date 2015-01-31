@@ -7,6 +7,9 @@ $(call inherit-product, device/oneplus/bacon/full_bacon.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
+# Telephony
+$(call inherit-product, vendor/xenonhd/configs/telephony.mk)
+
 # Enhanced NFC
 $(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
 
