@@ -4,6 +4,9 @@ $(call inherit-product, device/htc/m8/full_m8.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
+# Telephony
+$(call inherit-product, vendor/xenonhd/configs/telephony.mk)
+
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 

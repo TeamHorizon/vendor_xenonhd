@@ -9,18 +9,17 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 PRODUCT_PACKAGES += \
     AOKPTorch \
     Apollo \
-    audio_effects.conf \
+    AudioFX \
     BluetoothExt \
     CMFileManager \
     DeskClock \
     Dialer \
-    DSPManager \
+    Eleven \
     Focal \
     LatinImeDictionaryPack \
-    Launcher3 \
-    libcyanogen-dsp \
     libemoji \
     libscreenrecorder \
+	LockClock \
     OmniSwitch \
     OTAUpdateCenter \
     OmniTorch \
@@ -28,28 +27,76 @@ PRODUCT_PACKAGES += \
     ROMSettings \
     ROMStats \
     ScreenRecorder \
+    SlimLauncher \
     SoundRecorder \
     Torch \
     VoicePlus \
     KernelTweaker \
     XenonWallpapers
 
-#extras
+# CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
-	openvpn \
-	e2fsck \
-	mke2fs \
-	tune2fs \
-	bash \
-	nano \
+	org.cyanogenmod.hardware \
+	org.cyanogenmod.hardware.xml
+
+# Superuser
+SUPERUSER_EMBEDDED := true
+
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
+
+PRODUCT_COPY_FILES += \
+    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
+
+#Extras
+PRODUCT_PACKAGES += \
+    procmem \
+    procrank
+
+# Openssh
+PRODUCT_PACKAGES += \
 	libssh \
-	ssh \
-	sshd \
-	sshd-config \
-	ssh-keygen \
-	sftp \
-	scp \
-	start-ssh
+    scp \
+    sftp \
+    ssh \
+    sshd \
+    sshd_config \
+    ssh-keygen \
+    start-ssh
+
+# Extra tools in XenonHD
+PRODUCT_PACKAGES += \
+    libsepol \
+    openvpn \
+    e2fsck \
+    mke2fs \
+    tune2fs \
+    bash \
+    nano \
+    htop \
+    powertop \
+    lsof \
+    mount.exfat \
+    fsck.exfat \
+    mkfs.exfat \
+    mkfs.f2fs \
+    fsck.f2fs \
+    fibmap.f2fs \
+    ntfsfix \
+    ntfs-3g \
+    gdbserver \
+    micro_bench \
+    oprofiled \
+    sqlite3 \
+    strace
+
+# Stagefright FFMPEG plugin
+PRODUCT_PACKAGES += \
+    libstagefright_soft_ffmpegadec \
+    libstagefright_soft_ffmpegvdec \
+    libFFmpegExtractor \
+    libnamparser
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
@@ -150,27 +197,9 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
 
-#Declare your device here for APNs
-ifneq ($(filter xenonhd_crespo xenonhd_endeavoru xenonhd_maguro xenonhd_tilapia xenonhd_mako xenonhd_m7tmo xenonhd_d2lte xenonhd_jflte xenonhd_galaxysmtd xenonhd_i9100 xenonhd_i9100g xenonhd_i9300 xenonhd_n7000 xenonhd_n7100 xenonhd_t0lte xenonhd_t0lteatt xenonhd_t0ltetmo ,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
-endif
-
-ifneq ($(filter xenonhd_d2vzw xenonhd_jfltevzw xenonhd_d2usc xenonhd_xt926 xenonhd_i605 xenonhd_l900 xenonhd_r950 ,$(TARGET_PRODUCT)),)
-PRODUCT_COPY_FILES += \
-	vendor/xenonhd/proprietary/common/etc/apns-conf-cdma.xml:system/etc/apns-conf.xml
-endif
-
--include vendor/xenonhd/products/themes_common.mk
-
-# Dashclock
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/DashClock.apk:system/app/DashClock.apk
-
 # AdAway
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/org.adaway.apk:system/app/org.adaway.apk
-
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \

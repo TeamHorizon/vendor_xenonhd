@@ -1,4 +1,5 @@
 PRODUCT_MAKEFILES := \
+        $(LOCAL_DIR)/xenonhd_bacon.mk \
 	$(LOCAL_DIR)/xenonhd_crespo.mk \
 	$(LOCAL_DIR)/xenonhd_d2att.mk \
  	$(LOCAL_DIR)/xenonhd_d2tmo.mk \
@@ -19,6 +20,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_i9305.mk \
 	$(LOCAL_DIR)/xenonhd_jflte.mk \
 	$(LOCAL_DIR)/xenonhd_l900.mk \
+	$(LOCAL_DIR)/xenonhd_m7.mk \
 	$(LOCAL_DIR)/xenonhd_m8.mk \
 	$(LOCAL_DIR)/xenonhd_maguro.mk \
 	$(LOCAL_DIR)/xenonhd_mako.mk \
@@ -27,6 +29,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_n7000.mk \
 	$(LOCAL_DIR)/xenonhd_n7100.mk \
 	$(LOCAL_DIR)/xenonhd_r950.mk \
+	$(LOCAL_DIR)/xenonhd_shamu.mk \
 	$(LOCAL_DIR)/xenonhd_t0lte.mk \
 	$(LOCAL_DIR)/xenonhd_t0lteatt.mk \
 	$(LOCAL_DIR)/xenonhd_t0ltetmo.mk \
