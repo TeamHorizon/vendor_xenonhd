@@ -4,6 +4,12 @@ $(call inherit-product, device/samsung/trltetmo/full_trltetmo.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
+# Telephony
+$(call inherit-product, vendor/xenonhd/configs/telephony.mk)
+
+# Enhanced NFC
+$(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
+
 # Release name
 PRODUCT_RELEASE_NAME := trltetmo
 
