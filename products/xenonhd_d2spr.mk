@@ -1,15 +1,13 @@
 # Inherit AOSP device configuration for d2lte.
-$(call inherit-product, device/samsung/d2lte/full_d2lte.mk)
+$(call inherit-product, device/samsung/d2spr/full_d2spr.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 # Setup device specific product configuration.
-PRODUCT_NAME := xenonhd_d2lte
-PRODUCT_DEVICE := d2lte
+PRODUCT_NAME := xenonhd_d2spr
+PRODUCT_DEVICE := d2spr
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := d2lte
-
-PRODUCT_GMS_CLIENTID_BASE := android-verizon
+PRODUCT_MODEL := d2spr
 
 # Copy d2 specific prebuilt files
 PRODUCT_COPY_FILES +=  \
@@ -21,9 +19,6 @@ PRODUCT_COPY_FILES +=  \
     
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
-
-# Inherit common Verizon Wireless Perms and Lib
-$(call inherit-product, vendor/xenonhd/configs/vzw.mk)
 
 # Inherit drm blobs
 -include vendor/xenonhd/products/common_drm.mk
