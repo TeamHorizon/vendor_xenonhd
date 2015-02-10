@@ -1,6 +1,8 @@
 PRODUCT_MAKEFILES := \
         $(LOCAL_DIR)/xenonhd_bacon.mk \
 	$(LOCAL_DIR)/xenonhd_crespo.mk \
+	$(LOCAL_DIR)/xenonhd_d2spr.mk \
+	$(LOCAL_DIR)/xenonhd_d2bst.mk \
 	$(LOCAL_DIR)/xenonhd_d2att.mk \
  	$(LOCAL_DIR)/xenonhd_d2tmo.mk \
  	$(LOCAL_DIR)/xenonhd_d2usc.mk \
@@ -36,6 +38,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_tilapia.mk \
 	$(LOCAL_DIR)/xenonhd_toro.mk \
 	$(LOCAL_DIR)/xenonhd_toroplus.mk \
+	$(LOCAL_DIR)/xenonhd_trltetmo.mk \
 	$(LOCAL_DIR)/xenonhd_vigor.mk \
 	$(LOCAL_DIR)/xenonhd_xt925.mk \
 	$(LOCAL_DIR)/xenonhd_xt926.mk \
