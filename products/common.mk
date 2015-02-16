@@ -19,7 +19,7 @@ PRODUCT_PACKAGES += \
     LatinImeDictionaryPack \
     libemoji \
     libscreenrecorder \
-	LockClock \
+    LockClock \
     OmniSwitch \
     OTAUpdateCenter \
     OmniTorch \
@@ -36,8 +36,8 @@ PRODUCT_PACKAGES += \
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
-	org.cyanogenmod.hardware \
-	org.cyanogenmod.hardware.xml
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
 
 #Extras
 PRODUCT_PACKAGES += \
@@ -46,7 +46,7 @@ PRODUCT_PACKAGES += \
 
 # Openssh
 PRODUCT_PACKAGES += \
-	libssh \
+    libssh \
     scp \
     sftp \
     ssh \
@@ -142,7 +142,7 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
     vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
-    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # SELinux filesystem labels
