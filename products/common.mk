@@ -97,7 +97,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
     ro.setupwizard.mode=OPTIONAL \
     ro.setupwizard.enterprise_mode=1 \
-    windowsmgr.max_events_per_sec=240 \
     ro.media.enc.jpeg.quality=100 \
     ro.media.dec.jpeg.memcap=8000000 \
     ro.media.enc.hprof.vid.bps=8000000 \
@@ -126,7 +125,7 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     ro.secure=0 \
-    persist.sys.root_access=3
+    persist.sys.root_access=1
 endif
 
 # Common dictionaries
@@ -138,7 +137,6 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
     vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
