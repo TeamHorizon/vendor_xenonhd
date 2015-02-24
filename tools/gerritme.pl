@@ -5,11 +5,11 @@
 #[remote "gerrit"]
 #        url = ssh://pcarenza@104.171.250.39:29418/TeamHorizon/android_build
 #        fetch = +refs/heads/*:refs/remotes/gerrit/*
-#        push = HEAD:refs/for/kitkat
+#        push = HEAD:refs/for/lollipop
 #        receivepack = git receive-pack --reviewer jtoro2716@gmail.com --reviewer arhamjamal@gmail.com
 #
 # git config remote.gerrit.url "ssh://pcarenza@review.104.171.250.39:29418/TeamHorizon/android_build"
-# git config remote.gerrit.push "HEAD:refs/for/kitkat"
+# git config remote.gerrit.push "HEAD:refs/for/lollipop"
 # git config remote.gerrit.receivepack "git receive-pack --reviewer jtoro2716@gmail.com --reviewer arhamjamal@gmail.com"
 # Fetch URL: https://github.com/TeamHorizon/platform_frameworks_base
 # list default reviewers here
@@ -36,7 +36,7 @@ $basecommand = 'git config remote.gerrit.';
 
 # the three config items that we're concerned about now
 $base{'url'} = "ssh://$username\@104.171.250.39:29418/$repo";
-$base{'push'} = "HEAD:refs/for/kitkat";
+$base{'push'} = "HEAD:refs/for/lollipop";
 $base{'receivepack'} = "git receive-pack";
 
 # add reviewers to receivepack command
