@@ -191,7 +191,7 @@ PRODUCT_COPY_FILES += \
 
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/Layers.apk:system/app/Layers.apk
+    vendor/xenonhd/proprietary/common/app/com.lovejoy777.rroandlayersmanager.apk:system/app/com.lovejoy777.rroandlayersmanager/base.apk
 
 # SuperSU
 PRODUCT_COPY_FILES += \
