@@ -126,7 +126,8 @@ ifeq ($(strip $(HOST_OS)),linux)
                  -ftree-loop-linear \
                  -floop-interchange \
                  -floop-strip-mine \
-                 -floop-block
+                 -floop-block \
+                 -floop-nest-optimize
       endif
     endif
   endif
@@ -196,7 +197,8 @@ ifeq ($(strip $(HOST_OS)),linux)
                  -ftree-loop-linear \
                  -floop-interchange \
                  -floop-strip-mine \
-                 -floop-block
+                 -floop-block \
+                 -floop-nest-optimize
       endif
     endif
   endif
