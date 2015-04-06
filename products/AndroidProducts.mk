@@ -40,7 +40,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_toro.mk \
 	$(LOCAL_DIR)/xenonhd_toroplus.mk \
 	$(LOCAL_DIR)/xenonhd_trltetmo.mk \
-	$(LOCAL_DIR)/xenonhd_trltetxx.mk \
+	$(LOCAL_DIR)/xenonhd_trltexx.mk \
 	$(LOCAL_DIR)/xenonhd_vigor.mk \
 	$(LOCAL_DIR)/xenonhd_xt925.mk \
 	$(LOCAL_DIR)/xenonhd_xt926.mk \
