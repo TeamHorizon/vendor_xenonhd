@@ -17,7 +17,6 @@
 O3_OPTIMIZATIONS := true
 TARGET_SM_AND := 4.8
 TARGET_SM_KERNEL := 5.0
-TARGET_LIB_VERSION := 4.8
 ENABLE_PTHREAD := true
 
 # General flags for gcc 4.9 to allow compilation to complete.
