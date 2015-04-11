@@ -22,3 +22,22 @@ ENABLE_PTHREAD := true
 # General flags for gcc 4.9 to allow compilation to complete.
 MAYBE_UNINITIALIZED := \
   hwcomposer.msm8974
+
+# Extra SaberMod C flags for the ROM and Kernel
+export EXTRA_SABERMOD_GCC_CFLAGS := \
+         -ftree-loop-distribution \
+         -ftree-loop-if-convert \
+         -fvect-cost-model=dynamic \
+         -fprefetch-loop-arrays \
+         -ftree-vectorize \
+         -mvectorize-with-neon-quad
+
+EXTRA_SABERMOD_AND_GCC_CFLAGS := \
+         -fsanitize=address
+
+EXTRA_SABERMOD_CLANG_CFLAGS := \
+         -ftree-loop-if-convert \
+         -fprefetch-loop-arrays \
+         -ftree-vectorize \
+         -mvectorize-with-neon-quad \
+	 -fsanitize=memory
