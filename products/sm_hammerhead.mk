@@ -33,7 +33,7 @@ export EXTRA_SABERMOD_GCC_CFLAGS := \
          -mvectorize-with-neon-quad
 
 EXTRA_SABERMOD_AND_GCC_CFLAGS := \
-         -fsanitize=address
+         -fsanitize=thread
 
 EXTRA_SABERMOD_CLANG_CFLAGS := \
          -ftree-loop-if-convert \
