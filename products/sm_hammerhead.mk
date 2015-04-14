@@ -14,9 +14,9 @@
 #
 
 # Sabermod configs
-O3_OPTIMIZATIONS := true
 TARGET_SM_AND := 4.8
 TARGET_SM_KERNEL := 5.0
+O3_OPTIMIZATIONS := true
 ENABLE_PTHREAD := true
 
 # General flags for gcc 4.9 to allow compilation to complete.
@@ -27,13 +27,16 @@ MAYBE_UNINITIALIZED := \
 export EXTRA_SABERMOD_GCC_CFLAGS := \
          -ftree-loop-distribution \
          -ftree-loop-if-convert \
+         -ftree-loop-im \
+         -ftree-loop-ivcanon \
          -fvect-cost-model=dynamic \
          -fprefetch-loop-arrays \
          -ftree-vectorize \
          -mvectorize-with-neon-quad
 
 EXTRA_SABERMOD_AND_GCC_CFLAGS := \
-         -fsanitize=thread
+         -fsanitize=thread \
+         -ftree-parallelize-loops=n
 
 EXTRA_SABERMOD_CLANG_CFLAGS := \
          -ftree-loop-if-convert \
@@ -41,3 +44,5 @@ EXTRA_SABERMOD_CLANG_CFLAGS := \
          -ftree-vectorize \
          -mvectorize-with-neon-quad \
 	 -fsanitize=memory
+
+OPT4 := (extra)

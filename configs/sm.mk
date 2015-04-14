@@ -127,7 +127,8 @@ ifeq ($(strip $(HOST_OS)),linux)
                  -floop-interchange \
                  -floop-strip-mine \
                  -floop-block \
-                 -floop-nest-optimize
+                 -floop-nest-optimize \
+                 -floop-unroll-and-jam
       endif
     endif
   endif
@@ -198,7 +199,8 @@ ifeq ($(strip $(HOST_OS)),linux)
                  -floop-interchange \
                  -floop-strip-mine \
                  -floop-block \
-                 -floop-nest-optimize
+                 -floop-nest-optimize \
+                 -floop-unroll-and-jam
       endif
     endif
   endif
@@ -312,7 +314,7 @@ ifeq ($(strip $(HOST_OS)),linux)
   endif
 
   # Write gcc optimizations to build.prop
-  GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)
+  GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)
   ifneq ($(GCC_OPTIMIZATION_LEVELS),)
     PRODUCT_PROPERTY_OVERRIDES += \
       ro.sm.flags=$(GCC_OPTIMIZATION_LEVELS)
