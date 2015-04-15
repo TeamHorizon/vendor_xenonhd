@@ -23,7 +23,7 @@ ENABLE_PTHREAD := true
 MAYBE_UNINITIALIZED := \
   hwcomposer.msm8974
 
-# Extra SaberMod C flags for the ROM and Kernel
+# Extra SaberMod GCC C flags for the ROM and Kernel
 export EXTRA_SABERMOD_GCC_CFLAGS := \
          -ftree-loop-distribution \
          -ftree-loop-if-convert \
@@ -34,15 +34,20 @@ export EXTRA_SABERMOD_GCC_CFLAGS := \
          -ftree-vectorize \
          -mvectorize-with-neon-quad
 
+# Extra SaberMod GCC C flags for the ROM only
 EXTRA_SABERMOD_AND_GCC_CFLAGS := \
-         -fsanitize=thread \
-         -ftree-parallelize-loops=n
+         -ftree-parallelize-loops=n \
+         -fsanitize=thread
 
+# Extra SaberMod CLANG C flags
 EXTRA_SABERMOD_CLANG_CFLAGS := \
          -ftree-loop-if-convert \
+         -ftree-loop-im \
+         -ftree-loop-ivcanon \
          -fprefetch-loop-arrays \
          -ftree-vectorize \
          -mvectorize-with-neon-quad \
-	 -fsanitize=memory
+         -ftree-parallelize-loops=n \
+         -fsanitize=memory
 
 OPT4 := (extra)
