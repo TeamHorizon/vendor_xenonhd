@@ -232,7 +232,6 @@ ifeq ($(strip $(HOST_OS)),linux)
       libavcodec \
       skia_skia_library_gyp \
       libSR_Core \
-      libwebviewchromium \
       third_party_libvpx_libvpx_gyp \
       ui_gl_gl_gyp \
       fio
@@ -254,7 +253,6 @@ ifeq ($(strip $(HOST_OS)),linux)
       libavcodec \
       skia_skia_library_gyp \
       libSR_Core \
-      libwebviewchromium \
       third_party_libvpx_libvpx_gyp \
       ui_gl_gl_gyp \
       fio
@@ -273,12 +271,10 @@ ifeq ($(strip $(HOST_OS)),linux)
     ifndef LOCAL_DISABLE_O3
       LOCAL_DISABLE_O3 := \
         libaudioflinger \
-        libwebviewchromium \
         skia_skia_library_gyp
     else
       LOCAL_DISABLE_O3 += \
         libaudioflinger \
-        libwebviewchromium \
         skia_skia_library_gyp
     endif
 
