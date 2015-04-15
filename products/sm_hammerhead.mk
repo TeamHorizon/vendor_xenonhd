@@ -29,25 +29,13 @@ export EXTRA_SABERMOD_GCC_CFLAGS := \
          -ftree-loop-if-convert \
          -ftree-loop-im \
          -ftree-loop-ivcanon \
-         -fvect-cost-model=dynamic \
          -fprefetch-loop-arrays \
          -ftree-vectorize \
          -mvectorize-with-neon-quad
 
-# Extra SaberMod GCC C flags for the ROM only
-EXTRA_SABERMOD_AND_GCC_CFLAGS := \
-         -ftree-parallelize-loops=n \
-         -fsanitize=thread
-
 # Extra SaberMod CLANG C flags
 EXTRA_SABERMOD_CLANG_CFLAGS := \
-         -ftree-loop-if-convert \
-         -ftree-loop-im \
-         -ftree-loop-ivcanon \
          -fprefetch-loop-arrays \
-         -ftree-vectorize \
-         -mvectorize-with-neon-quad \
-         -ftree-parallelize-loops=n \
-         -fsanitize=memory
+         -ftree-vectorize
 
 OPT4 := (extra)
