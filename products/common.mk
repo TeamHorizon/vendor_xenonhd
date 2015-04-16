@@ -1,3 +1,6 @@
+# SaberMod Optimizations
+include vendor/xenonhd/configs/sm.mk
+
 # Generic product
 PRODUCT_NAME := xenonhd
 PRODUCT_BRAND := xenonhd
