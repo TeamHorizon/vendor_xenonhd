@@ -39,3 +39,15 @@ EXTRA_SABERMOD_CLANG_CFLAGS := \
          -ftree-vectorize
 
 OPT4 := (extra)
+
+# Extra graphite flags for hammerhead, optimized for number of threads
+GRAPHITE_FLAGS := \
+  -floop-parallelize-all \
+  -ftree-parallelize-loops=4
+
+GRAPHITE_KERNEL_FLAGS := \
+  -floop-parallelize-all \
+  -ftree-parallelize-loops=4
+
+LOCAL_DISABLE_GRAPHITE := \
+  libc_netbsd

@@ -145,7 +145,8 @@ ifeq ($(strip $(HOST_OS)),linux)
             -floop-block \
             -floop-nest-optimize
           ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
-     export GRAPHITE_KERNEL_FLAGS += \
+     export GRAPHITE_KERNEL_FLAGS := \
+              $(GRAPHITE_KERNEL_FLAGS) \
               -floop-unroll-and-jam
           endif
         else
@@ -159,7 +160,8 @@ ifeq ($(strip $(HOST_OS)),linux)
             -floop-block \
             -floop-nest-optimize
           ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
-     export GRAPHITE_KERNEL_FLAGS += \
+     export GRAPHITE_KERNEL_FLAGS := \
+              $(GRAPHITE_KERNEL_FLAGS) \
               -floop-unroll-and-jam
           endif
         endif
@@ -251,7 +253,8 @@ ifeq ($(strip $(HOST_OS)),linux)
             -floop-block \
             -floop-nest-optimize
           ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
-     export GRAPHITE_KERNEL_FLAGS += \
+     export GRAPHITE_KERNEL_FLAGS := \
+              $(GRAPHITE_KERNEL_FLAGS) \
               -floop-unroll-and-jam
           endif
         else
@@ -265,7 +268,8 @@ ifeq ($(strip $(HOST_OS)),linux)
             -floop-block \
             -floop-nest-optimize
           ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
-     export GRAPHITE_KERNEL_FLAGS += \
+     export GRAPHITE_KERNEL_FLAGS := \
+              $(GRAPHITE_KERNEL_FLAGS) \
               -floop-unroll-and-jam
           endif
         endif
