@@ -83,15 +83,26 @@ ifeq ($(strip $(HOST_OS)),linux)
       OPT1 := (graphite)
 
       # Graphite flags and friends
-      GRAPHITE_FLAGS := \
-        -fgraphite \
-        -fgraphite-identity \
-        -floop-flatten \
-        -floop-parallelize-all \
-        -ftree-loop-linear \
-        -floop-interchange \
-        -floop-strip-mine \
-        -floop-block
+      # Check if there's already something set in a device make file somewhere.
+      ifndef GRAPHITE_FLAGS
+        GRAPHITE_FLAGS := \
+          -fgraphite \
+          -fgraphite-identity \
+          -floop-flatten \
+          -ftree-loop-linear \
+          -floop-interchange \
+          -floop-strip-mine \
+          -floop-block
+      else
+        GRAPHITE_FLAGS += \
+          -fgraphite \
+          -fgraphite-identity \
+          -floop-flatten \
+          -ftree-loop-linear \
+          -floop-interchange \
+          -floop-strip-mine \
+          -floop-block
+      endif
 
       # Legacy gcc doesn't understand this flag
       ifneq ($(strip $(USE_LEGACY_GCC)),true)
@@ -118,17 +129,40 @@ ifeq ($(strip $(HOST_OS)),linux)
           ro.sm.kernel=$(SM_KERNEL_VERSION)
 
         # Graphite flags for kernel
-        export GRAPHITE_KERNEL_FLAGS := \
-                 -fgraphite \
-                 -fgraphite-identity \
-                 -floop-flatten \
-                 -floop-parallelize-all \
-                 -ftree-loop-linear \
-                 -floop-interchange \
-                 -floop-strip-mine \
-                 -floop-block \
-                 -floop-nest-optimize \
-                 -floop-unroll-and-jam
+
+        # Some graphite flags are only available for certain gcc versions
+        GRAPHITE_UNROLL_AND_JAM := $(filter 5.0.x-sabermod 6.0.x-sabermod,$(SM_KERNEL))
+
+        # Check if there's already something set in a device make file somewhere.
+        ifndef GRAPHITE_KERNEL_FLAGS
+   export GRAPHITE_KERNEL_FLAGS := \
+            -fgraphite \
+            -fgraphite-identity \
+            -floop-flatten \
+            -ftree-loop-linear \
+            -floop-interchange \
+            -floop-strip-mine \
+            -floop-block \
+            -floop-nest-optimize
+          ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
+     export GRAPHITE_KERNEL_FLAGS += \
+              -floop-unroll-and-jam
+          endif
+        else
+   export GRAPHITE_KERNEL_FLAGS := \
+            -fgraphite \
+            -fgraphite-identity \
+            -floop-flatten \
+            -ftree-loop-linear \
+            -floop-interchange \
+            -floop-strip-mine \
+            -floop-block \
+            -floop-nest-optimize
+          ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
+     export GRAPHITE_KERNEL_FLAGS += \
+              -floop-unroll-and-jam
+          endif
+        endif
       endif
     endif
   endif
@@ -155,15 +189,26 @@ ifeq ($(strip $(HOST_OS)),linux)
       OPT1 := (graphite)
 
       # Graphite flags and friends
-      GRAPHITE_FLAGS := \
-        -fgraphite \
-        -fgraphite-identity \
-        -floop-flatten \
-        -floop-parallelize-all \
-        -ftree-loop-linear \
-        -floop-interchange \
-        -floop-strip-mine \
-        -floop-block
+      # Check if there's already something set in a device make file somewhere.
+      ifndef GRAPHITE_FLAGS
+        GRAPHITE_FLAGS := \
+          -fgraphite \
+          -fgraphite-identity \
+          -floop-flatten \
+          -ftree-loop-linear \
+          -floop-interchange \
+          -floop-strip-mine \
+          -floop-block
+      else
+        GRAPHITE_FLAGS += \
+          -fgraphite \
+          -fgraphite-identity \
+          -floop-flatten \
+          -ftree-loop-linear \
+          -floop-interchange \
+          -floop-strip-mine \
+          -floop-block
+      endif
 
       # Legacy gcc doesn't understand this flag
       ifneq ($(strip $(USE_LEGACY_GCC)),true)
@@ -176,8 +221,8 @@ ifeq ($(strip $(HOST_OS)),linux)
     ifeq ($(strip $(TARGET_SM_KERNEL_DEFINED)),true)
 
       # Path to kernel toolchain
-      SM_KERNEL_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-linux-android-$(TARGET_SM_KERNEL)
-      SM_KERNEL := $(shell $(SM_KERNEL_PATH)/bin/aarch64-linux-android-gcc --version)
+      SM_KERNEL_PATH := prebuilts/gcc/$(HOST_PREBUILT_TAG)/aarch64/aarch64-$(TARGET_SM_KERNEL)
+      SM_KERNEL := $(shell $(SM_KERNEL_PATH)/bin/aarch64-gcc --version)
 
       ifneq ($(filter %sabermod,$(SM_KERNEL)),)
         SM_KERNEL_NAME := $(filter %sabermod,$(SM_KERNEL))
@@ -190,17 +235,40 @@ ifeq ($(strip $(HOST_OS)),linux)
           ro.sm.kernel=$(SM_KERNEL_VERSION)
 
         # Graphite flags for kernel
-        export GRAPHITE_KERNEL_FLAGS := \
-                 -fgraphite \
-                 -fgraphite-identity \
-                 -floop-flatten \
-                 -floop-parallelize-all \
-                 -ftree-loop-linear \
-                 -floop-interchange \
-                 -floop-strip-mine \
-                 -floop-block \
-                 -floop-nest-optimize \
-                 -floop-unroll-and-jam
+
+        # Some graphite flags are only available for certain gcc versions
+        GRAPHITE_UNROLL_AND_JAM := $(filter 5.0.x-sabermod 6.0.x-sabermod,$(SM_KERNEL))
+
+        # Check if there's already something set in a device make file somewhere.
+        ifndef GRAPHITE_KERNEL_FLAGS
+   export GRAPHITE_KERNEL_FLAGS := \
+            -fgraphite \
+            -fgraphite-identity \
+            -floop-flatten \
+            -ftree-loop-linear \
+            -floop-interchange \
+            -floop-strip-mine \
+            -floop-block \
+            -floop-nest-optimize
+          ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
+     export GRAPHITE_KERNEL_FLAGS += \
+              -floop-unroll-and-jam
+          endif
+        else
+   export GRAPHITE_KERNEL_FLAGS := \
+            -fgraphite \
+            -fgraphite-identity \
+            -floop-flatten \
+            -ftree-loop-linear \
+            -floop-interchange \
+            -floop-strip-mine \
+            -floop-block \
+            -floop-nest-optimize
+          ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
+     export GRAPHITE_KERNEL_FLAGS += \
+              -floop-unroll-and-jam
+          endif
+        endif
       endif
     endif
   endif
