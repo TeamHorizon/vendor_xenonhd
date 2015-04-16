@@ -330,6 +330,26 @@ ifeq ($(strip $(HOST_OS)),linux)
       fastboot
   endif
 
+  # Enable some basic host gcc optimizations
+  # None that are cpu specific but arch is ok. It's already known that we are on linux-x86.
+  # Many people claim that host binaries are not useful, this can be proven as false, and that there is some benifit.
+  # Especially when used with -O3
+  # Most of the host binary files are linked with ld or gcc as shared and static libraries for arch and clang binaries.
+  EXTRA_SABERMOD_HOST_GCC_CFLAGS := \
+    -march=x86-64 \
+    -ftree-vectorize
+
+  # Only enable loop optimizations if -O3 is enabled.
+  # These's no graphite here on host, so extra loop optimzations by themselves can be bad.
+  ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+    EXTRA_SABERMOD_HOST_GCC_CFLAGS += \
+      -ftree-loop-distribution \
+      -ftree-loop-if-convert \
+      -ftree-loop-im \
+      -ftree-loop-ivcanon \
+      -fprefetch-loop-arrays
+  endif
+
 else
   $(warning ********************************************************************************)
   $(warning *  SaberMod currently only works on linux host systems.)
