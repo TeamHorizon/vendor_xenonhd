@@ -151,6 +151,7 @@ ifeq ($(strip $(HOST_OS)),linux)
           endif
         else
    export GRAPHITE_KERNEL_FLAGS := \
+            $(GRAPHITE_KERNEL_FLAGS) \
             -fgraphite \
             -fgraphite-identity \
             -floop-flatten \
@@ -259,6 +260,7 @@ ifeq ($(strip $(HOST_OS)),linux)
           endif
         else
    export GRAPHITE_KERNEL_FLAGS := \
+            $(GRAPHITE_KERNEL_FLAGS) \
             -fgraphite \
             -fgraphite-identity \
             -floop-flatten \
