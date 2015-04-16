@@ -13,6 +13,7 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     CMFileManager \
     DeskClock \
+    Development \
     Dialer \
     Eleven \
     Focal \
