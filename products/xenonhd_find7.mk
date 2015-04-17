@@ -7,7 +7,7 @@ $(call inherit-product, device/oppo/find7/full_find7.mk)
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
-# Inherit some common xenonhd stuff.
+# Inherit some common xenonhd stuff. Not sure if this is needed
 # $(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
 
 # Telephony
