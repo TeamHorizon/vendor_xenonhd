@@ -411,7 +411,8 @@ ifeq ($(strip $(HOST_OS)),linux)
   # Most of the host binary files are linked with ld or gcc as shared and static libraries for arch and clang binaries.
   EXTRA_SABERMOD_HOST_GCC_CFLAGS := \
     -march=x86-64 \
-    -ftree-vectorize
+    -ftree-vectorize \
+    -pipe
 
   # Only enable loop optimizations if -O3 is enabled.
   # These's no graphite here on host, so extra loop optimzations by themselves can be bad.
