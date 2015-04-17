@@ -1,11 +1,14 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
-# Inherit AOSP device configuration for bacon.
-$(call inherit-product, device/oneplus/bacon/full_bacon.mk)
+# Inherit AOSP device configuration for find7.
+$(call inherit-product, device/oppo/find7/full_find7.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
+
+# Inherit some common xenonhd stuff. Not sure if this is needed
+# $(call inherit-product, vendor/xenonhd/config/common_full_phone.mk)
 
 # Telephony
 $(call inherit-product, vendor/xenonhd/configs/telephony.mk)
@@ -27,12 +30,13 @@ PRODUCT_COPY_FILES +=  \
 -include vendor/xenonhd/products/common_drm.mk
 
 # Setup device specific product configuration.
-PRODUCT_NAME := xenonhd_bacon
-PRODUCT_BRAND := oneplus
-PRODUCT_DEVICE := bacon
-PRODUCT_MODEL := A001
-PRODUCT_MANUFACTURER := OnePlus
-PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+PRODUCT_NAME := xenonhd_find7
+PRODUCT_BRAND := oppo
+PRODUCT_DEVICE := find7
+PRODUCT_MODEL := Find7
+PRODUCT_MANUFACTURER := Oppo
+PRODUCT_GMS_CLIENTID_BASE := android-oppo
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:5.1/LMY47O/XNPH25R:user/release-keys PRIVATE_BUILD_DESC="bacon-user 5.1 LMY47O XNPH25R release-keys"
+
+ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oppo/find7/Find7:5.1/LMY47O/XNPH25R:user/release-keys PRIVATE_BUILD_DESC="find7-user 5.1 LMY47O XNPH25R release-keys"
