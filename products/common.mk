@@ -13,6 +13,7 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     CMFileManager \
     DeskClock \
+    Development \
     Dialer \
     Eleven \
     Focal \
@@ -102,7 +103,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.media.enc.hprof.vid.bps=8000000 \
     wifi.supplicant_scan_interval=180 \
     ro.ril.disable.power.collapse=1 \
-    pm.sleep_mode=1
+    pm.sleep_mode=1 \
+    dalvik.vm.image-dex2oat-filter=everything \
+    dalvik.vm.dex2oat-filter=everything
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
