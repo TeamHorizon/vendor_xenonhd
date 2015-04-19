@@ -16,3 +16,8 @@
 # Clear SaberMod variables
 $(shell unset EXTRA_SABERMOD_GCC_CFLAGS)
 $(shell unset GRAPHITE_KERNEL_FLAGS)
+$(shell unset KERNEL_STRICT_FLAGS)
+
+ifeq (pa_hammerhead,$(TARGET_PRODUCT))
+  $(shell unset CONFIG_MACH_MSM8974_HAMMERHEAD_STRICT_ALIASING)
+endif
