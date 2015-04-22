@@ -7,8 +7,6 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
-    AOKPTorch \
-    Apollo \
     AudioFX \
     BluetoothExt \
     CMFileManager \
@@ -16,17 +14,10 @@ PRODUCT_PACKAGES += \
     Development \
     Dialer \
     Eleven \
-    Focal \
     LatinImeDictionaryPack \
     libemoji \
     libscreenrecorder \
     LockClock \
-    OmniSwitch \
-    OTAUpdateCenter \
-    OmniTorch \
-    RingsExtended \
-    ROMSettings \
-    ROMStats \
     ScreenRecorder \
     SlimLauncher \
     SoundRecorder \
@@ -150,26 +141,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
-# Cron schedual
-#PRODUCT_COPY_FILES += \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.conf:system/etc/cron/cron.conf \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.hourly/00drop_caches:system/etc/cron/cron.hourly/00drop_caches \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.daily/00drop_caches:system/etc/cron/cron.daily/00drop_caches \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.weekly/00drop_caches:system/etc/cron/cron.weekly/00drop_caches \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.hourly/01clear_cache:system/etc/cron/cron.hourly/01clear_cache \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.daily/01clear_cache:system/etc/cron/cron.daily/01clear_cache \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.weekly/01clear_cache:system/etc/cron/cron.weekly/01clear_ca
-
 # Term info for nano support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/terminfo/l/linux:system/etc/terminfo/l/linux \
     vendor/xenonhd/proprietary/common/etc/terminfo/u/unknown:system/etc/terminfo/u/unknown
-
-# Compcache/Zram support
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/etc/init.local.rc:system/etc/init.local.rc \
-    vendor/xenonhd/proprietary/common/bin/compcache:system/bin/compcache \
-    vendor/xenonhd/proprietary/common/bin/handle_compcache:system/bin/handle_compcache
 
 # Added xbin files
 PRODUCT_COPY_FILES += \
