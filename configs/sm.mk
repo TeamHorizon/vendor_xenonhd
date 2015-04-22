@@ -331,102 +331,114 @@ ifeq ($(strip $(HOST_OS)),linux)
       ui_gl_gl_gyp \
       fio
   endif
+else
+  $(warning ********************************************************************************)
+  $(warning *  Limited optimization options are available outside of linux host OS.)
+  $(warning *  To take advantage of all optimization options, build on linux host OS.)
+  $(warning ********************************************************************************)
+endif
 
-  # O3 optimizations
-  # To enable this set O3_OPTIMIZATIONS=true in a device makefile somewhere.
-  ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
-    OPT2 := (max)
+# Check if there's already something set in a device make file somewhere.
+ifndef LOCAL_DISABLE_STRICT_ALIASING
+  LOCAL_DISABLE_STRICT_ALIASING := \
+    libpdfiumcore \
+    libpdfium
+else
+  LOCAL_DISABLE_STRICT_ALIASING += \
+    libpdfiumcore \
+    libpdfium
+endif
 
-    # Disable some modules that break with -O3
-    # Add more modules if needed for devices in a device make file somewhere with
-    # LOCAL_DISABLE_O3 :=
+# O3 optimizations
+# To enable this set O3_OPTIMIZATIONS=true in a device makefile somewhere.
+ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+  OPT2 := (max)
 
-    # Check if there's already something set in a device make file somewhere.
-    ifndef LOCAL_DISABLE_O3
-      LOCAL_DISABLE_O3 := \
-        libaudioflinger \
-        skia_skia_library_gyp
-    else
-      LOCAL_DISABLE_O3 += \
-        libaudioflinger \
-        skia_skia_library_gyp
-    endif
+  # Disable some modules that break with -O3
+  # Add more modules if needed for devices in a device make file somewhere with
+  # LOCAL_DISABLE_O3 :=
 
-    # -O3 flags and friends
-    O3_FLAGS := \
-      -O3 \
-      -Wno-error=array-bounds \
-      -Wno-error=strict-overflow
+  # Check if there's already something set in a device make file somewhere.
+  ifndef LOCAL_DISABLE_O3
+    LOCAL_DISABLE_O3 := \
+      libaudioflinger \
+      skia_skia_library_gyp
   else
-    OPT2:=
-
+    LOCAL_DISABLE_O3 += \
+      libaudioflinger \
+      skia_skia_library_gyp
   endif
 
-  # posix thread optimizations
-  # To enable this set ENABLE_PTHREAD=true in a device makefile somewhere.
-  ifeq ($(strip $(ENABLE_PTHREAD)),true)
-    OPT3 := (pthread)
+  # -O3 flags and friends
+  O3_FLAGS := \
+    -O3 \
+    -Wno-error=array-bounds \
+    -Wno-error=strict-overflow
+else
+  OPT2:=
 
-    # Disable some modules that break with -pthread
-    # Add more modules if needed for devices in a device make file somewhere with
-    # LOCAL_DISABLE_PTHREAD :=
+endif
 
-    # Check if there's already something set in a device make file somewhere.
-    ifndef LOCAL_DISABLE_PTHREAD
-      LOCAL_DISABLE_PTHREAD := \
-        libc_netbsd
-    else
-      LOCAL_DISABLE_PTHREAD += \
-        libc_netbsd
-    endif
+# posix thread optimizations
+# To enable this set ENABLE_PTHREAD=true in a device makefile somewhere.
+ifeq ($(strip $(ENABLE_PTHREAD)),true)
+  OPT3 := (pthread)
+
+  # Disable some modules that break with -pthread
+  # Add more modules if needed for devices in a device make file somewhere with
+  # LOCAL_DISABLE_PTHREAD :=
+  # Check if there's already something set in a device make file somewhere.
+  ifndef LOCAL_DISABLE_PTHREAD
+    LOCAL_DISABLE_PTHREAD := \
+      libc_netbsd
   else
-    OPT3:=
+    LOCAL_DISABLE_PTHREAD += \
+      libc_netbsd
   endif
+else
+  OPT3:=
+endif
 
-  # Write gcc optimizations to build.prop
+# General flags for gcc 4.9 to allow compilation to complete.
+# Commented out for now since there's no common (non-device specific) modules to list here.
+# Add more modules if needed for devices in a device make file somewhere with
+# MAYBE_UNINITIALIZED :=
+
+# Check if there's already something set in a device make file somewhere.
+ifndef MAYBE_UNINITIALIZED
+  MAYBE_UNINITIALIZED := \
+    fastboot
+else
+  MAYBE_UNINITIALIZED += \
+    fastboot
+endif
+
+# Enable some basic host gcc optimizations
+# None that are cpu specific but arch is ok. It's already known that we are on linux-x86.
+# Many people claim that host binaries are not useful, this can be proven as false, and that there is some benifit.
+# Especially when used with -O3
+# Most of the host binary files are linked with ld or gcc as shared and static libraries for arch and clang binaries.
+EXTRA_SABERMOD_HOST_GCC_CFLAGS := \
+  -march=x86-64 \
+  -ftree-vectorize \
+  -pipe
+
+# Only enable loop optimizations if -O3 is enabled.
+# These's no graphite here on host, so extra loop optimzations by themselves can be bad.
+ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+  EXTRA_SABERMOD_HOST_GCC_O3_CFLAGS := \
+    -ftree-loop-distribution \
+    -ftree-loop-if-convert \
+    -ftree-loop-im \
+    -ftree-loop-ivcanon \
+    -fprefetch-loop-arrays
+endif
+
+# Only write these to build.prop if on linux
+ifeq ($(strip $(HOST_OS)),linux)
   GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)
   ifneq ($(GCC_OPTIMIZATION_LEVELS),)
     PRODUCT_PROPERTY_OVERRIDES += \
       ro.sm.flags=$(GCC_OPTIMIZATION_LEVELS)
   endif
-
-  # General flags for gcc 4.9 to allow compilation to complete.
-  # Commented out for now since there's no common (non-device specific) modules to list here.
-  # Add more modules if needed for devices in a device make file somewhere with
-  # MAYBE_UNINITIALIZED :=
-
-  # Check if there's already something set in a device make file somewhere.
-  ifndef MAYBE_UNINITIALIZED
-    MAYBE_UNINITIALIZED := \
-      fastboot
-  else
-    MAYBE_UNINITIALIZED += \
-      fastboot
-  endif
-
-  # Enable some basic host gcc optimizations
-  # None that are cpu specific but arch is ok. It's already known that we are on linux-x86.
-  # Many people claim that host binaries are not useful, this can be proven as false, and that there is some benifit.
-  # Especially when used with -O3
-  # Most of the host binary files are linked with ld or gcc as shared and static libraries for arch and clang binaries.
-  EXTRA_SABERMOD_HOST_GCC_CFLAGS := \
-    -march=x86-64 \
-    -ftree-vectorize \
-    -pipe
-
-  # Only enable loop optimizations if -O3 is enabled.
-  # These's no graphite here on host, so extra loop optimzations by themselves can be bad.
-  ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
-    EXTRA_SABERMOD_HOST_GCC_O3_CFLAGS := \
-      -ftree-loop-distribution \
-      -ftree-loop-if-convert \
-      -ftree-loop-im \
-      -ftree-loop-ivcanon \
-      -fprefetch-loop-arrays
-  endif
-
-else
-  $(warning ********************************************************************************)
-  $(warning *  SaberMod currently only works on linux host systems.)
-  $(warning ********************************************************************************)
 endif
