@@ -417,7 +417,7 @@ ifeq ($(strip $(HOST_OS)),linux)
   # Only enable loop optimizations if -O3 is enabled.
   # These's no graphite here on host, so extra loop optimzations by themselves can be bad.
   ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
-    EXTRA_SABERMOD_HOST_GCC_CFLAGS += \
+    EXTRA_SABERMOD_HOST_GCC_O3_CFLAGS := \
       -ftree-loop-distribution \
       -ftree-loop-if-convert \
       -ftree-loop-im \
