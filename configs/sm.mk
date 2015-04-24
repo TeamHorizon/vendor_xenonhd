@@ -139,7 +139,7 @@ ifeq ($(strip $(HOST_OS)),linux)
             # Graphite flags for kernel
 
             # Some graphite flags are only available for certain gcc versions
-            GRAPHITE_UNROLL_AND_JAM := $(filter 5.0.x-sabermod 6.0.x-sabermod,$(SM_KERNEL))
+     export GRAPHITE_UNROLL_AND_JAM := $(filter 5.0.x-sabermod 6.0.x-sabermod,$(SM_KERNEL))
 
             BASE_GRAPHITE_KERNEL_FLAGS := \
               -fgraphite \
@@ -244,7 +244,7 @@ ifeq ($(strip $(HOST_OS)),linux)
             # Graphite flags for kernel
 
             # Some graphite flags are only available for certain gcc versions
-            GRAPHITE_UNROLL_AND_JAM := $(filter 5.0.x-sabermod 6.0.x-sabermod,$(SM_KERNEL))
+     export GRAPHITE_UNROLL_AND_JAM := $(filter 5.0.x-sabermod 6.0.x-sabermod,$(SM_KERNEL))
 
             BASE_GRAPHITE_KERNEL_FLAGS := \
               -fgraphite \
