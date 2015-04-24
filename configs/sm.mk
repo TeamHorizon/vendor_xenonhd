@@ -316,11 +316,28 @@ ifeq ($(strip $(HOST_OS)),linux)
       endif
     endif
 
+    # Bluetooth modules
+    LOCAL_BLUETOOTH_BLUEDROID := \
+      bluetooth.default \
+      libbt-brcm_stack \
+      audio.a2dp.default \
+      libbt-brcm_gki \
+      libbt-utils \
+      libbt-qcom_sbc_decoder \
+      libbt-brcm_bta \
+      bdt \
+      bdtest \
+      libbt-hci \
+      libosi \
+      ositests \
+      libbt-vendor
+
     # SABERMOD_ARM_MODE
     # The LOCAL_COMPILERS_WHITELIST will allow modules that absolutely have to be complied with thumb instructions,
     # or the clang compiler, to skip replacing the default overrides.
     ifeq ($(strip $(ENABLE_SABERMOD_ARM_MODE)),true)
       LOCAL_COMPILERS_WHITELIST := \
+        $(LOCAL_BLUETOOTH_BLUEDROID)
         libmincrypt \
         libc++abi \
         libjni_latinime_common_static \
