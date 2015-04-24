@@ -337,7 +337,7 @@ ifeq ($(strip $(HOST_OS)),linux)
     # or the clang compiler, to skip replacing the default overrides.
     ifeq ($(strip $(ENABLE_SABERMOD_ARM_MODE)),true)
       LOCAL_COMPILERS_WHITELIST := \
-        $(LOCAL_BLUETOOTH_BLUEDROID)
+        $(LOCAL_BLUETOOTH_BLUEDROID) \
         libmincrypt \
         libc++abi \
         libjni_latinime_common_static \
