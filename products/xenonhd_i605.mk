@@ -22,8 +22,14 @@ PRODUCT_RELEASE_NAME := i605
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-# Inherit some common Liquid stuff.
+# Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
+
+# Telephony
+$(call inherit-product, vendor/xenonhd/configs/telephony.mk)
+
+# Enhanced NFC
+$(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/samsung/i605/full_i605.mk)

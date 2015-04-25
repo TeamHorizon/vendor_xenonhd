@@ -10,6 +10,9 @@ $(call inherit-product, vendor/xenonhd/configs/telephony.mk)
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=0
+
 # Copy m8 specific prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \

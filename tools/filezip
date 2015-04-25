@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+# Name the zip file and get md5
+# XenonHD
+
+. $ANDROID_BUILD_TOP/vendor/xenonhd/tools/colors
+
+
+OUT_TARGET_HOST=`uname -a | grep Darwin`
+if [ -z "$OUT_TARGET_HOST" ]
+then
+   MD5=md5sum
+else
+   MD5="md5 -r "
+fi
+
+# Determine what to name the new signed package
+if [ -z "$XenonHD" ]; then
+	MODVERSION=`sed -n -e'/ro\.xehdversion/s/^.*=//p' $OUT/system/build.prop`
+	: ${MODVERSION:=}
+	Device=`sed -n -e'/ro\.product\.device/s/^.*=//p' $OUT/system/build.prop`
+	: ${Device:=}
+	XENONHD_TARGET_PACKAGE=update-$MODVERSION-signed-$Device.zip
+	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
+else
+	XENONHD_TARGET_PACKAGE=update-squished.zip
+	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
+fi
+
+# Create a md5 checksum image of the repacked package
+(
+img=`basename $OUTFILE`
+cd `dirname $OUTFILE`
+ln -f *-ota-*.zip $XENONHD_TARGET_PACKAGE
+$MD5 $img >$XENONHD_TARGET_PACKAGE.md5sum
+ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
+echo -e ${cya}"===========-Package complete-==========="${txtrst}
+echo -e ${cya}"zip:"${cya}" $XENONHD_TARGET_PACKAGE"${txtrst}
+echo -e ${cya}"md5:"${cya}" $(cat $XENONHD_TARGET_PACKAGE.md5sum | awk '{ print $1 }')"${txtrst}
+echo -e ${cya}"size:"${cya}" $ZIPSIZE"${txtrst}
+echo -e ${cya}"========================================"${txtrst}
+)

@@ -1,17 +1,11 @@
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
-# Inherit AOSP device configuration for bacon.
-$(call inherit-product, device/oneplus/bacon/full_bacon.mk)
+# Inherit AOSP device configuration for hammerhead-caf.
+$(call inherit-product, device/lge/hammerheadcaf/full_hammerhead.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 # Telephony
 $(call inherit-product, vendor/xenonhd/configs/telephony.mk)
-
-# Enhanced NFC
-$(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
 
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
@@ -27,12 +21,10 @@ PRODUCT_COPY_FILES +=  \
 -include vendor/xenonhd/products/common_drm.mk
 
 # Setup device specific product configuration.
-PRODUCT_NAME := xenonhd_bacon
-PRODUCT_BRAND := oneplus
-PRODUCT_DEVICE := bacon
-PRODUCT_MODEL := A001
-PRODUCT_MANUFACTURER := OnePlus
-PRODUCT_GMS_CLIENTID_BASE := android-oneplus
-TARGET_CONTINUOUS_SPLASH_ENABLED := true
+PRODUCT_NAME := xenonhd_hammerheadcaf
+PRODUCT_BRAND := google
+PRODUCT_DEVICE := hammerhead
+PRODUCT_MODEL := Nexus 5
+PRODUCT_MANUFACTURER := LGE
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:5.1/LMY47O/YNG1TAS0YL:user/release-keys PRIVATE_BUILD_DESC="bacon-user 5.1 LMY47O YNG1TAS0YL release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=hammerhead BUILD_FINGERPRINT=google/hammerhead/hammerhead:5.0.1/LRX22C/1602158:user/release-keys PRIVATE_BUILD_DESC="hammerhead-user 5.0.1 LRX22C 1602158 release-keys"

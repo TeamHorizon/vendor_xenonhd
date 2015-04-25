@@ -1,8 +1,5 @@
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
-# Inherit AOSP device configuration for bacon.
-$(call inherit-product, device/oneplus/bacon/full_bacon.mk)
+# Inherit device configuration
+$(call inherit-product, device/samsung/trltexx/full_trltexx.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -13,10 +10,17 @@ $(call inherit-product, vendor/xenonhd/configs/telephony.mk)
 # Enhanced NFC
 $(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
 
+# Release name
+PRODUCT_RELEASE_NAME := trltexx
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
-# Copy hammerhead specific prebuilt files
+# Copy trlte specific prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/tuna/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
@@ -26,13 +30,13 @@ PRODUCT_COPY_FILES +=  \
 # Inherit drm blobs
 -include vendor/xenonhd/products/common_drm.mk
 
-# Setup device specific product configuration.
-PRODUCT_NAME := xenonhd_bacon
-PRODUCT_BRAND := oneplus
-PRODUCT_DEVICE := bacon
-PRODUCT_MODEL := A001
-PRODUCT_MANUFACTURER := OnePlus
-PRODUCT_GMS_CLIENTID_BASE := android-oneplus
-TARGET_CONTINUOUS_SPLASH_ENABLED := true
+# APNs
+PRODUCT_COPY_FILES +=  \
+	vendor/xenonhd/proprietary/common/etc/apns-conf-cdma.xml:system/etc/apns-conf.xml
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=oneplus/bacon/A0001:5.1/LMY47O/YNG1TAS0YL:user/release-keys PRIVATE_BUILD_DESC="bacon-user 5.1 LMY47O YNG1TAS0YL release-keys"
+## Device identifier. This must come after all inclusions
+PRODUCT_NAME := xenonhd_trltexx
+PRODUCT_DEVICE := trltexx
+PRODUCT_BRAND := Samsung
+PRODUCT_MODEL := SM-N910F
+PRODUCT_MANUFACTURER := Samsung

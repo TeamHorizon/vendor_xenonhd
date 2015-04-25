@@ -4,10 +4,12 @@ add_lunch_combo xenonhd_d2lte-userdebug
 add_lunch_combo xenonhd_e975-userdebug
 add_lunch_combo	xenonhd_endeavoru-userdebug
 add_lunch_combo xenonhd_find5-userdebug
+add_lunch_combo xenonhd_find7-userdebug
 add_lunch_combo xenonhd_flo-userdebug
 add_lunch_combo xenonhd_galaxysmtd-userdebug
 add_lunch_combo xenonhd_grouper-userdebug
 add_lunch_combo xenonhd_hammerhead-userdebug
+add_lunch_combo xenonhd_hammerheadcaf-userdebug
 add_lunch_combo xenonhd_honami-userdebug
 add_lunch_combo xenonhd_i605-userdebug
 add_lunch_combo xenonhd_i9100-userdebug
@@ -30,8 +32,10 @@ add_lunch_combo xenonhd_t0lte-userdebug
 add_lunch_combo xenonhd_t0lteatt-userdebug
 add_lunch_combo xenonhd_t0ltetmo-userdebug
 add_lunch_combo xenonhd_tilapia-userdebug
+add_lunch_combo xenonhd_trltetmo-userdebug
 add_lunch_combo xenonhd_toro-userdebug
 add_lunch_combo xenonhd_toroplus-userdebug
+add_lunch_combo xenonhd_trltexx-userdebug
 add_lunch_combo xenonhd_vigor-userdebug
 add_lunch_combo xenonhd_xt907-userdebug
 add_lunch_combo xenonhd_xt925-userdebug

@@ -7,25 +7,17 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
-    AOKPTorch \
-    Apollo \
     AudioFX \
     BluetoothExt \
     CMFileManager \
     DeskClock \
+    Development \
     Dialer \
     Eleven \
-    Focal \
     LatinImeDictionaryPack \
     libemoji \
     libscreenrecorder \
-	LockClock \
-    OmniSwitch \
-    OTAUpdateCenter \
-    OmniTorch \
-    RingsExtended \
-    ROMSettings \
-    ROMStats \
+    LockClock \
     ScreenRecorder \
     SlimLauncher \
     SoundRecorder \
@@ -36,18 +28,8 @@ PRODUCT_PACKAGES += \
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
-	org.cyanogenmod.hardware \
-	org.cyanogenmod.hardware.xml
-
-# Superuser
-SUPERUSER_EMBEDDED := true
-
-PRODUCT_PACKAGES += \
-    Superuser \
-    su
-
-PRODUCT_COPY_FILES += \
-    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
+    org.cyanogenmod.hardware \
+    org.cyanogenmod.hardware.xml
 
 #Extras
 PRODUCT_PACKAGES += \
@@ -56,7 +38,7 @@ PRODUCT_PACKAGES += \
 
 # Openssh
 PRODUCT_PACKAGES += \
-	libssh \
+    libssh \
     scp \
     sftp \
     ssh \
@@ -107,13 +89,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
     ro.setupwizard.mode=OPTIONAL \
     ro.setupwizard.enterprise_mode=1 \
-    windowsmgr.max_events_per_sec=240 \
     ro.media.enc.jpeg.quality=100 \
     ro.media.dec.jpeg.memcap=8000000 \
     ro.media.enc.hprof.vid.bps=8000000 \
     wifi.supplicant_scan_interval=180 \
     ro.ril.disable.power.collapse=1 \
-    pm.sleep_mode=1
+    pm.sleep_mode=1 \
+    dalvik.vm.image-dex2oat-filter=everything \
+    dalvik.vm.dex2oat-filter=everything
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
@@ -136,7 +119,7 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     ro.secure=0 \
-    persist.sys.root_access=3
+    persist.sys.root_access=1
 endif
 
 # Common dictionaries
@@ -148,37 +131,20 @@ PRODUCT_COPY_FILES += \
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/etc/init.d/00check:system/etc/init.d/00check \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
     vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
-    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # SELinux filesystem labels
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.d/50selinuxrelabel:system/etc/init.d/50selinuxrelabel
 
-# Cron schedual
-#PRODUCT_COPY_FILES += \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.conf:system/etc/cron/cron.conf \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.hourly/00drop_caches:system/etc/cron/cron.hourly/00drop_caches \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.daily/00drop_caches:system/etc/cron/cron.daily/00drop_caches \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.weekly/00drop_caches:system/etc/cron/cron.weekly/00drop_caches \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.hourly/01clear_cache:system/etc/cron/cron.hourly/01clear_cache \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.daily/01clear_cache:system/etc/cron/cron.daily/01clear_cache \
-#    vendor/xenonhd/proprietary/common/etc/cron/cron.weekly/01clear_cache:system/etc/cron/cron.weekly/01clear_ca
-
 # Term info for nano support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/terminfo/l/linux:system/etc/terminfo/l/linux \
     vendor/xenonhd/proprietary/common/etc/terminfo/u/unknown:system/etc/terminfo/u/unknown
-
-# Compcache/Zram support
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/etc/init.local.rc:system/etc/init.local.rc \
-    vendor/xenonhd/proprietary/common/bin/compcache:system/bin/compcache \
-    vendor/xenonhd/proprietary/common/bin/handle_compcache:system/bin/handle_compcache
 
 # Added xbin files
 PRODUCT_COPY_FILES += \
@@ -200,6 +166,15 @@ PRODUCT_COPY_FILES += \
 # AdAway
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/org.adaway.apk:system/app/org.adaway.apk
+
+# BitSyko Layers
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/proprietary/common/app/com.lovejoy777.rroandlayersmanager.apk:system/app/com.lovejoy777.rroandlayersmanager/base.apk
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+     vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+     vendor/xenonhd/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \

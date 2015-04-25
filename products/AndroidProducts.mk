@@ -10,10 +10,12 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_e975.mk \
 	$(LOCAL_DIR)/xenonhd_endeavoru.mk \
 	$(LOCAL_DIR)/xenonhd_find5.mk \
+	$(LOCAL_DIR)/xenonhd_find7.mk \
 	$(LOCAL_DIR)/xenonhd_flo.mk \
 	$(LOCAL_DIR)/xenonhd_galaxysmtd.mk \
 	$(LOCAL_DIR)/xenonhd_grouper.mk \
 	$(LOCAL_DIR)/xenonhd_hammerhead.mk \
+	$(LOCAL_DIR)/xenonhd_hammerheadcaf.mk \
 	$(LOCAL_DIR)/xenonhd_honami.mk \
 	$(LOCAL_DIR)/xenonhd_i605.mk \
 	$(LOCAL_DIR)/xenonhd_i9100.mk \
@@ -38,6 +40,8 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_tilapia.mk \
 	$(LOCAL_DIR)/xenonhd_toro.mk \
 	$(LOCAL_DIR)/xenonhd_toroplus.mk \
+	$(LOCAL_DIR)/xenonhd_trltetmo.mk \
+	$(LOCAL_DIR)/xenonhd_trltexx.mk \
 	$(LOCAL_DIR)/xenonhd_vigor.mk \
 	$(LOCAL_DIR)/xenonhd_xt925.mk \
 	$(LOCAL_DIR)/xenonhd_xt926.mk \
