@@ -24,8 +24,8 @@ endif
 ifeq ($(strip $(HOST_OS)),linux)
 
   # Sabermod configs
-  TARGET_SM_AND := 4.8
-  TARGET_SM_KERNEL := 4.9
+  TARGET_SM_AND := SM-4.8
+  TARGET_SM_KERNEL := SM-4.9
   PRODUCT_THREADS := 4
   ENABLE_SABERMOD_ARM_MODE := true
 
