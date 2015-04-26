@@ -98,7 +98,7 @@ ifeq ($(strip $(HOST_OS)),linux)
         # Check if there's already something set in a device make file somewhere.
         # Make dependent on -O3 optimizations.
         # These are extra loop optmizations, that act as helpers for -O3 and other loop optimization flags.
-        ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+        ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
           ifndef GRAPHITE_FLAGS
             GRAPHITE_FLAGS := \
               $(BASE_GRAPHITE_FLAGS)
@@ -134,7 +134,7 @@ ifeq ($(strip $(HOST_OS)),linux)
 
           # Make dependent on -O3 optimizations.
           # These are extra loop optmizations, that act as helpers for -O3 and other loop optimization flags.
-          ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+          ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
 
             # Graphite flags for kernel
 
@@ -239,7 +239,7 @@ ifeq ($(strip $(HOST_OS)),linux)
 
           # Make dependent on -O3 optimizations.
           # These are extra loop optmizations, that act as helpers for -O3 and other loop optimization flags.
-          ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+          ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
 
             # Graphite flags for kernel
 
@@ -255,7 +255,7 @@ ifeq ($(strip $(HOST_OS)),linux)
               -floop-strip-mine \
               -floop-block \
               -floop-nest-optimize
-            ifneq ($(GRAPHITE_UNROLL_AND_JAM),)
+            ifneq ($(GRAPHITE_UNROLL_AND_JAM),false)
               BASE_GRAPHITE_KERNEL_FLAGS += \
                 -floop-unroll-and-jam
             endif
@@ -304,7 +304,9 @@ ifeq ($(strip $(HOST_OS)),linux)
         libSR_Core \
         third_party_libvpx_libvpx_gyp \
         ui_gl_gl_gyp \
-        fio
+        fio \
+	libncurses \
+	libminshacrypt
 
       # Check if there's already something set in a device make file somewhere.
       ifndef LOCAL_DISABLE_GRAPHITE
@@ -339,6 +341,7 @@ ifeq ($(strip $(HOST_OS)),linux)
       LOCAL_COMPILERS_WHITELIST := \
         $(LOCAL_BLUETOOTH_BLUEDROID) \
         libmincrypt \
+	libminshacrypt \
         libc++abi \
         libjni_latinime_common_static \
         libcompiler_rt \
@@ -348,7 +351,8 @@ ifeq ($(strip $(HOST_OS)),linux)
         netd \
         libscrypt_static \
         libRSCpuRef \
-        libRSDriver
+        libRSDriver \
+	libpng
     endif
   endif
 else
@@ -364,7 +368,7 @@ endif
 # This causes warnings and should be dealt with, by turning strict-aliasing off to fix the warnings,
 # until AOSP gets around to fixing the warnings locally in the code.
 
-LOCAL_BASE_DISABLE_STRICT_ALIASING := \
+export LOCAL_BASE_DISABLE_STRICT_ALIASING := \
     libpdfiumcore \
     libpdfium \
     libc_bionic \
@@ -409,6 +413,7 @@ LOCAL_BASE_DISABLE_STRICT_ALIASING := \
     audio.a2dp.default \
     libjavacore \
     libstagefright_avcenc \
+    libminshacrypt \
     libRSDriver
 
 # Check if there's already something set in a device make file somewhere.
@@ -422,7 +427,7 @@ endif
 
 # O3 optimizations
 # To enable this set O3_OPTIMIZATIONS=true in a device makefile somewhere.
-ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
 
   # If -O3 is enabled, force disable on thumb flags.
   # loop optmizations are not really usefull in thumb mode.
@@ -456,7 +461,7 @@ endif
 
 # posix thread optimizations
 # To enable this set ENABLE_PTHREAD=true in a device makefile somewhere.
-ifeq ($(strip $(ENABLE_PTHREAD)),true)
+ifneq ($(strip $(ENABLE_PTHREAD)),false)
   OPT3 := (pthread)
 
   # Disable some modules that break with -pthread
@@ -494,13 +499,14 @@ endif
 # Especially when used with -O3
 # Most of the host binary files are linked with ld or gcc as shared and static libraries for arch and clang binaries.
 EXTRA_SABERMOD_HOST_GCC_CFLAGS := \
-  -march=x86-64 \
+  -march=native \
   -ftree-vectorize \
+  -O3 \
   -pipe
 
 # Only enable loop optimizations if -O3 is enabled.
 # These's no graphite here on host, so extra loop optimzations by themselves can be bad.
-ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
   EXTRA_SABERMOD_HOST_GCC_O3_CFLAGS := \
     -ftree-loop-distribution \
     -ftree-loop-if-convert \

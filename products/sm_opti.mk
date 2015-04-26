@@ -24,8 +24,8 @@ endif
 ifeq ($(strip $(HOST_OS)),linux)
 
   # Sabermod configs
-  TARGET_SM_AND := SM-4.8
-  TARGET_SM_KERNEL := SM-4.9
+    # Custom Toolchains can be switched in build/core/sabermod/toolchains.mk
+    include $(BUILD_SYSTEM)/sabermod/toolchains.mk
   PRODUCT_THREADS := 4
   ENABLE_SABERMOD_ARM_MODE := true
 
@@ -35,9 +35,9 @@ ifeq ($(strip $(HOST_OS)),linux)
     -fopenmp
 
   # strict-aliasing kernel flags
-  export KERNEL_STRICT_FLAGS := \
-           -fstrict-aliasing \
-           -Werror=strict-aliasing
+#  export KERNEL_STRICT_FLAGS := \
+ #          -fstrict-aliasing \
+ #          -Werror=strict-aliasing
 endif
 
 ENABLE_PTHREAD := true
@@ -53,7 +53,7 @@ export EXTRA_SABERMOD_GCC_CFLAGS := \
          -pipe
 
 # Flags that should only be used with -O3 optimizations on arch target gcc.
-ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
 export EXTRA_SABERMOD_GCC_O3_CFLAGS := \
          -ftree-loop-distribution \
          -ftree-loop-if-convert \
@@ -68,7 +68,7 @@ EXTRA_SABERMOD_CLANG_CFLAGS := \
   -pipe
 
 # Flags that should only be used with -O3 optimizations on clang.
-ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
+ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
   EXTRA_SABERMOD_CLANG_O3_CFLAGS := -fprefetch-loop-arrays
 endif
 
