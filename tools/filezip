@@ -32,6 +32,7 @@ fi
 img=`basename $OUTFILE`
 cd `dirname $OUTFILE`
 ln -f *-ota-*.zip $XENONHD_TARGET_PACKAGE
+rm *-ota-*.zip
 $MD5 $img >$XENONHD_TARGET_PACKAGE.md5sum
 ZIPSIZE=`ls -lah $OUTFILE | awk '{ print $5}' `
 echo -e ${cya}"===========-Package complete-==========="${txtrst}
