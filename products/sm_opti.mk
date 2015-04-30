@@ -24,10 +24,9 @@ endif
 ifeq ($(strip $(HOST_OS)),linux)
 
   # Sabermod configs
-    # Custom Toolchains can be switched in build/core/sabermod/toolchains.mk
-    include $(BUILD_SYSTEM)/sabermod/toolchains.mk
+    # Custom Toolchains can be switched in build/core/sabermod/ELECTRIFY.mk
+    include $(BUILD_SYSTEM)/sabermod/ELECTRIFY.mk
   PRODUCT_THREADS := 4
-  ENABLE_SABERMOD_ARM_MODE := true
 
   GRAPHITE_KERNEL_FLAGS := \
     -floop-parallelize-all \
@@ -39,8 +38,6 @@ ifeq ($(strip $(HOST_OS)),linux)
  #          -fstrict-aliasing \
  #          -Werror=strict-aliasing
 endif
-
-ENABLE_PTHREAD := true
 
 # General flags for gcc 4.9 to allow compilation to complete.
 MAYBE_UNINITIALIZED := \
