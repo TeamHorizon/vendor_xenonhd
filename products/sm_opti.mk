@@ -34,9 +34,9 @@ ifeq ($(strip $(HOST_OS)),linux)
     -fopenmp
 
   # strict-aliasing kernel flags
-#  export KERNEL_STRICT_FLAGS := \
- #          -fstrict-aliasing \
- #          -Werror=strict-aliasing
+  export KERNEL_STRICT_FLAGS := \
+           -fstrict-aliasing \
+           -Werror=strict-aliasing
 endif
 
 # General flags for gcc 4.9 to allow compilation to complete.
@@ -56,7 +56,7 @@ export EXTRA_SABERMOD_GCC_O3_CFLAGS := \
          -ftree-loop-if-convert \
          -ftree-loop-im \
          -ftree-loop-ivcanon \
-         -fprefetch-loop-arrays
+         -fprefetch-loop-arrays 
 endif
 
 # Extra SaberMod CLANG C flags

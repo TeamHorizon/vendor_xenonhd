@@ -58,9 +58,6 @@ ifeq ($(strip $(UNAME)),Linux)
   HOST_OS := linux
 endif
 
-# Enable -O3 for all builds.
-export O3_OPTIMIZATIONS := true
-
 # Only use these compilers on linux host.
 ifeq ($(strip $(HOST_OS)),linux)
   ifneq ($(filter arm arm64,$(TARGET_ARCH)),)
@@ -306,7 +303,8 @@ ifeq ($(strip $(HOST_OS)),linux)
         ui_gl_gl_gyp \
         fio \
 	libncurses \
-	libminshacrypt
+	libminshacrypt \
+	libmincrypt
 
       # Check if there's already something set in a device make file somewhere.
       ifndef LOCAL_DISABLE_GRAPHITE
@@ -436,17 +434,21 @@ ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
 
   # Disable some modules that break with -O3
   # Add more modules if needed for devices in a device make file somewhere with
-  # LOCAL_DISABLE_O3 :=
+  # LOCAL_DISABLE_O3 := 
 
   # Check if there's already something set in a device make file somewhere.
   ifndef LOCAL_DISABLE_O3
     LOCAL_DISABLE_O3 := \
       libaudioflinger \
-      skia_skia_library_gyp
+      skia_skia_library_gyp \
+      libminshacrypt \
+      libmincrypt
   else
     LOCAL_DISABLE_O3 += \
       libaudioflinger \
-      skia_skia_library_gyp
+      skia_skia_library_gyp \
+      libminshacrypt \
+      libmincrypt
   endif
 
   # -O3 flags and friends
@@ -470,13 +472,15 @@ ifneq ($(strip $(ENABLE_PTHREAD)),false)
   # Check if there's already something set in a device make file somewhere.
   ifndef LOCAL_DISABLE_PTHREAD
     LOCAL_DISABLE_PTHREAD := \
-      libc_netbsd
+      libc_netbsd \
+      libminshacrypt \
+      libmincrypt
   else
     LOCAL_DISABLE_PTHREAD += \
-      libc_netbsd
+      libc_netbsd \
+      libminshacrypt \
+      libmincrypt \
   endif
-else
-  OPT3:=
 endif
 
 # General flags for gcc 4.9 to allow compilation to complete.
@@ -514,9 +518,6 @@ ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
     -ftree-loop-ivcanon \
     -fprefetch-loop-arrays
 endif
-
-GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)
-ifneq ($(GCC_OPTIMIZATION_LEVELS),)
-  PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sm.flags=$(GCC_OPTIMIZATION_LEVELS)
 endif
+GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)
+
