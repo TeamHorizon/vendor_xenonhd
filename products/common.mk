@@ -183,3 +183,8 @@ PRODUCT_COPY_FILES += \
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.camera-sound=1
+
+
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM), yes)
+    -include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
+endif
