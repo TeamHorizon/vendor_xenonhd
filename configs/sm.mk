@@ -304,7 +304,8 @@ ifeq ($(strip $(HOST_OS)),linux)
         fio \
 	libncurses \
 	libminshacrypt \
-	libmincrypt
+	libmincrypt \
+	libscrypt_static
 
       # Check if there's already something set in a device make file somewhere.
       ifndef LOCAL_DISABLE_GRAPHITE
@@ -350,7 +351,9 @@ ifeq ($(strip $(HOST_OS)),linux)
         libscrypt_static \
         libRSCpuRef \
         libRSDriver \
-	libpng
+	libpng \
+        libc++ \
+	libRSSupport
     endif
   endif
 else
@@ -412,7 +415,8 @@ export LOCAL_BASE_DISABLE_STRICT_ALIASING := \
     libjavacore \
     libstagefright_avcenc \
     libminshacrypt \
-    libRSDriver
+    libRSDriver \
+    libscrypt_static
 
 # Check if there's already something set in a device make file somewhere.
 ifndef LOCAL_DISABLE_STRICT_ALIASING
@@ -442,13 +446,17 @@ ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
       libaudioflinger \
       skia_skia_library_gyp \
       libminshacrypt \
-      libmincrypt
+      libmincrypt \
+      libscrypt_static \
+      libc++ 
   else
     LOCAL_DISABLE_O3 += \
       libaudioflinger \
       skia_skia_library_gyp \
       libminshacrypt \
-      libmincrypt
+      libmincrypt \
+      libscrypt_static \
+      libc++ 
   endif
 
   # -O3 flags and friends
@@ -474,12 +482,17 @@ ifneq ($(strip $(ENABLE_PTHREAD)),false)
     LOCAL_DISABLE_PTHREAD := \
       libc_netbsd \
       libminshacrypt \
-      libmincrypt
+      libmincrypt \
+      libscrypt_static \
+      libc++ \
+      libRSSupport
   else
     LOCAL_DISABLE_PTHREAD += \
       libc_netbsd \
       libminshacrypt \
       libmincrypt \
+      libscrypt_static \
+      libRSSupport
   endif
 endif
 
@@ -518,6 +531,22 @@ ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
     -ftree-loop-ivcanon \
     -fprefetch-loop-arrays
 endif
-endif
 GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)
+
+export LOCAL_ARM_COMPILERS_WHITELIST := $(LOCAL_BLUETOOTH_BLUEDROID) \
+        			libmincrypt \
+				libminshacrypt \
+       				libc++abi \
+        			libjni_latinime_common_static \
+        			libcompiler_rt \
+        			libnativebridge \
+        			libc++ \
+        			libRSSupport \
+        			netd \
+        			libscrypt_static \
+        			libRSCpuRef \
+        			libRSDriver \
+				libpng \
+        			libc++ \
+				libRSSupport
 
