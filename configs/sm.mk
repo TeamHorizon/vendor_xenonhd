@@ -305,7 +305,8 @@ ifeq ($(strip $(HOST_OS)),linux)
 	libncurses \
 	libminshacrypt \
 	libmincrypt \
-	libscrypt_static
+	libscrypt_static \
+        libRSSupport
 
       # Check if there's already something set in a device make file somewhere.
       ifndef LOCAL_DISABLE_GRAPHITE
