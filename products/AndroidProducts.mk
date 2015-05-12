@@ -9,6 +9,7 @@ PRODUCT_MAKEFILES := \
  	$(LOCAL_DIR)/xenonhd_d2vzw.mk \
 	$(LOCAL_DIR)/xenonhd_e975.mk \
 	$(LOCAL_DIR)/xenonhd_endeavoru.mk \
+	$(LOCAL_DIR)/xenonhd_falcon.mk \
 	$(LOCAL_DIR)/xenonhd_find5.mk \
 	$(LOCAL_DIR)/xenonhd_find7.mk \
 	$(LOCAL_DIR)/xenonhd_flo.mk \
