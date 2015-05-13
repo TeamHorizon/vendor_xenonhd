@@ -1,4 +1,4 @@
-# Inherit AOSP device configuration for bacon.
+# Inherit AOSP device configuration for cancro.
 $(call inherit-product, device/xiaomi/cancro/full_cancro.mk)
 
 # Inherit common product files.
