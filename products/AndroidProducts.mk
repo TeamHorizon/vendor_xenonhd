@@ -48,4 +48,5 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_vigor.mk \
 	$(LOCAL_DIR)/xenonhd_xt925.mk \
 	$(LOCAL_DIR)/xenonhd_xt926.mk \
+	$(LOCAL_DIR)/xenonhd_ville.mk \
 	$(LOCAL_DIR)/xenonhd_xt907.mk
