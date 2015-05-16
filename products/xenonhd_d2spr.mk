@@ -27,4 +27,3 @@ PRODUCT_COPY_FILES +=  \
 
 # Inherit drm blobs
 -include vendor/xenonhd/products/common_drm.mk
-lp-mr
