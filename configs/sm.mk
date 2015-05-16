@@ -317,9 +317,16 @@ ifeq ($(strip $(HOST_OS)),linux)
           $(LOCAL_BASE_DISABLE_GRAPHITE)
       endif
     endif
+  endif
+else
+    $(warning ********************************************************************************)
+    $(warning *  Limited optimization options are available outside of linux host OS.)
+    $(warning *  To take advantage of all optimization options, build on linux host OS.)
+    $(warning ********************************************************************************)
+endif
 
-    # Bluetooth modules
-    LOCAL_BLUETOOTH_BLUEDROID := \
+# Bluetooth modules
+  LOCAL_BLUETOOTH_BLUEDROID := \
       bluetooth.default \
       libbt-brcm_stack \
       audio.a2dp.default \
@@ -334,11 +341,11 @@ ifeq ($(strip $(HOST_OS)),linux)
       ositests \
       libbt-vendor
 
-    # SABERMOD_ARM_MODE
-    # The LOCAL_COMPILERS_WHITELIST will allow modules that absolutely have to be complied with thumb instructions,
-    # or the clang compiler, to skip replacing the default overrides.
-    ifeq ($(strip $(ENABLE_SABERMOD_ARM_MODE)),true)
-      LOCAL_COMPILERS_WHITELIST := \
+# SABERMOD_ARM_MODE
+# The LOCAL_COMPILERS_WHITELIST will allow modules that absolutely have to be complied with thumb instructions,
+# or the clang compiler, to skip replacing the default overrides.
+ifeq ($(strip $(ENABLE_SABERMOD_ARM_MODE)),true)
+  LOCAL_COMPILERS_WHITELIST := \
         $(LOCAL_BLUETOOTH_BLUEDROID) \
         libmincrypt \
 	libminshacrypt \
@@ -354,14 +361,8 @@ ifeq ($(strip $(HOST_OS)),linux)
         libRSDriver \
 	libpng \
         libc++ \
-	libRSSupport
-    endif
-  endif
-else
-    $(warning ********************************************************************************)
-    $(warning *  Limited optimization options are available outside of linux host OS.)
-    $(warning *  To take advantage of all optimization options, build on linux host OS.)
-    $(warning ********************************************************************************)
+	libRSSupport \
+	libopus
 endif
 
 # BUGFIX for AOSP
@@ -430,7 +431,7 @@ endif
 
 # O3 optimizations
 # To enable this set O3_OPTIMIZATIONS=true in a device makefile somewhere.
-ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
+ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
 
   # If -O3 is enabled, force disable on thumb flags.
   # loop optmizations are not really usefull in thumb mode.
@@ -449,7 +450,8 @@ ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
       libminshacrypt \
       libmincrypt \
       libscrypt_static \
-      libc++ 
+      libc++ \
+      libopus
   else
     LOCAL_DISABLE_O3 += \
       libaudioflinger \
@@ -457,7 +459,8 @@ ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
       libminshacrypt \
       libmincrypt \
       libscrypt_static \
-      libc++ 
+      libc++ \
+      libopus
   endif
 
   # -O3 flags and friends
@@ -472,7 +475,7 @@ endif
 
 # posix thread optimizations
 # To enable this set ENABLE_PTHREAD=true in a device makefile somewhere.
-ifneq ($(strip $(ENABLE_PTHREAD)),false)
+ifeq ($(strip $(ENABLE_PTHREAD)),true)
   OPT3 := (pthread)
 
   # Disable some modules that break with -pthread
@@ -522,9 +525,22 @@ EXTRA_SABERMOD_HOST_GCC_CFLAGS := \
   -O3 \
   -pipe
 
+# Module Disable List for Tune flags
+ifeq ($(strip $(TUNE_CPU)),true)
+  LOCAL_DISABLE_TUNE := \
+	libc_dns \
+	libc_tzcode \
+	bluetooth.default \
+	libwebviewchromium \
+	libwebviewchromium_loader \
+	libwebviewchromium_plat_support \
+	libopus \
+	libavcodec
+endif
+
 # Only enable loop optimizations if -O3 is enabled.
 # These's no graphite here on host, so extra loop optimzations by themselves can be bad.
-ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
+ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
   EXTRA_SABERMOD_HOST_GCC_O3_CFLAGS := \
     -ftree-loop-distribution \
     -ftree-loop-if-convert \
@@ -534,20 +550,5 @@ ifneq ($(strip $(O3_OPTIMIZATIONS)),false)
 endif
 GCC_OPTIMIZATION_LEVELS := $(OPT1)$(OPT2)$(OPT3)$(OPT4)
 
-export LOCAL_ARM_COMPILERS_WHITELIST := $(LOCAL_BLUETOOTH_BLUEDROID) \
-        			libmincrypt \
-				libminshacrypt \
-       				libc++abi \
-        			libjni_latinime_common_static \
-        			libcompiler_rt \
-        			libnativebridge \
-        			libc++ \
-        			libRSSupport \
-        			netd \
-        			libscrypt_static \
-        			libRSCpuRef \
-        			libRSDriver \
-				libpng \
-        			libc++ \
-				libRSSupport
+export LOCAL_ARM_COMPILERS_WHITELIST := $(LOCAL_COMPILERS_WHITELIST)
 
