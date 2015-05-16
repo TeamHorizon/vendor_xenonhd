@@ -526,7 +526,7 @@ EXTRA_SABERMOD_HOST_GCC_CFLAGS := \
   -pipe
 
 # Module Disable List for Tune flags
-ifeq ($(strip $(TUNE_CPU)),true)
+ifeq ($(strip $(ENABLE_TUNE)),true)
   LOCAL_DISABLE_TUNE := \
 	libc_dns \
 	libc_tzcode \
