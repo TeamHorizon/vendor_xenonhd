@@ -362,7 +362,8 @@ ifeq ($(strip $(ENABLE_SABERMOD_ARM_MODE)),true)
 	libpng \
         libc++ \
 	libRSSupport \
-	libopus
+	libopus \
+	hwcomposer.msm8960
 endif
 
 # BUGFIX for AOSP
