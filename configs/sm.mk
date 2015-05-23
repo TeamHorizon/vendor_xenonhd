@@ -363,7 +363,8 @@ ifeq ($(strip $(ENABLE_SABERMOD_ARM_MODE)),true)
         libc++ \
 	libRSSupport \
 	libopus \
-	hwcomposer.msm8960
+	hwcomposer.msm8960 \
+	gps.msm8960
 endif
 
 # BUGFIX for AOSP
