@@ -446,6 +446,7 @@ ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
   # Check if there's already something set in a device make file somewhere.
   ifndef LOCAL_DISABLE_O3
     LOCAL_DISABLE_O3 := \
+      $(LOCAL_BLUETOOTH_BLUEDROID) \
       libaudioflinger \
       skia_skia_library_gyp \
       libminshacrypt \
@@ -455,6 +456,7 @@ ifeq ($(strip $(O3_OPTIMIZATIONS)),true)
       libopus
   else
     LOCAL_DISABLE_O3 += \
+      $(LOCAL_BLUETOOTH_BLUEDROID) \
       libaudioflinger \
       skia_skia_library_gyp \
       libminshacrypt \
