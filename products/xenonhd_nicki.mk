@@ -25,8 +25,7 @@ $(call inherit-product, device/sony/nicki/nicki.mk)
 TARGET_SCREEN_HEIGHT := 854
 TARGET_SCREEN_WIDTH := 480
 PRODUCT_COPY_FILES +=  \
-    vendor/xenonhd/proprietary/nicki/media/bootanimation.zip:system/media/bootanimation.zip \
-    vendor/xenonhd/proprietary/nicki/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
+    vendor/xenonhd/proprietary/common/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/xenonhd/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
