@@ -1,6 +1,6 @@
 # SaberMod Optimizations
-include vendor/xenonhd/configs/sm.mk
-include vendor/xenonhd/products/sm_opti.mk
+SM_VENDOR := $(ANDROID_BUILD_TOP)/vendor/sm
+include $(SM_VENDOR)/Main.mk
 
 # Generic product
 PRODUCT_NAME := xenonhd
