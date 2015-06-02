@@ -1,12 +1,12 @@
 # Inherit AOSP device configuration for jflte.
-$(call inherit-product, device/samsung/jflte/full_jfltetmo.mk)
+$(call inherit-product, device/samsung/jfltetmo/full_jfltetmo.mk)
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 # Setup device specific product configuration.
 PRODUCT_NAME := xenonhd_jfltetmo
 PRODUCT_BRAND := Samsung
-PRODUCT_DEVICE := jflte
-PRODUCT_MODEL := jflte
+PRODUCT_DEVICE := jfltetmo
+PRODUCT_MODEL := jfltetmo
 PRODUCT_MANUFACTURER := Samsung
 
 # Copy d2 specific prebuilt files
