@@ -35,7 +35,7 @@ print "**** Setting up gerrit configuration for $repo. ****\n";
 $basecommand = 'git config remote.gerrit.';
 
 # the three config items that we're concerned about now
-$base{'url'} = "ssh://$username\@104.171.250.39:29418/$repo";
+$base{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
 $base{'push'} = "HEAD:refs/for/lollipop";
 $base{'receivepack'} = "git receive-pack";
 
@@ -52,7 +52,7 @@ print "$addcommand\n";
 `addcommand`;
 
 # add the commit message hook
-$addcommand = 'gitdir=$(git rev-parse --git-dir); scp -p -P 29418 '.$username.'@104.171.250.39:hooks/commit-msg ${gitdir}/hooks/';
+$addcommand = 'gitdir=$(git rev-parse --git-dir); scp -p -P 29418 '.$username.'@83.233.5.249:hooks/commit-msg ${gitdir}/hooks/';
 print "$addcommand\n";
 `addcommand`;
 
