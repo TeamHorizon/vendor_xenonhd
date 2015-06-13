@@ -36,7 +36,7 @@ $basecommand = 'git config remote.gerrit.';
 
 # the three config items that we're concerned about now
 $base{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
-$base{'push'} = "HEAD:refs/for/lollipop";
+$base{'push'} = "HEAD:refs/for/lp-mr1";
 $base{'receivepack'} = "git receive-pack";
 
 # add reviewers to receivepack command
