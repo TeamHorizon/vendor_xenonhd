@@ -2,7 +2,7 @@
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 768
 
-# Inherit AOSP device configuration for one x.
+# Inherit AOSP device configuration for LG Optiumus G (e975).
 $(call inherit-product, device/lge/e975/e975.mk)
 
 # Inherit common product files.
