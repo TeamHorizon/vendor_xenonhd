@@ -40,21 +40,24 @@ $base{'push'} = "HEAD:refs/for/lp-mr1";
 $base{'receivepack'} = "git receive-pack";
 
 # add reviewers to receivepack command
-$reviewertitle = "--reviewer ";
-foreach (@reviewers) {
-    $base{'receivepack'} .= " $reviewertitle $_";
-}
+#$reviewertitle = "--reviewer ";
+#foreach (@reviewers) {
+#    $base{'receivepack'} .= " $reviewertitle $_";
+#}
 
 # add the gerrit remote 
 print "branch is $branch\n";
-$addcommand = "git remote add gerrit $base{'url'}";
-print "$addcommand\n";
-`addcommand`;
 
 # add the commit message hook
-$addcommand = 'gitdir=$(git rev-parse --git-dir); scp -p -P 29418 '.$username.'@83.233.5.241:hooks/commit-msg ${gitdir}/hooks/';
+$revparse = `git rev-parse --git-dir`;
+chomp $revparse;
+print "$revparse\n";
+
+
+ $addcommand = 'scp -p -P 29418 '.$username.'@83.233.5.241:hooks/commit-msg '.$revparse.'/hooks/commit-msg';
 print "$addcommand\n";
-`addcommand`;
+`$addcommand`;
+
 
 # finally, set the git config
 foreach my $key (keys %base) {
