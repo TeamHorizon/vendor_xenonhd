@@ -22,6 +22,10 @@ PRODUCT_RELEASE_NAME := i605
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+# Default Alarm Sound
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.config.alarm_alert=Cesium.ogg
+
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
