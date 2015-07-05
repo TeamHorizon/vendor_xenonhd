@@ -1,4 +1,8 @@
-# Inherit AOSP device configuration for one x.
+# Boot animation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 768
+
+# Inherit AOSP device configuration for LG Optiumus G (e975).
 $(call inherit-product, device/lge/e975/e975.mk)
 
 # Inherit common product files.
@@ -24,7 +28,17 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_DEVICE := e975
 PRODUCT_NAME := xenonhd_e975
 PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG-E975
+PRODUCT_MODEL := Optimus G
 PRODUCT_MANUFACTURER := LGE
+PRODUCT_HW_CPU := Snapdragon S4 Pro
+PRODUCT_HW_GPU := Adreno 320
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=geehrc_open_eu BUILD_FINGERPRINT=lge/geehrc_open_eu/geehrc:4.1.2/JZO54K/E97510b.1360741472:user/release-keys PRIVATE_BUILD_DESC="geehrc_open_eu-user 4.1.2 JZO54K E97510b.1360741472 release-keys"
+# build.prop overrides
+PRODUCT_BUILD_PROP_OVERRIDES += \
+	USER=Dadi11 \
+	PRODUCT_NAME=geehrc_open_eu \
+	BUILD_FINGERPRINT=lge/geehrc_open_eu/geehrc:4.4.2/KOT49I.E97520a/E97520a.1403273885:user/release-keys \
+	PRIVATE_BUILD_DESC="geehrc_open_eu-user 4.4.2 KOT49I.E97520a E97520a.1403273885 release-keys"
+	
+# Enable Torch
+PRODUCT_PACKAGES += Torch

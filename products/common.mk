@@ -1,7 +1,3 @@
-# SaberMod Optimizations
-include vendor/xenonhd/configs/sm.mk
-include vendor/xenonhd/products/sm_opti.mk
-
 # Generic product
 PRODUCT_NAME := xenonhd
 PRODUCT_BRAND := xenonhd
@@ -82,8 +78,7 @@ PRODUCT_PACKAGES += \
     libstagefright_soft_ffmpegadec \
     libstagefright_soft_ffmpegvdec \
     libFFmpegExtractor \
-    libnamparser
-
+	media_codecs_ffmpeg.xml
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
@@ -179,6 +174,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
      vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
      vendor/xenonhd/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
+#OTA Updater
+PRODUCT_COPY_FILES += \
+     vendor/xenonhd/proprietary/common/app/OTA-Updater-2.0.5.apk:system/app/OTA-Updater.apk \
+     vendor/xenonhd/proprietary/common/etc/ota.prop:system/ota.prop \
+     vendor/xenonhd/proprietary/common/etc/rom.ota.prop:system/rom.ota.prop \
+     vendor/xenonhd/proprietary/common/etc/com.otaudater.feature.xml:system/etc/permissions/com.otaudater.feature.xml
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \

@@ -15,6 +15,8 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_find7.mk \
 	$(LOCAL_DIR)/xenonhd_flo.mk \
 	$(LOCAL_DIR)/xenonhd_galaxysmtd.mk \
+	$(LOCAL_DIR)/xenonhd_geehrc.mk \
+	$(LOCAL_DIR)/xenonhd_ghost.mk \
 	$(LOCAL_DIR)/xenonhd_grouper.mk \
 	$(LOCAL_DIR)/xenonhd_hammerhead.mk \
 	$(LOCAL_DIR)/xenonhd_hammerheadcaf.mk \
@@ -25,6 +27,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_i9300.mk \
 	$(LOCAL_DIR)/xenonhd_i9305.mk \
 	$(LOCAL_DIR)/xenonhd_jflte.mk \
+	$(LOCAL_DIR)/xenonhd_jfltetmo.mk \
 	$(LOCAL_DIR)/xenonhd_l900.mk \
 	$(LOCAL_DIR)/xenonhd_m7.mk \
 	$(LOCAL_DIR)/xenonhd_m8.mk \
@@ -32,10 +35,12 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_mako.mk \
 	$(LOCAL_DIR)/xenonhd_mb886.mk \
 	$(LOCAL_DIR)/xenonhd_m7tmo.mk \
+	$(LOCAL_DIR)/xenonhd_nicki.mk \
 	$(LOCAL_DIR)/xenonhd_n7000.mk \
 	$(LOCAL_DIR)/xenonhd_n7100.mk \
 	$(LOCAL_DIR)/xenonhd_r950.mk \
 	$(LOCAL_DIR)/xenonhd_shamu.mk \
+        $(LOCAL_DIR)/xenonhd_surnia.mk \
 	$(LOCAL_DIR)/xenonhd_t0lte.mk \
 	$(LOCAL_DIR)/xenonhd_t0lteatt.mk \
 	$(LOCAL_DIR)/xenonhd_t0ltetmo.mk \
@@ -48,4 +53,6 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_vigor.mk \
 	$(LOCAL_DIR)/xenonhd_xt925.mk \
 	$(LOCAL_DIR)/xenonhd_xt926.mk \
-	$(LOCAL_DIR)/xenonhd_xt907.mk
+	$(LOCAL_DIR)/xenonhd_ville.mk \
+	$(LOCAL_DIR)/xenonhd_xt907.mk \
+	$(LOCAL_DIR)/xenonhd_vs985.mk

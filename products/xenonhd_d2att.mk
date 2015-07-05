@@ -16,11 +16,17 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := t0lte
+PRODUCT_RELEASE_NAME := d2att
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
+
+# Inherit device configuration
+$(call inherit-product, device/samsung/d2att/full_d2att.mk)
+
+# Enhanced NFC
+$(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -28,28 +34,26 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 # Telephony
 $(call inherit-product, vendor/xenonhd/configs/telephony.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
-
-# Inherit device configuration
-$(call inherit-product, device/samsung/t0lte/full_t0lte.mk)
-
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
-# Copy t0lte specific prebuilt files
-PRODUCT_COPY_FILES +=  \
+# Copy d2 specific prebuilt files
+PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/tuna/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/xenonhd/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := t0lte
-PRODUCT_NAME := xenonhd_t0lte
+PRODUCT_DEVICE := d2att
+PRODUCT_NAME := xenonhd_d2att
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := GT-N7105
+PRODUCT_MODEL := SCH-I747
 PRODUCT_MANUFACTURER := samsung
 
 # Set build fingerprint / ID / Product Name ect.
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=t0lte TARGET_DEVICE=t0lte BUILD_FINGERPRINT="samsung/t0ltexx/t0lte:4.1.2/JZO54K/N7105XXDLL4:user/release-keys" PRIVATE_BUILD_DESC="t0ltexx-user 4.1.2 JZO54K N7105XXDLL4 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=d2uc \
+    TARGET_DEVICE=d2att \
+    BUILD_FINGERPRINT="samsung/d2uc/d2att:4.4.2/KOT49H/I747UCUFNJ1:user/release-keys" \
+    PRIVATE_BUILD_DESC="d2uc-user 4.4.2 KOT49H I747UCUFNJ1 release-keys"

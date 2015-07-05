@@ -1,4 +1,4 @@
-# Inherit AOSP device configuration for grouper.
+# Inherit AOSP device configuration for flo.
 $(call inherit-product, device/asus/flo/full_flo.mk)
 
 # Inherit common product files.
@@ -10,7 +10,7 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 # Extra grouper overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/grouper
 
-# Copy grouper specific prebuilt files
+# Copy flo specific prebuilt files
 PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/grouper/media/bootanimation.zip:system/media/bootanimation.zip \
     vendor/xenonhd/proprietary/grouper/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
@@ -27,5 +27,5 @@ PRODUCT_DEVICE := flo
 PRODUCT_MODEL := Nexus 7 (2013)
 PRODUCT_MANUFACTURER := Asus
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=razor BUILD_FINGERPRINT=google/razor/flo:5.0.2/LRX22G/1649326:user/release-keys PRIVATE_BUILD_DESC="razor-user 5.0.2 LRX22G 1649326 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=razor BUILD_FINGERPRINT=google/razor/flo:5.1.1/LMY47V/1836172:user/release-keys PRIVATE_BUILD_DESC="razor-user 5.1.1 LMY47V 1836172 release-keys"
 

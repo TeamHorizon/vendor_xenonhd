@@ -35,31 +35,33 @@ print "**** Setting up gerrit configuration for $repo. ****\n";
 $basecommand = 'git config remote.gerrit.';
 
 # the three config items that we're concerned about now
-$base{'url'} = "ssh://$username\@104.171.250.39:29418/$repo";
-$base{'push'} = "HEAD:refs/for/lollipop";
+$base{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
+$base{'push'} = "HEAD:refs/for/lp-mr1";
 $base{'receivepack'} = "git receive-pack";
 
 # add reviewers to receivepack command
-$reviewertitle = "--reviewer ";
-foreach (@reviewers) {
-    $base{'receivepack'} .= " $reviewertitle $_";
-}
+#$reviewertitle = "--reviewer ";
+#foreach (@reviewers) {
+#    $base{'receivepack'} .= " $reviewertitle $_";
+#}
 
-# add the gerrit remote 
+# add the gerrit remote
 print "branch is $branch\n";
-$addcommand = "git remote add gerrit $base{'url'}";
-print "$addcommand\n";
-`addcommand`;
 
 # add the commit message hook
-$addcommand = 'gitdir=$(git rev-parse --git-dir); scp -p -P 29418 '.$username.'@104.171.250.39:hooks/commit-msg ${gitdir}/hooks/';
+$revparse = `git rev-parse --git-dir`;
+chomp $revparse;
+print "$revparse\n";
+
+
+ $addcommand = 'scp -p -P 29418 '.$username.'@83.233.5.249:hooks/commit-msg '.$revparse.'/hooks/commit-msg';
 print "$addcommand\n";
-`addcommand`;
+`$addcommand`;
+
 
 # finally, set the git config
 foreach my $key (keys %base) {
      $command= "$basecommand$key \"$base{$key}\"";
      print "$command\n";
-     `$command`;     
+     `$command`;
 }
-
