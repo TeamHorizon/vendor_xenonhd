@@ -175,13 +175,6 @@ PRODUCT_COPY_FILES += \
      vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
      vendor/xenonhd/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-#OTA Updater
-PRODUCT_COPY_FILES += \
-     vendor/xenonhd/proprietary/common/app/OTA-Updater-2.0.5.apk:system/app/OTA-Updater.apk \
-     vendor/xenonhd/proprietary/common/etc/ota.prop:system/ota.prop \
-     vendor/xenonhd/proprietary/common/etc/rom.ota.prop:system/rom.ota.prop \
-     vendor/xenonhd/proprietary/common/etc/com.otaudater.feature.xml:system/etc/permissions/com.otaudater.feature.xml
-
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
