@@ -32,4 +32,9 @@ PRODUCT_MANUFACTURER := XIAOMI
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_FINGERPRINT=Xiaomi/cancro/cancro:5.1.1/LMY47V/5.4.24:userdebug/test-keys PRIVATE_BUILD_DESC="cancro-userdebug 5.1.1 LMY47V 5.4.24 test-keys"
+# Build prop overrides
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE="cancro" \
+    PRODUCT_NAME="cancro" \
+    BUILD_FINGERPRINT="Xiaomi/cancro/cancro:5.1.1/LMY48G:userdebug/test-keys" \
+    PRIVATE_BUILD_DESC="cancro-userdebug 5.1.1 LMY48G test-keys"
