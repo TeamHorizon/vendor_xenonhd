@@ -169,6 +169,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/com.lovejoy777.rroandlayersmanager.apk:system/app/com.lovejoy777.rroandlayersmanager/base.apk
 
+# Hide BitSyko Layers Manager app icon from launcher
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.layers.noIcon=noIcon
+
 # Kernel Adiutor
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/com.grarak.kerneladiutor.apk:system/app/com.grarak.kerneladiutor/base.apk
