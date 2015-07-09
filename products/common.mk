@@ -9,7 +9,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 PRODUCT_PACKAGES += \
     AudioFX \
     BluetoothExt \
-    CMFileManager \
     DeskClock \
     Development \
     Dialer \
