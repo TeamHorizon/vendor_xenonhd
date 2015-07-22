@@ -18,6 +18,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_geehrc.mk \
 	$(LOCAL_DIR)/xenonhd_ghost.mk \
 	$(LOCAL_DIR)/xenonhd_grouper.mk \
+	$(LOCAL_DIR)/xenonhd_h345,mk \
 	$(LOCAL_DIR)/xenonhd_hammerhead.mk \
 	$(LOCAL_DIR)/xenonhd_hammerheadcaf.mk \
 	$(LOCAL_DIR)/xenonhd_honami.mk \
@@ -28,7 +29,6 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_i9305.mk \
 	$(LOCAL_DIR)/xenonhd_jflte.mk \
 	$(LOCAL_DIR)/xenonhd_jfltetmo.mk \
-	$(LOCAL_DIR)/xenonhd_c50.mk \
 	$(LOCAL_DIR)/xenonhd_l900.mk \
 	$(LOCAL_DIR)/xenonhd_m7.mk \
 	$(LOCAL_DIR)/xenonhd_m8.mk \
