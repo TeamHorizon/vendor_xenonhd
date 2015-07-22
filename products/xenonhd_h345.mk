@@ -16,7 +16,7 @@
 
 PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-$(call inherit-product, device/lge/c50/full_c50.mk)
+$(call inherit-product, device/lge/c50/full_h345.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -39,7 +39,7 @@ PRODUCT_COPY_FILES +=  \
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := c50
-PRODUCT_NAME := xenonhd_c50
+PRODUCT_NAME := xenonhd_h345
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H345
 PRODUCT_MANUFACTURER := LGE
