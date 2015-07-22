@@ -16,7 +16,7 @@
 
 PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-$(call inherit-product, device/lge/c50/full_h345.mk)
+$(call inherit-product, device/lge/h345/full_h345.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
