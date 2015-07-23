@@ -1,5 +1,5 @@
 # Inherit from d855 device
-$(call inherit-product, device/lge/d855/device.mk)
+$(call inherit-product, device/lge/d855/full_d855.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -9,6 +9,9 @@ $(call inherit-product, vendor/xenonhd/configs/telephony.mk)
 
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
+
+# Enhanced NFC
+$(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
 
 # Copy specific prebuilt files
 PRODUCT_COPY_FILES +=  \
