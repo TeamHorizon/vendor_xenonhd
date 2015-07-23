@@ -7,11 +7,11 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 # Telephony
 $(call inherit-product, vendor/xenonhd/configs/telephony.mk)
 
-# Inherit common build.prop overrides
--include vendor/xenonhd/products/common_versions.mk
-
 # Enhanced NFC
 $(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
+
+# Inherit common build.prop overrides
+-include vendor/xenonhd/products/common_versions.mk
 
 # Copy specific prebuilt files
 PRODUCT_COPY_FILES +=  \
