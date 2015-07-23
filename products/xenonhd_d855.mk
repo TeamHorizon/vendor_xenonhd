@@ -1,24 +1,24 @@
-#
-# Copyright 2014 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
 # Inherit from d855 device
 $(call inherit-product, device/lge/d855/device.mk)
+
+# Inherit common product files.
+$(call inherit-product, vendor/xenonhd/products/common.mk)
+
+# Telephony
+$(call inherit-product, vendor/xenonhd/configs/telephony.mk)
+
+# Inherit common build.prop overrides
+-include vendor/xenonhd/products/common_versions.mk
+
+# Copy specific prebuilt files
+PRODUCT_COPY_FILES +=  \
+    vendor/xenonhd/proprietary/tuna/media/bootanimation.zip:system/media/bootanimation.zip \
+    vendor/xenonhd/proprietary/tuna/media/audio/notifications/Nexus.mp3:system/media/audio/notifications/Nexus.mp3 \
+    vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/xenonhd/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+
+# Inherit drm blobs
+-include vendor/xenonhd/products/common_drm.mk
 
 # Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := d855
@@ -26,12 +26,6 @@ PRODUCT_NAME := xenonhd_d855
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-D855
 PRODUCT_MANUFACTURER := LGE
-
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
-
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \
