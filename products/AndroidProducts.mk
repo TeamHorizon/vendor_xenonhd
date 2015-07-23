@@ -8,6 +8,7 @@ PRODUCT_MAKEFILES := \
  	$(LOCAL_DIR)/xenonhd_d2tmo.mk \
  	$(LOCAL_DIR)/xenonhd_d2usc.mk \
  	$(LOCAL_DIR)/xenonhd_d2vzw.mk \
+ 	$(LOCAL_DIR)/xenonhd_d855.mk \
 	$(LOCAL_DIR)/xenonhd_e975.mk \
 	$(LOCAL_DIR)/xenonhd_endeavoru.mk \
 	$(LOCAL_DIR)/xenonhd_falcon.mk \
