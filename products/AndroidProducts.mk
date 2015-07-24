@@ -1,5 +1,6 @@
 PRODUCT_MAKEFILES := \
         $(LOCAL_DIR)/xenonhd_bacon.mk \
+        $(LOCAL_DIR)/xenonhd_baconcaf.mk \
 	$(LOCAL_DIR)/xenonhd_crespo.mk \
 	$(LOCAL_DIR)/xenonhd_cancro.mk \
 	$(LOCAL_DIR)/xenonhd_d2spr.mk \
