@@ -38,7 +38,7 @@ PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := c50
+PRODUCT_DEVICE := h345
 PRODUCT_NAME := xenonhd_h345
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-H345
