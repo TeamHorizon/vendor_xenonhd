@@ -127,6 +127,12 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
 
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/proprietary/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/xenonhd/proprietary/common/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/xenonhd/proprietary/common/bin/50-xehd.sh:system/addon.d/50-xehd.sh
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
