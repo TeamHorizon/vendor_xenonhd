@@ -28,6 +28,7 @@ add_lunch_combo xenonhd_i9300-userdebug
 add_lunch_combo xenonhd_i9305-userdebug
 add_lunch_combo xenonhd_jflte-userdebug
 add_lunch_combo xenonhd_jfltetmo-userdebug
+add_lunch_combo xenonhd_klte-userdebug
 add_lunch_combo xenonhd_l900-userdebug
 add_lunch_combo xenonhd_m7tmo-userdebug
 add_lunch_combo xenonhd_m7-userdebug
