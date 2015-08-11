@@ -1,4 +1,4 @@
-EnPRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
 # Inherit AOSP device configuration for bacon.
