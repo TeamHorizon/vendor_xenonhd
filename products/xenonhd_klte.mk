@@ -44,3 +44,4 @@ PRODUCT_COPY_FILES +=  \
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := klte
 PRODUCT_NAME := xenonhd_klte
+PRODUCT_BRAND := samsung
