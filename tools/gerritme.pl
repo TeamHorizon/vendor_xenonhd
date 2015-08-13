@@ -22,8 +22,12 @@
 chomp ($username = `whoami`);
 
 # grabs active branch from 'git branch'
-chomp ($branch = `git branch| grep "*"`);
-$branch =~ s/\*\s//g;
+if ($ARGV[0]) {
+	$branch = $ARGV[0];
+} else {
+	chomp ($branch = `git branch| grep "*"`);
+	$branch =~ s/\*\s//g;
+}
 
 # grab the repository name from the list of URLs
 chomp ($repo = `git remote show th | grep "Fetch URL"`);
@@ -34,11 +38,6 @@ print "**** Setting up gerrit configuration for $repo. ****\n";
 # sets up the base git config command
 $basecommand = 'git config remote.gerrit.';
 
-# the three config items that we're concerned about now
-$base{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
-$base{'push'} = "HEAD:refs/for/lp-mr1";
-$base{'receivepack'} = "git receive-pack";
-
 # add reviewers to receivepack command
 #$reviewertitle = "--reviewer ";
 #foreach (@reviewers) {
@@ -47,6 +46,16 @@ $base{'receivepack'} = "git receive-pack";
 
 # add the gerrit remote
 print "branch is $branch\n";
+if ($branch eq '(no branch)') {
+	print "branch was null, is now lp-mr1\n";
+	$branch = "lp-mr1";
+}
+
+# the three config items that we're concerned about now
+$base{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
+$base{'push'} = "HEAD:refs/for/$branch";
+$base{'receivepack'} = "git receive-pack";
+
 
 # add the commit message hook
 $revparse = `git rev-parse --git-dir`;
