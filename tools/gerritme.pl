@@ -37,6 +37,7 @@ print "**** Setting up gerrit configuration for $repo. ****\n";
 
 # sets up the base git config command
 $basecommand = 'git config remote.gerrit.';
+$forcecommand = 'git config remote.gforce.';
 
 # add reviewers to receivepack command
 $reviewertitle = "--reviewer ";
@@ -56,6 +57,10 @@ $base{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
 $base{'push'} = "HEAD:refs/for/$branch";
 $base{'receivepack'} = "git receive-pack";
 
+$force{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
+$force{'push'} = "HEAD:refs/heads/$branch";
+$force{'receivepack'} = "git receive-pack";
+
 
 # add the commit message hook
 $revparse = `git rev-parse --git-dir`;
@@ -74,3 +79,9 @@ foreach my $key (keys %base) {
      print "$command\n";
      `$command`;
 }
+foreach my $key (keys %force) {
+    $command = "$forcecommand$key \"$force{$key}\"";
+    print "$command\n";
+    `$command`;
+}
+
