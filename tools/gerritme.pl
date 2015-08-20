@@ -27,6 +27,7 @@ if ($ARGV[0]) {
 } else {
 	chomp ($branch = `git branch| grep "*"`);
 	$branch =~ s/\*\s//g;
+	
 }
 
 # grab the repository name from the list of URLs
@@ -45,11 +46,12 @@ foreach (@reviewers) {
     $base{'receivepack'} .= " $reviewertitle $_";
 }
 
-# add the gerrit remote
-print "branch is $branch\n";
-if ($branch eq '(no branch)') {
-	print "branch was null, is now lp-mr1\n";
+# add the gerrit remote branch
+if ($branch eq '(no branch)'|| $branch =~ /Detached/i) {
+	print "branch was $branch, it is now lp-mr1\n";
 	$branch = "lp-mr1";
+} else {
+print "branch is $branch\n";
 }
 
 # the three config items that we're concerned about now
