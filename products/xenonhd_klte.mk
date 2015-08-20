@@ -19,6 +19,9 @@
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1280
 
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.product.device=klte
+
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
