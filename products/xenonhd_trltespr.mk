@@ -1,3 +1,6 @@
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.product.device=trltespr
+
 # Inherit device configuration
 $(call inherit-product, device/samsung/trltespr/full_trltespr.mk)
 
