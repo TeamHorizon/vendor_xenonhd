@@ -28,6 +28,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_hammerhead.mk \
 	$(LOCAL_DIR)/xenonhd_hammerheadcaf.mk \
 	$(LOCAL_DIR)/xenonhd_honami.mk \
+	$(LOCAL_DIR)/xenonhd_huashan.mk \
 	$(LOCAL_DIR)/xenonhd_i605.mk \
 	$(LOCAL_DIR)/xenonhd_i9100.mk \
 	$(LOCAL_DIR)/xenonhd_i9100g.mk \
@@ -57,7 +58,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_toro.mk \
 	$(LOCAL_DIR)/xenonhd_toroplus.mk \
 	$(LOCAL_DIR)/xenonhd_trltetmo.mk \
-        $(LOCAL_DIR)/xenonhd_trltespr.mk \
+	$(LOCAL_DIR)/xenonhd_trltespr.mk \
 	$(LOCAL_DIR)/xenonhd_trltexx.mk \
         $(LOCAL_DIR)/xenonhd_victara.mk \
 	$(LOCAL_DIR)/xenonhd_vigor.mk \
