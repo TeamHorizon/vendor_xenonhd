@@ -39,10 +39,10 @@ print "**** Setting up gerrit configuration for $repo. ****\n";
 $basecommand = 'git config remote.gerrit.';
 
 # add reviewers to receivepack command
-#$reviewertitle = "--reviewer ";
-#foreach (@reviewers) {
-#    $base{'receivepack'} .= " $reviewertitle $_";
-#}
+$reviewertitle = "--reviewer ";
+foreach (@reviewers) {
+    $base{'receivepack'} .= " $reviewertitle $_";
+}
 
 # add the gerrit remote
 print "branch is $branch\n";
