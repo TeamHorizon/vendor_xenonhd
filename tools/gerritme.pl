@@ -19,7 +19,7 @@
 @reviewers = ('pcarenza@gmail.com');
 
 # grabs user name from local unix system
-chomp ($username = `whoami`);
+chomp ($username = `git config user.name`);
 
 # grabs active branch from 'git branch'
 if ($ARGV[0]) {
