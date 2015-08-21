@@ -16,7 +16,7 @@
 #
 
 
-@reviewers = ('pcarenza@gmail.com');
+@reviewers = ('pcarenza@gmail.com','jtoro2716@gmail.com','arhamjamal@gmail.com');
 
 # grabs user name from local unix system
 chomp ($username = `git config user.name`);
@@ -57,7 +57,7 @@ print "branch is $branch\n";
 # the three config items that we're concerned about now
 $base{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
 $base{'push'} = "HEAD:refs/for/$branch";
-$base{'receivepack'} = "git receive-pack";
+$base{'receivepack'} = "git receive-pack $base{'receivepack'}";
 
 $force{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
 $force{'push'} = "HEAD:refs/heads/$branch";
