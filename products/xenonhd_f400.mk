@@ -1,8 +1,5 @@
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
 # Inherit from d855 device
-$(call inherit-product, device/lge/vs985/full_vs985.mk)
+$(call inherit-product, device/lge/f400/full_f400.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -27,17 +24,15 @@ PRODUCT_COPY_FILES +=  \
 -include vendor/xenonhd/products/common_drm.mk
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := vs985
-PRODUCT_NAME := xenonhd_vs985
+PRODUCT_DEVICE := f400
+PRODUCT_NAME := xenonhd_f400
 PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG-VS985
+PRODUCT_MODEL := LG-F400
 PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE="g3" \
-    PRODUCT_NAME="g3_vzw_us" \
-    BUILD_FINGERPRINT="lge/g3_vzw/g3:5.0.1/LRX21Y/1516810098cf1:user/release-keys" \
-    PRIVATE_BUILD_DESC="g3_vzw-user 5.0.1 LRX21Y 1516810098cf1 release-keys"
-
-PRODUCT_GMS_CLIENTID_BASE := android-verizon
+   PRODUCT_DEVICE="g3" \
+   PRODUCT_NAME="g3_kt_kr" \
+   BUILD_FINGERPRINT="lge/g3_kt_kr/g3:5.0/LRX21R/F400K20f.1419232865:user/release-keys" \
+   PRIVATE_BUILD_DESC="g3_kt_kr-user 5.0 LRX21R F400K20f.1419232865 release-keys"
 

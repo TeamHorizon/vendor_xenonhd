@@ -9,9 +9,13 @@ PRODUCT_MAKEFILES := \
  	$(LOCAL_DIR)/xenonhd_d2tmo.mk \
  	$(LOCAL_DIR)/xenonhd_d2usc.mk \
  	$(LOCAL_DIR)/xenonhd_d2vzw.mk \
+ 	$(LOCAL_DIR)/xenonhd_d850.mk \
+ 	$(LOCAL_DIR)/xenonhd_d851.mk \
+ 	$(LOCAL_DIR)/xenonhd_d852.mk \
  	$(LOCAL_DIR)/xenonhd_d855.mk \
 	$(LOCAL_DIR)/xenonhd_e975.mk \
 	$(LOCAL_DIR)/xenonhd_endeavoru.mk \
+	$(LOCAL_DIR)/xenonhd_f400.mk \
 	$(LOCAL_DIR)/xenonhd_falcon.mk \
 	$(LOCAL_DIR)/xenonhd_find5.mk \
 	$(LOCAL_DIR)/xenonhd_find7.mk \
@@ -33,6 +37,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_jfltetmo.mk \
         $(LOCAL_DIR)/xenonhd_klte.mk \
 	$(LOCAL_DIR)/xenonhd_l900.mk \
+	$(LOCAL_DIR)/xenonhd_ls990.mk \
 	$(LOCAL_DIR)/xenonhd_m7.mk \
 	$(LOCAL_DIR)/xenonhd_m8.mk \
 	$(LOCAL_DIR)/xenonhd_maguro.mk \

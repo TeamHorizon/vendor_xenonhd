@@ -1,8 +1,5 @@
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
 # Inherit from d855 device
-$(call inherit-product, device/lge/vs985/full_vs985.mk)
+$(call inherit-product, device/lge/d852/full_d852.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -27,17 +24,14 @@ PRODUCT_COPY_FILES +=  \
 -include vendor/xenonhd/products/common_drm.mk
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_DEVICE := vs985
-PRODUCT_NAME := xenonhd_vs985
+PRODUCT_DEVICE := d852
+PRODUCT_NAME := xenonhd_d852
 PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG-VS985
+PRODUCT_MODEL := LG-D852
 PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \
-    PRODUCT_NAME="g3_vzw_us" \
-    BUILD_FINGERPRINT="lge/g3_vzw/g3:5.0.1/LRX21Y/1516810098cf1:user/release-keys" \
-    PRIVATE_BUILD_DESC="g3_vzw-user 5.0.1 LRX21Y 1516810098cf1 release-keys"
-
-PRODUCT_GMS_CLIENTID_BASE := android-verizon
-
+    PRODUCT_NAME="g3_bell_ca" \
+    BUILD_FINGERPRINT="lge/g3_bell_ca/g3:4.4.2/KVT49L.D85210b/D85210b.1405397224:user/release-keys" \
+    PRIVATE_BUILD_DESC="g3_bell_ca-user 4.4.2 KVT49L.D85210b D85210b.1405397224 release-keys"
