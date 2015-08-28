@@ -23,7 +23,8 @@ PRODUCT_PACKAGES += \
     Torch \
     VoicePlus \
     KernelTweaker \
-    XenonWallpapers
+    XenonWallpapers \
+    XenonOTA
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \

@@ -18,13 +18,47 @@ fi
 if [ -z "$XenonHD" ]; then
 	MODVERSION=`sed -n -e'/ro\.xehdversion/s/^.*=//p' $OUT/system/build.prop`
 	: ${MODVERSION:=}
-	Device=`sed -n -e'/ro\.product\.device/s/^.*=//p' $OUT/system/build.prop`
-	: ${Device:=}
+        Device=`sed -n -e'/ro\.ota\.device/s/^.*=//p' $OUT/system/build.prop`
+        : ${Device:=}
+        OTA_TYPE=`sed -n -e'/ro\.ota\.type/s/^.*=//p' $OUT/system/build.prop`
+        : ${OTA_TYPE:=}
+        OTA_FILENAME=`sed -n -e'/ro\.ota\.version/s/^.*=//p' $OUT/system/build.prop`
+        : ${OTA_FILENAME:=}
 	XENONHD_TARGET_PACKAGE=update-$MODVERSION-signed-$Device.zip
 	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
 else
 	XENONHD_TARGET_PACKAGE=update-squished.zip
 	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
+fi
+
+# Create OTA XML file
+if [ -f $ANDROID_BUILD_TOP/ota_conf ]; then
+cat >$OUT/ota_lollipop.xml <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
+    <Stable>
+        <$Device>
+            <Filename>$OTA_FILENAME</Filename>
+            <RomUrl
+                id="rom"
+                title="Rom"
+                description="Download latest XenonHD build">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$Device/$XENONHD_TARGET_PACKAGE</RomUrl>
+            <MD5Url
+                id="md5"
+                title="Md5"
+                description="Download XenonHD build md5">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$Device/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+            <DownloadsURL
+                id="downloads"
+                title="Downloads"
+                description="XenonHD Downloads for all builds">https://mirrors.c0urier.net/?dir=android/teamhorizon</DownloadsURL>
+            <GappsUrl
+                id="gapps"
+                title="Gapps"
+                description="Download latest BaNks Gapps">https://s.basketbuild.com/devs/BaNkS/GApps</GappsUrl>
+        </$Device>
+    </Stable>
+</SlimOTA>
+EOF
 fi
 
 # Create a md5 checksum image of the repacked package
