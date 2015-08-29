@@ -1,22 +1,26 @@
 #!/usr/bin/perl
-
-# git remote add gerrit ssh://pcarenza@104.171.250.39:29418/TeamHorizon/android_packages_apps_Gallery2
-# gitconfig
-#[remote "gerrit"]
-#        url = ssh://pcarenza@104.171.250.39:29418/TeamHorizon/android_build
-#        fetch = +refs/heads/*:refs/remotes/gerrit/*
-#        push = HEAD:refs/for/lollipop
-#        receivepack = git receive-pack --reviewer jtoro2716@gmail.com --reviewer arhamjamal@gmail.com
+# gerritme.pl
+#/*
+# * Copyright (C) 2015 Team Horizon
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *      http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# */
 #
-# git config remote.gerrit.url "ssh://pcarenza@review.104.171.250.39:29418/TeamHorizon/android_build"
-# git config remote.gerrit.push "HEAD:refs/for/lollipop"
-# git config remote.gerrit.receivepack "git receive-pack --reviewer jtoro2716@gmail.com --reviewer arhamjamal@gmail.com"
-# Fetch URL: https://github.com/TeamHorizon/platform_frameworks_base
-# list default reviewers here
-#
 
-
+# softcoded config
 @reviewers = ('pcarenza@gmail.com','jtoro2716@gmail.com','arhamjamal@gmail.com');
+$gerrithost = "83.233.5.249";
+$defaultbranch = "lp-mr1"
 
 # grabs user name from local unix system
 chomp ($username = `git config user.name`);
@@ -48,18 +52,18 @@ foreach (@reviewers) {
 
 # add the gerrit remote branch
 if ($branch eq '(no branch)'|| $branch =~ /Detached/i) {
-	print "branch was $branch, it is now lp-mr1\n";
-	$branch = "lp-mr1";
+	print "branch was $branch, it is now $defaultbranch\n";
+	$branch = "$defaultbranch";
 } else {
 print "branch is $branch\n";
 }
 
 # the three config items that we're concerned about now
-$base{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
+$base{'url'} = "ssh://$username\@$gerrithost:29418/$repo";
 $base{'push'} = "HEAD:refs/for/$branch";
 $base{'receivepack'} = "git receive-pack $base{'receivepack'}";
 
-$force{'url'} = "ssh://$username\@83.233.5.249:29418/$repo";
+$force{'url'} = "ssh://$username\@$gerrithost:29418/$repo";
 $force{'push'} = "HEAD:refs/heads/$branch";
 $force{'receivepack'} = "git receive-pack";
 
@@ -70,7 +74,7 @@ chomp $revparse;
 print "$revparse\n";
 
 
- $addcommand = 'scp -p -P 29418 '.$username.'@83.233.5.249:hooks/commit-msg '.$revparse.'/hooks/commit-msg';
+ $addcommand = 'scp -p -P 29418 '.$username.'@'.$gerrithost.':hooks/commit-msg '.$revparse.'/hooks/commit-msg';
 print "$addcommand\n";
 `$addcommand`;
 
