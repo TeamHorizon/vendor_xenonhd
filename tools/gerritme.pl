@@ -21,10 +21,13 @@
 # softcoded config
 @reviewers = ('pcarenza@gmail.com','jtoro2716@gmail.com','arhamjamal@gmail.com');
 $gerrithost = "83.233.5.249";
-$defaultbranch = "lp-mr1"
+$defaultbranch = "lp-mr1";
 
 # grabs user name from local unix system
 chomp ($username = `git config user.name`);
+if ($username eq "") {
+	chomp($username = `whoami`);
+}
 
 # grabs active branch from 'git branch'
 if ($ARGV[0]) {
