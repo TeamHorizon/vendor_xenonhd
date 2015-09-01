@@ -170,11 +170,11 @@ PRODUCT_COPY_FILES += \
 
 # AdAway
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/org.adaway.apk:system/app/org.adaway.apk
+    vendor/xenonhd/proprietary/common/app/org.adaway.apk:system/app/Adaway/Adaway.apk
 
 # BitSyko Layers
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/com.lovejoy777.rroandlayersmanager.apk:system/app/com.lovejoy777.rroandlayersmanager/base.apk
+    vendor/xenonhd/proprietary/common/app/com.lovejoy777.rroandlayersmanager.apk:system/app/LayersManager/LayersManager.apk
 
 # Hide BitSyko Layers Manager app icon from launcher
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -182,11 +182,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Kernel Adiutor
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/com.grarak.kerneladiutor.apk:system/app/com.grarak.kerneladiutor/base.apk
+    vendor/xenonhd/proprietary/common/app/com.grarak.kerneladiutor.apk:system/priv-app/KernelAdiutor/KernelAdiutor.apk
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-     vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+     vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU-v2.46.zip:system/addon.d/UPDATE-SuperSU.zip \
      vendor/xenonhd/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Enable SIP+VoIP on all targets
