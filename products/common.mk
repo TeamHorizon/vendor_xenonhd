@@ -181,11 +181,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Kernel Adiutor
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/com.grarak.kerneladiutor.apk:system/data/com.grarak.kerneladiutor/base.apk
+    vendor/xenonhd/proprietary/common/app/com.grarak.kerneladiutor.apk:system/app/com.grarak.kerneladiutor/base.apk
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-     vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU-v2.46.zip:system/addon.d/UPDATE-SuperSU.zip \
+     vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
      vendor/xenonhd/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Enable SIP+VoIP on all targets
