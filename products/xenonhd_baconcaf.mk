@@ -36,5 +36,5 @@ PRODUCT_GMS_CLIENTID_BASE := android-oneplus
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=oneplus/bacon/A0001:5.0.2/LRX22G/YNG1TAS2I3:user/release-keys \
-    PRIVATE_BUILD_DESC="bacon-user 5.0.2 LRX22G YNG1TAS2I3 release-keys"
+    BUILD_FINGERPRINT=oneplus/bacon/A0001:5.1.1/LMY48B/Y0G4PAS1N0:user/release-keys \
+    PRIVATE_BUILD_DESC="bacon-user 5.1.1 LMY48B YOG4PAS1N0 release-keys"
