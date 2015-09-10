@@ -22,6 +22,8 @@
 @reviewers = ('pcarenza@gmail.com','jtoro2716@gmail.com','arhamjamal@gmail.com');
 $gerrithost = "83.233.5.249";
 $defaultbranch = "lp-mr1";
+$mainremote = "th";
+$gitname= "TeamHorizon";
 
 # grabs user name from local unix system
 chomp ($username = `git config user.name`);
@@ -29,20 +31,38 @@ if ($username eq "") {
 	chomp($username = `whoami`);
 }
 
-# grabs active branch from 'git branch'
-if ($ARGV[0]) {
-	$branch = $ARGV[0];
-} else {
-	chomp ($branch = `git branch| grep "*"`);
-	$branch =~ s/\*\s//g;
-	
-}
-
 # grab the repository name from the list of URLs
-chomp ($repo = `git remote show th | grep "Fetch URL"`);
-$repo =~ s/.*Fetch URL: https:\/\/github.com\///g;
+if (`git remote show | grep $mainremote`) {
+    print "found $mainremote remote...\n";
+    chomp ($repo = `git remote show $mainremote | grep "Fetch URL"`);
+} elsif (`git remote show | grep gh`) {
+    print "found gh remote...\n";
+    chomp ($repo = `git remote show gh | grep "Fetch URL"`);
+} else {
+    chomp($findone = `git remote -v | grep $gitname | grep fetch | grep -v gerrit | grep -v gforce | cut -f1`); 
+    if ($findone) {
+        print "Found another gh remote... $findone\n";
+	chomp($repo = `git remote -v | grep $findone | grep fetch | cut -f2`);
+    } else {
+        print "cannot find $gitname remote. Exiting... \n";
+        exit(0);
+    }
+}
+$repo =~ s/.*Fetch URL: //g;
+$repo =~ s/https:\/\/github.com\///g;
 
 print "**** Setting up gerrit configuration for $repo. ****\n";
+
+# grabs active branch from 'git rev-parse'
+if ($ARGV[0]) {
+        $branch = $ARGV[0];
+} else {
+        @branch = `git rev-parse --symbolic-full-name --abbrev-ref --remotes`;
+        @branchz = grep (/^(th|gh|$findone)/, @branch);
+        chomp ($branch = $branchz[0]);
+        $branch =~ s/^.*\///g;
+        
+}
 
 # sets up the base git config command
 $basecommand = 'git config remote.gerrit.';
@@ -55,8 +75,8 @@ foreach (@reviewers) {
 }
 
 # add the gerrit remote branch
-if ($branch eq '(no branch)'|| $branch =~ /Detached/i) {
-	print "branch was $branch, it is now $defaultbranch\n";
+if ($branch eq '') {
+	print "branch was unknown, it is now $defaultbranch\n";
 	$branch = "$defaultbranch";
 } else {
 print "branch is $branch\n";
@@ -75,7 +95,7 @@ $force{'receivepack'} = "git receive-pack";
 # add the commit message hook
 $revparse = `git rev-parse --git-dir`;
 chomp $revparse;
-print "$revparse\n";
+#print "$revparse\n";
 
 
  $addcommand = 'scp -p -P 29418 '.$username.'@'.$gerrithost.':hooks/commit-msg '.$revparse.'/hooks/commit-msg';
