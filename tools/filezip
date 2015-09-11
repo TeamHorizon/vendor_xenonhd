@@ -51,10 +51,18 @@ cat >$OUT/ota_lollipop.xml <<EOF
                 id="downloads"
                 title="Downloads"
                 description="XenonHD Downloads for all builds">https://mirrors.c0urier.net/?dir=android/teamhorizon</DownloadsURL>
-            <GappsUrl
-                id="gapps"
-                title="Gapps"
-                description="Download latest BaNks Gapps">https://s.basketbuild.com/devs/BaNkS/GApps</GappsUrl>
+            <BaNkSGappsUrl
+                id="banksgapps"
+                title="BaNkS Gapps"
+                description="BaNks Gapps Downloads">https://mirrors.c0urier.net/?dir=android/teamhorizon/gapps</BaNkSGappsUrl>
+            <TKGappsUrl
+                id="tkgapps"
+                title="TK Gapps"
+                description="TK Gapps Downloads">http://forum.xda-developers.com/android/software/tk-gapps-t3116347</TKGappsUrl>
+            <OpenGappsUrl
+                id="opengapps"
+                title="Open Gapps"
+                description="Open Gapps Downloads">http://opengapps.org</OpenGappsUrl>
         </$Device>
     </Stable>
 </SlimOTA>
