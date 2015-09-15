@@ -58,7 +58,11 @@ if ($ARGV[0]) {
         $branch = $ARGV[0];
 } else {
         @branch = `git rev-parse --symbolic-full-name --abbrev-ref --remotes`;
-        @branchz = grep (/^(th|gh|$findone)/, @branch);
+	if ($findone) {
+            @branchz = grep (/^(th|gh|$findone)/, @branch);
+        } else {
+            @branchz = grep (/^(th|gh)/, @branch);
+        }
         chomp ($branch = $branchz[0]);
         $branch =~ s/^.*\///g;
         
