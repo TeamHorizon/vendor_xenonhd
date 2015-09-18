@@ -41,11 +41,15 @@ if (`git remote show | grep $mainremote`) {
 } else {
     chomp($findone = `git remote -v | grep $gitname | grep fetch | grep -v gerrit | grep -v gforce | cut -f1`); 
     if ($findone) {
-        print "Found another gh remote... $findone\n";
-	chomp($repo = `git remote -v | grep $findone | grep fetch | cut -f2`);
+        print "Found $findone remote...\n";
+	chomp($repo = `git remote show $findone | grep "Fetch URL"`);
     } else {
         print "cannot find $gitname remote. Exiting... \n";
         exit(0);
+    }
+    if (!$repo) {
+	print "There is no such remote repository. Exiting... \n";
+	exit (0);
     }
 }
 $repo =~ s/.*Fetch URL: //g;
