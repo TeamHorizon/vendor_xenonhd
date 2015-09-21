@@ -27,6 +27,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_h345.mk \
 	$(LOCAL_DIR)/xenonhd_hammerhead.mk \
 	$(LOCAL_DIR)/xenonhd_hammerheadcaf.mk \
+        $(LOCAL_DIR)/xenonhd_hlte.mk \
 	$(LOCAL_DIR)/xenonhd_honami.mk \
 	$(LOCAL_DIR)/xenonhd_huashan.mk \
 	$(LOCAL_DIR)/xenonhd_i605.mk \
