@@ -186,7 +186,7 @@ PRODUCT_COPY_FILES += \
 
 # SuperSU
 PRODUCT_COPY_FILES += \
-     vendor/xenonhd/proprietary/common/app/UPDATE-SuperSU-v2.46.zip:system/addon.d/UPDATE-SuperSU.zip \
+     vendor/xenonhd/proprietary/common/app/SuperSU-v2.52.zip:system/addon.d/UPDATE-SuperSU.zip \
      vendor/xenonhd/proprietary/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Enable SIP+VoIP on all targets
