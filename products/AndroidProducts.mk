@@ -20,6 +20,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_find5.mk \
 	$(LOCAL_DIR)/xenonhd_find7.mk \
 	$(LOCAL_DIR)/xenonhd_flo.mk \
+	$(LOCAL_DIR)/xenonhd_flounder.mk \
 	$(LOCAL_DIR)/xenonhd_galaxysmtd.mk \
 	$(LOCAL_DIR)/xenonhd_geehrc.mk \
 	$(LOCAL_DIR)/xenonhd_ghost.mk \

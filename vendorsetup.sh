@@ -18,6 +18,7 @@ add_lunch_combo xenonhd_falcon-userdebug
 add_lunch_combo xenonhd_find5-userdebug
 add_lunch_combo xenonhd_find7-userdebug
 add_lunch_combo xenonhd_flo-userdebug
+add_lunch_combo xenonhd_flounder-userdebug
 add_lunch_combo xenonhd_galaxysmtd-userdebug
 add_lunch_combo xenonhd_geehrc-userdebug
 add_lunch_combo xenonhd_ghost-userdebug
