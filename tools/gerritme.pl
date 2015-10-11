@@ -21,7 +21,7 @@
 # softcoded config
 @reviewers = ('pcarenza@gmail.com','jtoro2716@gmail.com','arhamjamal@gmail.com');
 $gerrithost = "83.233.5.249";
-$defaultbranch = "lp-mr1";
+$defaultbranch = "mm";
 $mainremote = "th";
 $gitname= "TeamHorizon";
 
