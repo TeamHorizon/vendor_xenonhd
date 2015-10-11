@@ -1,10 +1,14 @@
-# Inherit device configuration
+# Inherit AOSP device configuration for flounder.
 $(call inherit-product, device/htc/flounder/aosp_flounder.mk)
+
+# Inherit from those products. Most specific first.
+$(call inherit-product, device/htc/flounder/product.mk)
+$(call inherit-product, device/htc/flounder/device-lte.mk)
+$(call inherit-product-if-exists, vendor/htc/flounder_lte/device-vendor.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
-
-$(call inherit-product-if-exists, vendor/htc/flounder/device-vendor.mk)
 
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
@@ -27,4 +31,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := xenonhd_flounder
 PRODUCT_BRAND := google
+PRODUCT_DEVICE := flounder
 PRODUCT_MODEL := Nexus 9
+PRODUCT_MANUFACTURER := htc
