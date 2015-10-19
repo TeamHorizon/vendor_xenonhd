@@ -3,8 +3,8 @@
 # inherit from CM and XenonHD
 #
 
-BOARD_SEPOLICY_DIRS += \
-    vendor/xenonhd/sepolicy
+#BOARD_SEPOLICY_DIRS += \
+#    vendor/xenonhd/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file.te \
