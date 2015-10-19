@@ -1,17 +1,23 @@
 # Inherit AOSP device configuration for flounder.
 $(call inherit-product, device/htc/flounder/aosp_flounder.mk)
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, device/htc/flounder/product.mk)
-$(call inherit-product, device/htc/flounder/device-lte.mk)
-$(call inherit-product-if-exists, vendor/htc/flounder_lte/device-vendor.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
 
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
+
+# Inherit vendor
+$(call inherit-product-if-exists, vendor/htc/flounder/device-vendor.mk)
+
+# Inline kernel building
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.8/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_SOURCE := kernel/htc/flounder
+TARGET_KERNEL_CONFIG := flounder_defconfig
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_CMDLINE := androidboot.selinux=enforcing
+TARGET_PREBUILT_KERNEL := false
 
 # Copy shamu specific prebuilt files
 PRODUCT_COPY_FILES +=  \
@@ -22,6 +28,10 @@ PRODUCT_COPY_FILES +=  \
 
 # Inherit drm blobs
 -include vendor/xenonhd/products/common_drm.mk
+
+# Enable USB OTG (CAF commit to Settings)
+ADDITIONAL_BUILD_PROPERTIES += \
+    persist.sys.isUsbOtgEnabled=true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=flounder \
