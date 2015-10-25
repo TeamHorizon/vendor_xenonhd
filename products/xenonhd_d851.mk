@@ -1,4 +1,4 @@
-# Inherit from d855 device
+# Inherit from d851 device
 $(call inherit-product, device/lge/d851/full_d851.mk)
 
 # Inherit common product files.
@@ -30,9 +30,16 @@ PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-D851
 PRODUCT_MANUFACTURER := LGE
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
+# Enable Torch
+PRODUCT_PACKAGES += Torch
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \
     PRODUCT_NAME="g3_tmo_us" \
-    BUILD_FINGERPRINT="lge/g3_tmo_us/g3:4.4.2/KVT49L.D85110c/D85110c.1403267110:user/release-keys" \
-    PRIVATE_BUILD_DESC="g3_tmo_us-user 4.4.2 KVT49L.D85110c D85110c.1403267110 release-keys"
+    BUILD_FINGERPRINT="lge/g3_tmo_us/g3:6.0/MRA58K/2256973:user/release-keys" \
+    PRIVATE_BUILD_DESC="g3_tmo_us-user 6.0 MRA58K 2256973 release-keys"
 

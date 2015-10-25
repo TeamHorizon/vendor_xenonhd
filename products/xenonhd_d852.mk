@@ -1,4 +1,4 @@
-# Inherit from d855 device
+# Inherit from d852 device
 $(call inherit-product, device/lge/d852/full_d852.mk)
 
 # Inherit common product files.
@@ -29,6 +29,13 @@ PRODUCT_NAME := xenonhd_d852
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-D852
 PRODUCT_MANUFACTURER := LGE
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
+# Enable Torch
+PRODUCT_PACKAGES += Torch
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \

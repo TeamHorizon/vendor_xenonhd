@@ -1,4 +1,4 @@
-# Inherit from d855 device
+# Inherit from f400 device
 $(call inherit-product, device/lge/f400/full_f400.mk)
 
 # Inherit common product files.
@@ -30,9 +30,16 @@ PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-F400
 PRODUCT_MANUFACTURER := LGE
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
+# Enable Torch
+PRODUCT_PACKAGES += Torch
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
    PRODUCT_DEVICE="g3" \
    PRODUCT_NAME="g3_kt_kr" \
-   BUILD_FINGERPRINT="lge/g3_kt_kr/g3:5.0/LRX21R/F400K20f.1419232865:user/release-keys" \
-   PRIVATE_BUILD_DESC="g3_kt_kr-user 5.0 LRX21R F400K20f.1419232865 release-keys"
+   BUILD_FINGERPRINT="lge/g3_kt_kr/g3:6.0/MRA58K/2256973:user/release-keys" \
+   PRIVATE_BUILD_DESC="g3_kt_kr-user 6.0 MRA58K 2256973 release-keys"
 

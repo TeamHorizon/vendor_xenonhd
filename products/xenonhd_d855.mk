@@ -30,8 +30,15 @@ PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-D855
 PRODUCT_MANUFACTURER := LGE
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
+# Enable Torch
+PRODUCT_PACKAGES += Torch
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \
     PRODUCT_NAME="g3_global_com" \
-    BUILD_FINGERPRINT="lge/g3_global_com/g3:5.0/LRX21R.A1419207951/1419207951:user/release-keys" \
-    PRIVATE_BUILD_DESC="g3_global_com-user 5.0 LRX21R.A1419207951 1419207951 release-keys"
+    BUILD_FINGERPRINT="lge/g3_global_com/g3:6.0/MRA58K/2256973:user/release-keys" \
+    PRIVATE_BUILD_DESC="g3_global_com-user 6.0 MRA58K 2256973 release-keys"

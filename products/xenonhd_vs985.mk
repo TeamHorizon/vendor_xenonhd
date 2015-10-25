@@ -1,7 +1,4 @@
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
-# Inherit from d855 device
+# Inherit from vs985 device
 $(call inherit-product, device/lge/vs985/full_vs985.mk)
 
 # Inherit common product files.
@@ -33,11 +30,20 @@ PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG-VS985
 PRODUCT_MANUFACTURER := LGE
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2560
+TARGET_SCREEN_WIDTH := 1440
+
+# Enable Torch
+PRODUCT_PACKAGES += Torch
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \
     PRODUCT_NAME="g3_vzw_us" \
-    BUILD_FINGERPRINT="lge/g3_vzw/g3:5.0.1/LRX21Y/1516810098cf1:user/release-keys" \
-    PRIVATE_BUILD_DESC="g3_vzw-user 5.0.1 LRX21Y 1516810098cf1 release-keys"
+    BUILD_FINGERPRINT="lge/g3_vzw/g3:6.0/MRA58K/2256973:user/release-keys" \
+    PRIVATE_BUILD_DESC="g3_vzw-user 6.0 MRA58K 2256973 release-keys"
 
 PRODUCT_GMS_CLIENTID_BASE := android-verizon
-
