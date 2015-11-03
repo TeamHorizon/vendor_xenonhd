@@ -33,7 +33,7 @@ fi
 
 # Create OTA XML file
 if [ -f $ANDROID_BUILD_TOP/ota_conf ]; then
-cat >$OUT/ota_lollipop.xml <<EOF
+cat >$OUT/ota_marshmallow.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
@@ -51,14 +51,6 @@ cat >$OUT/ota_lollipop.xml <<EOF
                 id="downloads"
                 title="Downloads"
                 description="XenonHD Downloads for all builds">https://mirrors.c0urier.net/?dir=android/teamhorizon</DownloadsURL>
-            <BaNkSGappsUrl
-                id="banksgapps"
-                title="BaNkS Gapps"
-                description="BaNks Gapps Downloads">https://mirrors.c0urier.net/?dir=android/teamhorizon/gapps</BaNkSGappsUrl>
-            <TKGappsUrl
-                id="tkgapps"
-                title="TK Gapps"
-                description="TK Gapps Downloads">http://forum.xda-developers.com/android/software/tk-gapps-t3116347</TKGappsUrl>
             <OpenGappsUrl
                 id="opengapps"
                 title="Open Gapps"

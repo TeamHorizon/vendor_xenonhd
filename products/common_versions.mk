@@ -1,14 +1,18 @@
 # Version information used on all builds
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_VERSION_TAGS=release-keys USER=android-build BUILD_UTC_DATE=$(shell date +"%s")
 
-XENONHD_VERSION :=  update-XenonHD-$(shell date +"%m-%d-%y")-signed
+# XenonHD version
+BOARD := $(subst xenonhd_,,$(TARGET_PRODUCT))
+PRODUCT_NAME := $(TARGET_PRODUCT)
+
+XENONHD_VERSION :=  XenonHD-$(shell date +"%m-%d-%y")-$(OTA_TYPE)
 
 # Rom Manager properties
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.xehdversion=XenonHD-$(shell date +"%m-%d-%y") \
     ro.modversion=XenonHD-$(shell date +"%m-%d-%y") \
     ro.rommanager.developerid=TeamHorizon
-    
+
 # ROM Statistics and ROM Identification
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.romstats.url=http://iceandfire.co/stats/ \
@@ -31,7 +35,7 @@ $(shell echo -e "#       **** This_is_an_auto-generated_configuration_file_used_
 ota-device=$(TARGET_PRODUCT)\n \
 \n \
 # Build_Location\n \
-ota_url=https://mirrors.c0urier.net/android/teamhorizon/OTA/$(TARGET_PRODUCT)/ota_lollipop.xml\n \
+ota_url=https://mirrors.c0urier.net/android/teamhorizon/OTA/$(TARGET_PRODUCT)/ota_marshmallow.xml\n \
 \n \
 # release_type. This value never changes and is not build type dependent\n \
 release_type=Stable\n \
@@ -50,4 +54,4 @@ $(shell sed -i "s/\( \|xenonhd_\)//g" $(ANDROID_BUILD_TOP)/ota_conf)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.device=$(shell sed -n -e'/ota-device/s/^.*=//p' $(ANDROID_BUILD_TOP)/ota_conf) \
     ro.ota.type=$(OTA_TYPE) \
-    ro.ota.version=$(OTA_TYPE)-XenonHD-$(shell date +"%Y%m%d")
+    ro.ota.version=XenonHD-$(shell date +"%m-%d-%y")
