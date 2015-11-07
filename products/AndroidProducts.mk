@@ -26,6 +26,7 @@ PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/xenonhd_ghost.mk \
 	$(LOCAL_DIR)/xenonhd_grouper.mk \
 	$(LOCAL_DIR)/xenonhd_h345.mk \
+        $(LOCAL_DIR)/xenonhd_h811.mk \
 	$(LOCAL_DIR)/xenonhd_hammerhead.mk \
 	$(LOCAL_DIR)/xenonhd_hammerheadcaf.mk \
         $(LOCAL_DIR)/xenonhd_hlte.mk \

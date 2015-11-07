@@ -24,6 +24,7 @@ add_lunch_combo xenonhd_geehrc-userdebug
 add_lunch_combo xenonhd_ghost-userdebug
 add_lunch_combo xenonhd_grouper-userdebug
 add_lunch_combo xenonhd_h345-userdebug
+add_lunch_combo xenonhd_h811-userdebug
 add_lunch_combo xenonhd_hammerhead-userdebug
 add_lunch_combo xenonhd_hammerheadcaf-userdebug
 add_lunch_combo xenonhd_hlte-userdebug
