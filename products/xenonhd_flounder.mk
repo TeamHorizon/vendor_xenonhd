@@ -25,7 +25,7 @@ ADDITIONAL_BUILD_PROPERTIES += \
     persist.sys.isUsbOtgEnabled=true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=volantis \
+    PRODUCT_NAME=flounder \
     BUILD_FINGERPRINT=google/volantis/flounder:6.0/MRA58N/2289998:user/release-keys \
     PRIVATE_BUILD_DESC="volantis-user 6.0 MRA58N 2289998 release-keys"
 
