@@ -137,7 +137,6 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
     vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
-    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # SELinux filesystem labels
@@ -195,6 +194,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.camera-sound=1
 
+# LatinIME swyping support
+ifneq ($(filter xenonhd_angler xenonhd_flounder xenonhd_h811,$(TARGET_PRODUCT)),)
+PRODUCT_COPY_FILES += \
+	vendor/xenonhd/proprietary/common/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so
+else
+PRODUCT_COPY_FILES += \
+	vendor/xenonhd/proprietary/common/lib/libjni_latinime.so:system/lib/libjni_latinime.so
+endif
 
 ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM), yes)
     -include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
