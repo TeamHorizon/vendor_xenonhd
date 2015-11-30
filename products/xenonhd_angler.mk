@@ -17,9 +17,6 @@ PRODUCT_COPY_FILES +=  \
     vendor/xenonhd/proprietary/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
     vendor/xenonhd/proprietary/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
-# Inherit drm blobs
--include vendor/xenonhd/products/common_drm.mk
-
 # APNs
 PRODUCT_COPY_FILES +=  \
 	vendor/xenonhd/proprietary/common/etc/apns-conf.xml:system/etc/apns-conf.xml
