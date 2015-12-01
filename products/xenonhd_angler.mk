@@ -23,10 +23,10 @@ PRODUCT_COPY_FILES +=  \
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := xenonhd_angler
-PRODUCT_BRAND := google
+PRODUCT_BRAND := Google
 PRODUCT_DEVICE := angler
 PRODUCT_MODEL := Nexus 6P
-PRODUCT_MANUFACTURER := huawei
+PRODUCT_MANUFACTURER := Huawei
 
 TARGET_VENDOR := huawei
 
