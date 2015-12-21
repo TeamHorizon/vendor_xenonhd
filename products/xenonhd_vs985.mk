@@ -40,10 +40,10 @@ PRODUCT_PACKAGES += Torch
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
+PRODUCT_GMS_CLIENTID_BASE := android-verizon
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_DEVICE="g3" \
     PRODUCT_NAME="g3_vzw_us" \
-    BUILD_FINGERPRINT="lge/g3_vzw/g3:6.0/MRA58K/2256973:user/release-keys" \
-    PRIVATE_BUILD_DESC="g3_vzw-user 6.0 MRA58K 2256973 release-keys"
-
-PRODUCT_GMS_CLIENTID_BASE := android-verizon
+    BUILD_FINGERPRINT="lge/g3_vzw/g3:6.0.1/MMB29M/2431559:user/release-keys" \
+    PRIVATE_BUILD_DESC="g3_vzw-user 6.0.1 MMB29M 2431559 release-keys"
