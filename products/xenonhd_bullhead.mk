@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration.
-(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
+$(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
