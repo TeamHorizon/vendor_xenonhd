@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration.
-$(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
+(call inherit-product, device/lge/bullhead/aosp_bullhead.mk)
 
 # Inherit common product files.
 $(call inherit-product, vendor/xenonhd/products/common.mk)
@@ -25,7 +25,7 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_NAME := xenonhd_bullhead
 PRODUCT_BRAND := Google
 PRODUCT_DEVICE := bullhead
-PRODUCT_MODEL := Nexus 6P
+PRODUCT_MODEL := Nexus 5X
 PRODUCT_MANUFACTURER := LGE
 
 TARGET_VENDOR := lge
