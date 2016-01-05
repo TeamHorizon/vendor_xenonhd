@@ -7,6 +7,9 @@ $(call inherit-product, vendor/xenonhd/products/common.mk)
 # Telephony
 $(call inherit-product, vendor/xenonhd/configs/telephony.mk)
 
+# Enhanced NFC
+$(call inherit-product, vendor/xenonhd/configs/nfc_enhanced.mk)
+
 # Inherit common build.prop overrides
 -include vendor/xenonhd/products/common_versions.mk
 
@@ -37,5 +40,5 @@ PRODUCT_PACKAGES += Torch
 # build.prop overrides
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=geehrc_open_eu \
-    BUILD_FINGERPRINT=lge/geehrc_open_eu/geehrc:6.0/MRA58K/2256973:user/release-keys \
-    PRIVATE_BUILD_DESC="geehrc_open_eu-user 6.0 MRA58K 2256973 release-keys"
+    BUILD_FINGERPRINT=lge/geehrc_open_eu/geehrc:6.0.1/MMB29M/2431559:user/release-keys \
+    PRIVATE_BUILD_DESC="geehrc_open_eu-user 6.0.1 MMB29M 2431559 release-keys"
