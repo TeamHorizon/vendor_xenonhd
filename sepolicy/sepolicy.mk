@@ -1,6 +1,6 @@
 #
 # This policy configuration will be used by all products that
-# inherit from CM and XenonHD
+# inherit from XenonHD
 #
 
 BOARD_SEPOLICY_DIRS += \

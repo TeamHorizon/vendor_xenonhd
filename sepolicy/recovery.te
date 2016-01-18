@@ -30,14 +30,20 @@ allow recovery sdcard_posix:file r_file_perms;
 allow recovery recovery_prop:property_service set;
 
 # recursive rm for wipes... :(
+allow app_data_file self:filesystem associate;
+allow recovery app_data_file:file { read open create write };
+allow recovery app_data_file:filesystem { relabelto relabelfrom mount unmount };
+
 allow recovery file_type:dir { rw_dir_perms rmdir };
 allow recovery file_type:notdevfile_class_set { unlink getattr };
 # wipe saves and restores the layout version
 allow recovery install_data_file:file create_file_perms;
-allow recovery system_data_file:file create;
+allow recovery system_data_file:file create_file_perms;
 
 # /cache/recovery things: command and logs
 allow recovery recovery_cache_file:dir create_dir_perms;
 allow recovery recovery_cache_file:file create_file_perms;
 
+# set system properties for various things
+allow recovery system_prop:property_service set;
 ')
