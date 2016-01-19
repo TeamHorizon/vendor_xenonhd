@@ -4,6 +4,12 @@
          disable does not work unless this is true. -->
     <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
+    <!-- Global actions -->
+    <string-array name="config_globalActionsList" translatable="false">
+        <item>power</item>
+        <item>reboot</item>
+    </string-array>
+
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- The Google Network Location Services location provider -->
         <item>com.google.android.gms</item>
@@ -13,7 +19,7 @@
 
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
-	<!-- Disable stock OTA components if installed -->
+    <!-- Disable stock OTA components if installed -->
     <string-array name="config_disabledComponents" translatable="false">
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity</item>
         <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService$Receiver</item>
@@ -30,14 +36,14 @@
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService</item>
     </string-array>
 
-	<!-- Disable stock OTA components if installed -->
-    <string-array name="config_disabledComponents" translatable="false">
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateActivity</item>
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService</item>
-        <item>com.google.android.gsf/com.google.android.gsf.update.SystemUpdateService$Receiver</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$Receiver</item>
-        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$ActiveReceiver</item>
-    </string-array>
+    <!-- Set default widget options to use Google clock -->
+    <string name="widget_default_package_name">com.google.android.deskclock</string>
+    <string name="widget_default_class_name">com.android.alarmclock.DigitalAppWidgetProvider</string>
+
+    <!-- Set default messaging app to Google Messenger -->
+    <string name="default_sms_application">com.google.android.apps.messaging</string>
+
+    <!-- Set defaults for Google Services -->
+    <string name="config_appsAuthorizedForSharedAccounts">;com.android.vending;com.android.settings;</string>
+    <string name="config_persistentDataPackageName">com.google.android.gms</string>
 </resources>

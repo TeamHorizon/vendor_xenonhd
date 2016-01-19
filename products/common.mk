@@ -7,24 +7,33 @@ PRODUCT_DEVICE := generic
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_PACKAGES += \
-    AudioFX \
     BluetoothExt \
+    Busybox \
     DeskClock \
     Development \
     Dialer \
     Eleven \
+    LatinIME \
     LatinImeDictionaryPack \
     libemoji \
-    libscreenrecorder \
     LockClock \
-    ScreenRecorder \
+    messaging \
+    Screencast \
     SlimLauncher \
     SoundRecorder \
     Torch \
-    VoicePlus \
-    KernelTweaker \
-    XenonWallpapers \
     XenonOTA
+
+PRODUCT_PACKAGES += \
+    Basic \
+    Galaxy4 \
+    HoloSpiralWallpaper \
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    MagicSmokeWallpapers \
+    NoiseField \
+    PhaseBeam \
+    PhotoTable
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
@@ -77,10 +86,14 @@ endif
 PRODUCT_PACKAGES += \
     libffmpeg_extractor \
     libffmpeg_omx \
-	media_codecs_ffmpeg.xml
+    media_codecs_ffmpeg.xml
+
 PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so \
+    media.sf.extractor-plugin=libffmpeg_extractor.so
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    keyguard.no_require_sim=true \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.com.google.clientidbase=android-google \
@@ -101,8 +114,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/xenonhd/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions 
+    vendor/xenonhd/proprietary/common/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/xenonhd/proprietary/common/bin/backuptool.functions:install/bin/backuptool.functions
 
 # Audio
 $(call inherit-product-if-exists, frameworks/base/data/sounds/OldAudio.mk)
@@ -125,9 +138,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.root_access=1
 endif
 
-# Common dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
-
 # Blobs common to all devices
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/resolv.conf:system/etc/resolv.conf
@@ -137,7 +147,6 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/etc/init.local.rc:root/init.xenonhd.rc \
     vendor/xenonhd/proprietary/common/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
     vendor/xenonhd/proprietary/common/etc/init_trigger.enabled:system/etc/init_trigger.enabled \
-    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
     vendor/xenonhd/proprietary/common/bin/sysinit:system/bin/sysinit
 
 # SELinux filesystem labels
@@ -165,6 +174,18 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/xbin/sysrw:system/xbin/sysrw \
     vendor/xenonhd/proprietary/common/xbin/zip:system/xbin/zip \
     vendor/xenonhd/proprietary/common/xbin/zipalign:system/xbin/zipalign
+
+# LatinIME swyping support
+ifneq ($(filter angler flounder h811, $(TARGET_DEVICE)),)
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle64.so:system/lib64/libjni_latinimegoogle.so
+else
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/proprietary/common/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so
+endif
+
+# Common dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 
 # AdAway
 PRODUCT_COPY_FILES += \
@@ -199,3 +220,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM), yes)
     -include prebuilts/chromium/$(TARGET_DEVICE)/chromium_prebuilt.mk
 endif
+
+# Inherit telephony configs
+    -include vendor/xenonhd/products/telephony.mk
+
+# Inherit drm blobs
+    -include vendor/xenonhd/products/common_drm.mk
+
+# Inherit common build.prop overrides
+    -include vendor/xenonhd/products/common_versions.mk
