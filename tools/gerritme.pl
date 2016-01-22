@@ -77,10 +77,10 @@ $basecommand = 'git config remote.gerrit.';
 $forcecommand = 'git config remote.gforce.';
 
 # add reviewers to receivepack command
-$reviewertitle = "--reviewer ";
-foreach (@reviewers) {
-    $base{'receivepack'} .= " $reviewertitle $_";
-}
+#$reviewertitle = "--reviewer ";
+#foreach (@reviewers) {
+#    $base{'receivepack'} .= " $reviewertitle $_";
+#}
 
 # add the gerrit remote branch
 if ($branch eq '') {
