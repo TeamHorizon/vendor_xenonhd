@@ -19,7 +19,7 @@ PRODUCT_PACKAGES += \
     LockClock \
     messaging \
     Screencast \
-    SlimLauncher \
+    Launcher3 \
     SoundRecorder \
     Torch \
     XenonOTA
