@@ -23,7 +23,7 @@ ro.romstats.tframe=2
 
 # OTA
 ifeq ($(OTA_TYPE),)
-OTA_TYPE=experimental
+OTA_TYPE=Unofficial
 endif
 
 # Create ota_conf, Rudimentary, but it works for now
