@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
     Launcher3 \
     SoundRecorder \
     Torch \
-    XenonOTA
+    XenonOTA \
+    masquerade
 
 PRODUCT_PACKAGES += \
     Basic \
