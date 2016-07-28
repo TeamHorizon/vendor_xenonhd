@@ -191,13 +191,9 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/org.adaway.apk:system/app/Adaway/Adaway.apk
 
-# BitSyko Layers
+# Substratum Theme Engine
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/com.lovejoy777.rroandlayersmanager.apk:system/app/LayersManager/LayersManager.apk
-
-# Hide BitSyko Layers Manager app icon from launcher
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.layers.noIcon=noIcon
+    vendor/xenonhd/proprietary/common/app/projekt.substratum.apk:system/app/Substratum/Substratum.apk
 
 # Kernel Adiutor
 PRODUCT_COPY_FILES += \
