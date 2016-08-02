@@ -12,6 +12,7 @@ allow vold self:capability { setgid setuid };
 recovery_only(`
   allow vold rootfs:dir { add_name write };
   allow vold rootfs:file execute_no_trans;
+  allow vold vold_tmpfs:file link;
 ')
 
 # Allow vold to relabel sdcard fs mounts
