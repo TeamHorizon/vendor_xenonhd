@@ -118,6 +118,10 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/xenonhd/proprietary/common/bin/backuptool.functions:install/bin/backuptool.functions
 
+# Backup Services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/configs/permissions/backup.xml:system/etc/sysconfig/backup.xml
+
 # Audio
 $(call inherit-product-if-exists, frameworks/base/data/sounds/OldAudio.mk)
 $(call inherit-product-if-exists, frameworks/base/data/sounds/NewAudio.mk)
