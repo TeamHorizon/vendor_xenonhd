@@ -332,7 +332,6 @@ void healthd_board_mode_charger_draw_battery(
     int capacity = -1;
 
     if (!font_inited) {
-        gr_set_font("log");
         font_inited = true;
     }
 
