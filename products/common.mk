@@ -23,7 +23,8 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     Torch \
     XenonOTA \
-    masquerade
+    masquerade \
+    substratum
 
 PRODUCT_PACKAGES += \
     Basic \
@@ -210,10 +211,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries
 # AdAway
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/proprietary/common/app/org.adaway.apk:system/app/Adaway/Adaway.apk
-
-# Substratum Theme Engine
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/proprietary/common/app/projekt.substratum.apk:system/app/Substratum/Substratum.apk
 
 # Kernel Adiutor
 PRODUCT_COPY_FILES += \
