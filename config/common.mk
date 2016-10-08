@@ -1,8 +1,15 @@
+# XenonHD product
 PRODUCT_BRAND ?= xenonhd
+PRODUCT_NAME ?= xenonhd
+
+# Definitions
+CONFIG := vendor/xenonhd/config
+OVERLAY := vendor/xenonhd/overlay
+PREBUILT := vendor/xenonhd/prebuilt/common
 
 # Copy prebuilt files
 PRODUCT_COPY_FILES +=  \
-    vendor/xenonhd/prebuilt/common/media/bootanimation.zip:system/media/bootanimation.zip
+    $(PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=$(shell date +"%s")
 
@@ -47,37 +54,37 @@ PRODUCT_COPY_FILES += \
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
-    vendor/xenonhd/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/xenonhd/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
-    vendor/xenonhd/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    $(PREBUILT)/bin/backuptool.sh:install/bin/backuptool.sh \
+    $(PREBUILT)/bin/backuptool.functions:install/bin/backuptool.functions \
+    $(PREBUILT)/bin/50-cm.sh:system/addon.d/50-cm.sh \
+    $(PREBUILT)/bin/blacklist:system/addon.d/blacklist
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    $(CONFIG)/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+    $(PREBUILT)/bin/otasigcheck.sh:install/bin/otasigcheck.sh
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/xenonhd/prebuilt/common/bin/sysinit:system/bin/sysinit
+    $(PREBUILT)/etc/init.d/00banner:system/etc/init.d/00banner \
+    $(PREBUILT)/bin/sysinit:system/bin/sysinit
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    $(PREBUILT)/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
 # CM-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/etc/init.local.rc:root/init.cm.rc
+    $(PREBUILT)/etc/init.local.rc:root/init.cm.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
+    $(PREBUILT)/lib/content-types.properties:system/lib/content-types.properties
 
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
@@ -89,20 +96,20 @@ PRODUCT_COPY_FILES += \
 
 # This is CM!
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+    $(CONFIG)/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
 # Include OTA config
-include vendor/xenonhd/config/ota.mk
+include $(CONFIG)/ota.mk
 
 # Include CM audio files
-include vendor/xenonhd/config/cm_audio.mk
+include $(CONFIG)/cm_audio.mk
 
 # Theme engine
-include vendor/xenonhd/config/themes_common.mk
+include $(CONFIG)/themes_common.mk
 
 ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
-include vendor/xenonhd/config/cmsdk_common.mk
+include $(CONFIG)/cmsdk_common.mk
 endif
 
 # Required CM packages
@@ -229,7 +236,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
-DEVICE_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
+DEVICE_PACKAGE_OVERLAYS += $(OVERLAY)/common
 
 # XenonHD version
 BOARD := $(subst xenonhd_,,$(TARGET_PRODUCT))
@@ -261,7 +268,7 @@ endif
 endif
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
--include vendor/xenonhd/config/partner_gms.mk
+-include $(CONFIG)/partner_gms.mk
 -include vendor/cyngn/product.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
