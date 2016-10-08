@@ -1,5 +1,13 @@
 LOCAL_PATH := $(call my-dir)
 
+# XenonHD bootanimation
+include $(CLEAR_VARS)
+LOCAL_MODULE := bootanimation.zip
+LOCAL_SRC_FILES := media/bootanimation.zip
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT)/media
+include $(BUILD_PREBUILT)
+
 # a wrapper for curl which provides wget syntax, for compatibility
 include $(CLEAR_VARS)
 LOCAL_MODULE := wget
