@@ -91,6 +91,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
+# Include OTA config
+include vendor/xenonhd/config/ota.mk
+
 # Include CM audio files
 include vendor/xenonhd/config/cm_audio.mk
 
