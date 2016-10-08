@@ -16,7 +16,7 @@ fi
 
 # Determine what to name the new signed package
 if [ -z "$XenonHD" ]; then
-	MODVERSION=`sed -n -e'/ro\.xehdversion/s/^.*=//p' $OUT/system/build.prop`
+	MODVERSION=`sed -n -e'/ro\.xenonhd.version/s/^.*=//p' $OUT/system/build.prop`
 	: ${MODVERSION:=}
         Device=`sed -n -e'/ro\.ota\.device/s/^.*=//p' $OUT/system/build.prop`
         : ${Device:=}
@@ -24,10 +24,10 @@ if [ -z "$XenonHD" ]; then
         : ${OTA_TYPE:=}
         OTA_FILENAME=`sed -n -e'/ro\.ota\.version/s/^.*=//p' $OUT/system/build.prop`
         : ${OTA_FILENAME:=}
-	XENONHD_TARGET_PACKAGE=update-$MODVERSION-signed-$Device.zip
+	XENONHD_TARGET_PACKAGE=$MODVERSION-$OTA_TYPE-$Device.zip
 	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
 else
-	XENONHD_TARGET_PACKAGE=update-squished.zip
+	XENONHD_TARGET_PACKAGE=xenonhd-squished.zip
 	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
 fi
 
