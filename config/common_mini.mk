@@ -1,4 +1,4 @@
 # Inherit common CM stuff
-$(call inherit-product, vendor/cm/config/common.mk)
+$(call inherit-product, vendor/xenonhd/config/common.mk)
 
 PRODUCT_SIZE := mini
