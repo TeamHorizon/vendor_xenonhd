@@ -41,20 +41,20 @@ cat >$OUT/ota_nougat.xml <<EOF
             <Filename>$OTA_FILENAME</Filename>
             <RomUrl
                 id="rom"
-                title="Rom"
+                title="ROM"
                 description="Download latest XenonHD build">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$Device/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
-                title="Md5"
-                description="Download XenonHD build md5">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$Device/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+                title="MD5"
+                description="Download latest XenonHD build's MD5">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$Device/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <DownloadsURL
                 id="downloads"
                 title="Downloads"
-                description="XenonHD Downloads for all builds">https://mirrors.c0urier.net/android/teamhorizon/</DownloadsURL>
+                description="Downloads of all XenonHD builds">https://mirrors.c0urier.net/android/teamhorizon/</DownloadsURL>
             <OpenGappsUrl
                 id="opengapps"
                 title="Open Gapps"
-                description="Open Gapps Downloads">http://opengapps.org</OpenGappsUrl>
+                description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
         </$Device>
     </Stable>
 </SlimOTA>
