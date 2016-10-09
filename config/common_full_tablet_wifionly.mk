@@ -1,9 +1,9 @@
-# Inherit common CM stuff
+# Inherit common XenonHD stuff
 $(call inherit-product, vendor/xenonhd/config/common_full.mk)
 
-# Required CM packages
+# Required XenonHD packages
 PRODUCT_PACKAGES += \
     LatinIME
 
-# Include CM LatinIME dictionaries
+# Include XenonHD LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/dictionaries

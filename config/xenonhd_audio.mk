@@ -1,5 +1,5 @@
 #
-# CyanogenMod Audio Files
+# XenonHD Audio Files
 #
 
 ALARM_PATH := vendor/xenonhd/prebuilt/common/media/audio/alarms

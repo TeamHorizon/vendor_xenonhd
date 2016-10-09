@@ -48,10 +48,6 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
-# Copy over the changelog to the device
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
-
 # Backup Tool
 PRODUCT_COPY_FILES += \
     $(PREBUILT)/bin/backuptool.sh:install/bin/backuptool.sh \
@@ -78,9 +74,9 @@ PRODUCT_COPY_FILES += \
     $(PREBUILT)/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
-# CM-specific init file
+# XenonHD-specific init file
 PRODUCT_COPY_FILES += \
-    $(PREBUILT)/etc/init.local.rc:root/init.cm.rc
+    $(PREBUILT)/etc/init.local.rc:root/init.xenonhd.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -94,7 +90,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# This is CM!
+# This is XenonHD!
 PRODUCT_COPY_FILES += \
     $(CONFIG)/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
@@ -108,8 +104,8 @@ PRODUCT_COPY_FILES += \
 # Include OTA config
 include $(CONFIG)/ota.mk
 
-# Include CM audio files
-include $(CONFIG)/cm_audio.mk
+# Include XenonHD audio files
+include $(CONFIG)/xenonhd_audio.mk
 
 # Theme engine
 include $(CONFIG)/themes_common.mk
@@ -119,7 +115,7 @@ ifneq ($(TARGET_DISABLE_CMSDK), true)
 include $(CONFIG)/cmsdk_common.mk
 endif
 
-# Required CM packages
+# Required XenonHD packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
     CMAudioService \
@@ -128,7 +124,7 @@ PRODUCT_PACKAGES += \
     Profiles \
     WeatherManagerService
 
-# Optional CM packages
+# Optional XenonHD packages
 PRODUCT_PACKAGES += \
     libemoji \
     Terminal \
@@ -139,7 +135,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librsjni
 
-# Custom CM packages
+# Custom XenonHD packages
 PRODUCT_PACKAGES += \
     Launcher3 \
     Trebuchet \
@@ -161,7 +157,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Exchange2
 
-# Extra tools in CM
+# Extra tools in XenonHD
 PRODUCT_PACKAGES += \
     libsepol \
     mke2fs \
@@ -263,8 +259,6 @@ ifeq ($(OTA_PACKAGE_SIGNING_KEY),)
 endif
 
 -include vendor/cm-priv/keys/keys.mk
-
-CM_DISPLAY_VERSION := $(XENONHD_VERSION)
 
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)

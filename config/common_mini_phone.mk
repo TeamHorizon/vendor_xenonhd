@@ -1,6 +1,6 @@
 $(call inherit-product, vendor/xenonhd/config/common_mini.mk)
 
-# Required CM packages
+# Required XenonHD packages
 PRODUCT_PACKAGES += \
     LatinIME
 
