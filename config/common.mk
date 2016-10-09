@@ -249,11 +249,11 @@ DEVICE_PACKAGE_OVERLAYS += $(OVERLAY)/common
 BOARD := $(subst xenonhd_,,$(TARGET_PRODUCT))
 PRODUCT_NAME := $(TARGET_PRODUCT)
 
-XENONHD_VERSION :=  XenonHD-$(shell date +"%m-%d-%y")-$(OTA_TYPE)
+XENONHD_VERSION :=  XenonHD-$(shell date +"%y-%m-%d")-$(OTA_TYPE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.xenonhd.version=XenonHD-$(shell date +"%m-%d-%y") \
-    ro.modversion=XenonHD-$(shell date +"%m-%d-%y") \
+    ro.xenonhd.version=XenonHD-$(shell date +"%y-%m-%d") \
+    ro.modversion=XenonHD-$(shell date +"%y-%m-%d") \
     ro.rommanager.developerid=TeamHorizon
 
 ifeq ($(OTA_PACKAGE_SIGNING_KEY),)

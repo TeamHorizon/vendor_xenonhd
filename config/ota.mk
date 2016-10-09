@@ -31,7 +31,7 @@ $(shell sed -i "s/\( \|xenonhd_\)//g" $(ANDROID_BUILD_TOP)/ota_conf)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.device=$(shell sed -n -e'/ota-device/s/^.*=//p' $(ANDROID_BUILD_TOP)/ota_conf) \
     ro.ota.type=$(OTA_TYPE) \
-    ro.ota.version=XenonHD-$(shell date +"%m-%d-%y")
+    ro.ota.version=XenonHD-$(shell date +"%y-%m-%d")
 
 # XenonHD OTA app
 PRODUCT_PACKAGES += \
