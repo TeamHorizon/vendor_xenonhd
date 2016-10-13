@@ -127,9 +127,9 @@ PRODUCT_PACKAGES += \
 # Optional XenonHD packages
 PRODUCT_PACKAGES += \
     libemoji \
-    Terminal \
     LiveWallpapersPicker \
-    PhotoTable
+    PhotoTable \
+    Terminal
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
@@ -137,17 +137,18 @@ PRODUCT_PACKAGES += \
 
 # Custom XenonHD packages
 PRODUCT_PACKAGES += \
-    Trebuchet \
     AudioFX \
     CMFileManager \
-    Eleven \
-    LockClock \
     CMSettingsProvider \
+    Eleven \
     ExactCalculator \
     LiveLockScreenService \
-    WeatherProvider \
+    LockClock \
+    Screencast \
     SoundRecorder \
-    Screencast
+    Trebuchet \
+    WallpaperPicker \
+    WeatherProvider
 
 # Exchange support
 PRODUCT_PACKAGES += \
@@ -155,26 +156,25 @@ PRODUCT_PACKAGES += \
 
 # Extra tools in XenonHD
 PRODUCT_PACKAGES += \
-    libsepol \
-    mke2fs \
-    tune2fs \
-    nano \
-    htop \
-    mkfs.ntfs \
-    fsck.ntfs \
-    mount.ntfs \
-    gdbserver \
-    micro_bench \
-    oprofiled \
-    sqlite3 \
-    strace \
-    pigz \
     7z \
-    lib7z \
     bash \
     bzip2 \
     curl \
+    fsck.ntfs \
+    gdbserver \
+    htop \
+    lib7z \
+    libsepol \
+    micro_bench \
+    mke2fs \
+    mkfs.ntfs \
+    mount.ntfs \
+    oprofiled \
+    pigz \
     powertop \
+    sqlite3 \
+    strace \
+    tune2fs \
     unrar \
     unzip \
     vim \
