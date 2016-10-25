@@ -5,26 +5,23 @@
 
 . $ANDROID_BUILD_TOP/vendor/xenonhd/tools/colors
 
-
 OUT_TARGET_HOST=`uname -a | grep Darwin`
 if [ -z "$OUT_TARGET_HOST" ]
 then
    MD5=md5sum
 else
-   MD5="md5 -r "
+   MD5="md5 -r"
 fi
 
 # Determine what to name the new signed package
 if [ -z "$XenonHD" ]; then
 	MODVERSION=`sed -n -e'/ro\.xenonhd.version/s/^.*=//p' $OUT/system/build.prop`
 	: ${MODVERSION:=}
-        Device=`sed -n -e'/ro\.ota\.device/s/^.*=//p' $OUT/system/build.prop`
-        : ${Device:=}
         OTA_TYPE=`sed -n -e'/ro\.ota\.type/s/^.*=//p' $OUT/system/build.prop`
         : ${OTA_TYPE:=}
-        OTA_FILENAME=`sed -n -e'/ro\.ota\.version/s/^.*=//p' $OUT/system/build.prop`
-        : ${OTA_FILENAME:=}
-	XENONHD_TARGET_PACKAGE=$MODVERSION-$OTA_TYPE-$Device.zip
+        DEVICE=`sed -n -e'/ro\.ota\.device/s/^.*=//p' $OUT/system/build.prop`
+        : ${DEVICE:=}
+	XENONHD_TARGET_PACKAGE=$MODVERSION-$DEVICE.zip
 	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
 else
 	XENONHD_TARGET_PACKAGE=xenonhd-squished.zip
@@ -37,25 +34,25 @@ cat >$OUT/ota_nougat.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
-        <$Device>
-            <Filename>$OTA_FILENAME</Filename>
+        <$DEVICE>
+            <Filename>$MODVERSION</Filename>
             <RomUrl
                 id="rom"
                 title="ROM"
-                description="Download latest XenonHD build">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$Device/$XENONHD_TARGET_PACKAGE</RomUrl>
+                description="Download the latest build">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
                 title="MD5"
-                description="Download latest XenonHD build's MD5">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$Device/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
-            <DownloadsURL
-                id="downloads"
-                title="Downloads"
-                description="Downloads of all XenonHD builds">https://mirrors.c0urier.net/android/teamhorizon/</DownloadsURL>
+                description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+            <ChangelogUrl
+                id="changelog"
+                title="Changelog"
+                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/Changelog.txt</ChangelogUrl>
             <OpenGappsUrl
                 id="opengapps"
                 title="Open Gapps"
                 description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
-        </$Device>
+        </$DEVICE>
     </Stable>
 </SlimOTA>
 EOF

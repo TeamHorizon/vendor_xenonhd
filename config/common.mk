@@ -244,17 +244,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 DEVICE_PACKAGE_OVERLAYS += $(OVERLAY)/common
 
-# XenonHD version
-BOARD := $(subst xenonhd_,,$(TARGET_PRODUCT))
-PRODUCT_NAME := $(TARGET_PRODUCT)
-
-XENONHD_VERSION :=  XenonHD-$(shell date +"%y-%m-%d")-$(OTA_TYPE)
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.xenonhd.version=XenonHD-$(shell date +"%y-%m-%d") \
-    ro.modversion=XenonHD-$(shell date +"%y-%m-%d") \
-    ro.rommanager.developerid=TeamHorizon
-
 ifeq ($(OTA_PACKAGE_SIGNING_KEY),)
     PRODUCT_EXTRA_RECOVERY_KEYS += \
         vendor/xenonhd/build/target/product/security/cm \
