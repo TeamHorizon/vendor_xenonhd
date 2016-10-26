@@ -145,8 +145,8 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     LockClock \
     Screencast \
+    SlimLauncher \
     SoundRecorder \
-    Trebuchet \
     WallpaperPicker \
     WeatherProvider
 
