@@ -38,15 +38,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Argon.ogg \
     ro.config.alarm_alert=Helium.ogg
 
-ifneq ($(TARGET_BUILD_VARIANT),user)
-# Thank you, please drive thru!
-PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
-endif
-
-ifneq ($(TARGET_BUILD_VARIANT),eng)
-# Enable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
-endif
+# Enable root and ADB
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.dun.override=0 \
+    persist.sys.root_access=3 \
+    ro.adb.secure=0 \
+    ro.secure=0
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -238,9 +235,6 @@ PRODUCT_PACKAGES += \
     procrank \
     su
 endif
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=0
 
 DEVICE_PACKAGE_OVERLAYS += $(OVERLAY)/common
 
