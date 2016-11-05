@@ -134,15 +134,17 @@ PRODUCT_PACKAGES += \
 
 # Custom XenonHD packages
 PRODUCT_PACKAGES += \
+    Adaway \
     AudioFX \
     CMFileManager \
     CMSettingsProvider \
     Eleven \
     ExactCalculator \
+    KernelAdiutor \
     LiveLockScreenService \
     LockClock \
+    NovaLauncher \
     Screencast \
-    SlimLauncher \
     SoundRecorder \
     WallpaperPicker \
     WeatherProvider
