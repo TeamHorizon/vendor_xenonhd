@@ -39,11 +39,11 @@ cat >$OUT/ota_nougat.xml <<EOF
             <RomUrl
                 id="rom"
                 title="ROM"
-                description="Download the latest build">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
+                description="Download the latest build">https://mirrors.c0urier.net/android/teamhorizon/N/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
                 title="MD5"
-                description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+                description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/N/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <ChangelogUrl
                 id="changelog"
                 title="Changelog"
