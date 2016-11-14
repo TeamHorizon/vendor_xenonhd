@@ -9,7 +9,8 @@ PREBUILT := vendor/xenonhd/prebuilt/common
 
 # Copy prebuilt files
 PRODUCT_COPY_FILES +=  \
-    $(PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip
+    $(PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip \
+    packages/apps/XenonApps/SuperSU.zip:system/addon.d/SuperSU.zip
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=$(shell date +"%s")
 
@@ -65,8 +66,8 @@ PRODUCT_COPY_FILES += \
     $(PREBUILT)/etc/init.d/00banner:system/etc/init.d/00banner \
     $(PREBUILT)/bin/sysinit:system/bin/sysinit
 
-ifneq ($(TARGET_BUILD_VARIANT),user)
 # userinit support
+ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_COPY_FILES += \
     $(PREBUILT)/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
