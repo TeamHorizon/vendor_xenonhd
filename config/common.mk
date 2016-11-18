@@ -9,8 +9,7 @@ PREBUILT := vendor/xenonhd/prebuilt/common
 
 # Copy prebuilt files
 PRODUCT_COPY_FILES +=  \
-    $(PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip \
-    packages/apps/XenonApps/SuperSU.zip:system/addon.d/SuperSU.zip
+    $(PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=$(shell date +"%s")
 
@@ -147,6 +146,7 @@ PRODUCT_PACKAGES += \
     NovaLauncher \
     Screencast \
     SoundRecorder \
+    Superuser \
     WallpaperPicker \
     WeatherProvider
 
