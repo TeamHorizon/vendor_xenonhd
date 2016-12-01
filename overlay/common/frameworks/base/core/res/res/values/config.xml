@@ -71,6 +71,7 @@
          so that applications can still use their own mechanisms. -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
-    <!-- If this is true, long press on power button will be available from the non-interactive state -->
+    <!-- If this is true, long press on power button will be available from a
+         non-interactive state. -->
     <bool name="config_supportLongPressPowerWhenNonInteractive">true</bool>
 </resources>
