@@ -1,4 +1,6 @@
+add_lunch_combo xenonhd_athene-userdebug
 add_lunch_combo xenonhd_bacon-userdebug
+add_lunch_combo xenonhd_bullhead-userdebug
 add_lunch_combo xenonhd_cancro-userdebug
 add_lunch_combo xenonhd_d855-userdebug
 add_lunch_combo xenonhd_endeavoru-userdebug
