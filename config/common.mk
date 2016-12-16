@@ -147,9 +147,14 @@ PRODUCT_PACKAGES += \
     NovaLauncher \
     Screencast \
     SoundRecorder \
-    Superuser \
     WallpaperPicker \
     WeatherProvider
+
+# Optional SuperSU apk
+ifeq ($(WITH_SUPERSU),true)
+PRODUCT_PACKAGES += \
+    SuperSU
+endif
 
 # Exchange support
 PRODUCT_PACKAGES += \
