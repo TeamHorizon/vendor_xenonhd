@@ -3,7 +3,7 @@ Officialy Supported Devices:
 | Device                           | Codename     | XDA Thread                                                         | Maintainer                                              |
 | :------------------------------: | :----------: | :----------------------------------------------------------------: | :-----------------------------------------------------: | 
 | HTC One (M7)                     | m7           | [XDA] (http://forum.xda-developers.com/showthread.php?t=2986038)   | [ljjehl] (https://github.com/ljjehl)
-| HTC One (M8)                     | m8           |                                                                    | [ljjehl] (https://github.com/ljjehl)
+| HTC One (M8)                     | m8           | [XDA] (http://forum.xda-developers.com/showthread.php?t=3520382)   | [ljjehl] (https://github.com/ljjehl)
 | LG G3                            | d855         | [XDA] (http://forum.xda-developers.com/showthread.php?t=3493380)   | [Vangreen] (https://github.com/Vangreen)
 | LG Nexus 4                       | mako         | [XDA] (http://forum.xda-developers.com/showthread.php?t=3499985)   | [nitin1438] (https://github.com/nitin1438)
 | LG Nexus 5X                      | bullhead     | [XDA] (http://forum.xda-developers.com/showthread.php?t=3510911)   | [Sid-Sun] (https://github.com/Sid-Sun)
