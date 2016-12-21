@@ -16,10 +16,7 @@
 
 <resources>
     <color name="primary_color">#ff2d2d2d</color>
-    <color name="primary_dark_color">@color/material_blue_grey_950</color>
-    <color name="secondary_color">#ff3a3a3a</color>
-    <color name="accent_color">@color/material_blue_500</color>
-    <color name="accent_color_lighter">@color/material_blue_400</color>
-    <color name="material_blue_400">#ff5e97f6</color>
-    <color name="material_blue_500">#ff4285f4</color>
+    <color name="primary_dark_color">#ff242424</color>
+    <color name="accent_color_light">#ff4285f4</color>
+    <color name="accent_color_dark">#ff5e97f6</color>
 </resources>
