@@ -32,7 +32,7 @@ fi
 if [ -f $ANDROID_BUILD_TOP/ota_conf ]; then
 cat >$OUT/ota_nougat.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
-<SlimOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
+<XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
         <$DEVICE>
             <Filename>$MODVERSION</Filename>
@@ -54,7 +54,7 @@ cat >$OUT/ota_nougat.xml <<EOF
                 description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
         </$DEVICE>
     </Stable>
-</SlimOTA>
+</XenonOTA>
 EOF
 fi
 
