@@ -91,13 +91,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(CONFIG)/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
-# Copy LatinIME libs for gesture typing
-PRODUCT_COPY_FILES += \
-    $(PREBUILT)/lib/libjni_latinime.so:system/lib/libjni_latinime.so \
-    $(PREBUILT)/lib/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
-    $(PREBUILT)/lib64/libjni_latinime.so:system/lib64/libjni_latinime.so \
-    $(PREBUILT)/lib64/libjni_latinimegoogle.so:system/lib64/libjni_latinimegoogle.so
-
 # Include OTA config
 include $(CONFIG)/ota.mk
 
