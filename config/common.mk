@@ -100,6 +100,11 @@ include $(CONFIG)/xenonhd_audio.mk
 # Theme engine
 include $(CONFIG)/themes_common.mk
 
+# OMS7 substratum & masquerade
+PRODUCT_PACKAGES += \
+   substratum \
+   masquerade
+
 ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
 include $(CONFIG)/cmsdk_common.mk
