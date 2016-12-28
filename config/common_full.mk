@@ -3,6 +3,5 @@ $(call inherit-product, vendor/xenonhd/config/common.mk)
 
 PRODUCT_SIZE := full
 
-# Themes
-PRODUCT_PACKAGES += \
-    HexoLibre
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.substratum.verified=true
