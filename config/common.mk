@@ -132,8 +132,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     masquerade \
     NovaLauncher \
-    Screencast \
-    SoundRecorder \
     WallpaperPicker \
     WeatherProvider
 
