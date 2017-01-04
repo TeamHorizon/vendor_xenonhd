@@ -78,8 +78,14 @@ userdebug_or_eng(`
   allow platform_app sudaemon:unix_stream_socket { connectto read write setopt ioctl };
   allow platform_app superuser_device:dir { create rw_dir_perms setattr unlink };
 
+  # Allow priv apps to start su commands
+  allow priv_app su_exec:file { execute_no_trans getattr open read execute };
+  allow priv_app superuser_device:sock_file { read write create setattr unlink getattr };
+  allow priv_app sudaemon:unix_stream_socket { connectto read write setopt ioctl };
+  allow priv_app superuser_device:dir { create rw_dir_perms setattr unlink };
+
   allow kernel sudaemon:fd { use };
 
 ')
 
-neverallow { domain userdebug_or_eng(`-dumpstate -shell -su -untrusted_app -init -sudaemon -system_app -system_server -platform_app') } su_exec:file no_x_file_perms;
+neverallow { domain userdebug_or_eng(`-dumpstate -shell -su -untrusted_app -init -sudaemon -system_app -system_server -platform_app -priv_app') } su_exec:file no_x_file_perms;
