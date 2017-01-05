@@ -155,10 +155,6 @@ PRODUCT_PACKAGES += \
     SuperSU
 endif
 
-# Exchange support		
-PRODUCT_PACKAGES += \		
-    Exchange2
-
 # Extra tools in XenonHD
 PRODUCT_PACKAGES += \
     7z \
