@@ -134,8 +134,8 @@ PRODUCT_PACKAGES += \
 # Custom XenonHD packages
 PRODUCT_PACKAGES += \
     Adaway \
+    Amaze \
     AudioFX \
-    CMFileManager \
     CMSettingsProvider \
     Eleven \
     ExactCalculator \
