@@ -246,6 +246,9 @@ endif
 
 DEVICE_PACKAGE_OVERLAYS += $(OVERLAY)/common
 
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+  vendor/cm/build/target/product/security/lineage
+
 -include vendor/cm-priv/keys/keys.mk
 
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
