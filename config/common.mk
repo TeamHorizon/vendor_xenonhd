@@ -246,12 +246,6 @@ endif
 
 DEVICE_PACKAGE_OVERLAYS += $(OVERLAY)/common
 
-ifeq ($(OTA_PACKAGE_SIGNING_KEY),)
-    PRODUCT_EXTRA_RECOVERY_KEYS += \
-        vendor/xenonhd/build/target/product/security/cm \
-        vendor/xenonhd/build/target/product/security/cm-devkey
-endif
-
 -include vendor/cm-priv/keys/keys.mk
 
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
