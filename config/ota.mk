@@ -18,7 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ota.type=$(OTA_TYPE)
 
 $(shell echo -e "# OTA_configuration\n \
-ota_url=https://mirrors.c0urier.net/android/teamhorizon/N/$(OTA_TYPE)/$(DEVICE)/ota_nougat.xml\n \
+ota_url=https://mirrors.c0urier.net/android/teamhorizon/N/OTA/ota_nougat_$(DEVICE).xml\n \
 ota-device=$(DEVICE)\n \
 device_name=ro.ota.device\n \
 release_type=Stable\n \

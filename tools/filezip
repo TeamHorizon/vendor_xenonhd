@@ -30,7 +30,7 @@ fi
 
 # Create OTA XML file
 if [ -f $ANDROID_BUILD_TOP/ota_conf ]; then
-cat >$OUT/ota_nougat.xml <<EOF
+cat >$OUT/ota_nougat_$DEVICE.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Stable>
@@ -47,7 +47,7 @@ cat >$OUT/ota_nougat.xml <<EOF
             <ChangelogUrl
                 id="changelog"
                 title="Changelog"
-                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/Changelog.txt</ChangelogUrl>
+                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/N/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
             <OpenGappsUrl
                 id="opengapps"
                 title="Open Gapps"
