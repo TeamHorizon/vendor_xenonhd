@@ -28,6 +28,7 @@ PRODUCT_COPY_FILES += \
     $(ALARM_PATH)/Bounce.ogg:system/media/audio/alarms/Bounce.ogg \
     $(ALARM_PATH)/Carbon.ogg:system/media/audio/alarms/Carbon.ogg \
     $(ALARM_PATH)/Drip.ogg:system/media/audio/alarms/Drip.ogg \
+    $(ALARM_PATH)/Flow.ogg:system/media/audio/alarms/Flow.ogg \
     $(ALARM_PATH)/Gallop.ogg:system/media/audio/alarms/Gallop.ogg \
     $(ALARM_PATH)/Helium.ogg:system/media/audio/alarms/Helium.ogg \
     $(ALARM_PATH)/Krypton.ogg:system/media/audio/alarms/Krypton.ogg \
@@ -72,16 +73,24 @@ PRODUCT_COPY_FILES += \
 # Notifications
 PRODUCT_COPY_FILES += \
     $(NOTIFICATION_PATH)/Ariel.ogg:system/media/audio/notifications/Ariel.ogg \
+    $(NOTIFICATION_PATH)/Birdsong.ogg:system/media/audio/notifications/Birdsong.ogg \
     $(NOTIFICATION_PATH)/Carme.ogg:system/media/audio/notifications/Carme.ogg \
     $(NOTIFICATION_PATH)/Ceres.ogg:system/media/audio/notifications/Ceres.ogg \
+    $(NOTIFICATION_PATH)/Chime.ogg:system/media/audio/notifications/Chime.ogg \
+    $(NOTIFICATION_PATH)/Clink.ogg:system/media/audio/notifications/Clink.ogg \
     $(NOTIFICATION_PATH)/Elara.ogg:system/media/audio/notifications/Elara.ogg \
     $(NOTIFICATION_PATH)/Europa.ogg:system/media/audio/notifications/Europa.ogg \
+    $(NOTIFICATION_PATH)/Flick.ogg:system/media/audio/notifications/Flick.ogg \
+    $(NOTIFICATION_PATH)/Hey.ogg:system/media/audio/notifications/Hey.ogg \
     $(NOTIFICATION_PATH)/Iapetus.ogg:system/media/audio/notifications/Iapetus.ogg \
     $(NOTIFICATION_PATH)/Io.ogg:system/media/audio/notifications/Io.ogg \
+    $(NOTIFICATION_PATH)/Note.ogg:system/media/audio/notifications/Note.ogg \
     $(NOTIFICATION_PATH)/Rhea.ogg:system/media/audio/notifications/Rhea.ogg \
     $(NOTIFICATION_PATH)/Salacia.ogg:system/media/audio/notifications/Salacia.ogg \
+    $(NOTIFICATION_PATH)/Strum.ogg:system/media/audio/notifications/Strum.ogg \
     $(NOTIFICATION_PATH)/Tethys.ogg:system/media/audio/notifications/Tethys.ogg \
-    $(NOTIFICATION_PATH)/Titan.ogg:system/media/audio/notifications/Titan.ogg
+    $(NOTIFICATION_PATH)/Titan.ogg:system/media/audio/notifications/Titan.ogg \
+    $(NOTIFICATION_PATH)/Trill.ogg:system/media/audio/notifications/Trill.ogg
 
 # Ringtones
 ifeq ($(TARGET_NEEDS_BOOSTED_SOUNDS),true)
@@ -94,15 +103,25 @@ PRODUCT_COPY_FILES += \
 else
 PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Atria.ogg:system/media/audio/ringtones/Atria.ogg \
+    $(RINGTONE_PATH)/Beats.ogg:system/media/audio/ringtones/Beats.ogg \
     $(RINGTONE_PATH)/Callisto.ogg:system/media/audio/ringtones/Callisto.ogg \
+    $(RINGTONE_PATH)/Dance_party.ogg:system/media/audio/ringtones/Dance_party.ogg \
     $(RINGTONE_PATH)/Dione.ogg:system/media/audio/ringtones/Dione.ogg \
+    $(RINGTONE_PATH)/Early_bird.ogg:system/media/audio/ringtones/Early_bird.ogg \
     $(RINGTONE_PATH)/Ganymede.ogg:system/media/audio/ringtones/Ganymede.ogg \
+    $(RINGTONE_PATH)/Hey_hey.ogg:system/media/audio/ringtones/Hey_hey.ogg \
     $(RINGTONE_PATH)/Luna.ogg:system/media/audio/ringtones/Luna.ogg \
     $(RINGTONE_PATH)/Oberon.ogg:system/media/audio/ringtones/Oberon.ogg \
     $(RINGTONE_PATH)/Phobos.ogg:system/media/audio/ringtones/Phobos.ogg \
     $(RINGTONE_PATH)/Pyxis.ogg:system/media/audio/ringtones/Pyxis.ogg \
+    $(RINGTONE_PATH)/Romance.ogg:system/media/audio/ringtones/Romance.ogg \
+    $(RINGTONE_PATH)/Rrrring.ogg:system/media/audio/ringtones/Rrrring.ogg \
     $(RINGTONE_PATH)/Sedna.ogg:system/media/audio/ringtones/Sedna.ogg \
+    $(RINGTONE_PATH)/Shooting_star.ogg:system/media/audio/ringtones/Shooting_star.ogg \
+    $(RINGTONE_PATH)/Spaceship.ogg:system/media/audio/ringtones/Spaceship.ogg \
+    $(RINGTONE_PATH)/Summer_night.ogg:system/media/audio/ringtones/Summer_night.ogg \
     $(RINGTONE_PATH)/Titania.ogg:system/media/audio/ringtones/Titania.ogg \
     $(RINGTONE_PATH)/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
-    $(RINGTONE_PATH)/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg
+    $(RINGTONE_PATH)/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg \
+    $(RINGTONE_PATH)/Zen.ogg:system/media/audio/ringtones/Zen.ogg
 endif
