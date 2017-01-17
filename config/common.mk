@@ -42,6 +42,13 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/prebuilt/common/bin/50-xenonhd.sh:system/addon.d/50-xenonhd.sh \
     vendor/xenonhd/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/xenonhd/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/xenonhd/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
+
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
