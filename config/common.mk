@@ -130,6 +130,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveLockScreenService \
     LockClock \
+    masquerade \
     NovaLauncher \
     Screencast \
     SoundRecorder \
@@ -143,7 +144,6 @@ PRODUCT_PACKAGES += \
     SuperSU \
     Adaway \
     substratum \
-    masquerade \
     KernelAdiutor
 endif
 
@@ -240,7 +240,6 @@ PRODUCT_PACKAGES += \
     su \
     Adaway \
     substratum \
-    masquerade \
     KernelAdiutor
 endif
 endif
