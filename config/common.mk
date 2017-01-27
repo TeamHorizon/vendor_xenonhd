@@ -235,7 +235,7 @@ PRODUCT_PACKAGES += \
     procrank
 
 # Conditionally build in su and root apps
-ifeq ($(WITH_SU),true)
+ifneq ($(WITHOUT_SU),true)
 PRODUCT_PACKAGES += \
     su \
     Adaway \
