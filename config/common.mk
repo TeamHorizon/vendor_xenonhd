@@ -140,11 +140,7 @@ PRODUCT_PACKAGES += \
 # Optional apps for rooted devices
 ifeq ($(WITH_SUPERSU),true)
 PRODUCT_PACKAGES += \
-    su \
-    SuperSU \
-    Adaway \
-    substratum \
-    KernelAdiutor
+    SuperSU
 endif
 
 # Extra tools in XenonHD
