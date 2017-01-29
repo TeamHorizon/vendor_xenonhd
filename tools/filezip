@@ -52,6 +52,10 @@ cat >$OUT/ota_nougat_$DEVICE.xml <<EOF
                 id="opengapps"
                 title="Open Gapps"
                 description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
+            <ExtrasUrl
+                id="extras"
+                title="Extras"
+                description="Download Extras">https://download.lineageos.org/extras</ExtrasUrl>
         </$DEVICE>
     </Stable>
 </XenonOTA>
