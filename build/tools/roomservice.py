@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # Copyright (C) 2012 The CyanogenMod Project
-# Copyright (C) 2012-2014 AICP Project
-# Copyright (C) 2012-2016 XenoNHD Project
+# Copyright (C) 2012/2013 SlimRoms Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,32 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from __future__ import print_function
-
-import base64
-import json
-import netrc
 import os
-import re
+import os.path
 import sys
-try:
-  # For python3
-  import urllib.error
-  import urllib.parse
-  import urllib.request
-except ImportError:
-  # For python2
-  import imp
-  import urllib2
-  import urlparse
-  urllib = imp.new_module('urllib')
-  urllib.error = urllib2
-  urllib.parse = urlparse
-  urllib.request = urllib2
-
+import urllib2
+import json
+import re
 from xml.etree import ElementTree
+from urllib2 import urlopen, Request
 
-product = sys.argv[1]
+product = sys.argv[1];
 
 if len(sys.argv) > 2:
     depsonly = sys.argv[2]
@@ -53,13 +36,19 @@ except:
     device = product
 
 if not depsonly:
-    print("Device %s not found. Attempting to retrieve device repository from TeamHorizon Github (http://github.com/TeamHorizon)." % device)
+    print "Device %s not found. Attempting to retrieve device repository from TeamHorizon Github (http://github.com/TeamHorizon)." % device
 
 repositories = []
 
 page = 1
 while not depsonly:
-    result = json.loads(urllib.request.urlopen("https://api.github.com/users/TeamHorizon/repos?page=%d" % page).read().decode())
+    request = Request("https://api.github.com/users/TeamHorizon/repos?page=%d" % page)
+    api_file = os.getenv("HOME") + '/api_token'
+    if (os.path.isfile(api_file)):
+        infile = open(api_file, 'r')
+        token = infile.readline()
+        request.add_header('Authorization', 'token %s' % token.strip())
+    result = json.loads(urllib2.urlopen(request).read())
     if len(result) == 0:
         break
     for res in result:
@@ -147,16 +136,16 @@ def add_to_manifest_dependencies(repositories):
         existing_project = exists_in_tree(lm, repo_target)
         if existing_project != None:
             if existing_project.attrib['name'] != repository['repository']:
-                print ('Updating dependency %s' % (repo_name))
+                print 'Updating dependency %s' % (repo_name)
                 existing_project.set('name', repository['repository'])
             if existing_project.attrib['revision'] == repository['branch']:
-                print ('TeamHorizon/%s already exists' % (repo_name))
+                print 'TeamHorizon/%s already exists' % (repo_name)
             else:
-                print ('updating branch for %s to %s' % (repo_name, repository['branch']))
+                print 'updating branch for %s to %s' % (repo_name, repository['branch'])
                 existing_project.set('revision', repository['branch'])
             continue
 
-        print ('Adding dependency: %s -> %s' % (repo_name, repo_target))
+        print 'Adding dependency: %s -> %s' % (repo_name, repo_target)
         project = ElementTree.Element("project", attrib = { "path": repo_target,
             "remote": "gh", "name": repo_name, "revision": "n" })
 
@@ -166,7 +155,7 @@ def add_to_manifest_dependencies(repositories):
         lm.append(project)
 
     indent(lm, 0)
-    raw_xml = ElementTree.tostring(lm).decode()
+    raw_xml = ElementTree.tostring(lm)
     raw_xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + raw_xml
 
     f = open('.repo/local_manifests/xenonhd_manifest.xml', 'w')
@@ -183,34 +172,34 @@ def add_to_manifest(repositories):
     for repository in repositories:
         repo_name = repository['repository']
         repo_target = repository['target_path']
-        if exists_in_tree(lm, repo_name):
-            print('TeamHorizon/%s already exists' % (repo_name))
+        existing_project = exists_in_tree_device(lm, repo_name)
+        if existing_project != None:
+            if existing_project.attrib['revision'] == repository['branch']:
+                print 'TeamHorizon/%s already exists' % (repo_name)
+            else:
+                print 'updating branch for TeamHorizon/%s to %s' % (repo_name, repository['branch'])
+                existing_project.set('revision', repository['branch'])
             continue
 
-        print('Adding dependency: TeamHorizon/%s -> %s' % (repo_name, repo_target))
+        print 'Adding dependency: TeamHorizon/%s -> %s' % (repo_name, repo_target)
         project = ElementTree.Element("project", attrib = { "path": repo_target,
             "remote": "gh", "name": "TeamHorizon/%s" % repo_name, "revision": "n" })
 
         if 'branch' in repository:
-            project.set('revision',repository['branch'])
-        elif fallback_branch:
-            print("Using fallback branch %s for %s" % (fallback_branch, repo_name))
-            project.set('revision', fallback_branch)
-        else:
-            print("Using default branch for %s" % repo_name)
+            project.set('revision', repository['branch'])
 
         lm.append(project)
 
     indent(lm, 0)
-    raw_xml = ElementTree.tostring(lm).decode()
+    raw_xml = ElementTree.tostring(lm)
     raw_xml = '<?xml version="1.0" encoding="UTF-8"?>\n' + raw_xml
 
     f = open('.repo/local_manifests/xenonhd_manifest.xml', 'w')
     f.write(raw_xml)
     f.close()
 
-def fetch_dependencies(repo_path, fallback_branch = None):
-    print('Looking for dependencies')
+def fetch_dependencies(repo_path):
+    print 'Looking for dependencies'
     dependencies_path = repo_path + '/xenonhd.dependencies'
     syncable_repos = []
 
@@ -227,28 +216,21 @@ def fetch_dependencies(repo_path, fallback_branch = None):
         dependencies_file.close()
 
         if len(fetch_list) > 0:
-            print('Adding dependencies to manifest')
+            print 'Adding dependencies to manifest'
             add_to_manifest_dependencies(fetch_list)
     else:
-        print('Dependencies file not found, bailing out.')
+        print 'Dependencies file not found, bailing out.'
 
     if len(syncable_repos) > 0:
-        print('Syncing dependencies')
+        print 'Syncing dependencies'
         os.system('repo sync --force-sync %s' % ' '.join(syncable_repos))
-
-    for deprepo in syncable_repos:
-        fetch_dependencies(deprepo)
-
-def has_branch(branches, revision):
-    return revision in [branch['name'] for branch in branches]
-
 
 if depsonly:
     repo_path = get_from_manifest(device)
     if repo_path:
         fetch_dependencies(repo_path)
     else:
-        print("Trying dependencies-only mode on a non-existing device tree?")
+        print "Trying dependencies-only mode on a non-existing device tree?"
 
     sys.exit()
 
@@ -256,20 +238,19 @@ else:
     for repository in repositories:
         repo_name = repository['name']
         if repo_name.startswith("android_device_") and repo_name.endswith("_" + device):
-            print("Found repository: %s" % repository['name'])
-
+            print "Found repository: %s" % repository['name']
             manufacturer = repo_name.replace("android_device_", "").replace("_" + device, "")
 
             repo_path = "device/%s/%s" % (manufacturer, device)
 
             add_to_manifest([{'repository':repo_name,'target_path':repo_path,'branch':'n'}])
 
-            print("Syncing repository to retrieve project.")
+            print "Syncing repository to retrieve project."
             os.system('repo sync --force-sync %s' % repo_path)
-            print("Repository synced!")
+            print "Repository synced!"
 
             fetch_dependencies(repo_path)
-            print("Done")
+            print "Done"
             sys.exit()
 
-print("Repository for %s not found in the TeamHorizon Github repository list. If this is in error, you may need to manually add it to your local_manifests/xenonhd_manifest.xml." % device)
+print "Repository for %s not found in the TeamHorizon Github repository list. If this is in error, you may need to manually add it to .repo/local_manifests/xenonhd_manifest.xml" % device
