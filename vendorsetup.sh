@@ -15,3 +15,4 @@ add_lunch_combo xenonhd_mako-userdebug
 add_lunch_combo xenonhd_onyx-userdebug
 add_lunch_combo xenonhd_titan-userdebug
 add_lunch_combo xenonhd_tomato-userdebug
+add_lunch_combo xenonhd_s2-userdebug
