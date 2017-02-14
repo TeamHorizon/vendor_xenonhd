@@ -7,9 +7,7 @@ CONFIG := vendor/xenonhd/config
 OVERLAY := vendor/xenonhd/overlay
 PREBUILT := vendor/xenonhd/prebuilt/common
 
-# Copy prebuilt files
-PRODUCT_COPY_FILES +=  \
-    $(PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip
+DEVICE_PACKAGE_OVERLAYS += $(OVERLAY)/common
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=$(shell date +"%s")
 
@@ -21,44 +19,27 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=$(PRODUCT_GMS_CLIENTID_BASE)
 endif
 
+# XenonHD Overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
-    ro.opa.eligible_device=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1
-
-# Default notification/alarm sounds
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Helium.ogg
-
-# Enable root and ADB
-PRODUCT_PROPERTY_OVERRIDES += \
+    media.sf.extractor-plugin=libffmpeg_extractor.so \
+    media.sf.omx-plugin=libffmpeg_omx.so \
     persist.sys.dun.override=0 \
     persist.sys.root_access=3 \
     ro.adb.secure=0 \
-    ro.secure=0
+    ro.build.selinux=1 \
+    ro.opa.eligible_device=true \
+    ro.secure=0 \
+    ro.storage_manager.enabled=true
 
-# Backup Tool
+# Backup Tool & init.d support
 PRODUCT_COPY_FILES += \
-    $(PREBUILT)/bin/backuptool.sh:install/bin/backuptool.sh \
-    $(PREBUILT)/bin/backuptool.functions:install/bin/backuptool.functions \
     $(PREBUILT)/bin/50-cm.sh:system/addon.d/50-cm.sh \
-    $(PREBUILT)/bin/blacklist:system/addon.d/blacklist
-
-# Backup Services whitelist
-PRODUCT_COPY_FILES += \
-    $(CONFIG)/permissions/backup.xml:system/etc/sysconfig/backup.xml
-
-# Signature compatibility validation
-PRODUCT_COPY_FILES += \
-    $(PREBUILT)/bin/otasigcheck.sh:install/bin/otasigcheck.sh
-
-# init.d support
-PRODUCT_COPY_FILES += \
-    $(PREBUILT)/etc/init.d/00banner:system/etc/init.d/00banner \
-    $(PREBUILT)/bin/sysinit:system/bin/sysinit
+    $(PREBUILT)/bin/backuptool.functions:install/bin/backuptool.functions \
+    $(PREBUILT)/bin/backuptool.sh:install/bin/backuptool.sh \
+    $(PREBUILT)/bin/blacklist:system/addon.d/blacklist \
+    $(PREBUILT)/bin/sysinit:system/bin/sysinit \
+    $(PREBUILT)/etc/init.d/00banner:system/etc/init.d/00banner
 
 # userinit support
 ifneq ($(TARGET_BUILD_VARIANT),user)
@@ -66,79 +47,82 @@ PRODUCT_COPY_FILES += \
     $(PREBUILT)/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
-# XenonHD-specific init file
-PRODUCT_COPY_FILES += \
-    $(PREBUILT)/etc/init.local.rc:root/init.xenonhd.rc
-
+# XenonHD-specific files
+# Backup Services whitelist
+# Signature compatibility validation
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
-    $(PREBUILT)/lib/content-types.properties:system/lib/content-types.properties
+    $(CONFIG)/permissions/backup.xml:system/etc/sysconfig/backup.xml \
+    $(CONFIG)/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml \
+    $(PREBUILT)/bin/otasigcheck.sh:install/bin/otasigcheck.sh \
+    $(PREBUILT)/etc/init.local.rc:root/init.xenonhd.rc \
+    $(PREBUILT)/lib/content-types.properties:system/lib/content-types.properties \
+    $(PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip
 
-# Enable SIP+VoIP on all targets
+# Enable SIP+VoIP on all targets & wireless Xbox 360 controller support
 PRODUCT_COPY_FILES += \
+    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
-# Enable wireless Xbox 360 controller support
-PRODUCT_COPY_FILES += \
-    frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
-
-# This is XenonHD!
-PRODUCT_COPY_FILES += \
-    $(CONFIG)/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
-
-# Include OTA config
+# Include OTA config, XenonHD audio files, Theme engine
 include $(CONFIG)/ota.mk
-
-# Include XenonHD audio files
+include $(CONFIG)/themes_common.mk
 include $(CONFIG)/xenonhd_audio.mk
 
-# Theme engine
-include $(CONFIG)/themes_common.mk
-
-ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
+ifneq ($(TARGET_DISABLE_CMSDK), true)
 include $(CONFIG)/cmsdk_common.mk
 endif
 
-# Required XenonHD packages
-PRODUCT_PACKAGES += \
-    BluetoothExt \
-    CMAudioService \
-    CMParts \
-    Development \
-    Profiles \
-    WeatherManagerService
-
-# Optional XenonHD packages
-PRODUCT_PACKAGES += \
-    libemoji \
-    LiveWallpapersPicker \
-    PhotoTable \
-    Terminal
-
-# Include explicitly to work around GMS issues
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full \
-    librsjni
-
-# Custom XenonHD packages
+# XenonHD packages
 PRODUCT_PACKAGES += \
     Amaze \
     AudioFX \
+    BluetoothExt \
+    CMAudioService \
+    CMParts \
     CMSettingsProvider \
+    Development \
     Eleven \
     ExactCalculator \
+    libemoji \
+    libffmpeg_omx \
+    libffmpeg_extractor \
+    libprotobuf-cpp-full \
+    librsjni \
     LiveLockScreenService \
+    LiveWallpapersPicker \
     LockClock \
-    masquerade \
+    media_codecs_ffmpeg.xml \
     NovaLauncher \
+    PhotoTable \
+    Profiles \
+    Recorder \
+    Terminal \
     WallpaperPicker \
+    WeatherManagerService \
     WeatherProvider
 
-# Optional apps for rooted devices
+# These packages are excluded from user builds
+ifneq ($(TARGET_BUILD_VARIANT),user)
+PRODUCT_PACKAGES += \
+    procmem \
+    procrank
+
+# Conditionally build in su and root apps
+ifneq ($(WITHOUT_SU),true)
+PRODUCT_PACKAGES += \
+    su \
+    Adaway \
+    substratum \
+    KernelAdiutor
+endif
+
+# Optional SuperSU apk
 ifeq ($(WITH_SUPERSU),true)
 PRODUCT_PACKAGES += \
     SuperSU
+endif
 endif
 
 # Extra tools in XenonHD
@@ -159,7 +143,15 @@ PRODUCT_PACKAGES += \
     oprofiled \
     pigz \
     powertop \
+    rsync \
+    scp \
+    sftp \
     sqlite3 \
+    ssh \
+    ssh-keygen \
+    sshd \
+    sshd_config \
+    start-ssh \
     strace \
     tune2fs \
     unrar \
@@ -168,82 +160,23 @@ PRODUCT_PACKAGES += \
     wget \
     zip
 
-# Custom off-mode charger
-ifneq ($(WITH_CM_CHARGER),false)
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    cm_charger_res_images \
-    font_log.png \
-    libhealthd.cm
-endif
-
 # ExFAT support
 WITH_EXFAT ?= true
 ifeq ($(WITH_EXFAT),true)
 TARGET_USES_EXFAT := true
 PRODUCT_PACKAGES += \
-    mount.exfat \
     fsck.exfat \
-    mkfs.exfat
+    mkfs.exfat \
+    mount.exfat
 endif
 
-# Openssh
-PRODUCT_PACKAGES += \
-    scp \
-    sftp \
-    ssh \
-    sshd \
-    sshd_config \
-    ssh-keygen \
-    start-ssh
-
-# rsync
-PRODUCT_PACKAGES += \
-    rsync
-
-# Stagefright FFMPEG plugin
-PRODUCT_PACKAGES += \
-    libffmpeg_extractor \
-    libffmpeg_omx \
-    media_codecs_ffmpeg.xml
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.sf.omx-plugin=libffmpeg_omx.so \
-    media.sf.extractor-plugin=libffmpeg_extractor.so
-
-# Storage manager
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.storage_manager.enabled=true
-
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
-# These packages are excluded from user builds
-ifneq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_PACKAGES += \
-    procmem \
-    procrank
-
-# Conditionally build in su and root apps
-ifneq ($(WITHOUT_SU),true)
-PRODUCT_PACKAGES += \
-    su \
-    Adaway \
-    substratum \
-    KernelAdiutor
-endif
-endif
-
-DEVICE_PACKAGE_OVERLAYS += $(OVERLAY)/common
+-include $(CONFIG)/partner_gms.mk
+-include $(WORKSPACE)/build_env/image-auto-bits.mk
+-include vendor/cm-priv/keys/keys.mk
+-include vendor/cyngn/product.mk
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-  vendor/xenonhd/build/target/product/security/lineage
-
--include vendor/cm-priv/keys/keys.mk
+    vendor/xenonhd/build/target/product/security/lineage
 
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
@@ -252,9 +185,5 @@ ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
     endif
 endif
 endif
-
--include $(WORKSPACE)/build_env/image-auto-bits.mk
--include $(CONFIG)/partner_gms.mk
--include vendor/cyngn/product.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)

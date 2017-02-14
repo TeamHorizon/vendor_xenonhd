@@ -16,10 +16,16 @@
 # XenonHD Audio Files
 #
 
-ALARM_PATH := vendor/xenonhd/prebuilt/common/media/audio/alarms
-NOTIFICATION_PATH := vendor/xenonhd/prebuilt/common/media/audio/notifications
-RINGTONE_PATH := vendor/xenonhd/prebuilt/common/media/audio/ringtones
-UI_PATH := vendor/xenonhd/prebuilt/common/media/audio/ui
+ALARM_PATH := $(PREBUILT)/media/audio/alarms
+NOTIFICATION_PATH := $(PREBUILT)/media/audio/notifications
+RINGTONE_PATH := $(PREBUILT)/media/audio/ringtones
+UI_PATH := $(PREBUILT)/media/audio/ui
+
+# Default ringtone
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.alarm_alert=Helium.ogg \
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.ringtone=Orion.ogg
 
 # Alarms
 PRODUCT_COPY_FILES += \

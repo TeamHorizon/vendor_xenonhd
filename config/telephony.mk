@@ -1,13 +1,14 @@
 # World APN list
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+    $(PREBUILT)/etc/apns-conf.xml:system/etc/apns-conf.xml
+
+# Telephony
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Telephony packages
 PRODUCT_PACKAGES += \
+    CellBroadcastReceiver \
     messaging \
     Stk \
-    CellBroadcastReceiver
-
-# Default ringtone
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Orion.ogg
+    telephony-ext
