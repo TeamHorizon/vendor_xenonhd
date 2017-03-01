@@ -1,3 +1,4 @@
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/xenonhd-rom/localized.svg)](https://crowdin.com/project/xenonhd-rom)
 Officially Supported Devices:
 ==========
 | Device                   | Codename                                                                     | Maintainer                                               | XDA Thread                                                        | Download
