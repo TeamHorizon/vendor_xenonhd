@@ -81,6 +81,7 @@ PRODUCT_PACKAGES += \
     CMAudioService \
     CMParts \
     CMSettingsProvider \
+    CustomTiles \
     Development \
     Eleven \
     ExactCalculator \
