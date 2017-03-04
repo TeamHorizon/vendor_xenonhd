@@ -76,7 +76,6 @@ endif
 
 # XenonHD packages
 PRODUCT_PACKAGES += \
-    Amaze \
     AudioFX \
     BluetoothExt \
     CMAudioService \
@@ -94,6 +93,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     LockClock \
     media_codecs_ffmpeg.xml \
+    MiXplorer \
     NovaLauncher \
     PhotoTable \
     Profiles \
