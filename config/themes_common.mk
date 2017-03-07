@@ -1,7 +1,7 @@
-# substratum & masquerade
+# substratum & ThemeInterfacer
 PRODUCT_PACKAGES += \
-        masquerade \
-        substratum
+        substratum \
+        ThemeInterfacer
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.substratum.verified=true
