@@ -5,6 +5,7 @@ add_lunch_combo xenonhd_cancro-userdebug
 add_lunch_combo xenonhd_d855-userdebug
 add_lunch_combo xenonhd_endeavoru-userdebug
 add_lunch_combo xenonhd_grouper-userdebug
+add_lunch_combo xenonhd_hammerhead-userdebug
 add_lunch_combo xenonhd_i9100-userdebug
 add_lunch_combo xenonhd_kenzo-userdebug
 add_lunch_combo xenonhd_kiwi-userdebug
@@ -17,3 +18,4 @@ add_lunch_combo xenonhd_onyx-userdebug
 add_lunch_combo xenonhd_titan-userdebug
 add_lunch_combo xenonhd_tomato-userdebug
 add_lunch_combo xenonhd_s2-userdebug
+add_lunch_combo xenonhd_shamu-userdebug
