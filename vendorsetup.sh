@@ -9,6 +9,7 @@ add_lunch_combo xenonhd_hammerhead-userdebug
 add_lunch_combo xenonhd_i9100-userdebug
 add_lunch_combo xenonhd_kenzo-userdebug
 add_lunch_combo xenonhd_kiwi-userdebug
+add_lunch_combo xenonhd_lettuce-userdebug
 add_lunch_combo xenonhd_lux-userdebug
 add_lunch_combo xenonhd_m7-userdebug
 add_lunch_combo xenonhd_m8-userdebug
