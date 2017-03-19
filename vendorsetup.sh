@@ -1,3 +1,4 @@
+add_lunch_combo xenonhd_armani-userdebug
 add_lunch_combo xenonhd_athene-userdebug
 add_lunch_combo xenonhd_bacon-userdebug
 add_lunch_combo xenonhd_bullhead-userdebug
