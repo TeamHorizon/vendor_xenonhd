@@ -23,4 +23,4 @@ FRAMEWORK_CM_API_NEEDS_UPDATE_TEXT := $(TOPDIR)vendor/xenonhd/build/core/apichec
 BUILD_MAVEN_PREBUILT := $(TOP)/vendor/xenonhd/build/core/maven_artifact.mk
 PUBLISH_MAVEN_PREBUILT := $(TOP)/vendor/xenonhd/build/core/maven_artifact_publish.mk
 
-BUILD_HTTP_PREBUILT := $(TOP)/vendor/cm/build/core/http_prebuilt.mk
+BUILD_HTTP_PREBUILT := $(TOP)/vendor/xenonhd/build/core/http_prebuilt.mk
