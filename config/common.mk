@@ -83,7 +83,6 @@ PRODUCT_PACKAGES += \
     CMSettingsProvider \
     CustomTiles \
     Development \
-    Eleven \
     ExactCalculator \
     libemoji \
     libffmpeg_omx \
@@ -96,6 +95,7 @@ PRODUCT_PACKAGES += \
     media_codecs_ffmpeg.xml \
     MiXplorer \
     NovaLauncher \
+    Phonograph \
     PhotoTable \
     Profiles \
     Recorder \
