@@ -95,6 +95,7 @@ PRODUCT_PACKAGES += \
     media_codecs_ffmpeg.xml \
     MiXplorer \
     NovaLauncher \
+    OmniClockOSS \
     Phonograph \
     PhotoTable \
     Profiles \
