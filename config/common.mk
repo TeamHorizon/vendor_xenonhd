@@ -111,19 +111,19 @@ PRODUCT_PACKAGES += \
     procmem \
     procrank
 
-# Conditionally build in su and root apps
-ifneq ($(WITHOUT_SU),true)
+ifeq ($(ROOT_METHOD),su)
 PRODUCT_PACKAGES += \
     su \
     Adaway \
-    substratum \
     KernelAdiutor
 endif
 
-# Optional SuperSU apk
-ifeq ($(WITH_SUPERSU),true)
+ifeq ($(ROOT_METHOD),magisk)
 PRODUCT_PACKAGES += \
-    SuperSU
+    Adaway \
+    KernelAdiutor \
+    Magisk \
+    MagiskManager
 endif
 endif
 
