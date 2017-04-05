@@ -93,7 +93,6 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     LockClock \
     media_codecs_ffmpeg.xml \
-    MiXplorer \
     NovaLauncher \
     OmniClockOSS \
     Phonograph \
@@ -113,15 +112,11 @@ PRODUCT_PACKAGES += \
 
 ifeq ($(ROOT_METHOD),su)
 PRODUCT_PACKAGES += \
-    su \
-    Adaway \
-    KernelAdiutor
+    su
 endif
 
 ifeq ($(ROOT_METHOD),magisk)
 PRODUCT_PACKAGES += \
-    Adaway \
-    KernelAdiutor \
     Magisk \
     MagiskManager
 endif
