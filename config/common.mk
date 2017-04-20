@@ -92,6 +92,7 @@ PRODUCT_PACKAGES += \
     CustomTiles \
     Development \
     ExactCalculator \
+    Jelly \
     libemoji \
     libffmpeg_omx \
     libffmpeg_extractor \
