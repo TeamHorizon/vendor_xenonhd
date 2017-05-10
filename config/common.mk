@@ -32,6 +32,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.storage_manager.enabled=true
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Backup Tool & init.d support
 PRODUCT_COPY_FILES += \
     $(PREBUILT)/bin/50-cm.sh:system/addon.d/50-cm.sh \
