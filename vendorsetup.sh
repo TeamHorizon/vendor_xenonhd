@@ -25,3 +25,4 @@ add_lunch_combo xenonhd_s2-userdebug
 add_lunch_combo xenonhd_shamu-userdebug
 add_lunch_combo xenonhd_Z00L-userdebug
 add_lunch_combo xenonhd_Z00T-userdebug
+add_lunch_combo xenonhd_odin-userdebug
