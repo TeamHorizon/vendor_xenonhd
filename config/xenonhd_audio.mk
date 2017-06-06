@@ -21,6 +21,11 @@ NOTIFICATION_PATH := $(PREBUILT)/media/audio/notifications
 RINGTONE_PATH := $(PREBUILT)/media/audio/ringtones
 UI_PATH := $(PREBUILT)/media/audio/ui
 
+ifneq ($(DISABLE_AUDIOFX), true)
+PRODUCT_PACKAGES += \
+    AudioFX
+endif
+
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.alarm_alert=Helium.ogg \

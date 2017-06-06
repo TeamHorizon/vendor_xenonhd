@@ -84,7 +84,6 @@ endif
 
 # XenonHD packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     BluetoothExt \
     CMAudioService \
     CMParts \
