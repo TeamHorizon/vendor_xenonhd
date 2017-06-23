@@ -1,4 +1,5 @@
 add_lunch_combo xenonhd_a6000-userdebug
+add_lunch_combo xenonhd_addison-userdebug
 add_lunch_combo xenonhd_angler-userdebug
 add_lunch_combo xenonhd_armani-userdebug
 add_lunch_combo xenonhd_athene-userdebug
