@@ -33,6 +33,7 @@ add_lunch_combo xenonhd_titan-userdebug
 add_lunch_combo xenonhd_tomato-userdebug
 add_lunch_combo xenonhd_s2-userdebug
 add_lunch_combo xenonhd_shamu-userdebug
+add_lunch_combo xenonhd_surnia-userdebug
 add_lunch_combo xenonhd_yuga-userdebug
 add_lunch_combo xenonhd_Z00L-userdebug
 add_lunch_combo xenonhd_Z00T-userdebug
