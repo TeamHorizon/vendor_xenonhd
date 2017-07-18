@@ -82,6 +82,11 @@ ifneq ($(TARGET_DISABLE_CMSDK), true)
 include $(CONFIG)/cmsdk_common.mk
 endif
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include vendor/xenonhd/config/twrp.mk
+endif
+
 # XenonHD packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
