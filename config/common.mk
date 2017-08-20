@@ -88,9 +88,6 @@ PRODUCT_COPY_FILES += \
 # Include XenonHD audio files
 include vendor/xenonhd/config/xenonhd_audio.mk
 
-# Theme engine
-include vendor/xenonhd/config/themes_common.mk
-
 ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
 include vendor/xenonhd/config/cmsdk_common.mk
