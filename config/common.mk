@@ -100,7 +100,6 @@ PRODUCT_PACKAGES += \
     libffmpeg_extractor \
     libprotobuf-cpp-full \
     librsjni \
-    LiveLockScreenService \
     LiveWallpapersPicker \
     LockClock \
     media_codecs_ffmpeg.xml \
