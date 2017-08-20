@@ -74,7 +74,6 @@ PRODUCT_COPY_FILES += \
 
 # Include OTA config, XenonHD audio files, Theme engine
 include $(CONFIG)/ota.mk
-include $(CONFIG)/themes_common.mk
 include $(CONFIG)/xenonhd_audio.mk
 
 # CMSDK
