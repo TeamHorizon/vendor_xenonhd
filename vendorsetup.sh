@@ -40,4 +40,3 @@ add_lunch_combo xenonhd_yuga-userdebug
 add_lunch_combo xenonhd_Z00L-userdebug
 add_lunch_combo xenonhd_Z00T-userdebug
 add_lunch_combo xenonhd_odin-userdebug
-add_lunch_combo xenonhd_p2a42-userdebug
