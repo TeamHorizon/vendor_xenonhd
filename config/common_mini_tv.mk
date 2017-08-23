@@ -1,2 +1,2 @@
-# Inherit mini common Lineage stuff
+# Inherit mini common XenonHD stuff
 $(call inherit-product, vendor/xenonhd/config/common_mini.mk)

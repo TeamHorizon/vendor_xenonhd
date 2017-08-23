@@ -1,0 +1,6 @@
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/xenonhd-rom/localized.svg)](https://crowdin.com/project/xenonhd-rom)
+Officially Supported Devices:
+==========
+| Device                         | Codename                                                                    | Maintainer                                              | XDA Thread                                                       | Download
+| :----------------------------: | :-------------------------------------------------------------------------: | :-----------------------------------------------------: | :--------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Xiaomi Redmi Note 4X           | [mido](https://github.com/TeamHorizon/android_device_xiaomi_mido)           | [dadi11](https://github.com/dadi11)                     | [XDA](https://forum.xda-developers.com/showthread.php?t=3647173) | [Official](https://mirrors.c0urier.net/android/teamhorizon/N/Official/mido/) / [experimental](https://mirrors.c0urier.net/android/teamhorizon/O/experimental/mido/)         |

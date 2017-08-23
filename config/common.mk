@@ -324,8 +324,7 @@ endif
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.xenonhd.version=$(XENONHD_VERSION) \
     ro.xenonhd.releasetype=$(XENONHD_BUILDTYPE) \
-    ro.modversion=$(XENONHD_VERSION) \
-    ro.lineagelegal.url=https://lineageos.org/legal
+    ro.modversion=$(XENONHD_VERSION)
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/xenonhd/build/target/product/security/lineage

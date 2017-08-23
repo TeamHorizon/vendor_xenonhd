@@ -67,7 +67,7 @@ function breakfast()
 {
     target=$1
     local variant=$2
-    LINEAGE_DEVICES_ONLY="true"
+    XENONHD_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
     for f in `/bin/ls vendor/xenonhd/vendorsetup.sh 2> /dev/null`
@@ -86,7 +86,7 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            # This is probably just the Lineage model name
+            # This is probably just the XenonHD model name
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi
