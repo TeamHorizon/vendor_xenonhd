@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= LineageOS
+PRODUCT_BRAND ?= XenonHD
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -43,7 +43,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/xenonhd/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/xenonhd/prebuilt/common/bin/50-lineage.sh:system/addon.d/50-lineage.sh \
+    vendor/xenonhd/prebuilt/common/bin/50-xenonhd.sh:system/addon.d/50-xenonhd.sh \
     vendor/xenonhd/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
 # Backup Services whitelist
@@ -65,9 +65,9 @@ PRODUCT_COPY_FILES += \
     vendor/xenonhd/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
 
-# Lineage-specific init file
+# XenonHD-specific init file
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/etc/init.local.rc:root/init.lineage.rc
+    vendor/xenonhd/prebuilt/common/etc/init.local.rc:root/init.xenonhd.rc
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -81,12 +81,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/keyboards/Vendor_045e_Product_028e.kl:system/usr/keylayout/Vendor_045e_Product_0719.kl
 
-# This is Lineage!
+# This is XenonHD!
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
-# Include Lineage audio files
-include vendor/xenonhd/config/lineage_audio.mk
+# Include XenonHD audio files
+include vendor/xenonhd/config/xenonhd_audio.mk
 
 # Theme engine
 include vendor/xenonhd/config/themes_common.mk
@@ -105,7 +105,7 @@ endif
 PRODUCT_PACKAGES += \
     bootanimation.zip
 
-# Required Lineage packages
+# Required XenonHD packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
     CMAudioService \
@@ -126,7 +126,7 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     librsjni
 
-# Custom Lineage packages
+# Custom XenonHD packages
 PRODUCT_PACKAGES += \
     AudioFX \
     CMSettingsProvider \
@@ -145,7 +145,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Exchange2
 
-# Extra tools in Lineage
+# Extra tools in XenonHD
 PRODUCT_PACKAGES += \
     7z \
     bash \
@@ -246,85 +246,85 @@ PRODUCT_VERSION_MINOR = 0
 PRODUCT_VERSION_MAINTENANCE := 0
 
 ifeq ($(TARGET_VENDOR_SHOW_MAINTENANCE_VERSION),true)
-    LINEAGE_VERSION_MAINTENANCE := $(PRODUCT_VERSION_MAINTENANCE)
+    XENONHD_VERSION_MAINTENANCE := $(PRODUCT_VERSION_MAINTENANCE)
 else
-    LINEAGE_VERSION_MAINTENANCE := 0
+    XENONHD_VERSION_MAINTENANCE := 0
 endif
 
-# Set LINEAGE_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
+# Set XENONHD_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
 
-ifndef LINEAGE_BUILDTYPE
+ifndef XENONHD_BUILDTYPE
     ifdef RELEASE_TYPE
-        # Starting with "LINEAGE_" is optional
-        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^LINEAGE_||g')
-        LINEAGE_BUILDTYPE := $(RELEASE_TYPE)
+        # Starting with "XENONHD_" is optional
+        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^XENONHD_||g')
+        XENONHD_BUILDTYPE := $(RELEASE_TYPE)
     endif
 endif
 
 # Filter out random types, so it'll reset to UNOFFICIAL
-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(LINEAGE_BUILDTYPE)),)
-    LINEAGE_BUILDTYPE :=
+ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(XENONHD_BUILDTYPE)),)
+    XENONHD_BUILDTYPE :=
 endif
 
-ifdef LINEAGE_BUILDTYPE
-    ifneq ($(LINEAGE_BUILDTYPE), SNAPSHOT)
-        ifdef LINEAGE_EXTRAVERSION
+ifdef XENONHD_BUILDTYPE
+    ifneq ($(XENONHD_BUILDTYPE), SNAPSHOT)
+        ifdef XENONHD_EXTRAVERSION
             # Force build type to EXPERIMENTAL
-            LINEAGE_BUILDTYPE := EXPERIMENTAL
-            # Remove leading dash from LINEAGE_EXTRAVERSION
-            LINEAGE_EXTRAVERSION := $(shell echo $(LINEAGE_EXTRAVERSION) | sed 's/-//')
-            # Add leading dash to LINEAGE_EXTRAVERSION
-            LINEAGE_EXTRAVERSION := -$(LINEAGE_EXTRAVERSION)
+            XENONHD_BUILDTYPE := EXPERIMENTAL
+            # Remove leading dash from XENONHD_EXTRAVERSION
+            XENONHD_EXTRAVERSION := $(shell echo $(XENONHD_EXTRAVERSION) | sed 's/-//')
+            # Add leading dash to XENONHD_EXTRAVERSION
+            XENONHD_EXTRAVERSION := -$(XENONHD_EXTRAVERSION)
         endif
     else
-        ifndef LINEAGE_EXTRAVERSION
+        ifndef XENONHD_EXTRAVERSION
             # Force build type to EXPERIMENTAL, SNAPSHOT mandates a tag
-            LINEAGE_BUILDTYPE := EXPERIMENTAL
+            XENONHD_BUILDTYPE := EXPERIMENTAL
         else
-            # Remove leading dash from LINEAGE_EXTRAVERSION
-            LINEAGE_EXTRAVERSION := $(shell echo $(LINEAGE_EXTRAVERSION) | sed 's/-//')
-            # Add leading dash to LINEAGE_EXTRAVERSION
-            LINEAGE_EXTRAVERSION := -$(LINEAGE_EXTRAVERSION)
+            # Remove leading dash from XENONHD_EXTRAVERSION
+            XENONHD_EXTRAVERSION := $(shell echo $(XENONHD_EXTRAVERSION) | sed 's/-//')
+            # Add leading dash to XENONHD_EXTRAVERSION
+            XENONHD_EXTRAVERSION := -$(XENONHD_EXTRAVERSION)
         endif
     endif
 else
-    # If LINEAGE_BUILDTYPE is not defined, set to UNOFFICIAL
-    LINEAGE_BUILDTYPE := UNOFFICIAL
-    LINEAGE_EXTRAVERSION :=
+    # If XENONHD_BUILDTYPE is not defined, set to UNOFFICIAL
+    XENONHD_BUILDTYPE := UNOFFICIAL
+    XENONHD_EXTRAVERSION :=
 endif
 
-ifeq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
+ifeq ($(XENONHD_BUILDTYPE), UNOFFICIAL)
     ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
-        LINEAGE_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
+        XENONHD_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
     endif
 endif
 
-ifeq ($(LINEAGE_BUILDTYPE), RELEASE)
+ifeq ($(XENONHD_BUILDTYPE), RELEASE)
     ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-        LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(LINEAGE_BUILD)
+        XENONHD_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(XENONHD_BUILD)
     else
         ifeq ($(TARGET_BUILD_VARIANT),user)
-            ifeq ($(LINEAGE_VERSION_MAINTENANCE),0)
-                LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(LINEAGE_BUILD)
+            ifeq ($(XENONHD_VERSION_MAINTENANCE),0)
+                XENONHD_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(XENONHD_BUILD)
             else
-                LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(LINEAGE_VERSION_MAINTENANCE)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(LINEAGE_BUILD)
+                XENONHD_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(XENONHD_VERSION_MAINTENANCE)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(XENONHD_BUILD)
             endif
         else
-            LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(LINEAGE_BUILD)
+            XENONHD_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(XENONHD_BUILD)
         endif
     endif
 else
-    ifeq ($(LINEAGE_VERSION_MAINTENANCE),0)
-        LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(LINEAGE_BUILDTYPE)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)
+    ifeq ($(XENONHD_VERSION_MAINTENANCE),0)
+        XENONHD_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(XENONHD_BUILDTYPE)$(XENONHD_EXTRAVERSION)-$(XENONHD_BUILD)
     else
-        LINEAGE_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(LINEAGE_VERSION_MAINTENANCE)-$(shell date -u +%Y%m%d)-$(LINEAGE_BUILDTYPE)$(LINEAGE_EXTRAVERSION)-$(LINEAGE_BUILD)
+        XENONHD_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(XENONHD_VERSION_MAINTENANCE)-$(shell date -u +%Y%m%d)-$(XENONHD_BUILDTYPE)$(XENONHD_EXTRAVERSION)-$(XENONHD_BUILD)
     endif
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.xenonhd.version=$(LINEAGE_VERSION) \
-    ro.xenonhd.releasetype=$(LINEAGE_BUILDTYPE) \
-    ro.modversion=$(LINEAGE_VERSION) \
+    ro.xenonhd.version=$(XENONHD_VERSION) \
+    ro.xenonhd.releasetype=$(XENONHD_BUILDTYPE) \
+    ro.modversion=$(XENONHD_VERSION) \
     ro.lineagelegal.url=https://lineageos.org/legal
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
@@ -332,33 +332,33 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 -include vendor/lineage-priv/keys/keys.mk
 
-LINEAGE_DISPLAY_VERSION := $(LINEAGE_VERSION)
+XENONHD_DISPLAY_VERSION := $(XENONHD_VERSION)
 
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
 ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
-    ifneq ($(LINEAGE_BUILDTYPE), UNOFFICIAL)
+    ifneq ($(XENONHD_BUILDTYPE), UNOFFICIAL)
         ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-            ifneq ($(LINEAGE_EXTRAVERSION),)
-                # Remove leading dash from LINEAGE_EXTRAVERSION
-                LINEAGE_EXTRAVERSION := $(shell echo $(LINEAGE_EXTRAVERSION) | sed 's/-//')
-                TARGET_VENDOR_RELEASE_BUILD_ID := $(LINEAGE_EXTRAVERSION)
+            ifneq ($(XENONHD_EXTRAVERSION),)
+                # Remove leading dash from XENONHD_EXTRAVERSION
+                XENONHD_EXTRAVERSION := $(shell echo $(XENONHD_EXTRAVERSION) | sed 's/-//')
+                TARGET_VENDOR_RELEASE_BUILD_ID := $(XENONHD_EXTRAVERSION)
             else
                 TARGET_VENDOR_RELEASE_BUILD_ID := $(shell date -u +%Y%m%d)
             endif
         else
             TARGET_VENDOR_RELEASE_BUILD_ID := $(TARGET_VENDOR_RELEASE_BUILD_ID)
         endif
-        ifeq ($(LINEAGE_VERSION_MAINTENANCE),0)
-            LINEAGE_DISPLAY_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(LINEAGE_BUILD)
+        ifeq ($(XENONHD_VERSION_MAINTENANCE),0)
+            XENONHD_DISPLAY_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(XENONHD_BUILD)
         else
-            LINEAGE_DISPLAY_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(LINEAGE_VERSION_MAINTENANCE)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(LINEAGE_BUILD)
+            XENONHD_DISPLAY_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(XENONHD_VERSION_MAINTENANCE)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(XENONHD_BUILD)
         endif
     endif
 endif
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.xenonhd.display.version=$(LINEAGE_DISPLAY_VERSION)
+    ro.xenonhd.display.version=$(XENONHD_DISPLAY_VERSION)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/xenonhd/config/partner_gms.mk
