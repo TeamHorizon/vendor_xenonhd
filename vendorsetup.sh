@@ -13,6 +13,7 @@ add_lunch_combo xenonhd_fortunafz-userdebug
 add_lunch_combo xenonhd_fortunave3g-userdebug
 add_lunch_combo xenonhd_grandprimeve3g-userdebug
 add_lunch_combo xenonhd_grouper-userdebug
+add_lunch_combo xenonhd_gts210vewifi-userdebug
 add_lunch_combo xenonhd_hammerhead-userdebug
 add_lunch_combo xenonhd_i9100-userdebug
 add_lunch_combo xenonhd_i9300-userdebug
