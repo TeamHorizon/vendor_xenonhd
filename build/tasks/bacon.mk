@@ -1,5 +1,5 @@
 # Copyright (C) 2017 Unlegacy-Android
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017 XenonHD Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,12 +14,19 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# XenonHD OTA update package
 
-XENONHD_TARGET_PACKAGE := $(PRODUCT_OUT)/xenonhd-$(XENONHD_VERSION).zip
+XENONHD_PACKAGE := $(XENONHD_VERSION)-$(TARGET_DEVICE).zip
+XENONHD_TARGET_PACKAGE := $(PRODUCT_OUT)/$(XENONHD_PACKAGE)
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(XENONHD_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(XENONHD_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(XENONHD_TARGET_PACKAGE).md5sum
-	@echo "Package Complete: $(XENONHD_TARGET_PACKAGE)" >&2
+	$(hide) rm $(INTERNAL_OTA_PACKAGE_TARGET)
+	@echo "$(XENONHD_TARGET_PACKAGE)"
+	@echo -e "\a\n================-Package complete-================"
+	@echo "file: $(XENONHD_PACKAGE)"
+	@echo "md5: $(shell cat $(XENONHD_TARGET_PACKAGE).md5sum | awk '{ print $$1 }')"
+	@echo "size: $(shell ls -lah $(XENONHD_TARGET_PACKAGE) | awk '{ print $$5 }')"
+	@echo -e "==================================================\n"
