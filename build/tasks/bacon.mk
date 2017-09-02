@@ -21,6 +21,8 @@ XENONHD_TARGET_PACKAGE := $(PRODUCT_OUT)/$(XENONHD_PACKAGE)
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
+	$(hide) ./vendor/xenonhd/build/tools/changelog
+	$(hide) ./vendor/xenonhd/build/tools/ota
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(XENONHD_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(XENONHD_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(XENONHD_TARGET_PACKAGE).md5sum
 	$(hide) rm $(INTERNAL_OTA_PACKAGE_TARGET)
