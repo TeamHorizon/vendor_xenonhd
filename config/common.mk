@@ -16,11 +16,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
-# Default notification/alarm sounds
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.alarm_alert=Hassium.ogg
-
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
@@ -88,6 +83,9 @@ PRODUCT_COPY_FILES += \
 # Include XenonHD audio files
 include vendor/xenonhd/config/xenonhd_audio.mk
 
+# Include XenonOTA config
+include vendor/xenonhd/config/ota.mk
+
 ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
 include vendor/xenonhd/config/cmsdk_common.mk
@@ -125,7 +123,6 @@ PRODUCT_PACKAGES += \
 
 # Custom XenonHD packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     CMSettingsProvider \
     LineageSetupWizard \
     Eleven \
@@ -221,9 +218,16 @@ PRODUCT_PACKAGES += \
     procrank
 
 # Conditionally build in su
-ifeq ($(WITH_SU),true)
+ifeq ($(ROOT_METHOD),su)
 PRODUCT_PACKAGES += \
     su
+endif
+
+# Use magisk if preferred
+ifeq ($(ROOT_METHOD),magisk)
+PRODUCT_PACKAGES += \
+    Magisk \
+    MagiskManager
 endif
 endif
 
@@ -232,6 +236,5 @@ DEVICE_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/xenonhd/config/partner_gms.mk
 -include vendor/cyngn/product.mk
-include vendor/xenonhd/config/ota.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)

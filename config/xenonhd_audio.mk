@@ -6,6 +6,17 @@ ALARM_PATH := vendor/xenonhd/prebuilt/common/media/audio/alarms
 NOTIFICATION_PATH := vendor/xenonhd/prebuilt/common/media/audio/notifications
 RINGTONE_PATH := vendor/xenonhd/prebuilt/common/media/audio/ringtones
 
+ifneq ($(DISABLE_AUDIOFX), true)
+PRODUCT_PACKAGES += \
+    AudioFX
+endif
+
+# Default alarm/notification/ringtone sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.alarm_alert=Hassium.ogg \
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.ringtone=Orion.ogg
+
 # Alarms
 PRODUCT_COPY_FILES += \
     $(ALARM_PATH)/CyanAlarm.ogg:system/media/audio/alarms/CyanAlarm.ogg \
