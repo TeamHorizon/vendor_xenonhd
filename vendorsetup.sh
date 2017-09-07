@@ -1,3 +1,4 @@
 add_lunch_combo xenonhd_d855-userdebug
+add_lunch_combo xenonhd_lux-userdebug
 add_lunch_combo xenonhd_mido-userdebug
 
