@@ -62,7 +62,6 @@ PRODUCT_COPY_FILES += \
     $(CONFIG)/permissions/backup.xml:system/etc/sysconfig/backup.xml \
     $(CONFIG)/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml \
     $(CONFIG)/permissions/power-whitelist.xml:system/etc/sysconfig/power-whitelist.xml \
-    $(PREBUILT)/bin/otasigcheck.sh:install/bin/otasigcheck.sh \
     $(PREBUILT)/etc/init.local.rc:root/init.xenonhd.rc \
     $(PREBUILT)/lib/content-types.properties:system/lib/content-types.properties \
     $(PREBUILT)/media/bootanimation.zip:system/media/bootanimation.zip
@@ -180,18 +179,6 @@ endif
 
 -include $(CONFIG)/partner_gms.mk
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
--include vendor/cm-priv/keys/keys.mk
 -include vendor/cyngn/product.mk
-
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/xenonhd/build/target/product/security/lineage
-
-ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
-ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
-    ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-      TARGET_VENDOR_RELEASE_BUILD_ID := $(shell date -u +%Y%m%d)
-    endif
-endif
-endif
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
