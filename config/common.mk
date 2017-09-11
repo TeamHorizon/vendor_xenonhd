@@ -45,10 +45,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
-# Signature compatibility validation
-PRODUCT_COPY_FILES += \
-    vendor/xenonhd/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
-
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
