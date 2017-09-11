@@ -13,20 +13,13 @@ else
    MD5="md5 -r"
 fi
 
-# Determine what to name the new signed package
-if [ -z "$XenonHD" ]; then
-	MODVERSION=`sed -n -e'/ro\.xenonhd.version/s/^.*=//p' $OUT/system/build.prop`
-	: ${MODVERSION:=}
-        OTA_TYPE=`sed -n -e'/ro\.ota\.type/s/^.*=//p' $OUT/system/build.prop`
-        : ${OTA_TYPE:=}
-        DEVICE=`sed -n -e'/ro\.ota\.device/s/^.*=//p' $OUT/system/build.prop`
-        : ${DEVICE:=}
-	XENONHD_TARGET_PACKAGE=$MODVERSION-$DEVICE.zip
-	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
-else
-	XENONHD_TARGET_PACKAGE=xenonhd-squished.zip
-	OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
-fi
+# Determine build properties
+MODVERSION=`grep ro.xenonhd.version $OUT/system/build.prop | cut -d'=' -f2`
+DEVICE=`grep ro.xenonhd.device $OUT/system/build.prop | cut -d'=' -f2`
+OTA_TYPE=`grep ro.xenonhd.type $OUT/system/build.prop | cut -d'=' -f2`
+
+XENONHD_TARGET_PACKAGE=$MODVERSION-$DEVICE.zip
+OUTFILE=$OUT/$XENONHD_TARGET_PACKAGE
 
 # Create OTA XML file
 if [ -f $ANDROID_BUILD_TOP/ota_conf ]; then
