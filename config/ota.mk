@@ -10,8 +10,8 @@ DEVICE := $(subst xenonhd_,,$(TARGET_PRODUCT))
 # Build.prop overrides
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.xenonhd.version=$(XENONHD_VERSION) \
-    ro.ota.device=$(DEVICE) \
-    ro.ota.type=$(OTA_TYPE)
+    ro.xenonhd.device=$(DEVICE) \
+    ro.xenonhd.type=$(OTA_TYPE)
 
 ifneq ($(OTA_TYPE),Unofficial)
 # XenonHD OTA app
@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
 $(shell echo -e "# OTA_configuration\n \
 ota_url=https://mirrors.c0urier.net/android/teamhorizon/O/OTA/ota_$(DEVICE).xml\n \
 ota-device=$(DEVICE)\n \
-device_name=ro.ota.device\n \
+device_name=ro.xenonhd.device\n \
 release_type=XenonHD\n \
 version_source=ro.xenonhd.version\n \
 version_delimiter=-\n \
