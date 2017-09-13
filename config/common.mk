@@ -103,6 +103,7 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     LockClock \
     media_codecs_ffmpeg.xml \
+    mnml \
     NovaLauncher \
     OmniClockOSS \
     Phonograph \
