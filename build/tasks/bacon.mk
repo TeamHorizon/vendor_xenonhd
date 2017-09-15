@@ -32,3 +32,4 @@ bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo "md5: $(shell cat $(XENONHD_TARGET_PACKAGE).md5sum | awk '{ print $$1 }')"
 	@echo "size: $(shell ls -lah $(XENONHD_TARGET_PACKAGE) | awk '{ print $$5 }')"
 	@echo -e "==================================================\n"
+	$(hide) jack-admin stop-server
