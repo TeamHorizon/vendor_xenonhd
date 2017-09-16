@@ -111,9 +111,7 @@ def indent(elem, level=0):
             elem.tail = i
 
 def get_default_revision():
-    m = ElementTree.parse(".repo/manifest.xml")
-    d = m.findall('default')[0]
-    r = d.get('revision')
+    r = ('o')
     return r.replace('refs/heads/', '').replace('refs/tags/', '')
 
 def get_from_manifest(devicename):
@@ -181,7 +179,7 @@ def add_to_manifest(repositories, fallback_branch = None):
 
         print('Adding dependency: TeamHorizon/%s -> %s' % (repo_name, repo_target))
         project = ElementTree.Element("project", attrib = { "path": repo_target,
-            "remote": "github", "name": "TeamHorizon/%s" % repo_name })
+            "remote": "github", "name": "TeamHorizon/%s" % repo_name, "revision": "o"})
 
         if 'branch' in repository:
             project.set('revision',repository['branch'])
