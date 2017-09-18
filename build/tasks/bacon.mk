@@ -23,9 +23,10 @@ XENONHD_TARGET_PACKAGE := $(PRODUCT_OUT)/$(XENONHD_PACKAGE)
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ./vendor/xenonhd/build/tools/changelog
 	$(hide) ./vendor/xenonhd/build/tools/ota
+	$(hide) rm -rf $(PRODUCT_OUT)/XenonHD*
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(XENONHD_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(XENONHD_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(XENONHD_TARGET_PACKAGE).md5sum
-	$(hide) rm $(INTERNAL_OTA_PACKAGE_TARGET)
+	$(hide) rm -rf $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo "$(XENONHD_TARGET_PACKAGE)"
 	@echo -e "\a\n================-Package complete-================"
 	@echo "file: $(XENONHD_PACKAGE)"
