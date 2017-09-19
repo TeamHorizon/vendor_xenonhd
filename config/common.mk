@@ -75,7 +75,7 @@ PRODUCT_COPY_FILES += \
 
 # This is XenonHD!
 PRODUCT_COPY_FILES += \
-    vendor/xenonhd/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+    vendor/xenonhd/config/permissions/org.lineageos.android.xml:system/etc/permissions/org.lineageos.android.xml
 
 # Include XenonHD audio files
 include vendor/xenonhd/config/xenonhd_audio.mk
@@ -83,9 +83,9 @@ include vendor/xenonhd/config/xenonhd_audio.mk
 # Include XenonOTA config
 include vendor/xenonhd/config/ota.mk
 
-ifneq ($(TARGET_DISABLE_CMSDK), true)
-# CMSDK
-include vendor/xenonhd/config/cmsdk_common.mk
+ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
+# Lineage SDK
+include vendor/xenonhd/config/lineage_sdk_common.mk
 endif
 
 # TWRP
@@ -101,7 +101,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     BluetoothExt \
     CMAudioService \
-    CMParts \
+    LineageParts \
     Development \
     Profiles \
     WeatherManagerService
@@ -120,7 +120,8 @@ PRODUCT_PACKAGES += \
 
 # Custom XenonHD packages
 PRODUCT_PACKAGES += \
-    CMSettingsProvider \
+    AudioFX \
+    LineageSettingsProvider \
     LineageSetupWizard \
     Eleven \
     ExactCalculator \
