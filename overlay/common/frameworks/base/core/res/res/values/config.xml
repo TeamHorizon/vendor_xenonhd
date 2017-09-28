@@ -87,6 +87,10 @@
     -->
     <integer name="config_backPanicBehavior">1</integer>
 
+    <!-- Night display. Boolean indicating whether the HWC setColorTransform 
+         function can be performed efficiently in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
+
     <!-- non blockable notification packages -->
     <string-array name="config_nonBlockableNotificationPackages">
         <item>com.android.dialer</item>
