@@ -125,7 +125,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     Jelly \
     LockClock \
-    Trebuchet \
+    NovaLauncher \
     WallpaperPicker \
     WeatherProvider
 
