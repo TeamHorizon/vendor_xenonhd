@@ -13,7 +13,7 @@ if [ -f $ANDROID_BUILD_TOP/ota_conf ]; then
 cat >$OUT/ota_$DEVICE.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
-    <Stable>
+    <Oreo>
         <$DEVICE>
             <Filename>$MODVERSION</Filename>
             <RomUrl
@@ -32,12 +32,8 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
                 id="opengapps"
                 title="Open Gapps"
                 description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
-            <ExtrasUrl
-                id="extras"
-                title="Extras"
-                description="Download Extras">https://download.lineageos.org/extras</ExtrasUrl>
         </$DEVICE>
-    </Stable>
+    </Oreo>
 </XenonOTA>
 EOF
 fi
