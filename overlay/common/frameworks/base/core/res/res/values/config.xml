@@ -102,4 +102,12 @@
     <string-array name="config_ephemeralResolverPackage">
         <item>com.google.android.gms</item>
     </string-array>
+
+    <!-- Minimum color temperature, in Kelvin, supported by Night display. -->
+    <integer name="config_nightDisplayColorTemperatureMin">1600</integer>
+
+    <!-- Default color temperature, in Kelvin, to tint the screen when Night display is
+         activated. -->
+    <integer name="config_nightDisplayColorTemperatureDefault">2650</integer>
+
 </resources>
