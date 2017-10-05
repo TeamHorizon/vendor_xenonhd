@@ -11,10 +11,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    keyguard.no_require_sim=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.selinux=1
+    keyguard.no_require_sim=true \
+    persist.sys.disable_rescue=true \
+    ro.build.selinux=1 \
+    ro.opa.eligible_device=true \
+    ro.storage_manager.enabled=true
 
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
@@ -202,10 +203,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
-
-# Storage manager
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.storage_manager.enabled=true
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
