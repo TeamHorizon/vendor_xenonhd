@@ -87,6 +87,10 @@ include vendor/xenonhd/config/xenonhd_audio.mk
 # Include XenonOTA config
 include vendor/xenonhd/config/ota.mk
 
+# Fix Google dialer
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
+
 ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
 include vendor/xenonhd/config/lineage_sdk_common.mk
