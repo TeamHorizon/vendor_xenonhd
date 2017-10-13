@@ -104,6 +104,7 @@ PRODUCT_PACKAGES += \
     LineageParts \
     Development \
     Profiles \
+    ThemeInterfacer \
     WeatherManagerService
 
 # Optional packages
