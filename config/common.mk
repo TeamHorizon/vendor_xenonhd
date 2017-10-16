@@ -46,6 +46,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
+# XenonHD-specific broadcast actions whitelist
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/config/permissions/xenonhd-sysconfig.xml:system/etc/sysconfig/xenonhd-sysconfig.xml
+
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
