@@ -107,7 +107,9 @@ PRODUCT_PACKAGES += \
     CMAudioService \
     LineageParts \
     Development \
+    PixelTheme \
     Profiles \
+    StockTheme \
     Substratum \
     ThemeInterfacer \
     WeatherManagerService
