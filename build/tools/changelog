@@ -10,6 +10,9 @@ fi
 
 touch $Changelog
 
+if [ "$SKIP_CHANGELOG" = "1" ] ; then
+  echo "Skipped because 'SKIP_CHANGELOG' was enabled" >> $Changelog;
+else
 for i in $(seq 7);
 do
 export After_Date=`date --date="$i days ago" +%m-%d-%Y`
@@ -27,6 +30,7 @@ k=$(expr $i - 1)
 done
 
 sed -i 's/project/   */g' $Changelog
+fi
 
 cp $Changelog $OUT/system/etc/
 cp $Changelog $OUT/
