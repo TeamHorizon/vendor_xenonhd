@@ -220,16 +220,9 @@ PRODUCT_PACKAGES += \
     procrank
 
 # Conditionally build in su
-ifeq ($(ROOT_METHOD),su)
+ifeq ($(WITH_SU),true)
 PRODUCT_PACKAGES += \
     su
-endif
-
-# Use magisk if preferred
-ifeq ($(ROOT_METHOD),magisk)
-PRODUCT_PACKAGES += \
-    Magisk \
-    MagiskManager
 endif
 endif
 
