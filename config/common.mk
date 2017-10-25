@@ -116,6 +116,7 @@ PRODUCT_PACKAGES += \
     StockTheme \
     Substratum \
     ThemeInterfacer \
+    Turbo \
     WeatherManagerService
 
 # Optional packages
