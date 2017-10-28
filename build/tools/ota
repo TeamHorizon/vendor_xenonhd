@@ -27,14 +27,14 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
                 id="md5"
                 title="MD5"
                 description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
-            <ChangelogUrl
-                id="changelog"
-                title="Changelog"
-                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
             <OpenGappsUrl
                 id="opengapps"
                 title="Open Gapps"
                 description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
+            <ChangelogUrl
+                id="changelog"
+                title="Changelog"
+                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
         </$DEVICE>
     </Oreo>
 </XenonOTA>
@@ -56,14 +56,14 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
                 id="md5"
                 title="MD5"
                 description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
-            <ChangelogUrl
-                id="changelog"
-                title="Changelog"
-                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
             <OpenGappsUrl
                 id="opengapps"
                 title="Open Gapps"
                 description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
+            <ChangelogUrl
+                id="changelog"
+                title="Changelog"
+                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
             <DonateUrl
                 id="donate"
                 title="Support"
