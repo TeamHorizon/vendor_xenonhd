@@ -74,9 +74,7 @@ alias bib=breakfast
 function eat()
 {
     if [ "$OUT" ] ; then
-        MODVERSION=$(get_build_var XENONHD_VERSION)
-        ZIPFILE=xenonhd-$MODVERSION.zip
-        ZIPPATH=$OUT/$ZIPFILE
+        ZIPPATH=`ls -tr "$OUT"/xenonhd-*.zip | tail -1`
         if [ ! -f $ZIPPATH ] ; then
             echo "Nothing to eat"
             return 1
