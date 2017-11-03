@@ -114,8 +114,6 @@ PRODUCT_PACKAGES += \
     PixelTheme \
     Profiles \
     StockTheme \
-    Substratum \
-    ThemeInterfacer \
     Turbo \
     WeatherManagerService
 
