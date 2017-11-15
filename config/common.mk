@@ -80,6 +80,7 @@ PRODUCT_COPY_FILES += \
 # This is XenonHD!
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/config/permissions/org.lineageos.android.xml:system/etc/permissions/org.lineageos.android.xml
+    vendor/xenonhd/config/permissions/privapp-permissions-lineage.xml:system/etc/permissions/privapp-permissions-lineage.xml
 
 # Include XenonHD audio files
 include vendor/xenonhd/config/xenonhd_audio.mk
