@@ -31,6 +31,7 @@ add_lunch_combo xenonhd_m7-userdebug
 add_lunch_combo xenonhd_m8-userdebug
 add_lunch_combo xenonhd_m8d-userdebug
 add_lunch_combo xenonhd_mako-userdebug
+add_lunch_combo xenonhd_nobleltetmo-userdebug
 add_lunch_combo xenonhd_n7100-userdebug
 add_lunch_combo xenonhd_onyx-userdebug
 add_lunch_combo xenonhd_titan-userdebug
