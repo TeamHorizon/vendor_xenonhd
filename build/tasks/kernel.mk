@@ -272,6 +272,13 @@ ifeq ($(TARGET_KERNEL_MODULES),)
     TARGET_KERNEL_MODULES := INSTALLED_KERNEL_MODULES
 endif
 
+$(KERNEL_OUT_STAMP):
+	$(hide) mkdir -p $(KERNEL_OUT)
+	$(hide) rm -rf $(KERNEL_MODULES_OUT)
+	$(hide) mkdir -p $(KERNEL_MODULES_OUT)
+	$(hide) rm -rf $(KERNEL_DEPMOD_STAGING_DIR)
+	$(hide) touch $@
+
 KERNEL_ADDITIONAL_CONFIG_OUT := $(KERNEL_OUT)/.additional_config
 
 .PHONY: force_additional_config
