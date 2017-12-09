@@ -3,6 +3,14 @@ ifeq ($(OTA_TYPE),)
 OTA_TYPE=Unofficial
 endif
 
+# Make sure the uppercase is used
+ifeq ($(OTA_TYPE),experimental)
+OTA_TYPE=Experimental
+endif
+ifeq ($(OTA_TYPE),official)
+OTA_TYPE=Official
+endif
+
 # XenonHD version
 XENONHD_VERSION := XenonHD-$(shell date +"%y%m%d")-$(OTA_TYPE)
 DEVICE := $(subst xenonhd_,,$(TARGET_PRODUCT))
