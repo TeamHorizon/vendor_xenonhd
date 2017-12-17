@@ -10,3 +10,5 @@ Officially Supported Devices:
 | Motorola Moto X Play              | [lux](https://github.com/TeamHorizon/android_device_motorola_lux)                  | [axxx007xxxz](https://github.com/axxx007xxxz) | [XDA](https://forum.xda-developers.com/showthread.php?t=3701304) | [Experimental](https://mirrors.c0urier.net/android/teamhorizon/O/Experimental/lux/)          |
 | Samsung Galaxy TAB S2 9.7" (2016) | [gts210vewifi](https://github.com/TeamHorizon/android_device_samsung_gts210vewifi) | [joe2k01](https://github.com/joe2k01)         | [XDA](https://forum.xda-developers.com/showthread.php?t=3697169) | [Experimental](https://mirrors.c0urier.net/android/teamhorizon/O/Experimental/gts210vewifi/) |
 | Xiaomi Redmi Note 4X              | [mido](https://github.com/TeamHorizon/android_device_xiaomi_mido)                  | [dadi11](https://github.com/dadi11)           | [XDA](https://forum.xda-developers.com/showthread.php?t=3696072) | [Experimental](https://mirrors.c0urier.net/android/teamhorizon/O/Experimental/mido/)         |
+
+<!-- Note for maintainers: add your devices in alphabetical order by the "Device" column -->
