@@ -109,7 +109,6 @@ PRODUCT_PACKAGES += \
 # Required XenonHD packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
-    CMAudioService \
     LineageParts \
     Development \
     PixelTheme \
