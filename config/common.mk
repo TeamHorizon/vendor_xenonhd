@@ -114,8 +114,7 @@ PRODUCT_PACKAGES += \
     PixelTheme \
     Profiles \
     StockTheme \
-    Turbo \
-    WeatherManagerService
+    Turbo
 
 # Optional packages
 PRODUCT_PACKAGES += \
