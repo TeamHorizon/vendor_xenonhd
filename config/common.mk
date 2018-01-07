@@ -141,6 +141,13 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     WeatherProvider
 
+# Themes
+PRODUCT_PACKAGES += \
+    SettingsDarkThemeOverlay \
+    SystemDarkThemeOverlay \
+    SettingsBlackThemeOverlay \
+    SystemBlackThemeOverlay
+
 # Exchange support
 PRODUCT_PACKAGES += \
     Exchange2
