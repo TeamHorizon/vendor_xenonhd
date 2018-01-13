@@ -130,7 +130,6 @@ PRODUCT_PACKAGES += \
 
 # Custom XenonHD packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     BrowserInstaller \
     LineageSettingsProvider \
     LineageSetupWizard \
