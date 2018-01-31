@@ -1,6 +1,5 @@
-add_lunch_combo xenonhd_d855-userdebug
+add_lunch_combo xenonhd_a6000-userdebug
+add_lunch_combo xenonhd_falcon-userdebug
 add_lunch_combo xenonhd_gts210vewifi-userdebug
-add_lunch_combo xenonhd_lux-userdebug
 add_lunch_combo xenonhd_mido-userdebug
-add_lunch_combo xenonhd_cancro-userdebug
-add_lunch_combo xenonhd_zerofltexx-userdebug
+add_lunch_combo xenonhd_potter-userdebug
