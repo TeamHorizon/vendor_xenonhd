@@ -145,8 +145,8 @@ PRODUCT_PACKAGES += \
 # Berry styles
 PRODUCT_PACKAGES += \
     LineageDarkTheme \
+    LineageAmberAccent \
     LineageBlackAccent \
-    LineageBlueAccent \
     LineageBrownAccent \
     LineageCyanAccent \
     LineageGreenAccent \
@@ -154,6 +154,7 @@ PRODUCT_PACKAGES += \
     LineagePinkAccent \
     LineagePurpleAccent \
     LineageRedAccent \
+    LineageTealAccent \
     LineageYellowAccent
 
 # Default dark theme
