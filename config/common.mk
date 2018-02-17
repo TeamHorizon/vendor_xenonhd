@@ -155,6 +155,13 @@ PRODUCT_PACKAGES += \
     LineageRedAccent \
     LineageYellowAccent
 
+# Default dark theme
+PRODUCT_PACKAGES += \
+    DefaultDark-System \
+    DefaultDark-SystemUI \
+    DefaultDark-Settings \
+    DefaultDark-Calculator
+
 # Extra tools in XenonHD
 PRODUCT_PACKAGES += \
     7z \
