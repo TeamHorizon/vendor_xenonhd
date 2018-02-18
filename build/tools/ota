@@ -21,20 +21,20 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
             <Filename>$MODVERSION</Filename>
             <RomUrl
                 id="rom"
-                title="ROM"
-                description="Download the latest build">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
+                title=""
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
-                title="MD5"
-                description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+                title=""
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <OpenGappsUrl
-                id="opengapps"
-                title="Open Gapps"
-                description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
+                id="gapps"
+                title=""
+                description="">http://opengapps.org</OpenGappsUrl>
             <ChangelogUrl
                 id="changelog"
-                title="Changelog"
-                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
+                title=""
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
         </$DEVICE>
     </Oreo>
 </XenonOTA>
@@ -50,24 +50,24 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
             <Filename>$MODVERSION</Filename>
             <RomUrl
                 id="rom"
-                title="ROM"
-                description="Download the latest build">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
+                title=""
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
-                title="MD5"
-                description="Download MD5 of the latest build">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+                title=""
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <OpenGappsUrl
-                id="opengapps"
-                title="Open Gapps"
-                description="Download Open Gapps">http://opengapps.org</OpenGappsUrl>
+                id="gapps"
+                title=""
+                description="">http://opengapps.org</OpenGappsUrl>
             <ChangelogUrl
                 id="changelog"
-                title="Changelog"
-                description="View the latest changelog">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
+                title=""
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
             <DonateUrl
                 id="donate"
-                title="Support"
-                description="Donate to your device maintainer">$DONATE</DonateUrl>
+                title=""
+                description="">$DONATE</DonateUrl>
         </$DEVICE>
     </Oreo>
 </XenonOTA>
