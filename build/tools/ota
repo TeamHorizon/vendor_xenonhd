@@ -10,7 +10,7 @@ DONATE=`grep ro.xenonhd.donate $OUT/system/build.prop | cut -d'=' -f2`
 XENONHD_TARGET_PACKAGE=$MODVERSION-$DEVICE.zip
 
 # Create OTA XML file
-if [ -f $ANDROID_BUILD_TOP/ota_conf ]; then
+if [ -f $ANDROID_BUILD_TOP/out/ota_conf ]; then
 if [ -z "$DONATE" ]; then
 
 cat >$OUT/ota_$DEVICE.xml <<EOF

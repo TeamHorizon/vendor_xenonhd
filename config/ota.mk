@@ -32,5 +32,5 @@ release_type=Oreo\n \
 version_source=ro.xenonhd.version\n \
 version_delimiter=-\n \
 version_position=1\n \
-version_format=yyMMdd" > $(ANDROID_BUILD_TOP)/ota_conf)
+version_format=yyMMdd" > $(ANDROID_BUILD_TOP)/out/ota_conf)
 endif
