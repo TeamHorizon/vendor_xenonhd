@@ -1,7 +1,9 @@
 add_lunch_combo xenonhd_a6000-userdebug
+add_lunch_combo xenonhd_armani-userdebug
 add_lunch_combo xenonhd_falcon-userdebug
 add_lunch_combo xenonhd_gts210vewifi-userdebug
 add_lunch_combo xenonhd_lux-userdebug
+add_lunch_combo xenonhd_m8-userdebug
 add_lunch_combo xenonhd_marlin-userdebug
 add_lunch_combo xenonhd_mido-userdebug
 add_lunch_combo xenonhd_potter-userdebug
