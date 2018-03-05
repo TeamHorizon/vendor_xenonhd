@@ -1,4 +1,4 @@
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/xenonhd-rom/localized.svg)](https://crowdin.com/project/xenonhd-rom)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/xenonhd-rom/localized.svg)](https://translate.xenonhd.com/project/xenonhd-rom)
 
 Officially Supported Devices:
 =============================
