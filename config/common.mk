@@ -150,6 +150,7 @@ PRODUCT_PACKAGES += \
     LineageBrownAccent \
     LineageCyanAccent \
     LineageGreenAccent \
+    LineageGreyAccent \
     LineageOrangeAccent \
     LineagePinkAccent \
     LineagePurpleAccent \
