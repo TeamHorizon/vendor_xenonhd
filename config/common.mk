@@ -111,9 +111,7 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     LineageParts \
     Development \
-    PixelTheme \
     Profiles \
-    StockTheme \
     Turbo
 
 # Optional packages
@@ -139,13 +137,6 @@ PRODUCT_PACKAGES += \
     NovaLauncher \
     WallpaperPicker \
     WeatherProvider
-
-# Themes
-PRODUCT_PACKAGES += \
-    SettingsDarkThemeOverlay \
-    SystemDarkThemeOverlay \
-    SettingsBlackThemeOverlay \
-    SystemBlackThemeOverlay
 
 # Exchange support
 PRODUCT_PACKAGES += \
