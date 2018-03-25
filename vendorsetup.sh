@@ -7,4 +7,5 @@ add_lunch_combo xenonhd_m8-userdebug
 add_lunch_combo xenonhd_marlin-userdebug
 add_lunch_combo xenonhd_mido-userdebug
 add_lunch_combo xenonhd_potter-userdebug
+add_lunch_combo xenonhd_scorpio-userdebug
 add_lunch_combo xenonhd_zenfone3-userdebug
