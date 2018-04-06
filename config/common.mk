@@ -163,7 +163,10 @@ PRODUCT_PACKAGES += \
     DefaultDark-System \
     DefaultDark-SystemUI \
     DefaultDark-Settings \
-    DefaultDark-Calculator
+    DefaultDark-LineageParts \
+    DefaultDark-Calculator \
+    DefaultBlack-System \
+    DefaultBlack-SystemUI
 
 # Extra tools in XenonHD
 PRODUCT_PACKAGES += \
