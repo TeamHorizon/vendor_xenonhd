@@ -2,12 +2,18 @@
 # XenonHD OTA
 
 # Determine build properties
-MODVERSION=`grep ro.xenonhd.version $OUT/system/build.prop | cut -d'=' -f2`
-DEVICE=`grep ro.xenonhd.device $OUT/system/build.prop | cut -d'=' -f2`
-OTA_TYPE=`grep ro.xenonhd.type $OUT/system/build.prop | cut -d'=' -f2`
-DONATE=`grep ro.xenonhd.donate $OUT/system/build.prop | cut -d'=' -f2`
+if [ -f $OUT/vendor/build.prop ]; then
+PROP=$OUT/vendor/build.prop
+else
+PROP=$OUT/system/build.prop
+fi
 
-XENONHD_TARGET_PACKAGE=$MODVERSION-$DEVICE.zip
+DEVICE=`grep ro.xenonhd.device $OUT/system/build.prop | cut -d'=' -f2`
+DONATE=`grep ro.xenonhd.donate $PROP | cut -d'=' -f2`
+TYPE=`grep ro.xenonhd.type $PROP | cut -d'=' -f2`
+VERSION=`grep ro.xenonhd.version $PROP | cut -d'=' -f2`
+
+XENONHD_TARGET_PACKAGE=$VERSION-$DEVICE.zip
 
 # Create OTA XML file
 if [ -f $ANDROID_BUILD_TOP/out/ota_conf ]; then
@@ -18,15 +24,15 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
 <XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Oreo>
         <$DEVICE>
-            <Filename>$MODVERSION</Filename>
+            <Filename>$VERSION</Filename>
             <RomUrl
                 id="rom"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <OpenGappsUrl
                 id="gapps"
                 title=""
@@ -34,7 +40,7 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
             <ChangelogUrl
                 id="changelog"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
         </$DEVICE>
     </Oreo>
 </XenonOTA>
@@ -47,15 +53,15 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
 <XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Oreo>
         <$DEVICE>
-            <Filename>$MODVERSION</Filename>
+            <Filename>$VERSION</Filename>
             <RomUrl
                 id="rom"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <OpenGappsUrl
                 id="gapps"
                 title=""
@@ -63,7 +69,7 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
             <ChangelogUrl
                 id="changelog"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$OTA_TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
             <DonateUrl
                 id="donate"
                 title=""
