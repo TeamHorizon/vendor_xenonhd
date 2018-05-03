@@ -17,9 +17,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- set defaults for google services -->
-    <string name="config_appsAuthorizedForSharedAccounts">;com.android.vending;com.android.settings;</string>
-
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <!-- The Google provider -->
         <item>com.google.android.gms</item>
@@ -76,33 +73,6 @@
             1 - Go to home
     -->
     <integer name="config_backPanicBehavior">1</integer>
-
-    <!-- Night display. Boolean indicating whether the HWC setColorTransform 
-         function can be performed efficiently in hardware. -->
-    <bool name="config_setColorTransformAccelerated">true</bool>
-
-    <!-- Flag indicating whether the assist disclosure can be disabled using
-         ASSIST_DISCLOSURE_ENABLED. -->
-    <bool name="config_allowDisablingAssistDisclosure">true</bool>
-
-    <!-- non blockable notification packages -->
-    <string-array name="config_nonBlockableNotificationPackages">
-        <item>com.android.dialer</item>
-        <item>com.google.android.dialer</item>
-        <item>com.google.android.deskclock</item>
-    </string-array>
-
-    <!-- ephemeral resolver packages -->
-    <string-array name="config_ephemeralResolverPackage">
-        <item>com.google.android.gms</item>
-    </string-array>
-
-    <!-- Minimum color temperature, in Kelvin, supported by Night display. -->
-    <integer name="config_nightDisplayColorTemperatureMin">1600</integer>
-
-    <!-- Default color temperature, in Kelvin, to tint the screen when Night display is
-         activated. -->
-    <integer name="config_nightDisplayColorTemperatureDefault">2650</integer>
 
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
