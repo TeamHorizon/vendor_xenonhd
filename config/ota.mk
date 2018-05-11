@@ -15,11 +15,6 @@ endif
 XENONHD_VERSION := XenonHD-$(shell date +"%y%m%d")-$(OTA_TYPE)
 DEVICE := $(subst xenonhd_,,$(TARGET_PRODUCT))
 
-# Build.prop overrides
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.xenonhd.version=$(XENONHD_VERSION) \
-    ro.xenonhd.type=$(OTA_TYPE)
-
 ifneq ($(OTA_TYPE),Unofficial)
 # XenonHD OTA app
 PRODUCT_PACKAGES += \
