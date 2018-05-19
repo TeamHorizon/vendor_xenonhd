@@ -85,9 +85,6 @@ PRODUCT_COPY_FILES += \
 # Include XenonHD audio files
 include vendor/xenonhd/config/xenonhd_audio.mk
 
-# Include XenonOTA config
-include vendor/xenonhd/config/ota.mk
-
 # Fix Google dialer
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
