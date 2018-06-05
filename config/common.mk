@@ -159,6 +159,7 @@ PRODUCT_PACKAGES += \
     LineagePurpleAccent \
     LineageRedAccent \
     LineageTealAccent \
+    LineageTurquoiseAccent \
     LineageYellowAccent
 
 # Default dark theme
