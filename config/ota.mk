@@ -20,12 +20,13 @@ ifneq ($(OTA_TYPE),Unofficial)
 PRODUCT_PACKAGES += \
     XenonOTA
 
-$(shell echo -e "# OTA_configuration\n \
+# OTA Configuration
+$(shell echo -e "OTA_Configuration\n \
 ota_url=https://mirrors.c0urier.net/android/teamhorizon/O/OTA/ota_$(DEVICE).xml\n \
 device_name=ro.xenonhd.device\n \
 release_type=Oreo\n \
 version_source=ro.xenonhd.version\n \
 version_delimiter=-\n \
 version_position=1\n \
-version_format=yyMMdd" > $(ANDROID_BUILD_TOP)/out/ota_conf)
+version_format=yyMMdd" > $(OTA_DIR)/ota_conf)
 endif
