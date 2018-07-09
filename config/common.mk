@@ -151,6 +151,7 @@ PRODUCT_PACKAGES += \
 
 # Berry styles
 PRODUCT_PACKAGES += \
+    LineageDarkTheme \
     LineageAmberAccent \
     LineageBlackAccent \
     LineageBrownAccent \
@@ -166,13 +167,6 @@ PRODUCT_PACKAGES += \
     LineageTealAccent \
     LineageTurquoiseAccent \
     LineageYellowAccent
-
-# Default dark theme
-PRODUCT_PACKAGES += \
-    DefaultDark-System \
-    DefaultDark-SystemUI \
-    DefaultDark-Settings \
-    DefaultDark-Calculator
 
 # Extra tools in XenonHD
 PRODUCT_PACKAGES += \
