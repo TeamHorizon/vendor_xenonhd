@@ -247,6 +247,9 @@ endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
+PRODUCT_EXTRA_RECOVERY_KEYS += \
+    vendor/xenonhd/build/target/product/security/lineage
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/xenonhd/config/partner_gms.mk
 
