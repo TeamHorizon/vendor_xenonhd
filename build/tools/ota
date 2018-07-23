@@ -1,17 +1,10 @@
 #!/bin/bash
 # XenonHD OTA
 
-# Determine build properties
-if [ -f $OUT/vendor/build.prop ]; then
-PROP=$OUT/vendor/build.prop
-else
-PROP=$OUT/system/build.prop
-fi
-
-DEVICE=`grep ro.xenonhd.device $OUT/system/build.prop | cut -d'=' -f2`
-DONATE=`grep ro.xenonhd.donate $PROP | cut -d'=' -f2`
-TYPE=`grep ro.xenonhd.type $PROP | cut -d'=' -f2`
-VERSION=`grep ro.xenonhd.version $PROP | cut -d'=' -f2`
+DEVICE=`grep ro.xenonhd.device $OUT/*/build.prop | cut -d'=' -f2`
+DONATE=`grep ro.xenonhd.donate $OUT/*/build.prop | cut -d'=' -f2`
+TYPE=`grep ro.xenonhd.type $OUT/*/build.prop | cut -d'=' -f2`
+VERSION=`grep ro.xenonhd.version $OUT/*/build.prop | cut -d'=' -f2`
 
 XENONHD_TARGET_PACKAGE=$VERSION-$DEVICE.zip
 
