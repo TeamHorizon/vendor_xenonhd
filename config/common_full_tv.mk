@@ -5,4 +5,4 @@ PRODUCT_PACKAGES += \
     AppDrawer \
     LineageCustomizer
 
-DEVICE_PACKAGE_OVERLAYS += vendor/lineage/overlay/tv
+DEVICE_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/tv
