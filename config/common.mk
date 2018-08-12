@@ -241,6 +241,7 @@ PRODUCT_PACKAGES += \
 endif
 endif
 
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/xenonhd/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/xenonhd/overlay/common
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
