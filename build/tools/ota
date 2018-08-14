@@ -15,17 +15,17 @@ if [ -z "$DONATE" ]; then
 cat >$OUT/ota_$DEVICE.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
-    <Oreo>
+    <Pie>
         <$DEVICE>
             <Filename>$VERSION</Filename>
             <RomUrl
                 id="rom"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <OpenGappsUrl
                 id="gapps"
                 title=""
@@ -33,9 +33,9 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
             <ChangelogUrl
                 id="changelog"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
         </$DEVICE>
-    </Oreo>
+    </Pie>
 </XenonOTA>
 EOF
 
@@ -44,17 +44,17 @@ else
 cat >$OUT/ota_$DEVICE.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
-    <Oreo>
+    <Pie>
         <$DEVICE>
             <Filename>$VERSION</Filename>
             <RomUrl
                 id="rom"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url
                 id="md5"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <OpenGappsUrl
                 id="gapps"
                 title=""
@@ -62,13 +62,13 @@ cat >$OUT/ota_$DEVICE.xml <<EOF
             <ChangelogUrl
                 id="changelog"
                 title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/O/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
+                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
             <DonateUrl
                 id="donate"
                 title=""
                 description="">$DONATE</DonateUrl>
         </$DEVICE>
-    </Oreo>
+    </Pie>
 </XenonOTA>
 EOF
 

@@ -24,7 +24,7 @@ PRODUCT_PACKAGES += \
 $(shell echo -e "OTA_Configuration\n \
 ota_url=https://mirrors.c0urier.net/android/teamhorizon/O/OTA/ota_$(DEVICE).xml\n \
 device_name=ro.xenonhd.device\n \
-release_type=Oreo\n \
+release_type=Pie\n \
 version_source=ro.xenonhd.version\n \
 version_delimiter=-\n \
 version_position=1\n \
