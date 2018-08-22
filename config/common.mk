@@ -125,7 +125,8 @@ PRODUCT_PACKAGES += \
     LineageParts \
     Development \
     Profiles \
-    Turbo
+    Turbo \
+    turbo.xml
 
 # Optional packages
 PRODUCT_PACKAGES += \
