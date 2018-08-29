@@ -1,4 +1,6 @@
-_contents := $(_contents)    "xenonhd":{$(newline)
+add_json_str_omitempty = $(if $(strip $(2)),$(call add_json_str, $(1), $(2)))
+
+_contents := $(_contents)    "XenonHD":{$(newline)
 
 # See build/core/soong_config.mk for the add_json_* functions you can use here.
 $(call add_json_bool, Has_legacy_camera_hal1, $(filter true,$(TARGET_HAS_LEGACY_CAMERA_HAL1)))
