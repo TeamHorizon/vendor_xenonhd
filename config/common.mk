@@ -126,7 +126,8 @@ PRODUCT_PACKAGES += \
     Development \
     Profiles \
     Turbo \
-    turbo.xml
+    turbo.xml \
+    privapp-permissions-turbo.xml
 
 # Optional packages
 PRODUCT_PACKAGES += \
