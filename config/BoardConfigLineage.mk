@@ -8,3 +8,5 @@ include vendor/xenonhd/config/BoardConfigKernel.mk
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 include vendor/xenonhd/config/BoardConfigQcom.mk
 endif
+
+include vendor/xenonhd/config/BoardConfigSoong.mk
