@@ -147,7 +147,6 @@ PRODUCT_PACKAGES += \
     Eleven \
     ExactCalculator \
     LockClock \
-    NovaLauncher \
     WallpaperPicker \
     WeatherProvider
 
