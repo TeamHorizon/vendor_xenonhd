@@ -259,4 +259,7 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/xenonhd/config/partner_gms.mk
 
+# Use release-keys with Official builds if possible
+include vendor/xenonhd/config/release_keys.mk
+
 $(call inherit-product-if-exists, vendor/extra/product.mk)
