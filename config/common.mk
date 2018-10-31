@@ -169,25 +169,7 @@ PRODUCT_PACKAGES += \
     Exchange2
 
 # Berry styles
-PRODUCT_PACKAGES += \
-    LineageBlackTheme \
-    LineageDarkTheme \
-    LineageAmberAccent \
-    LineageBlackAccent \
-    LineageBrownAccent \
-    LineageCyanAccent \
-    LineageDemonAccent \
-    LineageDenimAccent \
-    LineageGoldAccent \
-    LineageGreenAccent \
-    LineageGreyAccent \
-    LineageOrangeAccent \
-    LineageOxygenAccent \
-    LineagePinkAccent \
-    LineagePurpleAccent \
-    LineageTealAccent \
-    LineageTurquoiseAccent \
-    LineageYellowAccent
+include packages/overlays/XenonHD/product_packages.mk
 
 # Extra tools in XenonHD
 PRODUCT_PACKAGES += \
