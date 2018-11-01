@@ -15,26 +15,13 @@ if [ -f $OTA_DIR/ota_conf ] &>/dev/null; then
 
 cat >$OUT/ota_$TITLE.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
-<XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
+<XenonOTA>
     <Pie>
         <$DEVICE>
             <Filename>$VERSION</Filename>
-            <RomUrl
-                id="rom"
-                title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
-            <MD5Url
-                id="md5"
-                title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
-            <OpenGappsUrl
-                id="gapps"
-                title=""
-                description="">http://opengapps.org</OpenGappsUrl>
-            <ChangelogUrl
-                id="changelog"
-                title=""
-                description="">https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
+            <RomUrl>https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
+            <MD5Url>https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
+            <ChangelogUrl>https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
         </$DEVICE>
     </Pie>
 </XenonOTA>
