@@ -5,12 +5,15 @@ DEVICE=`grep ro.xenonhd.device $OUT/*/build.prop | cut -d'=' -f2`
 TYPE=`grep ro.xenonhd.type $OUT/*/build.prop | cut -d'=' -f2`
 VERSION=`grep ro.xenonhd.version $OUT/*/build.prop | cut -d'=' -f2`
 
+OTA=${OTA_TYPE,,}
+TITLE=$DEVICE\_$OTA
+
 XENONHD_TARGET_PACKAGE=$VERSION-$DEVICE.zip
 
 # Create OTA XML file
 if [ -f $OTA_DIR/ota_conf ] &>/dev/null; then
 
-cat >$OUT/ota_$DEVICE.xml <<EOF
+cat >$OUT/ota_$TITLE.xml <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <XenonOTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ota.xsd">
     <Pie>
