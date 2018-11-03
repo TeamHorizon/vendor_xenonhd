@@ -148,7 +148,6 @@ PRODUCT_PACKAGES += \
     LineageSetupWizard \
     Eleven \
     ExactCalculator \
-    Jelly \
     LockClock \
     WallpaperPicker \
     WeatherProvider
