@@ -4,6 +4,7 @@
 DEVICE=`grep ro.xenonhd.device $OUT/*/build.prop | cut -d'=' -f2`
 TYPE=`grep ro.xenonhd.type $OUT/*/build.prop | cut -d'=' -f2`
 VERSION=`grep ro.xenonhd.version $OUT/*/build.prop | cut -d'=' -f2`
+TIME=`grep 'ro.build.date=' $OUT/*/build.prop | cut -d' ' -f4`
 
 OTA=${OTA_TYPE,,}
 TITLE=$DEVICE\_$OTA
@@ -19,6 +20,7 @@ cat >$OUT/ota_$TITLE.xml <<EOF
     <Pie>
         <$DEVICE>
             <Filename>$VERSION</Filename>
+            <BuildTime>$TIME</BuildTime>
             <RomUrl>https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE</RomUrl>
             <MD5Url>https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/$XENONHD_TARGET_PACKAGE.md5sum</MD5Url>
             <ChangelogUrl>https://mirrors.c0urier.net/android/teamhorizon/P/$TYPE/$DEVICE/Changelog.txt</ChangelogUrl>
