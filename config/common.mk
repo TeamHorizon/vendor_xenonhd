@@ -20,6 +20,12 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.opa.eligible_device=true \
     ro.storage_manager.enabled=true
 
+# Default alarm/notification/ringtone sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.alarm_alert=Bright_morning.ogg \
+    ro.config.notification_sound=Popcorn.ogg \
+    ro.config.ringtone=The_big_adventure.ogg
+
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.dun.override=0
@@ -99,9 +105,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/config/permissions/lineage-hiddenapi-package-whitelist.xml:system/etc/permissions/lineage-hiddenapi-package-whitelist.xml
 
-# Include XenonHD audio files
-include vendor/xenonhd/config/xenonhd_audio.mk
-
 # Include XenonOTA config
 include vendor/xenonhd/config/ota.mk
 
@@ -154,6 +157,11 @@ PRODUCT_PACKAGES += \
     LockClock \
     WallpaperPicker \
     WeatherProvider
+
+ifneq ($(DISABLE_AUDIOFX), true)
+PRODUCT_PACKAGES += \
+    AudioFX
+endif
 
 # Exchange support
 PRODUCT_PACKAGES += \
