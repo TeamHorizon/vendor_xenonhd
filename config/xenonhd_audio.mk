@@ -13,9 +13,9 @@ endif
 
 # Default alarm/notification/ringtone sounds
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.alarm_alert=Hassium.ogg \
-    ro.config.notification_sound=Argon.ogg \
-    ro.config.ringtone=Orion.ogg
+    ro.config.alarm_alert=Bright_morning.ogg \
+    ro.config.notification_sound=Popcorn.ogg \
+    ro.config.ringtone=The_big_adventure.ogg
 
 # Alarms
 PRODUCT_COPY_FILES += \
