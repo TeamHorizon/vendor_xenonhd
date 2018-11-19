@@ -1,7 +1,8 @@
 # XenonHD System Version
 ADDITIONAL_BUILD_PROPERTIES += \
     ro.xenonhd.version=$(XENONHD_VERSION) \
-    ro.xenonhd.type=$(OTA_TYPE)
+    ro.xenonhd.type=$(OTA_TYPE) \
+    ro.xenonhd.timestamp=dummy
 
 # LineageOS Platform SDK Version
 ADDITIONAL_BUILD_PROPERTIES += \

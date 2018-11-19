@@ -1,10 +1,13 @@
 #!/bin/bash
 # XenonHD OTA
 
+timestamp=`date +%s`
+sed -i "/^ro.xenonhd.timestamp=/s/=.*/=$timestamp/" $OUT/*/build.prop
+
 DEVICE=`grep ro.xenonhd.device $OUT/*/build.prop | cut -d'=' -f2`
 TYPE=`grep ro.xenonhd.type $OUT/*/build.prop | cut -d'=' -f2`
 VERSION=`grep ro.xenonhd.version $OUT/*/build.prop | cut -d'=' -f2`
-TIME=`grep ro.build.date.utc $OUT/*/build.prop | cut -d'=' -f2`
+TIME=`grep ro.xenonhd.timestamp $OUT/*/build.prop | cut -d'=' -f2`
 
 OTA=${OTA_TYPE,,}
 TITLE=$DEVICE\_$OTA
