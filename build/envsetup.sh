@@ -1,13 +1,13 @@
 function __print_xenonhd_functions_help() {
 cat <<EOF
-Additional LineageOS functions:
+Additional XenonHD functions:
 - cout:            Changes directory to out.
 - mmp:             Builds all of the modules in the current directory and pushes them to the device.
 - mmap:            Builds all of the modules in the current directory and its dependencies, then pushes the package to the device.
 - mmmp:            Builds all of the modules in the supplied directories and pushes them to the device.
-- lineagegerrit:   A Git wrapper that fetches/pushes patch from/to LineageOS Gerrit Review.
-- lineagerebase:   Rebase a Gerrit change and push it again.
-- lineageremote:   Add git remote for LineageOS Gerrit Review.
+- xenonhdgerrit:   A Git wrapper that fetches/pushes patch from/to XenonHD Gerrit Review.
+- xenonhdrebase:   Rebase a Gerrit change and push it again.
+- xenonhdremote:   Add git remote for XenonHD Gerrit Review.
 - aospremote:      Add git remote for matching AOSP repository.
 - cafremote:       Add git remote for matching CodeAurora repository.
 - mka:             Builds using SCHED_BATCH on all processors.
@@ -256,43 +256,43 @@ function dddclient()
    fi
 }
 
-function lineageremote()
+function xenonhdremote()
 {
     if ! git rev-parse --git-dir &> /dev/null
     then
         echo ".git directory not found. Please run this from the root directory of the Android repository you wish to set up."
         return 1
     fi
-    git remote rm lineage 2> /dev/null
+    git remote rm xenonhd 2> /dev/null
     local REMOTE=$(git config --get remote.github.projectname)
-    local LINEAGE="true"
+    local XENONHD="true"
     if [ -z "$REMOTE" ]
     then
         REMOTE=$(git config --get remote.aosp.projectname)
-        LINEAGE="false"
+        XENONHD="false"
     fi
     if [ -z "$REMOTE" ]
     then
         REMOTE=$(git config --get remote.caf.projectname)
-        LINEAGE="false"
+        XENONHD="false"
     fi
 
-    if [ $LINEAGE = "false" ]
+    if [ $XENONHD = "false" ]
     then
         local PROJECT=$(echo $REMOTE | sed -e "s#platform/#android/#g; s#/#_#g")
-        local PFX="LineageOS/"
+        local PFX="TeamHorizon/"
     else
         local PROJECT=$REMOTE
     fi
 
-    local LINEAGE_USER=$(git config --get review.review.lineageos.org.username)
-    if [ -z "$LINEAGE_USER" ]
+    local XENONHD_USER=$(git config --get review.gerrit.xenonhd.com.username)
+    if [ -z "$XENONHD_USER" ]
     then
-        git remote add lineage ssh://review.lineageos.org:29418/$PFX$PROJECT
+        git remote add xenonhd ssh://gerrit.xenonhd.com:29418/$PFX$PROJECT
     else
-        git remote add lineage ssh://$LINEAGE_USER@review.lineageos.org:29418/$PFX$PROJECT
+        git remote add xenonhd ssh://$XENONHD_USER@gerrit.xenonhd.com:29418/$PFX$PROJECT
     fi
-    echo "Remote 'lineage' created"
+    echo "Remote 'xenonhd' created"
 }
 
 function aospremote()
@@ -449,13 +449,13 @@ function makerecipe() {
     if [ "$REPO_REMOTE" = "github" ]
     then
         pwd
-        lineageremote
-        git push lineage HEAD:refs/heads/'$1'
+        xenonhdremote
+        git push xenonhd HEAD:refs/heads/'$1'
     fi
     '
 }
 
-function lineagegerrit() {
+function xenonhdgerrit() {
     if [ "$(__detect_shell)" = "zsh" ]; then
         # zsh does not define FUNCNAME, derive from funcstack
         local FUNCNAME=$funcstack[1]
@@ -465,7 +465,7 @@ function lineagegerrit() {
         $FUNCNAME help
         return 1
     fi
-    local user=`git config --get review.review.lineageos.org.username`
+    local user=`git config --get review.gerrit.xenonhd.com.username`
     local review=`git config --get remote.github.review`
     local project=`git config --get remote.github.projectname`
     local command=$1
@@ -501,7 +501,7 @@ EOF
             case $1 in
                 __cmg_*) echo "For internal use only." ;;
                 changes|for)
-                    if [ "$FUNCNAME" = "lineagegerrit" ]; then
+                    if [ "$FUNCNAME" = "xenonhdgerrit" ]; then
                         echo "'$FUNCNAME $1' is deprecated."
                     fi
                     ;;
@@ -594,7 +594,7 @@ EOF
                 $local_branch:refs/for/$remote_branch || return 1
             ;;
         changes|for)
-            if [ "$FUNCNAME" = "lineagegerrit" ]; then
+            if [ "$FUNCNAME" = "xenonhdgerrit" ]; then
                 echo >&2 "'$FUNCNAME $command' is deprecated."
             fi
             ;;
@@ -693,15 +693,15 @@ EOF
     esac
 }
 
-function lineagerebase() {
+function xenonhdrebase() {
     local repo=$1
     local refs=$2
     local pwd="$(pwd)"
     local dir="$(gettop)/$repo"
 
     if [ -z $repo ] || [ -z $refs ]; then
-        echo "LineageOS Gerrit Rebase Usage: "
-        echo "      lineagerebase <path to project> <patch IDs on Gerrit>"
+        echo "XenonHD Gerrit Rebase Usage: "
+        echo "      xenonhdrebase <path to project> <patch IDs on Gerrit>"
         echo "      The patch IDs appear on the Gerrit commands that are offered."
         echo "      They consist on a series of numbers and slashes, after the text"
         echo "      refs/changes. For example, the ID in the following command is 26/8126/2"
@@ -722,7 +722,7 @@ function lineagerebase() {
     echo "Bringing it up to date..."
     repo sync .
     echo "Fetching change..."
-    git fetch "http://review.lineageos.org/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
+    git fetch "http://gerrit.xenonhd.com/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
     if [ "$?" != "0" ]; then
         echo "Error cherry-picking. Not uploading!"
         return
@@ -944,7 +944,7 @@ function repopick() {
 function fixup_common_out_dir() {
     common_out_dir=$(get_build_var OUT_DIR)/target/common
     target_device=$(get_build_var TARGET_DEVICE)
-    if [ ! -z $LINEAGE_FIXUP_COMMON_OUT ]; then
+    if [ ! -z $XENONHD_FIXUP_COMMON_OUT ]; then
         if [ -d ${common_out_dir} ] && [ ! -L ${common_out_dir} ]; then
             mv ${common_out_dir} ${common_out_dir}-${target_device}
             ln -s ${common_out_dir}-${target_device} ${common_out_dir}
