@@ -131,6 +131,7 @@ PRODUCT_PACKAGES += \
     LineageParts \
     Development \
     Profiles \
+    SubstratumSignature \
     Turbo \
     turbo.xml \
     privapp-permissions-turbo.xml
@@ -209,7 +210,7 @@ PRODUCT_PACKAGES += \
     mke2fs \
     mkfs.exfat \
     mkfs.ntfs \
-    mount.ntfs
+    mount.ntfs \
     ntfsfix \
     ntfs-3g
 
