@@ -21,7 +21,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.storage_manager.enabled=true
 
 # Default alarm/notification/ringtone sounds
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.config.alarm_alert=Bright_morning.ogg \
     ro.config.notification_sound=Popcorn.ogg \
     ro.config.ringtone=The_big_adventure.ogg
