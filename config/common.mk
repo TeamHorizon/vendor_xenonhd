@@ -104,6 +104,10 @@ include vendor/xenonhd/config/ota.mk
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/prebuilt/common/etc/dialer_experience.xml:system/etc/sysconfig/dialer_experience.xml
 
+# Power whitelist
+PRODUCT_COPY_FILES += \
+    vendor/xenonhd/config/permissions/lineage-power-whitelist.xml:system/etc/sysconfig/lineage-power-whitelist.xml
+
 ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
 include vendor/xenonhd/config/lineage_sdk_common.mk
