@@ -14,7 +14,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 endif
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    keyguard.no_require_sim=true \
     persist.sys.disable_rescue=true \
     ro.build.selinux=1 \
     ro.opa.eligible_device=true \
