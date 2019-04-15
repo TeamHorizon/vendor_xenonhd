@@ -286,12 +286,12 @@ function xenonhdremote()
         local PROJECT=$REMOTE
     fi
 
-    local XENONHD_USER=$(git config --get review.gerrit.xenonhd.com.username)
+    local XENONHD_USER=$(git config --get review.xenonhd.zyns.com.username)
     if [ -z "$XENONHD_USER" ]
     then
-        git remote add xenonhd ssh://gerrit.xenonhd.com:29418/$PFX$PROJECT
+        git remote add xenonhd ssh://xenonhd.zyns.com:29418/$PFX$PROJECT
     else
-        git remote add xenonhd ssh://$XENONHD_USER@gerrit.xenonhd.com:29418/$PFX$PROJECT
+        git remote add xenonhd ssh://$XENONHD_USER@xenonhd.zyns.com:29418/$PFX$PROJECT
     fi
     echo "Remote 'xenonhd' created"
 }
@@ -487,7 +487,7 @@ function xenonhdgerrit() {
         $FUNCNAME help
         return 1
     fi
-    local user=`git config --get review.gerrit.xenonhd.com.username`
+    local user=`git config --get review.xenonhd.zyns.com.username`
     local review=`git config --get remote.github.review`
     local project=`git config --get remote.github.projectname`
     local command=$1
@@ -744,7 +744,7 @@ function xenonhdrebase() {
     echo "Bringing it up to date..."
     repo sync .
     echo "Fetching change..."
-    git fetch "http://gerrit.xenonhd.com/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
+    git fetch "http://xenonhd.zyns.com/p/$repo" "refs/changes/$refs" && git cherry-pick FETCH_HEAD
     if [ "$?" != "0" ]; then
         echo "Error cherry-picking. Not uploading!"
         return
