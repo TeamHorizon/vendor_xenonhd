@@ -149,6 +149,7 @@ PRODUCT_PACKAGES += \
 # Custom XenonHD packages
 PRODUCT_PACKAGES += \
     BrowserInstaller \
+    Backgrounds \
     LineageSettingsProvider \
     LineageSetupWizard \
     Eleven \
@@ -156,7 +157,6 @@ PRODUCT_PACKAGES += \
     LockClock \
     SoundPicker \
     TrebuchetQuickStep \
-    WallpaperPicker \
     WeatherProvider
 
 ifneq ($(DISABLE_AUDIOFX), true)
