@@ -91,6 +91,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/config/permissions/org.lineageos.android.xml:system/etc/permissions/org.lineageos.android.xml \
     vendor/xenonhd/config/permissions/privapp-permissions-lineage.xml:system/etc/permissions/privapp-permissions-lineage.xml
+    vendor/xenonhd/config/permissions/privapp-permissions-cm-legacy.xml:system/etc/permissions/privapp-permissions-cm-legacy.xml
 
 # Hidden API whitelist
 PRODUCT_COPY_FILES += \
