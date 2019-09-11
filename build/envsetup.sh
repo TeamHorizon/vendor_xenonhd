@@ -996,9 +996,4 @@ if [ -d $(gettop)/prebuilts/snapdragon-llvm/toolchains ]; then
     esac
 fi
 
-# Android specific JACK args
-if [ -n "$JACK_SERVER_VM_ARGUMENTS" ] && [ -z "$ANDROID_JACK_VM_ARGS" ]; then
-    export ANDROID_JACK_VM_ARGS=$JACK_SERVER_VM_ARGUMENTS
-fi
-
 export OTA_DIR=$(get_build_var OUT_DIR)
