@@ -42,8 +42,7 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/xenonhd/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/xenonhd/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/xenonhd/prebuilt/common/bin/50-xenonhd.sh:system/addon.d/50-xenonhd.sh \
-    vendor/xenonhd/prebuilt/common/bin/blacklist:system/addon.d/blacklist
+    vendor/xenonhd/prebuilt/common/bin/50-xenonhd.sh:system/addon.d/50-xenonhd.sh
 
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
