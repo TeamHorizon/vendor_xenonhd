@@ -1,18 +1,19 @@
 #!/bin/sh
 # XenonHD Changelog
 
+# Exports
+dir=$ANDROID_BUILD_TOP
+out=$dir/out/target/product
+
 export Changelog=Changelog.txt
 
 if [ -f $Changelog ];
 then
-	rm -f $Changelog
+    rm -f $Changelog
 fi
 
 touch $Changelog
 
-if [ "$SKIP_CHANGELOG" = "1" ] ; then
-  echo "Skipped because 'SKIP_CHANGELOG' was enabled" >> $Changelog;
-else
 for i in $(seq 7);
 do
 export After_Date=`date --date="$i days ago" +%F`
@@ -27,8 +28,15 @@ done
 
 sed -i 's/project/ */g' $Changelog
 sed -i 's/[/]$//' $Changelog
-fi
 
+if [ -e $out/*/$Changelog ]
+then
+rm $out/*/$Changelog
+fi
+if [ -e $out/*/system/etc/$Changelog ]
+then
+rm $out/*/system/etc/$Changelog
+fi
 cp $Changelog $OUT/system/etc/
 cp $Changelog $OUT/
 rm $Changelog
