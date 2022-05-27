@@ -25,11 +25,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.extractor-plugin=libffmpeg_extractor.so \
     media.sf.omx-plugin=libffmpeg_omx.so \
     persist.sys.dun.override=0 \
-    ro.adb.secure=0 \
     ro.build.selinux=1 \
     ro.opa.eligible_device=true \
-    ro.secure=0 \
     ro.storage_manager.enabled=true
+
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+# Enable ADB authentication
+PRODUCT_PROPERTY_OVERRIDES += ro.adb.secure=1
+endif
 
 # Telephony
 PRODUCT_PACKAGES += \
