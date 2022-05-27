@@ -25,7 +25,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.extractor-plugin=libffmpeg_extractor.so \
     media.sf.omx-plugin=libffmpeg_omx.so \
     persist.sys.dun.override=0 \
-    persist.sys.root_access=3 \
     ro.adb.secure=0 \
     ro.build.selinux=1 \
     ro.opa.eligible_device=true \
@@ -123,6 +122,9 @@ PRODUCT_PACKAGES += \
 ifeq ($(WITH_SU),su)
 PRODUCT_PACKAGES += \
     su
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=3
 endif
 endif
 
